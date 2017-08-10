@@ -1,0 +1,142 @@
+{
+	"jumper": [
+		[
+			{	
+				"description": "General Market Gas Lane 3 NO PLATEN",
+				"Grounded": [0,1,0,1,0,0],
+				"grill_type": 10
+			},
+			{
+				"description": "General Market Electric Lane 3 NO PLATEN",
+				"Grounded": [1,1,0,1,0,0],
+				"grill_type": 11
+			},
+			{
+				"description": "McDonalds Gas Lane 3",
+				"Grounded": [0,0,1,1,0,0],
+				"grill_type": 12
+			},
+			{
+				"description": "McDonalds Electric Lane 3 Slave",
+				"Grounded": [1,0,1,1,0,0],
+				"grill_type": 13
+			},
+			{
+				"description": "General Market Gas Lane 3",
+				"Grounded": [0,1,1,1,0,0],
+				"grill_type": 14
+			},
+			{
+				"description": "General Market Electric Lane 3",
+				"Grounded": [],
+				"grill_type": 15
+			},
+			{
+				"description": "General Market Gas Lane 2 NO PLATEN",
+				"Grounded": [0,1,0,0,1,0],
+				"grill_type": 18
+			},
+			{
+				"description": "General Market Electric Lane 2 NO PLATEN",
+				"Grounded": [1,1,0,0,1,0],
+				"grill_type": 19
+			},
+			{
+				"description": "McDonalds Gas Lane 2",
+				"Grounded": [0,0,1,0,1,0],
+				"grill_type": 20
+			},
+			{
+				"description": "McDonalds Electric Lane 2",
+				"Grounded": [1,0,1,0,1,0],
+				"grill_type": 21
+			},
+			{
+				"description": "General Market Gas Lane 2",
+				"Grounded": [0,1,1,0,1,0],
+				"grill_type": 22
+			},
+			{
+				"description": "General Market Electric Lane 2",
+				"Grounded": [1,1,1,0,1,0],
+				"grill_type": 23
+			},
+			{
+				"description": "General Market Gas Lane 1 NO PLATEN",
+				"Grounded": [0,1,0,1,1,0],
+				"grill_type": 26
+			},
+			{
+				"description": "General Market Electric Lane 1 NO PLATEN",
+				"Grounded": [1,1,0,1,1,0],
+				"grill_type": 27
+			},
+			{
+				"description": "McDonalds Gas Lane 1",
+				"Grounded": [0,0,1,1,1,0],
+				"grill_type": 28
+			},
+			{
+				"description": "McDonalds Electric Lane 1",
+				"Grounded": [1,0,1,1,1,0],
+				"grill_type": 29
+			},
+			{
+				"description": "General Market Gas Lane 1",
+				"Grounded": [0,1,1,1,1,0],
+				"grill_type": 30
+			},
+			{
+				"description": "General Market Electric Lane 1",
+				"Grounded": [1,1,1,1,1,0],
+				"grill_type": 31
+			},
+			{
+				"description": "McDonalds Electric Lane 1 Slave",
+				"Grounded": [0,1,1,0,0,1],
+				"grill_type": 38
+			},
+			{
+				"description": "General Market Electric Lane 1 Slave",
+				"Grounded": [1,1,1,0,0,1],
+				"grill_type": 39
+			},
+			{
+				"description": "McDonalds Gas Lane 1 Slave",
+				"Grounded": [0,1,0,1,0,1],
+				"grill_type": 42
+			},
+			{
+				"description": "General Market Gas Lane 1 Slave",
+				"Grounded": [1,1,0,1,0,1],
+				"grill_type": 43
+			},
+			{
+				"description": "McDonalds Gas Lane 3 Slave",
+				"Grounded": [0,0,1,1,0,1],
+				"grill_type": 44
+			},
+			{
+				"description": "General Market Gas Lane 3 Slave",
+				"Grounded": [1,0,1,1,0,1],
+				"grill_type": 45
+			},
+			{
+				"description": "CFA Gen-2",
+				"Grounded": [1,1,1,1,0,1],
+				"grill_type": 47
+			},
+			{
+				"description": "McDonalds Electric Lane 3 Master",
+				"Grounded": [0,1,0,0,1,1],
+				"grill_type": 50
+			},
+			{
+				"description": "General Market Electric Lane 3 Slave",
+				"Grounded": [1,1,0,0,1,1],
+				"grill_type": 51
+			}
+			
+		]
+	]
+}

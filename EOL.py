@@ -48,10 +48,15 @@ class myConfig(object):
     restTime = 0.05
     linuxPath = os.path.dirname(__file__)
     logPath = '/log/'  # log files storage path
-    sysPath = '/system/'  # system required storage path
+    sysPath = '/system/'  # system files storage path
+    hwcfg = '/hwcfg/' # library of all json configurations
     logfile = linuxPath + logPath + "error.log"
-    grillType = "" #load from jumper
-    jsonFile = linuxPath + logPath + grillType + ".json"
+    jumperFile = linuxPath + sysPath + "jumpers.json"
+    grillType = 0 #load from jumper
+    jsonFile = linuxPath + hwcfg + repr(grillType) + ".json"
+
+    def updateJSON(self, grillType):
+        self.jsonFile = self.linuxPath + self.logPath + str(grillType) + ".json"
 
 def main():
     # main starts here
@@ -60,8 +65,17 @@ def main():
     logger = setup_logger('event_log', config.logfile)
 
     myJSON = jsonToFile.loadJSON()
-    retry, jumper = myJSON.readJumper(master, logger, config.device, 1, config.restTime)
-    print jumper
+
+
+    retry, processID, jumperPIN = myJSON.readJumperPins(master, logger, config.device, 1, config.restTime)
+    if retry <= 0:
+        print "Failed reading Jumper.....@ processID %r" %processID
+        logger.error("Failed reading Jumper.....@ processID %r" %processID)
+        os._exit(1)
+    config.grillType = myJSON.jumperToDec(jumperPIN)
+    config.updateJSON(config.grillType)
+    print config.jsonFile
+
 
 
 if __name__ == "__main__":
