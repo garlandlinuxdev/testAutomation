@@ -52,11 +52,14 @@ class myConfig(object):
     hwcfg = '/hwcfg/' # library of all json configurations
     logfile = linuxPath + logPath + "error.log"
     jumperFile = linuxPath + sysPath + "jumpers.json"
-    grillType = 0 #load from jumper
-    jsonFile = linuxPath + hwcfg + repr(grillType) + ".json"
+    grillType = 0 #load from SIB
+    jsonFile = linuxPath + hwcfg + str(grillType) + ".json"
+
+    description = "unknown" # load from json file
+    sync_role = 0
 
     def updateJSON(self, grillType):
-        self.jsonFile = self.linuxPath + self.logPath + str(grillType) + ".json"
+        self.jsonFile = self.linuxPath + self.hwcfg + str(grillType) + ".json"
 
 def main():
     # main starts here
@@ -75,6 +78,9 @@ def main():
     config.grillType = myJSON.jumperToDec(jumperPIN)
     config.updateJSON(config.grillType)
     print config.jsonFile
+
+    data = myJSON.readJSON(config.jsonFile)
+    config.description, config.sync_role = myJSON.loadHardware(data)
 
 
 

@@ -14,17 +14,6 @@ class loadJSON():
         data_file.close()
         return data
 
-    def findGrillType(self, compare, jumper):
-        found = False
-        i = 0
-        while found != True:
-            if compare == jumper[i]:
-                found = True
-            else:
-                found = False
-                i += 1
-        return i
-
     def jumperToDec(self, arg):
         combine = ''.join(map(str, reversed(arg)))
         return int(combine, 2)
@@ -133,6 +122,12 @@ class loadJSON():
 
         return TCfilter, heaterPID, tempLimit, heaterProcess
 
+    def loadHardware(self, data):
+        description = data["hardware"]["description"]
+        sync_role = data["hardware"]["power_sync_role"]
+
+        return description, sync_role
+
     def setReg(self, master, logger, device, processID, startReg, restTime, Data):
         # For passing condition, no errors should occur and maximum retry is set at 3
         error = 1
@@ -167,7 +162,6 @@ class loadJSON():
                 pass
 
         return retry, processID, jumper
-
 
 def main():
     test = loadJSON()
