@@ -7,6 +7,12 @@ import modbus_tk.defines as cst
 
 
 class loadJSON():
+    motorPIDreg = 300
+    current_limit_Reg = 515
+    heaterPIDconfig = 0  # ["Standard Grilled", "Water Based", "Future Use 1", "Future Use 2", "Preheat"]
+    setpoint = -4500 # initial position setpoint
+    enable = [1, 1, 1, 1] # load register function, 1 for enable [motionPID, heaterPID, level sensors]
+    logger = ''
 
     def readJSON(self, filename):
         with open(filename) as data_file:
@@ -98,7 +104,7 @@ class loadJSON():
         heaterPID = [[], [], [], [], []]
         TCfilter = []
         tempLimit = [1794, 2400, 1794, 2400, 1794, 0, 0, 0]
-        heaterProcess = [1767, 2322, 1767, 2322, 1767, 0, 0, 0]  # temperature setpoint
+        heaterProcess = [0, 0, 0, 0, 0, 0, 0, 0]  # temperature setpoint
 
         TCfilter.extend(data["filter_weight"]["cold_junction"])
         TCfilter.extend(data["filter_weight"]["thermocouple"])
@@ -128,7 +134,7 @@ class loadJSON():
 
         return description, sync_role
 
-    def setReg(self, master, logger, device, processID, startReg, restTime, Data):
+    def setReg(self, master, device, processID, startReg, restTime, Data):
         # For passing condition, no errors should occur and maximum retry is set at 3
         error = 1
         retry = 3
@@ -139,14 +145,14 @@ class loadJSON():
                 error = 0
             except modbus_tk.modbus.ModbusInvalidResponseError:
                 print "error: ", processID
-                logger.error("Write to register %r failed, @ processID %r" % (startReg, processID))
+                self.logger.info("Write to register %r failed, @ processID %r" % (startReg, processID))
                 error = 1
                 retry -= 1
                 pass
 
         return retry, processID
 
-    def readJumperPins(self, master, logger, device, processID, restTime):
+    def readJumperPins(self, master, device, processID, restTime):
         error = 1
         retry = 3
         while error == 1 and retry != 0:
@@ -156,24 +162,69 @@ class loadJSON():
                 error = 0
             except modbus_tk.modbus.ModbusInvalidResponseError:
                 print "error: ", processID
-                logger.error("Write to coil %r failed, @ processID %r" % (20, processID))
+                self.logger.INFO("Write to coil %r failed, @ processID %r" % (20, processID))
                 error = 1
                 retry -= 1
                 pass
 
         return retry, processID, jumper
 
+    def maxRetryCheck(self, retry, processID):
+        if retry <= 0:
+            os._exit(1)
+            print "Max retry reached @ %r, exiting script...please restart" %processID
+        else:
+            pass
+
+    def setDevice(self, master, device, restTime, data):
+        # motionPID
+        if self.enable[0] == 1:
+            motorPID, current_limit = self.loadMotorPID(data)
+            retry, processID = self.setReg(master, device, 101, self.motorPIDreg, restTime, motorPID)
+            self.maxRetryCheck(retry, processID)
+            retry, processID = self.setReg(master, device, 102, self.current_limit_Reg, restTime, current_limit)
+            self.maxRetryCheck(retry, processID)
+            self.logger.info("Writing motionPID successful")
+
+        # heaterPID
+        if self.enable[1] == 1:
+            TCfilter, heaterPID, tempLimit, heaterProcess = self.loadHeater(data)
+            retry, processID = self.setReg(master, device, 103, 124, restTime, heaterPID[self.heaterPIDconfig])
+            self.maxRetryCheck(retry, processID)
+            retry, processID = self.setReg(master, device, 104, 256, restTime, TCfilter)
+            self.maxRetryCheck(retry, processID)
+            retry, processID = self.setReg(master, device, 105, 52, restTime, tempLimit)
+            self.maxRetryCheck(retry, processID)
+            retry, processID = self.setReg(master, device, 106, 92, restTime, heaterProcess)
+            self.maxRetryCheck(retry, processID)
+            self.logger.info("Writing heaterPID successful")
+
+        # level sensors
+        if self.enable[2] == 1:
+            trigger, sensorLimit, levelMotor, encoder = self.loadSensor(data, self.setpoint)
+            retry, processID = self.setReg(master, device, 107, 0, restTime, encoder)
+            self.maxRetryCheck(retry, processID)
+            retry, processID = self.setReg(master, device, 108, 463, restTime, sensorLimit)
+            self.maxRetryCheck(retry, processID)
+            retry, processID = self.setReg(master, device, 109, 471, restTime, trigger)
+            self.maxRetryCheck(retry, processID)
+            retry, processID = self.setReg(master, device, 110, 496, restTime, levelMotor)
+            self.maxRetryCheck(retry, processID)
+            self.logger.info("Writing level sensors successful")
+
+        # power sync role
+        if self.enable[3] == 1:
+            description, sync_role = self.loadHardware(data)
+            temp = [sync_role]
+            retry, processID = self.setReg(master, device, 111, 41, restTime, temp)
+            self.maxRetryCheck(retry, processID)
+            self.logger.info("Writing power sync successful")
+
 def main():
     test = loadJSON()
     data = test.readJSON("29.json")
 
-    reg, currentLimit = test.loadMotorPID(data)
-    TCfilter, heaterPID = test.loadHeater(data)
-
-    # print reg
-    # print currentLimit
-    print heaterPID[0]
-
+    #test.setDevice(master, logger, config.device, config.restTime, data)
 
 if __name__ == "__main__":
     main()

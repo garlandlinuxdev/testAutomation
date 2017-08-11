@@ -50,7 +50,7 @@ class myConfig(object):
     logPath = '/log/'  # log files storage path
     sysPath = '/system/'  # system files storage path
     hwcfg = '/hwcfg/' # library of all json configurations
-    logfile = linuxPath + logPath + "error.log"
+    logfile = linuxPath + logPath + "event.log"
     jumperFile = linuxPath + sysPath + "jumpers.json"
     grillType = 0 #load from SIB
     jsonFile = linuxPath + hwcfg + str(grillType) + ".json"
@@ -66,22 +66,21 @@ def main():
     config = myConfig()
     master = setup()
     logger = setup_logger('event_log', config.logfile)
+    logger.info("==================== Test Begins ====================")
 
     myJSON = jsonToFile.loadJSON()
+    myJSON.enable = [1, 1, 1, 1]
+    myJSON.logger = logger
 
-
-    retry, processID, jumperPIN = myJSON.readJumperPins(master, logger, config.device, 1, config.restTime)
-    if retry <= 0:
-        print "Failed reading Jumper.....@ processID %r" %processID
-        logger.error("Failed reading Jumper.....@ processID %r" %processID)
-        os._exit(1)
+    retry, processID, jumperPIN = myJSON.readJumperPins(master, config.device, 1, config.restTime)
+    myJSON.maxRetryCheck(retry, processID)
     config.grillType = myJSON.jumperToDec(jumperPIN)
     config.updateJSON(config.grillType)
-    print config.jsonFile
+    logger.info(config.jsonFile)
 
     data = myJSON.readJSON(config.jsonFile)
     config.description, config.sync_role = myJSON.loadHardware(data)
-
+    myJSON.setDevice(master, config.device, config.restTime, data)
 
 
 if __name__ == "__main__":
