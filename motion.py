@@ -94,11 +94,13 @@ class actuator():
         return read
 
     def setpoint(self, SP):
-        self.setReg(200, 0, [SP])
+        process = 200
+        self.setReg(process, 0, [SP])
         self.logger.info("Writing setpoint reg 0 to %r" % SP)
 
     def spFeedback(self):
-        fb = self.readReg(201, 3, 1)
+        process = 201
+        fb = self.readReg(process, 3, 1)
         return fb[0]
 
     def homing(self):
