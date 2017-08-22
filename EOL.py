@@ -1,15 +1,16 @@
 #!/usr/bin/python
-#Project: EOL
-#Description: 
+# Project: EOL
+# Description:
 __author__ = "Adrian Wong"
 
 import modbus_tk
 import modbus_tk.defines as cst
 import modbus_tk.modbus_rtu as modbus_rtu
-import jsonToFile, serial, os, logging, time
+import serial, os, logging
+import jsonToFile, motion
+
 
 def setup():
-
     # Configure Hardware Overwrite
     com_port = 'COM30'  # For windows
     # com_port = '/dev/ttyO4' #For UART4
@@ -30,6 +31,7 @@ def setup():
 
     return master
 
+
 def setup_logger(name, log_file, level=logging.INFO):
     formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
     """Function setup as many loggers as you want"""
@@ -43,44 +45,57 @@ def setup_logger(name, log_file, level=logging.INFO):
 
     return logger
 
+
 class myConfig(object):
     device = 1
     restTime = 0.05
+    timeout = 30
     linuxPath = os.path.dirname(__file__)
     logPath = '/log/'  # log files storage path
     sysPath = '/system/'  # system files storage path
-    hwcfg = '/hwcfg/' # library of all json configurations
+    hwcfg = '/hwcfg/'  # library of all json configurations
     logfile = linuxPath + logPath + "event.log"
     jumperFile = linuxPath + sysPath + "jumpers.json"
-    grillType = 0 #load from SIB
+    grillType = 0  # load from SIB
     jsonFile = linuxPath + hwcfg + str(grillType) + ".json"
+    enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors]
 
-    description = "unknown" # load from json file
+    description = "unknown"  # load from json file
     sync_role = 0
 
     def updateJSON(self, grillType):
         self.jsonFile = self.linuxPath + self.hwcfg + str(grillType) + ".json"
+
 
 def main():
     # main starts here
     config = myConfig()
     master = setup()
     logger = setup_logger('event_log', config.logfile)
-    logger.info("==================== Test Begins ====================")
+    logger.info(" ")
+    logger.info("==================== Load Settings ====================")
 
     myJSON = jsonToFile.loadJSON()
-    myJSON.enable = [1, 1, 1, 1]
-    myJSON.logger = logger
+    myJSON.update(logger, master, config.device, config.restTime, config.enable)
 
-    retry, processID, jumperPIN = myJSON.readJumperPins(master, config.device, 1, config.restTime)
-    myJSON.maxRetryCheck(retry, processID)
+    jumperPIN = myJSON.readJumperPins(1)
     config.grillType = myJSON.jumperToDec(jumperPIN)
     config.updateJSON(config.grillType)
     logger.info(config.jsonFile)
 
     data = myJSON.readJSON(config.jsonFile)
     config.description, config.sync_role = myJSON.loadHardware(data)
-    myJSON.setDevice(master, config.device, config.restTime, data)
+    myJSON.setDevice(data)
+
+    motor = motion.actuator()
+    motor.update(logger, master, config.device, config.restTime, config.timeout)
+
+    logger.info("==================== Test Begins ====================")
+    motor.switchTest()
+    motor.homing()
+    motor.setpoint(-4000)
+
+    logger.info("==================== Test Completed ====================")
 
 
 if __name__ == "__main__":

@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d8b1b430-cf88-4d12-ae5d-ea818ec56e3d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EOL.py" afterPath="$PROJECT_DIR$/EOL.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsonToFile.py" afterPath="$PROJECT_DIR$/jsonToFile.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/motion.py" afterPath="$PROJECT_DIR$/motion.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/EOL$EOL.coverage" NAME="EOL Coverage Results" MODIFIED="1503334579518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EOL$EOL.coverage" NAME="EOL Coverage Results" MODIFIED="1503417580082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
@@ -21,20 +23,20 @@
       <file leaf-file-name="EOL.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EOL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="77" column="38" lean-forward="false" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
+            <state relative-caret-position="756">
+              <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
               <folding>
-                <element signature="e#75#91#0" expanded="true" />
+                <element signature="e#76#92#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jsonToFile.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="jsonToFile.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jsonToFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="143" column="16" lean-forward="true" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="97" />
+            <state relative-caret-position="1806">
+              <caret line="86" column="40" lean-forward="false" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
               <folding>
                 <element signature="e#87#108#0" expanded="true" />
               </folding>
@@ -42,13 +44,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="motion.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="motion.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/motion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+            <state relative-caret-position="2268">
+              <caret line="108" column="31" lean-forward="true" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
               <folding>
-                <element signature="e#74#90#0" expanded="true" />
+                <element signature="e#110#125#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,9 +72,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/system/jumpers.json" />
+        <option value="$PROJECT_DIR$/motion.py" />
         <option value="$PROJECT_DIR$/jsonToFile.py" />
         <option value="$PROJECT_DIR$/EOL.py" />
-        <option value="$PROJECT_DIR$/motion.py" />
       </list>
     </option>
   </component>
@@ -355,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502457067709</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update">
+      <created>1503343943274</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1503343943274</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -403,7 +412,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#75#91#0" expanded="true" />
+            <element signature="e#76#92#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -423,7 +432,7 @@
         <state relative-caret-position="84">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="e#74#90#0" expanded="true" />
+            <element signature="e#110#125#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -437,30 +446,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EOL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="77" column="38" lean-forward="false" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
+        <state relative-caret-position="756">
+          <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
-            <element signature="e#75#91#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsonToFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="143" column="16" lean-forward="true" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="97" />
-          <folding>
-            <element signature="e#87#108#0" expanded="true" />
+            <element signature="e#76#92#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/motion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state relative-caret-position="2268">
+          <caret line="108" column="31" lean-forward="true" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
           <folding>
-            <element signature="e#74#90#0" expanded="true" />
+            <element signature="e#110#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jsonToFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1806">
+          <caret line="86" column="40" lean-forward="false" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="40" />
+          <folding>
+            <element signature="e#87#108#0" expanded="true" />
           </folding>
         </state>
       </provider>
