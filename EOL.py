@@ -48,7 +48,7 @@ def setup_logger(name, log_file, level=logging.INFO):
 
 class myConfig(object):
     device = 1
-    restTime = 0.05
+    restTime = 0.01
     timeout = 30
     linuxPath = os.path.dirname(__file__)
     logPath = '/log/'  # log files storage path
@@ -101,13 +101,11 @@ def main():
 
     logger.info("==================== Test Begins ====================")
     print "==================== Test Begins ===================="
-    logger.info("execute voltage reading")
+    logger.info("< execute voltage reading >")
     processID = 2
     phase_status, supply_voltage = power.voltage(processID)
-    logger.info("Phase status: " + str(phase_status)[1:-1])
-    logger.info("Supply Voltage: " + str(supply_voltage)[1:-1])
-    print "phase_status: ", str(phase_status)[1:-1]
-    print "Supply Voltage: ", str(supply_voltage)[1:-1]
+    power.validate(phase_status, supply_voltage)
+
     logger.info("< execute switch test >")
     motor.switchTest()
     logger.info("< execute homing test >")
