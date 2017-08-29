@@ -6,8 +6,8 @@ __author__ = "Adrian Wong"
 import modbus_tk
 import modbus_tk.defines as cst
 import modbus_tk.modbus_rtu as modbus_rtu
-import serial, os, logging
-import jsonToFile, motion
+import serial, os, logging, modbus
+import jsonToFile, motion, voltage
 
 
 def setup():
@@ -71,32 +71,52 @@ def main():
     # main starts here
     config = myConfig()
     master = setup()
+
     logger = setup_logger('event_log', config.logfile)
-    logger.info(" ")
     logger.info("==================== Load Settings ====================")
+    print "==================== Load Settings ===================="
+
+    com = modbus.communicate()
+    com.setup(logger, master, config.device, config.restTime)
 
     myJSON = jsonToFile.loadJSON()
-    myJSON.update(logger, master, config.device, config.restTime, config.enable)
+    myJSON.update(logger, com, config.enable)
 
-    jumperPIN = myJSON.readJumperPins(1)
-    config.grillType = myJSON.jumperToDec(jumperPIN)
+    processID = 1
+    config.grillType = myJSON.grillType(processID)
     config.updateJSON(config.grillType)
     logger.info(config.jsonFile)
+    print config.jsonFile
 
     data = myJSON.readJSON(config.jsonFile)
     config.description, config.sync_role = myJSON.loadHardware(data)
     myJSON.setDevice(data)
 
+    power = voltage.measure()
+    power.update(logger, com)
+
     motor = motion.actuator()
-    motor.update(logger, master, config.device, config.restTime, config.timeout)
+    motor.update(logger, com, config.timeout)
+
 
     logger.info("==================== Test Begins ====================")
+    print "==================== Test Begins ===================="
+    logger.info("execute voltage reading")
+    processID = 2
+    phase_status, supply_voltage = power.voltage(processID)
+    logger.info("Phase status: " + str(phase_status)[1:-1])
+    logger.info("Supply Voltage: " + str(supply_voltage)[1:-1])
+    print "phase_status: ", str(phase_status)[1:-1]
+    print "Supply Voltage: ", str(supply_voltage)[1:-1]
+    logger.info("< execute switch test >")
     motor.switchTest()
+    logger.info("< execute homing test >")
     motor.homing()
+    logger.info("< execute setpoint settings >")
     motor.setpoint(-4000)
 
     logger.info("==================== Test Completed ====================")
-
+    print "==================== Test Completed ===================="
 
 if __name__ == "__main__":
     main()

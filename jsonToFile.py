@@ -1,10 +1,7 @@
 #!/usr/bin/python
 # Load SIB settings from json file
 # Program designed by Adrian Wong
-import os, json, time
-import modbus_tk
-import modbus_tk.defines as cst
-
+import json
 
 class loadJSON():
     motorPIDreg = 300
@@ -20,12 +17,11 @@ class loadJSON():
     master = ''
     device = 0
     restTime = 0
+    com = ''
 
-    def update(self, logger, master, device, restTime, enable):
+    def update(self, logger, com, enable):
         self.logger = logger
-        self.master = master
-        self.device = device
-        self.restTime = restTime
+        self.com = com
         self.enable = enable
 
     def readJSON(self, filename):
@@ -148,76 +144,41 @@ class loadJSON():
 
         return description, sync_role
 
-    def setReg(self, processID, startReg, Data):
-        # For passing condition, no errors should occur and maximum retry is set at 3
-        error = 1
-        retry = 3
-        while error == 1 and retry != 0:
-            try:
-                time.sleep(self.restTime)
-                self.master.execute(self.device, cst.WRITE_MULTIPLE_REGISTERS, startReg, output_value=Data)
-                error = 0
-            except modbus_tk.modbus.ModbusInvalidResponseError:
-                print "Write to register %r failed, @ processID %r" % (startReg, processID)
-                self.logger.info("Write to register %r failed, @ processID %r" % (startReg, processID))
-                error = 1
-                retry -= 1
-                pass
-
-        if retry <= 0:
-            os._exit(1)
-            print "Max retry reached @ %r, exiting script...please restart" % processID
-        else:
-            pass
-
     def readJumperPins(self, processID):
-        error = 1
-        retry = 3
-        while error == 1 and retry != 0:
-            try:
-                time.sleep(self.restTime)
-                jumper = self.master.execute(self.device, cst.READ_COILS, 20, 6)
-                error = 0
-            except modbus_tk.modbus.ModbusInvalidResponseError:
-                print "Write to coil %r failed, @ processID %r" % (20, processID)
-                self.logger.info("Write to coil %r failed, @ processID %r" % (20, processID))
-                error = 1
-                retry -= 1
-                pass
-        if retry <= 0:
-            os._exit(1)
-            print "Max retry reached @ %r, exiting script...please restart" % processID
-        else:
-            pass
+        jumper = self.com.readCoil(processID, 20, 6)
         return jumper
+
+    def grillType(self, processID):
+        grill = self.com.readReg(processID, 32, 1)
+        return grill[0]
 
     def setDevice(self, data):
         # motionPID
         if self.enable[0] == 1:
             process = 101
             motorPID, current_limit = self.loadMotorPID(data)
-            self.setReg(process, self.motorPIDreg, motorPID)
-            self.setReg(process, self.current_limit_Reg, current_limit)
+            self.com.setReg(process, self.motorPIDreg, motorPID)
+            self.com.setReg(process, self.current_limit_Reg, current_limit)
             self.logger.info("Writing motionPID successful, @ processID %r" % process)
 
         # heaterPID
         if self.enable[1] == 1:
             process = 102
             TCfilter, heaterPID, tempLimit, heaterProcess = self.loadHeater(data)
-            self.setReg(process, 124, heaterPID[self.heaterPIDconfig])
-            self.setReg(process, 256, TCfilter)
-            self.setReg(process, 52, tempLimit)
-            self.setReg(process, 92, heaterProcess)
+            self.com.setReg(process, 124, heaterPID[self.heaterPIDconfig])
+            self.com.setReg(process, 256, TCfilter)
+            self.com.setReg(process, 52, tempLimit)
+            self.com.setReg(process, 92, heaterProcess)
             self.logger.info("Writing heaterPID successful, @ processID %r" % process)
 
         # level sensors
         if self.enable[2] == 1:
             process = 103
             trigger, sensorLimit, levelMotor, encoder = self.loadSensor(data, self.setpoint)
-            self.setReg(process, 0, encoder)
-            self.setReg(process, 463, sensorLimit)
-            self.setReg(process, 471, trigger)
-            self.setReg(process, 496, levelMotor)
+            self.com.setReg(process, 0, encoder)
+            self.com.setReg(process, 463, sensorLimit)
+            self.com.setReg(process, 471, trigger)
+            self.com.setReg(process, 496, levelMotor)
             self.logger.info("Writing level sensors successful, @ processID %r" % process)
 
         # power sync role
@@ -225,7 +186,7 @@ class loadJSON():
             process = 104
             description, sync_role = self.loadHardware(data)
             temp = [sync_role]
-            self.setReg(process, 41, temp)
+            self.com.setReg(process, 41, temp)
             self.logger.info("Writing power sync successful, @ processID %r" % process)
 
 
