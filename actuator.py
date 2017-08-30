@@ -113,17 +113,21 @@ class motion():
             self.logger.info("Seeking upper switch failed, @ processID %r" % processID)
             os._exit(1)
         self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
+        endTime = commonFX.timeCal(startTime)
         encUP = self.spFeedback()
         distanceUP = abs(encDown - encUP)
+        drift = abs(distanceUP - distanceDOWN)
+
+        self.logger.info("Time elapse: " + str(endTime))
 
         if commonFX.rangeCheck(distanceDOWN, distanceUP, self.magnetTolerance):
             self.logger.info("Distance moving down: " + str(distanceDOWN))
             self.logger.info("Distance moving up: " + str(distanceUP))
-            self.logger.info("No drift found on encoder magnet")
+            self.logger.info("Encoder magnet ok, no drift found")
         else:
             self.logger.info("Distance moving down: " + str(distanceDOWN))
             self.logger.info("Distance moving up: " + str(distanceUP))
-            self.logger.info("drift found on encoder magnet, check encoder on actuator")
+            self.logger.info("Check encoder magnet, %r count drift found" %drift)
             os._exit(1)
 
 

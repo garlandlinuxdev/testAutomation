@@ -7,7 +7,7 @@ import modbus_tk
 import modbus_tk.defines as cst
 import modbus_tk.modbus_rtu as modbus_rtu
 import serial, os, logging, modbus
-import jsonToFile, actuator, voltage
+import jsonToFile, actuator, voltage, platen
 
 
 def setup():
@@ -98,6 +98,9 @@ def main():
     motor = actuator.motion()
     motor.update(logger, com, config.timeout)
 
+    pl = platen.sensors()
+    pl.update(logger, com)
+
     logger.info("==================== Test Begins ====================")
     print "==================== Test Begins ===================="
     logger.info("< execute voltage reading >")
@@ -112,7 +115,9 @@ def main():
     logger.info("< execute homing test >")
     motor.homing()
     logger.info("< execute setpoint settings >")
-    motor.setpoint(-4200)
+    motor.setpoint(0)
+    logger.info("< execute sensors gap test >")
+    pl.sensorGap()
 
     logger.info("==================== Test Completed ====================")
     print "==================== Test Completed ===================="
