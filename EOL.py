@@ -7,7 +7,7 @@ import modbus_tk
 import modbus_tk.defines as cst
 import modbus_tk.modbus_rtu as modbus_rtu
 import serial, os, logging, modbus
-import jsonToFile, motion, voltage
+import jsonToFile, actuator, voltage
 
 
 def setup():
@@ -95,9 +95,8 @@ def main():
     power = voltage.measure()
     power.update(logger, com)
 
-    motor = motion.actuator()
+    motor = actuator.motion()
     motor.update(logger, com, config.timeout)
-
 
     logger.info("==================== Test Begins ====================")
     print "==================== Test Begins ===================="
@@ -108,13 +107,16 @@ def main():
 
     logger.info("< execute switch test >")
     motor.switchTest()
+    logger.info("< execute magnet drift test >")
+    motor.magnetDrift()
     logger.info("< execute homing test >")
     motor.homing()
     logger.info("< execute setpoint settings >")
-    motor.setpoint(-4000)
+    motor.setpoint(-4200)
 
     logger.info("==================== Test Completed ====================")
     print "==================== Test Completed ===================="
+
 
 if __name__ == "__main__":
     main()

@@ -11,7 +11,7 @@ class communicate():
     logger = ''
     master = ''
     device = 0
-    restTime = 0
+    restTime = 0 # rest time for in between communication functions
 
     def setup(self, logger, master, device, restTime):
         self.logger = logger

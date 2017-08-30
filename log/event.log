@@ -1,100 +1,35 @@
-2017-08-29 14:40:03,183 INFO ==================== Load Settings ====================
-2017-08-29 14:40:03,279 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-08-29 14:40:03,503 INFO Writing motionPID successful, @ processID 101
-2017-08-29 14:40:03,887 INFO Writing heaterPID successful, @ processID 102
-2017-08-29 14:40:04,270 INFO Writing level sensors successful, @ processID 103
-2017-08-29 14:40:04,365 INFO Writing power sync successful, @ processID 104
-2017-08-29 14:40:04,365 INFO ==================== Test Begins ====================
-2017-08-29 14:40:04,365 INFO < execute voltage reading >
-2017-08-29 14:40:04,558 INFO Phase A not present, 0
-2017-08-29 14:40:04,559 INFO Phase B not present, 0
-2017-08-29 14:40:04,559 INFO Phase C not present, 0
-2017-08-29 14:40:04,559 INFO Frequency not in range, 0
-2017-08-29 14:40:04,559 INFO Voltage validation Failed, check logs for error
-2017-08-29 14:40:04,559 INFO 24V supply: 24.08
-2017-08-29 14:40:04,559 INFO 12V supply: 12.17
-2017-08-29 14:40:04,559 INFO 5V supply: 4.99
-2017-08-29 14:40:04,559 INFO 3.3V supply: 3.26
-2017-08-29 14:40:04,559 INFO < execute switch test >
-2017-08-29 14:40:05,132 INFO Seeking upper switch successful, @ processID 203
-2017-08-29 14:40:09,348 INFO Seeking lower switch successful, @ processID 203
-2017-08-29 14:40:09,348 INFO < execute homing test >
-2017-08-29 14:40:13,658 INFO Homing sequence successful, @ processID 202
-2017-08-29 14:40:13,660 INFO < execute setpoint settings >
-2017-08-29 14:40:13,756 INFO Writing setpoint reg 0 to -4000
-2017-08-29 14:40:13,756 INFO ==================== Test Completed ====================
-2017-08-29 14:44:49,115 INFO ==================== Load Settings ====================
-2017-08-29 14:44:49,220 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-08-29 14:44:49,427 INFO Writing motionPID successful, @ processID 101
-2017-08-29 14:44:49,842 INFO Writing heaterPID successful, @ processID 102
-2017-08-29 14:44:50,226 INFO Writing level sensors successful, @ processID 103
-2017-08-29 14:44:50,322 INFO Writing power sync successful, @ processID 104
-2017-08-29 14:44:50,322 INFO ==================== Test Begins ====================
-2017-08-29 14:44:50,322 INFO < execute voltage reading >
-2017-08-29 14:44:50,513 INFO Phase A not present, 0
-2017-08-29 14:44:50,513 INFO Phase B not present, 0
-2017-08-29 14:44:50,513 INFO Phase C not present, 0
-2017-08-29 14:44:50,515 INFO Frequency not in range, 0
-2017-08-29 14:44:50,515 INFO Voltage validation Failed, check logs for error
-2017-08-29 14:44:50,515 INFO 24V supply: 24.08
-2017-08-29 14:44:50,515 INFO 12V supply: 12.17
-2017-08-29 14:44:50,515 INFO 5V supply: 4.99
-2017-08-29 14:44:50,515 INFO 3.3V supply: 3.26
-2017-08-29 14:44:50,515 INFO < execute switch test >
-2017-08-29 14:44:51,088 INFO Seeking upper switch successful, @ processID 203
-2017-08-29 14:44:55,400 INFO Seeking lower switch successful, @ processID 203
-2017-08-29 14:44:55,400 INFO < execute homing test >
-2017-08-29 14:44:59,711 INFO Homing sequence successful, @ processID 202
-2017-08-29 14:44:59,711 INFO < execute setpoint settings >
-2017-08-29 14:44:59,808 INFO Writing setpoint reg 0 to -4000
-2017-08-29 14:44:59,808 INFO ==================== Test Completed ====================
-2017-08-29 14:45:24,686 INFO ==================== Load Settings ====================
-2017-08-29 14:45:24,739 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-08-29 14:45:24,882 INFO Writing motionPID successful, @ processID 101
-2017-08-29 14:45:25,138 INFO Writing heaterPID successful, @ processID 102
-2017-08-29 14:45:25,345 INFO Writing level sensors successful, @ processID 103
-2017-08-29 14:45:25,394 INFO Writing power sync successful, @ processID 104
-2017-08-29 14:45:25,394 INFO ==================== Test Begins ====================
-2017-08-29 14:45:25,394 INFO < execute voltage reading >
-2017-08-29 14:45:25,506 INFO Phase A not present, 0
-2017-08-29 14:45:25,506 INFO Phase B not present, 0
-2017-08-29 14:45:25,506 INFO Phase C not present, 0
-2017-08-29 14:45:25,506 INFO Frequency not in range, 0
-2017-08-29 14:45:25,506 INFO Voltage validation Failed, check logs for error
-2017-08-29 14:45:25,506 INFO 24V supply: 24.08
-2017-08-29 14:45:25,506 INFO 12V supply: 12.17
-2017-08-29 14:45:25,506 INFO 5V supply: 4.99
-2017-08-29 14:45:25,506 INFO 3.3V supply: 3.26
-2017-08-29 14:45:25,506 INFO < execute switch test >
-2017-08-29 14:45:25,937 INFO Seeking upper switch successful, @ processID 203
-2017-08-29 14:45:30,105 INFO Seeking lower switch successful, @ processID 203
-2017-08-29 14:45:30,105 INFO < execute homing test >
-2017-08-29 14:45:34,321 INFO Homing sequence successful, @ processID 202
-2017-08-29 14:45:34,321 INFO < execute setpoint settings >
-2017-08-29 14:45:34,368 INFO Writing setpoint reg 0 to -4000
-2017-08-29 14:45:34,368 INFO ==================== Test Completed ====================
-2017-08-29 14:45:40,326 INFO ==================== Load Settings ====================
-2017-08-29 14:45:40,381 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-08-29 14:45:40,523 INFO Writing motionPID successful, @ processID 101
-2017-08-29 14:45:40,779 INFO Writing heaterPID successful, @ processID 102
-2017-08-29 14:45:41,003 INFO Writing level sensors successful, @ processID 103
-2017-08-29 14:45:41,066 INFO Writing power sync successful, @ processID 104
-2017-08-29 14:45:41,066 INFO ==================== Test Begins ====================
-2017-08-29 14:45:41,066 INFO < execute voltage reading >
-2017-08-29 14:45:41,178 INFO Phase A not present, 0
-2017-08-29 14:45:41,178 INFO Phase B not present, 0
-2017-08-29 14:45:41,178 INFO Phase C not present, 0
-2017-08-29 14:45:41,178 INFO Frequency not in range, 0
-2017-08-29 14:45:41,178 INFO Voltage validation Failed, check logs for error
-2017-08-29 14:45:41,180 INFO 24V supply: 24.08
-2017-08-29 14:45:41,180 INFO 12V supply: 12.17
-2017-08-29 14:45:41,180 INFO 5V supply: 4.99
-2017-08-29 14:45:41,180 INFO 3.3V supply: 3.26
-2017-08-29 14:45:41,180 INFO < execute switch test >
-2017-08-29 14:45:41,625 INFO Seeking upper switch successful, @ processID 203
-2017-08-29 14:45:45,793 INFO Seeking lower switch successful, @ processID 203
-2017-08-29 14:45:45,793 INFO < execute homing test >
-2017-08-29 14:45:50,009 INFO Homing sequence successful, @ processID 202
-2017-08-29 14:45:50,009 INFO < execute setpoint settings >
-2017-08-29 14:45:50,058 INFO Writing setpoint reg 0 to -4000
-2017-08-29 14:45:50,058 INFO ==================== Test Completed ====================
+2017-08-30 12:15:19,999 INFO ==================== Load Settings ====================
+2017-08-30 12:15:20,052 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-08-30 12:15:20,180 INFO Writing motionPID successful, @ processID 101
+2017-08-30 12:15:20,436 INFO Writing heaterPID successful, @ processID 102
+2017-08-30 12:15:20,677 INFO Writing level sensors successful, @ processID 103
+2017-08-30 12:15:20,724 INFO Writing power sync successful, @ processID 104
+2017-08-30 12:15:20,724 INFO ==================== Test Begins ====================
+2017-08-30 12:15:20,724 INFO < execute voltage reading >
+2017-08-30 12:15:20,836 INFO Phase A not present, 0
+2017-08-30 12:15:20,836 INFO Phase B not present, 0
+2017-08-30 12:15:20,836 INFO Phase C not present, 0
+2017-08-30 12:15:20,836 INFO Frequency not in range, 0
+2017-08-30 12:15:20,836 INFO Voltage validation Failed, check logs for errors
+2017-08-30 12:15:20,836 INFO 24V supply: 24.08
+2017-08-30 12:15:20,836 INFO 12V supply: 12.17
+2017-08-30 12:15:20,838 INFO 5V supply: 4.99
+2017-08-30 12:15:20,838 INFO 3.3V supply: 3.26
+2017-08-30 12:15:20,838 INFO < execute switch test >
+2017-08-30 12:15:21,315 INFO Seeking upper switch successful, @ processID 203
+2017-08-30 12:15:25,586 INFO Seeking lower switch successful, @ processID 203
+2017-08-30 12:15:25,651 INFO Distance between Lift and Home switch (count): 4135
+2017-08-30 12:15:25,651 INFO Time elapse (sec): 4.58699989319
+2017-08-30 12:15:25,651 INFO Actuator speed (count/sec): 901.460670653
+2017-08-30 12:15:25,651 INFO < execute magnet drift test >
+2017-08-30 12:15:29,378 INFO Seeking upper switch successful, @ processID 204
+2017-08-30 12:15:40,111 INFO Seeking lower switch successful, @ processID 204
+2017-08-30 12:15:43,838 INFO Seeking upper switch successful, @ processID 204
+2017-08-30 12:15:43,885 INFO Distance moving down: 4144
+2017-08-30 12:15:43,885 INFO Distance moving up: 4138
+2017-08-30 12:15:43,885 INFO No drift found on encoder magnet
+2017-08-30 12:15:43,885 INFO < execute homing test >
+2017-08-30 12:15:52,986 INFO Homing sequence successful, @ processID 202
+2017-08-30 12:15:52,986 INFO < execute setpoint settings >
+2017-08-30 12:15:53,035 INFO Writing setpoint reg 0 to -4200
+2017-08-30 12:15:53,035 INFO ==================== Test Completed ====================

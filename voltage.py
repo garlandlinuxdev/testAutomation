@@ -2,14 +2,16 @@
 # Project: EOL
 # Description:
 __author__ = "Adrian Wong"
-import os
+import os, commonFX
 
 
 class measure():
     # Temporary variables, do not modify here
     logger = ''
     com = ''
-    ac_voltage = 208
+
+    # adjustable limits
+    voltageTolerance = 0.05 # percentage of error allowed for voltage test
 
     def update(self, logger, com):
         self.logger = logger
@@ -19,12 +21,6 @@ class measure():
         phase_status = self.com.readCoil(processID, 49, 4)
         supply_voltage = self.com.readReg(processID, 33, 9)
         return phase_status, supply_voltage
-
-    def rangeCheck(self, reading, target):
-        if target * 0.95 <= reading <= target * 1.05: #check within +/- 5%
-            return True
-        else:
-            return False
 
     def validate(self, ph_status, voltage):
         print "phase_status: ", str(ph_status)[1:-1]
@@ -51,28 +47,28 @@ class measure():
             self.logger.info("Frequency not in range, " + str(voltage[7]))
             print "Frequency not in range, ", voltage[7]
 
-        if self.rangeCheck(voltage[0], 2400) == False:
+        if commonFX.rangeCheck(voltage[0], 2400, self.voltageTolerance) == False:
             status[4] = 0
             self.logger.info("24V supply not in range: " + str(float(voltage[0]) / 100))
             print "24V supply not in range: ", float(voltage[0]) / 100
-        if self.rangeCheck(voltage[1], 1200) == False:
+        if commonFX.rangeCheck(voltage[1], 1200, self.voltageTolerance) == False:
             status[5] = 0
             self.logger.info("12V supply not in range: " + str(float(voltage[1]) / 100))
             print "12V supply not in range: ", float(voltage[1]) / 100
-        if self.rangeCheck(voltage[2], 500) == False:
+        if commonFX.rangeCheck(voltage[2], 500, self.voltageTolerance) == False:
             status[6] = 0
             self.logger.info("5V supply not in range: " + str(float(voltage[2]) / 100))
             print "5V supply not in range: ", float(voltage[2]) / 100
-        if self.rangeCheck(voltage[3], 330) == False:
+        if commonFX.rangeCheck(voltage[3], 330, self.voltageTolerance) == False:
             status[7] = 0
             self.logger.info("3.3V supply not in range: " + str(float(voltage[3]) / 100))
             print "3.3V supply not in range: ", float(voltage[3]) / 100
 
         for element in status:
             if element == 0:
-                self.logger.info("Voltage validation Failed, check logs for error")
-                print "Voltage validation Failed, check logs for error"
-                # os._exit(1) # uncomment this to stop test when failed
+                self.logger.info("Voltage validation Failed, check logs for errors")
+                print "Voltage validation Failed, check logs for errors"
+                # os._exit(1) # uncomment this line to stop test when failed
                 break
 
         self.logger.info("24V supply: " + str(float(voltage[0]) / 100))
