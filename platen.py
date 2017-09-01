@@ -2,7 +2,7 @@
 #Project: EOL
 #Description: 
 __author__ = "Adrian Wong"
-import os, commonFX
+import os, time, commonFX
 
 class sensors():
     # Temporary variables, do not modify here
@@ -10,8 +10,9 @@ class sensors():
     com = ''
 
     # adjustable limits
-    rear_target = 4273 # percentage of pwm, reading/32767 * 10000, 50% = 5000
-    front_target = 4273
+    rear_target = 13500
+    front_target = 13763
+    lvlMotorTime = 4
 
     def update(self, logger, com):
         self.logger = logger
@@ -35,25 +36,60 @@ class sensors():
             self.com.setReg(processID, 483, [direction])
 
         else:
-            self.com.setCoil(processID, 56, status)
+            self.com.setCoil(processID, 56, [status])
             self.resetMode(processID)
             self.com.setReg(processID, 483, [direction])
 
     def sensorGap(self):
         processID = 303
         read = self.readSensor(processID)
-        rear = (float(read[0])/32767) * 10000
-        front = (float(read[1])/32767) * 10000
-        print rear, front
-        if commonFX.rangeCheck(int(rear), self.rear_target, 0.05):
+        rear = read[0]
+        front = read[1]
+        #rear = (float(read[0])/32767) * 10000
+        #front = (float(read[1])/32767) * 10000
+        if commonFX.rangeCheck(int(rear), self.rear_target, 0.02):
             self.logger.info("Rear sensors within range " + str(rear/100))
         else:
             self.logger.info("Rear sensor out of range " + str(rear/100))
             os._exit(1)
-        if commonFX.rangeCheck(int(front), self.front_target, 0.05):
+        if commonFX.rangeCheck(int(front), self.front_target, 0.02):
             self.logger.info("Front sensors within range " + str(front/100))
         else:
             self.logger.info("Front sensor out of range" + str(front/100))
             os._exit(1)
+
+    def levelMotorTest(self):
+        processID = 304
+        sensorReading = self.readSensor(processID)
+        self.moveLvlMotor(1, -1)
+        time.sleep(self.lvlMotorTime)
+        self.moveLvlMotor(0, 0)
+        read = self.readSensor(processID)
+        if read[0] > sensorReading[0] + 300:
+            self.logger.info("Level motor installed correctly")
+        else:
+            self.logger.info("Level motor installed incorrectly, reverse direction")
+            os._exit(1)
+
+        # position reset
+        self.moveLvlMotor(1, 1)
+        read = self.readSensor(processID)
+        while read[0] >= sensorReading[0] + 100:
+            read = self.readSensor(processID)
+        self.moveLvlMotor(0, 0)
+        self.logger.info("Level motor test successful")
+        self.resetMode(processID)
+
+    def calZDBF(self):
+        processID = 305
+        self.com.setReg(processID, 255, [10])
+        read = self.com.readReg(processID, 255, 1)
+        while read[0] != 14:
+            read = self.com.readReg(processID, 255, 1)
+        gap = self.com.readReg(processID, 5, 2)
+        ZDBF = gap[0] - gap[1]
+        self.logger.info("ZDBF: " + str(ZDBF))
+        self.resetMode(processID)
+
 
 

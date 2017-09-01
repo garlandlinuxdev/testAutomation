@@ -6,7 +6,7 @@ __author__ = "Adrian Wong"
 import modbus_tk
 import modbus_tk.defines as cst
 import modbus_tk.modbus_rtu as modbus_rtu
-import serial, os, logging, modbus
+import serial, os, logging, modbus, time
 import jsonToFile, actuator, voltage, platen
 
 
@@ -109,16 +109,31 @@ def main():
     power.validate(phase_status, supply_voltage)
 
     logger.info("< execute switch test >")
+    print "< execute switch test >"
     motor.switchTest()
+    logger.info("< execute kill switch test >")
+    print "< execute kill switch test >"
+    motor.killSwitchTest()
     logger.info("< execute magnet drift test >")
+    print "< execute magnet drift test >"
     motor.magnetDrift()
     logger.info("< execute homing test >")
+    print "< execute homing test >"
     motor.homing()
-    logger.info("< execute setpoint settings >")
+    logger.info("< move platen to setpoint >")
+    print "< move platen to setpoint >"
     motor.setpoint(0)
+    time.sleep(3)
     logger.info("< execute sensors gap test >")
+    print "< execute sensors gap test >"
     pl.sensorGap()
-
+    logger.info("< execute ZDBF test >")
+    print "< execute ZDBF test >"
+    pl.calZDBF()
+    motor.setpoint(0)
+    logger.info("< execute level motor test >")
+    print "< execute level motor test >"
+    pl.levelMotorTest()
     logger.info("==================== Test Completed ====================")
     print "==================== Test Completed ===================="
 
