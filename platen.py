@@ -20,8 +20,20 @@ class sensors():
 
     def readSensor(self, processID):
         # [rear, front]
-        read = self.com.readReg(processID, 460, 2)
-        return read
+        sensor = self.com.readReg(processID, 460, 2)
+        if sensor[0] == 32767:
+            self.logger.info("Rear sensor not detected")
+            os._exit(1)
+        elif sensor[0] == 0:
+            self.logger.info("Rear sensor out of range")
+            os._exit(1)
+        if sensor[1] == 32767:
+            self.logger.info("Front sensor not detected")
+            os._exit(1)
+        elif sensor[1] == 0:
+            self.logger.info("Front sensor out of range")
+            os._exit(1)
+        return sensor
 
     def resetMode(self, processID):
         self.com.setReg(processID, 255, [2])
@@ -82,6 +94,8 @@ class sensors():
 
     def calZDBF(self):
         processID = 305
+        sensor = self.com.readReg(processID, 460, 2)
+
         self.com.setReg(processID, 255, [10])
         read = self.com.readReg(processID, 255, 1)
         while read[0] != 14:

@@ -193,11 +193,20 @@ class motion():
                     self.logger.info("Over current detected, lower kill switch failed")
                     self.stopMotion(processID)
                     os._exit(1)
+
+            lowerSW = self.com.readCoil(processID, 6, 1)
+            if lowerSW[0]:
+                self.logger.info("Home switch remain engaged, switch bracket ok ")
+            else:
+                self.logger.info("Home switch disengaged, check switch bracket or crossbar")
+                self.stopMotion(processID)
+                os._exit(1)
         else:
             self.logger.info("Platen did not reach lower switch")
             self.stopMotion(processID)
             os._exit(1)
         self.logger.info("Kill switch test successful")
+        self.stopMotion(processID)
 
 def main():
     x = 1

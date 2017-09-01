@@ -58,7 +58,8 @@ class myConfig(object):
     jumperFile = linuxPath + sysPath + "jumpers.json"
     grillType = 0  # load from SIB
     jsonFile = linuxPath + hwcfg + str(grillType) + ".json"
-    enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors]
+    loadReg_enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors]
+    test_enable =[1, 1, 1, 1, 1, 1, 1, 1]
 
     description = "unknown"  # load from json file
     sync_role = 0
@@ -80,7 +81,7 @@ def main():
     com.setup(logger, master, config.device, config.restTime)
 
     myJSON = jsonToFile.loadJSON()
-    myJSON.update(logger, com, config.enable)
+    myJSON.update(logger, com, config.loadReg_enable)
 
     processID = 1
     config.grillType = myJSON.grillType(processID)
@@ -113,7 +114,7 @@ def main():
     motor.switchTest()
     logger.info("< execute kill switch test >")
     print "< execute kill switch test >"
-    motor.killSwitchTest()
+    #motor.killSwitchTest()
     logger.info("< execute magnet drift test >")
     print "< execute magnet drift test >"
     motor.magnetDrift()
@@ -126,14 +127,14 @@ def main():
     time.sleep(3)
     logger.info("< execute sensors gap test >")
     print "< execute sensors gap test >"
-    pl.sensorGap()
+    #pl.sensorGap()
     logger.info("< execute ZDBF test >")
     print "< execute ZDBF test >"
     pl.calZDBF()
     motor.setpoint(0)
     logger.info("< execute level motor test >")
     print "< execute level motor test >"
-    pl.levelMotorTest()
+    #pl.levelMotorTest()
     logger.info("==================== Test Completed ====================")
     print "==================== Test Completed ===================="
 

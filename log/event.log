@@ -1803,3 +1803,186 @@
 2017-08-31 11:47:42,266 INFO ZDBF: 25
 2017-08-31 11:47:42,378 INFO Writing setpoint reg 0 to 0
 2017-08-31 11:47:42,378 INFO ==================== Test Completed ====================
+2017-09-01 07:44:05,894 INFO ==================== Load Settings ====================
+2017-09-01 07:44:05,950 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/47.json
+2017-09-01 07:44:06,076 INFO Writing motionPID successful, @ processID 101
+2017-09-01 07:44:06,334 INFO Writing heaterPID successful, @ processID 102
+2017-09-01 07:44:06,556 INFO Writing level sensors successful, @ processID 103
+2017-09-01 07:44:06,605 INFO Writing power sync successful, @ processID 104
+2017-09-01 07:44:06,605 INFO ==================== Test Begins ====================
+2017-09-01 07:44:06,605 INFO < execute voltage reading >
+2017-09-01 07:44:06,717 INFO Phase A: 2057
+2017-09-01 07:44:06,717 INFO Phase B: 2072
+2017-09-01 07:44:06,717 INFO Phase C: 2087
+2017-09-01 07:44:06,717 INFO Frequency: 60
+2017-09-01 07:44:06,717 INFO 24V supply: 24.05
+2017-09-01 07:44:06,717 INFO 12V supply: 12.3
+2017-09-01 07:44:06,717 INFO 5V supply: 4.91
+2017-09-01 07:44:06,717 INFO 3.3V supply: 3.25
+2017-09-01 07:44:06,717 INFO < execute switch test >
+2017-09-01 07:44:06,989 INFO Seeking upper switch successful, @ processID 203
+2017-09-01 07:44:11,676 INFO Seeking lower switch successful, @ processID 203
+2017-09-01 07:44:11,723 INFO Distance between Lift and Home switch (count): 4999
+2017-09-01 07:44:11,723 INFO Time elapse (sec): 4.67600011826
+2017-09-01 07:44:11,723 INFO Actuator speed (count/sec): 1069.07610641
+2017-09-01 07:44:11,786 INFO < execute kill switch test >
+2017-09-01 07:44:16,473 INFO Homing sequence successful, @ processID 202
+2017-09-01 07:44:39,075 INFO Over current detected, lower kill switch failed
+2017-09-01 07:45:18,736 INFO ==================== Load Settings ====================
+2017-09-01 07:45:18,789 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/47.json
+2017-09-01 07:45:18,934 INFO Writing motionPID successful, @ processID 101
+2017-09-01 07:45:19,190 INFO Writing heaterPID successful, @ processID 102
+2017-09-01 07:45:19,398 INFO Writing level sensors successful, @ processID 103
+2017-09-01 07:45:19,444 INFO Writing power sync successful, @ processID 104
+2017-09-01 07:45:19,446 INFO ==================== Test Begins ====================
+2017-09-01 07:45:19,446 INFO < execute voltage reading >
+2017-09-01 07:45:19,558 INFO Phase A: 2057
+2017-09-01 07:45:19,558 INFO Phase B: 2067
+2017-09-01 07:45:19,558 INFO Phase C: 2082
+2017-09-01 07:45:19,558 INFO Frequency: 60
+2017-09-01 07:45:19,558 INFO 24V supply: 24.05
+2017-09-01 07:45:19,558 INFO 12V supply: 12.3
+2017-09-01 07:45:19,558 INFO 5V supply: 4.91
+2017-09-01 07:45:19,558 INFO 3.3V supply: 3.25
+2017-09-01 07:45:19,558 INFO < execute switch test >
+2017-09-01 07:46:07,329 INFO ==================== Load Settings ====================
+2017-09-01 07:46:07,381 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/47.json
+2017-09-01 07:46:07,509 INFO Writing motionPID successful, @ processID 101
+2017-09-01 07:46:07,766 INFO Writing heaterPID successful, @ processID 102
+2017-09-01 07:46:07,989 INFO Writing level sensors successful, @ processID 103
+2017-09-01 07:46:08,052 INFO Writing power sync successful, @ processID 104
+2017-09-01 07:46:08,052 INFO ==================== Test Begins ====================
+2017-09-01 07:46:08,052 INFO < execute voltage reading >
+2017-09-01 07:46:08,164 INFO Phase A: 2062
+2017-09-01 07:46:08,164 INFO Phase B: 2062
+2017-09-01 07:46:08,164 INFO Phase C: 2082
+2017-09-01 07:46:08,164 INFO Frequency: 60
+2017-09-01 07:46:08,164 INFO 24V supply: 24.05
+2017-09-01 07:46:08,164 INFO 12V supply: 12.3
+2017-09-01 07:46:08,164 INFO 5V supply: 4.91
+2017-09-01 07:46:08,165 INFO 3.3V supply: 3.25
+2017-09-01 07:46:08,165 INFO < execute switch test >
+2017-09-01 07:46:08,453 INFO Seeking upper switch successful, @ processID 203
+2017-09-01 07:46:13,459 INFO Seeking lower switch successful, @ processID 203
+2017-09-01 07:46:13,506 INFO Distance between Lift and Home switch (count): 4565
+2017-09-01 07:46:13,506 INFO Time elapse (sec): 5.45900011063
+2017-09-01 07:46:13,507 INFO Actuator speed (count/sec): 836.233725497
+2017-09-01 07:46:13,571 INFO < execute kill switch test >
+2017-09-01 07:46:13,571 INFO < execute magnet drift test >
+2017-09-01 07:46:17,937 INFO Seeking upper switch successful, @ processID 204
+2017-09-01 07:46:29,885 INFO Seeking lower switch successful, @ processID 204
+2017-09-01 07:46:34,253 INFO Seeking upper switch successful, @ processID 204
+2017-09-01 07:46:34,365 INFO Time elapse: 4.25300002098
+2017-09-01 07:46:34,365 INFO Distance moving down: 4568
+2017-09-01 07:46:34,365 INFO Distance moving up: 4574
+2017-09-01 07:46:34,365 INFO Encoder magnet ok, no drift found
+2017-09-01 07:46:34,365 INFO < execute homing test >
+2017-09-01 07:46:44,658 INFO Homing sequence successful, @ processID 202
+2017-09-01 07:46:44,658 INFO < move platen to setpoint >
+2017-09-01 07:46:44,707 INFO Writing setpoint reg 0 to 0
+2017-09-01 07:46:47,707 INFO < execute sensors gap test >
+2017-09-01 07:46:47,762 INFO Rear sensor out of range 8
+2017-09-01 07:48:24,061 INFO ==================== Load Settings ====================
+2017-09-01 07:48:24,114 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/47.json
+2017-09-01 07:48:24,256 INFO Writing motionPID successful, @ processID 101
+2017-09-01 07:48:24,513 INFO Writing heaterPID successful, @ processID 102
+2017-09-01 07:48:24,736 INFO Writing level sensors successful, @ processID 103
+2017-09-01 07:48:24,785 INFO Writing power sync successful, @ processID 104
+2017-09-01 07:48:24,785 INFO ==================== Test Begins ====================
+2017-09-01 07:48:24,785 INFO < execute voltage reading >
+2017-09-01 07:48:24,897 INFO Phase A: 2062
+2017-09-01 07:48:24,898 INFO Phase B: 2067
+2017-09-01 07:48:24,898 INFO Phase C: 2082
+2017-09-01 07:48:24,898 INFO Frequency: 60
+2017-09-01 07:48:24,898 INFO 24V supply: 24.02
+2017-09-01 07:48:24,898 INFO 12V supply: 12.3
+2017-09-01 07:48:24,898 INFO 5V supply: 4.91
+2017-09-01 07:48:24,898 INFO 3.3V supply: 3.25
+2017-09-01 07:48:24,898 INFO < execute switch test >
+2017-09-01 07:48:28,832 INFO Seeking upper switch successful, @ processID 203
+2017-09-01 07:48:33,838 INFO Seeking lower switch successful, @ processID 203
+2017-09-01 07:48:33,901 INFO Distance between Lift and Home switch (count): 4697
+2017-09-01 07:48:33,901 INFO Time elapse (sec): 5.83800005913
+2017-09-01 07:48:33,901 INFO Actuator speed (count/sec): 804.556346767
+2017-09-01 07:48:33,950 INFO < execute kill switch test >
+2017-09-01 07:48:33,950 INFO < execute magnet drift test >
+2017-09-01 07:48:38,316 INFO Seeking upper switch successful, @ processID 204
+2017-09-01 07:48:50,265 INFO Seeking lower switch successful, @ processID 204
+2017-09-01 07:48:54,584 INFO Seeking upper switch successful, @ processID 204
+2017-09-01 07:48:54,694 INFO Time elapse: 4.58400011063
+2017-09-01 07:48:54,694 INFO Distance moving down: 4559
+2017-09-01 07:48:54,694 INFO Distance moving up: 4574
+2017-09-01 07:48:54,694 INFO Encoder magnet ok, no drift found
+2017-09-01 07:48:54,694 INFO < execute homing test >
+2017-09-01 07:49:04,819 INFO Homing sequence successful, @ processID 202
+2017-09-01 07:49:04,819 INFO < move platen to setpoint >
+2017-09-01 07:49:04,868 INFO Writing setpoint reg 0 to 0
+2017-09-01 07:49:07,868 INFO < execute sensors gap test >
+2017-09-01 07:49:07,868 INFO < execute ZDBF test >
+2017-09-01 08:11:23,706 INFO ==================== Load Settings ====================
+2017-09-01 08:11:23,756 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/47.json
+2017-09-01 08:11:23,884 INFO Writing motionPID successful, @ processID 101
+2017-09-01 08:11:24,141 INFO Writing heaterPID successful, @ processID 102
+2017-09-01 08:11:24,348 INFO Writing level sensors successful, @ processID 103
+2017-09-01 08:11:24,397 INFO Writing power sync successful, @ processID 104
+2017-09-01 08:11:24,397 INFO ==================== Test Begins ====================
+2017-09-01 08:11:24,397 INFO < execute voltage reading >
+2017-09-01 08:11:24,509 INFO Phase A: 2057
+2017-09-01 08:11:24,509 INFO Phase B: 2062
+2017-09-01 08:11:24,509 INFO Phase C: 2077
+2017-09-01 08:11:24,509 INFO Frequency: 60
+2017-09-01 08:11:24,509 INFO 24V supply: 24.05
+2017-09-01 08:11:24,509 INFO 12V supply: 12.3
+2017-09-01 08:11:24,509 INFO 5V supply: 4.91
+2017-09-01 08:11:24,509 INFO 3.3V supply: 3.25
+2017-09-01 08:11:24,509 INFO < execute switch test >
+2017-09-01 08:11:29,036 INFO Seeking upper switch successful, @ processID 203
+2017-09-01 08:11:33,723 INFO Seeking lower switch successful, @ processID 203
+2017-09-01 08:11:33,770 INFO Distance between Lift and Home switch (count): 4723
+2017-09-01 08:11:33,770 INFO Time elapse (sec): 4.72300004959
+2017-09-01 08:11:33,770 INFO Actuator speed (count/sec): 999.9999895
+2017-09-01 08:11:33,835 INFO < execute kill switch test >
+2017-09-01 08:11:33,835 INFO < execute magnet drift test >
+2017-09-01 08:11:38,201 INFO Seeking upper switch successful, @ processID 204
+2017-09-01 08:11:48,986 INFO Seeking lower switch successful, @ processID 204
+2017-09-01 08:11:53,368 INFO Seeking upper switch successful, @ processID 204
+2017-09-01 08:11:53,463 INFO Time elapse: 4.36800003052
+2017-09-01 08:11:53,463 INFO Distance moving down: 4586
+2017-09-01 08:11:53,463 INFO Distance moving up: 4579
+2017-09-01 08:11:53,463 INFO Encoder magnet ok, no drift found
+2017-09-01 08:11:53,463 INFO < execute homing test >
+2017-09-01 08:12:03,607 INFO Homing sequence successful, @ processID 202
+2017-09-01 08:12:03,607 INFO < move platen to setpoint >
+2017-09-01 08:12:03,654 INFO Writing setpoint reg 0 to 0
+2017-09-01 08:12:06,655 INFO < execute sensors gap test >
+2017-09-01 08:12:06,655 INFO < execute ZDBF test >
+2017-09-01 08:12:15,477 INFO ZDBF: -85
+2017-09-01 08:12:15,589 INFO Writing setpoint reg 0 to 0
+2017-09-01 08:12:15,589 INFO < execute level motor test >
+2017-09-01 08:12:15,589 INFO ==================== Test Completed ====================
+2017-09-01 09:17:54,838 INFO ==================== Load Settings ====================
+2017-09-01 09:17:54,894 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-01 09:17:55,055 INFO Writing motionPID successful, @ processID 101
+2017-09-01 09:17:55,311 INFO Writing heaterPID successful, @ processID 102
+2017-09-01 09:17:55,535 INFO Writing level sensors successful, @ processID 103
+2017-09-01 09:17:55,582 INFO Writing power sync successful, @ processID 104
+2017-09-01 09:17:55,582 INFO ==================== Test Begins ====================
+2017-09-01 09:17:55,582 INFO < execute voltage reading >
+2017-09-01 09:17:55,694 INFO Phase A not present, 0
+2017-09-01 09:17:55,694 INFO Phase B not present, 0
+2017-09-01 09:17:55,694 INFO Phase C not present, 0
+2017-09-01 09:17:55,696 INFO Frequency not in range, 0
+2017-09-01 09:17:55,696 INFO Voltage validation Failed, check logs for errors
+2017-09-01 09:17:55,696 INFO 24V supply: 24.08
+2017-09-01 09:17:55,696 INFO 12V supply: 12.17
+2017-09-01 09:17:55,696 INFO 5V supply: 4.99
+2017-09-01 09:17:55,696 INFO 3.3V supply: 3.26
+2017-09-01 09:17:55,696 INFO < execute switch test >
+2017-09-01 09:17:59,470 INFO Seeking upper switch successful, @ processID 203
+2017-09-01 09:18:03,565 INFO Seeking lower switch successful, @ processID 203
+2017-09-01 09:18:03,628 INFO Distance between Lift and Home switch (count): 4257
+2017-09-01 09:18:03,628 INFO Time elapse (sec): 4.56500005722
+2017-09-01 09:18:03,628 INFO Actuator speed (count/sec): 932.530108793
+2017-09-01 09:18:03,677 INFO < execute kill switch test >
+2017-09-01 09:18:03,677 INFO < execute magnet drift test >
+2017-09-01 09:18:07,339 INFO Seeking upper switch successful, @ processID 204
