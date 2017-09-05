@@ -1986,3 +1986,623 @@
 2017-09-01 09:18:03,677 INFO < execute kill switch test >
 2017-09-01 09:18:03,677 INFO < execute magnet drift test >
 2017-09-01 09:18:07,339 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:21:51,888 INFO ==================== Load Settings ====================
+2017-09-05 11:21:51,940 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 11:21:51,940 INFO McDonald Gas Test
+2017-09-05 11:21:52,084 INFO Writing motionPID successful, @ processID 101
+2017-09-05 11:21:52,339 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 11:21:52,563 INFO Writing level sensors successful, @ processID 103
+2017-09-05 11:21:52,611 INFO Writing power sync successful, @ processID 104
+2017-09-05 11:21:52,611 INFO ==================== Test Begins ====================
+2017-09-05 11:21:52,611 INFO < execute voltage reading >
+2017-09-05 11:21:52,723 INFO Phase A: 2128
+2017-09-05 11:21:52,723 INFO Phase B: 2108
+2017-09-05 11:21:52,723 INFO Phase C: 2118
+2017-09-05 11:21:52,723 INFO Frequency: 64
+2017-09-05 11:21:52,723 INFO 24V supply: 24.08
+2017-09-05 11:21:52,724 INFO 12V supply: 12.17
+2017-09-05 11:21:52,724 INFO 5V supply: 4.99
+2017-09-05 11:21:52,724 INFO 3.3V supply: 3.26
+2017-09-05 11:21:52,724 INFO < execute switch test >
+2017-09-05 11:21:52,996 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 11:21:56,992 INFO Seeking lower switch successful, @ processID 203
+2017-09-05 11:21:57,039 INFO Distance between Lift and Home switch (count): 95
+2017-09-05 11:21:57,039 INFO Time elapse (sec): 3.992000103
+2017-09-05 11:21:57,039 INFO Actuator speed (count/sec): 23.7975945764
+2017-09-05 11:21:57,104 INFO < execute kill switch test >
+2017-09-05 11:23:41,168 INFO ==================== Load Settings ====================
+2017-09-05 11:23:41,219 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 11:23:41,219 INFO McDonald Gas Test
+2017-09-05 11:23:41,346 INFO Writing motionPID successful, @ processID 101
+2017-09-05 11:23:41,602 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 11:23:41,825 INFO Writing level sensors successful, @ processID 103
+2017-09-05 11:23:41,890 INFO Writing power sync successful, @ processID 104
+2017-09-05 11:23:41,890 INFO ==================== Test Begins ====================
+2017-09-05 11:23:41,890 INFO < execute voltage reading >
+2017-09-05 11:23:42,002 INFO Phase A: 2128
+2017-09-05 11:23:42,002 INFO Phase B: 2108
+2017-09-05 11:23:42,002 INFO Phase C: 2118
+2017-09-05 11:23:42,002 INFO Frequency: 65
+2017-09-05 11:23:42,002 INFO 24V supply: 24.08
+2017-09-05 11:23:42,002 INFO 12V supply: 12.17
+2017-09-05 11:23:42,003 INFO 5V supply: 4.98
+2017-09-05 11:23:42,003 INFO 3.3V supply: 3.26
+2017-09-05 11:23:42,003 INFO < execute switch test >
+2017-09-05 11:23:42,529 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 11:23:46,845 INFO Seeking lower switch successful, @ processID 203
+2017-09-05 11:23:46,908 INFO Distance between Lift and Home switch (count): 4094
+2017-09-05 11:23:46,910 INFO Time elapse (sec): 4.84599995613
+2017-09-05 11:23:46,910 INFO Actuator speed (count/sec): 844.820478139
+2017-09-05 11:23:46,957 INFO < execute kill switch test >
+2017-09-05 11:24:10,104 INFO Home switch remain engaged, switch bracket ok 
+2017-09-05 11:24:10,104 INFO Kill switch test successful
+2017-09-05 11:24:10,151 INFO < execute magnet drift test >
+2017-09-05 11:24:18,190 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:24:28,948 INFO Seeking lower switch successful, @ processID 204
+2017-09-05 11:24:32,609 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:24:32,706 INFO Time elapse: 3.6099998951
+2017-09-05 11:24:32,706 INFO Distance moving down: 4113
+2017-09-05 11:24:32,706 INFO Distance moving up: 4125
+2017-09-05 11:24:32,706 INFO Encoder magnet ok, no drift found
+2017-09-05 11:24:32,706 INFO < execute homing test >
+2017-09-05 11:24:41,065 INFO Homing sequence successful, @ processID 202
+2017-09-05 11:24:41,066 INFO < execute sensors gap test >
+2017-09-05 11:24:41,130 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:24:44,184 INFO Rear sensor not detected
+2017-09-05 11:27:34,579 INFO ==================== Load Settings ====================
+2017-09-05 11:27:34,631 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 11:27:34,631 INFO McDonald Gas Test
+2017-09-05 11:27:34,759 INFO Writing motionPID successful, @ processID 101
+2017-09-05 11:27:35,015 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 11:27:35,239 INFO Writing level sensors successful, @ processID 103
+2017-09-05 11:27:35,302 INFO Writing power sync successful, @ processID 104
+2017-09-05 11:27:35,302 INFO ==================== Test Begins ====================
+2017-09-05 11:27:35,302 INFO < execute voltage reading >
+2017-09-05 11:27:35,414 INFO Phase A: 211.3
+2017-09-05 11:27:35,414 INFO Phase B: 210.8
+2017-09-05 11:27:35,414 INFO Phase C: 211.8
+2017-09-05 11:27:35,414 INFO Frequency: 64
+2017-09-05 11:27:35,414 INFO 24V supply: 23.93
+2017-09-05 11:27:35,414 INFO 12V supply: 12.17
+2017-09-05 11:27:35,414 INFO 5V supply: 4.99
+2017-09-05 11:27:35,414 INFO 3.3V supply: 3.26
+2017-09-05 11:27:35,414 INFO < execute switch test >
+2017-09-05 11:27:38,578 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 11:27:42,959 INFO Seeking lower switch successful, @ processID 203
+2017-09-05 11:27:43,006 INFO Distance between Lift and Home switch (count): 4233
+2017-09-05 11:27:43,006 INFO Time elapse (sec): 4.96000003815
+2017-09-05 11:27:43,007 INFO Actuator speed (count/sec): 853.427412791
+2017-09-05 11:27:43,071 INFO < execute kill switch test >
+2017-09-05 11:28:06,107 INFO Home switch remain engaged, switch bracket ok 
+2017-09-05 11:28:06,107 INFO Kill switch test successful
+2017-09-05 11:28:06,154 INFO < execute magnet drift test >
+2017-09-05 11:28:14,148 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:28:24,874 INFO Seeking lower switch successful, @ processID 204
+2017-09-05 11:28:28,551 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:28:28,663 INFO Time elapse: 3.55100011826
+2017-09-05 11:28:28,663 INFO Distance moving down: 4111
+2017-09-05 11:28:28,663 INFO Distance moving up: 4105
+2017-09-05 11:28:28,663 INFO Encoder magnet ok, no drift found
+2017-09-05 11:28:28,663 INFO < execute homing test >
+2017-09-05 11:28:36,911 INFO Homing sequence successful, @ processID 202
+2017-09-05 11:28:36,911 INFO < execute sensors gap test >
+2017-09-05 11:28:36,974 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:28:40,028 INFO Rear sensors within range 135
+2017-09-05 11:28:40,028 INFO Front sensors within range 137
+2017-09-05 11:28:40,028 INFO < execute ZDBF test >
+2017-09-05 11:28:40,075 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:28:51,154 INFO ZDBF: 30
+2017-09-05 11:28:51,266 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:28:51,266 INFO < execute level motor test >
+2017-09-05 11:28:55,742 INFO Level motor installed incorrectly, reverse direction
+2017-09-05 11:35:13,894 INFO ==================== Load Settings ====================
+2017-09-05 11:35:13,948 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 11:35:13,950 INFO McDonald Gas Test
+2017-09-05 11:35:14,092 INFO Writing motionPID successful, @ processID 101
+2017-09-05 11:35:14,348 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 11:35:14,572 INFO Writing level sensors successful, @ processID 103
+2017-09-05 11:35:14,621 INFO Writing power sync successful, @ processID 104
+2017-09-05 11:35:14,621 INFO ==================== Test Begins ====================
+2017-09-05 11:35:14,621 INFO < execute voltage reading >
+2017-09-05 11:35:14,733 INFO Phase A: 210.8
+2017-09-05 11:35:14,733 INFO Phase B: 211.3
+2017-09-05 11:35:14,733 INFO Phase C: 211.8
+2017-09-05 11:35:14,733 INFO Frequency: 65
+2017-09-05 11:35:14,733 INFO 24V supply: 24.08
+2017-09-05 11:35:14,733 INFO 12V supply: 12.17
+2017-09-05 11:35:14,733 INFO 5V supply: 4.99
+2017-09-05 11:35:14,733 INFO 3.3V supply: 3.26
+2017-09-05 11:35:14,733 INFO < execute switch test >
+2017-09-05 11:35:17,914 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 11:35:22,230 INFO Seeking lower switch successful, @ processID 203
+2017-09-05 11:35:22,293 INFO Distance between Lift and Home switch (count): 4230
+2017-09-05 11:35:22,293 INFO Time elapse (sec): 4.23000001907
+2017-09-05 11:35:22,293 INFO Actuator speed (count/sec): 999.999995491
+2017-09-05 11:35:22,342 INFO < execute kill switch test >
+2017-09-05 11:35:45,056 INFO Home switch remain engaged, switch bracket ok 
+2017-09-05 11:35:45,056 INFO Kill switch test successful
+2017-09-05 11:35:45,105 INFO < execute magnet drift test >
+2017-09-05 11:35:53,098 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:36:03,823 INFO Seeking lower switch successful, @ processID 204
+2017-09-05 11:36:07,500 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:36:07,612 INFO Time elapse: 3.50099992752
+2017-09-05 11:36:07,612 INFO Distance moving down: 4139
+2017-09-05 11:36:07,612 INFO Distance moving up: 4145
+2017-09-05 11:36:07,612 INFO Encoder magnet ok, no drift found
+2017-09-05 11:36:07,612 INFO < execute homing test >
+2017-09-05 11:36:15,861 INFO Homing sequence successful, @ processID 202
+2017-09-05 11:36:15,861 INFO < execute sensors gap test >
+2017-09-05 11:36:15,924 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:36:18,977 INFO Rear sensors within range 13510
+2017-09-05 11:36:18,977 INFO Front sensors within range 13752
+2017-09-05 11:36:18,977 INFO < execute ZDBF test >
+2017-09-05 11:36:19,026 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:36:30,055 INFO ZDBF: 32
+2017-09-05 11:36:30,167 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:36:30,167 INFO < execute level motor test >
+2017-09-05 11:36:30,216 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:36:37,729 INFO Level motor installed correctly
+2017-09-05 11:36:40,845 INFO Level motor test successful
+2017-09-05 11:36:40,910 INFO ==================== Test Completed ====================
+2017-09-05 11:41:23,223 INFO ==================== Load Settings ====================
+2017-09-05 11:41:23,279 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 11:41:23,280 INFO McDonald Gas Test
+2017-09-05 11:41:23,424 INFO Writing motionPID successful, @ processID 101
+2017-09-05 11:41:23,678 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 11:41:23,887 INFO Writing level sensors successful, @ processID 103
+2017-09-05 11:41:23,934 INFO Writing power sync successful, @ processID 104
+2017-09-05 11:41:23,934 INFO ==================== Test Begins ====================
+2017-09-05 11:41:23,934 INFO < execute voltage reading >
+2017-09-05 11:41:24,046 INFO Phase A: 211.3
+2017-09-05 11:41:24,048 INFO Phase B: 210.8
+2017-09-05 11:41:24,048 INFO Phase C: 213.8
+2017-09-05 11:41:24,048 INFO Frequency: 64
+2017-09-05 11:41:24,048 INFO 24V supply: 24.08
+2017-09-05 11:41:24,048 INFO 12V supply: 12.17
+2017-09-05 11:41:24,048 INFO 5V supply: 4.99
+2017-09-05 11:41:24,048 INFO 3.3V supply: 3.26
+2017-09-05 11:41:24,048 INFO < execute switch test >
+2017-09-05 11:41:27,229 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 11:41:31,545 INFO Seeking lower switch successful, @ processID 203
+2017-09-05 11:41:31,608 INFO Distance between Lift and Home switch (count): 4223
+2017-09-05 11:41:31,608 INFO Time elapse (sec): 4.54500007629
+2017-09-05 11:41:31,608 INFO Actuator speed (count/sec): 929.152899694
+2017-09-05 11:41:31,655 INFO < execute kill switch test >
+2017-09-05 11:41:54,099 INFO Home switch remain engaged, switch bracket ok 
+2017-09-05 11:41:54,101 INFO Kill switch test successful
+2017-09-05 11:41:54,148 INFO < execute magnet drift test >
+2017-09-05 11:42:02,141 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:42:12,868 INFO Seeking lower switch successful, @ processID 204
+2017-09-05 11:42:16,496 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:42:16,592 INFO Time elapse: 3.49699997902
+2017-09-05 11:42:16,592 INFO Distance moving down: 4106
+2017-09-05 11:42:16,592 INFO Distance moving up: 4105
+2017-09-05 11:42:16,592 INFO Encoder magnet ok, no drift found
+2017-09-05 11:42:16,592 INFO < execute homing test >
+2017-09-05 11:42:24,792 INFO Homing sequence successful, @ processID 202
+2017-09-05 11:42:24,792 INFO < execute sensors gap test >
+2017-09-05 11:42:24,857 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:42:27,910 INFO Rear sensors within range 13470
+2017-09-05 11:42:27,910 INFO Front sensors within range 13740
+2017-09-05 11:42:27,910 INFO < execute ZDBF test >
+2017-09-05 11:42:27,957 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:42:38,940 INFO ZDBF: 143
+2017-09-05 11:42:39,052 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:42:39,052 INFO < execute level motor test >
+2017-09-05 11:42:39,099 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:42:46,565 INFO Level motor installed correctly
+2017-09-05 11:42:46,789 INFO Level motor test successful
+2017-09-05 11:42:46,836 INFO ==================== Test Completed ====================
+2017-09-05 11:44:29,898 INFO ==================== Load Settings ====================
+2017-09-05 11:44:29,950 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 11:44:29,950 INFO McDonald Gas Test
+2017-09-05 11:44:30,094 INFO Writing motionPID successful, @ processID 101
+2017-09-05 11:44:30,349 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 11:44:30,573 INFO Writing level sensors successful, @ processID 103
+2017-09-05 11:44:30,621 INFO Writing power sync successful, @ processID 104
+2017-09-05 11:44:30,621 INFO ==================== Test Begins ====================
+2017-09-05 11:44:30,621 INFO < execute voltage reading >
+2017-09-05 11:44:30,733 INFO Phase A: 211.3
+2017-09-05 11:44:30,733 INFO Phase B: 211.8
+2017-09-05 11:44:30,733 INFO Phase C: 212.8
+2017-09-05 11:44:30,733 INFO Frequency: 65
+2017-09-05 11:44:30,734 INFO 24V supply: 24.08
+2017-09-05 11:44:30,734 INFO 12V supply: 12.17
+2017-09-05 11:44:30,734 INFO 5V supply: 4.99
+2017-09-05 11:44:30,734 INFO 3.3V supply: 3.26
+2017-09-05 11:44:30,734 INFO < execute switch test >
+2017-09-05 11:44:33,914 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 11:44:38,230 INFO Seeking lower switch successful, @ processID 203
+2017-09-05 11:44:38,295 INFO Distance between Lift and Home switch (count): 4230
+2017-09-05 11:44:38,295 INFO Time elapse (sec): 4.23099994659
+2017-09-05 11:44:38,295 INFO Actuator speed (count/sec): 999.763661875
+2017-09-05 11:44:38,342 INFO < execute kill switch test >
+2017-09-05 11:45:01,059 INFO Home switch remain engaged, switch bracket ok 
+2017-09-05 11:45:01,059 INFO Kill switch test successful
+2017-09-05 11:45:01,107 INFO < execute magnet drift test >
+2017-09-05 11:45:09,051 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:45:19,793 INFO Seeking lower switch successful, @ processID 204
+2017-09-05 11:45:23,391 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:45:23,502 INFO Time elapse: 4.39100003242
+2017-09-05 11:45:23,502 INFO Distance moving down: 4125
+2017-09-05 11:45:23,503 INFO Distance moving up: 4108
+2017-09-05 11:45:23,503 INFO Encoder magnet ok, no drift found
+2017-09-05 11:45:23,503 INFO < execute homing test >
+2017-09-05 11:45:31,703 INFO Homing sequence successful, @ processID 202
+2017-09-05 11:45:31,703 INFO < execute sensors gap test >
+2017-09-05 11:45:31,766 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:45:34,819 INFO Rear sensors within range 13510
+2017-09-05 11:45:34,819 INFO Front sensors within range 13730
+2017-09-05 11:45:34,819 INFO < execute ZDBF test >
+2017-09-05 11:45:34,868 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:45:45,786 INFO ZDBF: 305
+2017-09-05 11:45:45,898 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:45:45,898 INFO < execute level motor test >
+2017-09-05 11:45:45,946 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:45:53,459 INFO Level motor installed correctly
+2017-09-05 11:45:53,667 INFO Level motor test successful
+2017-09-05 11:45:53,714 INFO ==================== Test Completed ====================
+2017-09-05 11:48:36,632 INFO ==================== Load Settings ====================
+2017-09-05 11:48:36,687 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 11:48:36,687 INFO McDonald Gas Test
+2017-09-05 11:48:36,832 INFO Writing motionPID successful, @ processID 101
+2017-09-05 11:48:37,088 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 11:48:37,311 INFO Writing level sensors successful, @ processID 103
+2017-09-05 11:48:37,358 INFO Writing power sync successful, @ processID 104
+2017-09-05 11:48:37,359 INFO ==================== Test Begins ====================
+2017-09-05 11:48:37,359 INFO < execute voltage reading >
+2017-09-05 11:48:37,471 INFO Phase A: 210.8
+2017-09-05 11:48:37,471 INFO Phase B: 210.8
+2017-09-05 11:48:37,471 INFO Phase C: 212.3
+2017-09-05 11:48:37,471 INFO Frequency: 64
+2017-09-05 11:48:37,471 INFO 24V supply: 23.9
+2017-09-05 11:48:37,471 INFO 12V supply: 12.17
+2017-09-05 11:48:37,471 INFO 5V supply: 4.99
+2017-09-05 11:48:37,471 INFO 3.3V supply: 3.26
+2017-09-05 11:48:37,471 INFO < execute switch test >
+2017-09-05 11:48:40,653 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 11:48:44,921 INFO Seeking lower switch successful, @ processID 203
+2017-09-05 11:48:44,969 INFO Distance between Lift and Home switch (count): 4230
+2017-09-05 11:48:44,969 INFO Time elapse (sec): 4.92100000381
+2017-09-05 11:48:44,969 INFO Actuator speed (count/sec): 859.581385231
+2017-09-05 11:48:45,032 INFO < execute kill switch test >
+2017-09-05 11:49:08,065 INFO Home switch remain engaged, switch bracket ok 
+2017-09-05 11:49:08,065 INFO Kill switch test successful
+2017-09-05 11:49:08,112 INFO < execute magnet drift test >
+2017-09-05 11:49:15,993 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:49:26,752 INFO Seeking lower switch successful, @ processID 204
+2017-09-05 11:49:30,381 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:49:30,492 INFO Time elapse: 4.38100004196
+2017-09-05 11:49:30,492 INFO Distance moving down: 4107
+2017-09-05 11:49:30,492 INFO Distance moving up: 4115
+2017-09-05 11:49:30,492 INFO Encoder magnet ok, no drift found
+2017-09-05 11:49:30,492 INFO < execute homing test >
+2017-09-05 11:49:38,628 INFO Homing sequence successful, @ processID 202
+2017-09-05 11:49:38,628 INFO < execute sensors gap test >
+2017-09-05 11:49:38,693 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:49:41,746 INFO Rear sensors within range 13510
+2017-09-05 11:49:41,746 INFO Front sensors within range 13730
+2017-09-05 11:49:41,746 INFO < execute ZDBF test >
+2017-09-05 11:49:41,793 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:49:52,599 INFO ZDBF: 306
+2017-09-05 11:49:52,711 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:49:52,711 INFO < execute level motor test >
+2017-09-05 11:49:52,776 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:50:00,273 INFO Level motor installed correctly
+2017-09-05 11:50:05,388 INFO Level motor test successful
+2017-09-05 11:50:05,453 INFO ==================== Test Completed ====================
+2017-09-05 11:53:14,960 INFO ==================== Load Settings ====================
+2017-09-05 11:53:15,016 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 11:53:15,016 INFO McDonald Gas Test
+2017-09-05 11:53:15,158 INFO Writing motionPID successful, @ processID 101
+2017-09-05 11:53:15,414 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 11:53:15,638 INFO Writing level sensors successful, @ processID 103
+2017-09-05 11:53:15,687 INFO Writing power sync successful, @ processID 104
+2017-09-05 11:53:15,687 INFO ==================== Test Begins ====================
+2017-09-05 11:53:15,687 INFO < execute voltage reading >
+2017-09-05 11:53:15,799 INFO Phase A: 211.8
+2017-09-05 11:53:15,799 INFO Phase B: 210.8
+2017-09-05 11:53:15,799 INFO Phase C: 212.8
+2017-09-05 11:53:15,799 INFO Frequency: 65
+2017-09-05 11:53:15,799 INFO 24V supply: 24.05
+2017-09-05 11:53:15,799 INFO 12V supply: 12.17
+2017-09-05 11:53:15,799 INFO 5V supply: 4.99
+2017-09-05 11:53:15,799 INFO 3.3V supply: 3.26
+2017-09-05 11:53:15,799 INFO < execute switch test >
+2017-09-05 11:53:18,931 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 11:53:23,200 INFO Seeking lower switch successful, @ processID 203
+2017-09-05 11:53:23,247 INFO Distance between Lift and Home switch (count): 4225
+2017-09-05 11:53:23,247 INFO Time elapse (sec): 4.20000004768
+2017-09-05 11:53:23,247 INFO Actuator speed (count/sec): 1005.95236953
+2017-09-05 11:53:23,296 INFO < execute kill switch test >
+2017-09-05 11:53:46,075 INFO Home switch remain engaged, switch bracket ok 
+2017-09-05 11:53:46,075 INFO Kill switch test successful
+2017-09-05 11:53:46,122 INFO < execute magnet drift test >
+2017-09-05 11:53:54,003 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:54:04,729 INFO Seeking lower switch successful, @ processID 204
+2017-09-05 11:54:08,358 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:54:08,470 INFO Time elapse: 4.35800004005
+2017-09-05 11:54:08,470 INFO Distance moving down: 4114
+2017-09-05 11:54:08,470 INFO Distance moving up: 4115
+2017-09-05 11:54:08,470 INFO Encoder magnet ok, no drift found
+2017-09-05 11:54:08,470 INFO < execute homing test >
+2017-09-05 11:54:16,558 INFO Homing sequence successful, @ processID 202
+2017-09-05 11:54:16,559 INFO < execute sensors gap test >
+2017-09-05 11:54:16,605 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:54:19,660 INFO Rear sensors within range 13506
+2017-09-05 11:54:19,660 INFO Front sensors within range 13736
+2017-09-05 11:54:19,660 INFO < execute ZDBF test >
+2017-09-05 11:54:19,707 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:54:30,592 INFO ZDBF: 305
+2017-09-05 11:54:30,690 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:54:30,690 INFO < execute level motor test >
+2017-09-05 11:54:30,753 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:54:38,250 INFO Level motor installed correctly
+2017-09-05 11:54:42,533 INFO Level motor test successful
+2017-09-05 11:54:42,598 INFO ==================== Test Completed ====================
+2017-09-05 11:56:26,782 INFO ==================== Load Settings ====================
+2017-09-05 11:56:26,838 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 11:56:26,838 INFO McDonald Gas Test
+2017-09-05 11:56:26,980 INFO Writing motionPID successful, @ processID 101
+2017-09-05 11:56:27,236 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 11:56:27,460 INFO Writing level sensors successful, @ processID 103
+2017-09-05 11:56:27,525 INFO Writing power sync successful, @ processID 104
+2017-09-05 11:56:27,525 INFO ==================== Test Begins ====================
+2017-09-05 11:56:27,525 INFO < execute voltage reading >
+2017-09-05 11:56:27,637 INFO Phase A: 210.8
+2017-09-05 11:56:27,637 INFO Phase B: 212.3
+2017-09-05 11:56:27,637 INFO Phase C: 210.3
+2017-09-05 11:56:27,637 INFO Frequency: 64
+2017-09-05 11:56:27,637 INFO 24V supply: 24.08
+2017-09-05 11:56:27,637 INFO 12V supply: 12.17
+2017-09-05 11:56:27,637 INFO 5V supply: 4.99
+2017-09-05 11:56:27,637 INFO 3.3V supply: 3.26
+2017-09-05 11:56:27,637 INFO < execute switch test >
+2017-09-05 11:56:30,753 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 11:56:35,022 INFO Seeking lower switch successful, @ processID 203
+2017-09-05 11:56:35,069 INFO Distance between Lift and Home switch (count): 4235
+2017-09-05 11:56:35,069 INFO Time elapse (sec): 5.02200007439
+2017-09-05 11:56:35,069 INFO Actuator speed (count/sec): 843.289513594
+2017-09-05 11:56:35,134 INFO < execute kill switch test >
+2017-09-05 11:56:58,088 INFO Home switch remain engaged, switch bracket ok 
+2017-09-05 11:56:58,088 INFO Kill switch test successful
+2017-09-05 11:56:58,137 INFO < execute magnet drift test >
+2017-09-05 11:57:06,016 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:57:16,743 INFO Seeking lower switch successful, @ processID 204
+2017-09-05 11:57:20,369 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 11:57:20,482 INFO Time elapse: 4.3710000515
+2017-09-05 11:57:20,482 INFO Distance moving down: 4120
+2017-09-05 11:57:20,482 INFO Distance moving up: 4107
+2017-09-05 11:57:20,482 INFO Encoder magnet ok, no drift found
+2017-09-05 11:57:20,482 INFO < execute homing test >
+2017-09-05 11:57:28,523 INFO Homing sequence successful, @ processID 202
+2017-09-05 11:57:28,523 INFO < execute sensors gap test >
+2017-09-05 11:57:28,571 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:57:31,625 INFO Rear sensors within range 13510
+2017-09-05 11:57:31,625 INFO Front sensors within range 13730
+2017-09-05 11:57:31,625 INFO < execute ZDBF test >
+2017-09-05 11:57:31,673 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:57:42,542 INFO ZDBF: 263
+2017-09-05 11:57:42,654 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:57:42,654 INFO < execute level motor test >
+2017-09-05 11:57:42,701 INFO Writing setpoint reg 0 to 0
+2017-09-05 11:57:50,183 INFO Level motor installed correctly
+2017-09-05 11:57:55,571 INFO Level motor test successful
+2017-09-05 11:57:55,634 INFO ==================== Test Completed ====================
+2017-09-05 12:01:13,214 INFO ==================== Load Settings ====================
+2017-09-05 12:01:13,270 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 12:01:13,270 INFO McDonald Gas Test
+2017-09-05 12:01:13,398 INFO Writing motionPID successful, @ processID 101
+2017-09-05 12:01:13,654 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 12:01:13,862 INFO Writing level sensors successful, @ processID 103
+2017-09-05 12:01:13,911 INFO Writing power sync successful, @ processID 104
+2017-09-05 12:01:13,911 INFO ==================== Test Begins ====================
+2017-09-05 12:01:13,911 INFO < execute voltage reading >
+2017-09-05 12:01:14,023 INFO Phase A: 211.3
+2017-09-05 12:01:14,023 INFO Phase B: 210.8
+2017-09-05 12:01:14,023 INFO Phase C: 212.3
+2017-09-05 12:01:14,023 INFO Frequency: 65
+2017-09-05 12:01:14,023 INFO 24V supply: 23.93
+2017-09-05 12:01:14,023 INFO 12V supply: 12.17
+2017-09-05 12:01:14,023 INFO 5V supply: 4.99
+2017-09-05 12:01:14,023 INFO 3.3V supply: 3.26
+2017-09-05 12:01:14,023 INFO < execute switch test >
+2017-09-05 12:01:17,203 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 12:01:21,471 INFO Seeking lower switch successful, @ processID 203
+2017-09-05 12:01:21,519 INFO Distance between Lift and Home switch (count): 4235
+2017-09-05 12:01:21,519 INFO Time elapse (sec): 4.47199988365
+2017-09-05 12:01:21,519 INFO Actuator speed (count/sec): 947.003602456
+2017-09-05 12:01:21,584 INFO < execute kill switch test >
+2017-09-05 12:01:44,107 INFO Home switch remain engaged, switch bracket ok 
+2017-09-05 12:01:44,107 INFO Kill switch test successful
+2017-09-05 12:01:44,154 INFO < execute magnet drift test >
+2017-09-05 12:01:52,036 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 12:02:02,793 INFO Seeking lower switch successful, @ processID 204
+2017-09-05 12:02:06,423 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 12:02:06,519 INFO Time elapse: 4.42300009727
+2017-09-05 12:02:06,519 INFO Distance moving down: 4135
+2017-09-05 12:02:06,519 INFO Distance moving up: 4131
+2017-09-05 12:02:06,519 INFO Encoder magnet ok, no drift found
+2017-09-05 12:02:06,519 INFO < execute homing test >
+2017-09-05 12:02:14,624 INFO Homing sequence successful, @ processID 202
+2017-09-05 12:02:14,624 INFO < execute sensors gap test >
+2017-09-05 12:02:14,671 INFO Writing setpoint reg 0 to 0
+2017-09-05 12:02:17,724 INFO Rear sensors within range (mm) 4.12305063021
+2017-09-05 12:02:17,724 INFO Front sensors within range (mm) 4.19202246162
+2017-09-05 12:02:17,724 INFO < execute ZDBF test >
+2017-09-05 12:02:17,773 INFO Writing setpoint reg 0 to 0
+2017-09-05 12:02:28,642 INFO ZDBF: 232
+2017-09-05 12:02:28,755 INFO Writing setpoint reg 0 to 0
+2017-09-05 12:02:28,755 INFO < execute level motor test >
+2017-09-05 12:02:28,802 INFO Writing setpoint reg 0 to 0
+2017-09-05 12:02:36,315 INFO Level motor installed correctly
+2017-09-05 12:02:41,496 INFO Level motor test successful
+2017-09-05 12:02:41,543 INFO ==================== Test Completed ====================
+2017-09-05 12:09:01,803 INFO ==================== Load Settings ====================
+2017-09-05 12:09:01,858 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 12:09:01,858 INFO McDonald Gas Test
+2017-09-05 12:09:02,003 INFO Writing motionPID successful, @ processID 101
+2017-09-05 12:09:02,257 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 12:09:02,482 INFO Writing level sensors successful, @ processID 103
+2017-09-05 12:09:02,529 INFO Writing power sync successful, @ processID 104
+2017-09-05 12:09:02,529 INFO ==================== Test Begins ====================
+2017-09-05 12:09:02,529 INFO < execute voltage reading >
+2017-09-05 12:09:02,641 INFO Phase A: 211.8
+2017-09-05 12:09:02,641 INFO Phase B: 211.3
+2017-09-05 12:09:02,642 INFO Phase C: 212.3
+2017-09-05 12:09:02,642 INFO Frequency: 64
+2017-09-05 12:09:02,642 INFO 24V supply: 24.08
+2017-09-05 12:09:02,642 INFO 12V supply: 12.17
+2017-09-05 12:09:02,642 INFO 5V supply: 4.99
+2017-09-05 12:09:02,642 INFO 3.3V supply: 3.26
+2017-09-05 12:09:02,642 INFO < execute switch test >
+2017-09-05 12:09:05,822 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 12:09:10,092 INFO Seeking lower switch successful, @ processID 203
+2017-09-05 12:09:10,138 INFO Distance between Lift and Home switch (count): 4242
+2017-09-05 12:09:10,138 INFO Time elapse (sec): 5.09200000763
+2017-09-05 12:09:10,138 INFO Actuator speed (count/sec): 833.071483434
+2017-09-05 12:09:10,203 INFO < execute kill switch test >
+2017-09-05 12:09:33,078 INFO Home switch remain engaged, switch bracket ok 
+2017-09-05 12:09:33,078 INFO Kill switch test successful
+2017-09-05 12:09:33,127 INFO < execute magnet drift test >
+2017-09-05 12:09:41,006 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 12:09:51,733 INFO Seeking lower switch successful, @ processID 204
+2017-09-05 12:09:55,361 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 12:09:55,473 INFO Time elapse: 4.36199998856
+2017-09-05 12:09:55,473 INFO Distance moving down: 4121
+2017-09-05 12:09:55,473 INFO Distance moving up: 4105
+2017-09-05 12:09:55,473 INFO Encoder magnet ok, no drift found
+2017-09-05 12:09:55,473 INFO < execute homing test >
+2017-09-05 12:10:03,562 INFO Homing sequence successful, @ processID 202
+2017-09-05 12:10:03,562 INFO < execute sensors gap test >
+2017-09-05 12:10:03,609 INFO Writing setpoint reg 0 to 0
+2017-09-05 12:10:06,664 INFO Rear sensors within range (mm) 4.12030396435
+2017-09-05 12:10:06,664 INFO Front sensors within range (mm) 4.19202246162
+2017-09-05 12:10:06,664 INFO < execute ZDBF test >
+2017-09-05 12:10:06,711 INFO Writing setpoint reg 0 to 0
+2017-09-05 12:10:18,029 INFO ZDBF: 218
+2017-09-05 12:10:18,125 INFO Writing setpoint reg 0 to 0
+2017-09-05 12:10:18,125 INFO < execute level motor test >
+2017-09-05 12:10:18,190 INFO Writing setpoint reg 0 to 0
+2017-09-05 12:10:25,687 INFO Level motor installed correctly
+2017-09-05 12:10:29,492 INFO Write to register 255 failed, @ processID 302
+2017-09-05 12:10:29,588 INFO Write to register 255 failed, @ processID 302
+2017-09-05 12:10:30,437 INFO Write to register 255 failed, @ processID 302
+2017-09-05 12:10:30,530 INFO Write to register 255 failed, @ processID 302
+2017-09-05 12:10:31,073 INFO Level motor test successful
+2017-09-05 12:10:31,138 INFO ==================== Test Completed ====================
+2017-09-05 12:32:28,009 INFO ==================== Load Settings ====================
+2017-09-05 12:32:28,065 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 12:32:28,066 INFO McDonald Gas Test
+2017-09-05 12:32:28,194 INFO Writing motionPID successful, @ processID 101
+2017-09-05 12:32:28,434 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 12:32:28,657 INFO Writing level sensors successful, @ processID 103
+2017-09-05 12:32:28,706 INFO Writing power sync successful, @ processID 104
+2017-09-05 12:32:28,706 INFO ==================== Test Begins ====================
+2017-09-05 12:32:28,706 INFO < execute voltage reading >
+2017-09-05 12:32:28,818 INFO Phase A: 212.8
+2017-09-05 12:32:28,818 INFO Phase B: 213.3
+2017-09-05 12:32:28,818 INFO Phase C: 213.3
+2017-09-05 12:32:28,818 INFO Frequency: 65
+2017-09-05 12:32:28,819 INFO 24V supply: 24.08
+2017-09-05 12:32:28,819 INFO 12V supply: 12.17
+2017-09-05 12:32:28,819 INFO 5V supply: 4.99
+2017-09-05 12:32:28,819 INFO 3.3V supply: 3.26
+2017-09-05 12:32:28,819 INFO < execute switch test >
+2017-09-05 12:32:31,999 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 12:32:36,315 INFO Seeking lower switch successful, @ processID 203
+2017-09-05 12:32:36,378 INFO Distance between Lift and Home switch (count): 4240
+2017-09-05 12:32:36,378 INFO Time elapse (sec): 4.31500005722
+2017-09-05 12:32:36,378 INFO Actuator speed (count/sec): 982.618758696
+2017-09-05 12:32:36,427 INFO < execute kill switch test >
+2017-09-05 12:32:59,094 INFO Home switch remain engaged, switch bracket ok 
+2017-09-05 12:32:59,094 INFO Kill switch test successful
+2017-09-05 12:32:59,141 INFO < execute magnet drift test >
+2017-09-05 12:33:07,071 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 12:33:17,828 INFO Seeking lower switch successful, @ processID 204
+2017-09-05 12:33:21,457 INFO Seeking upper switch successful, @ processID 204
+2017-09-05 12:33:21,569 INFO Time elapse: 3.45799994469
+2017-09-05 12:33:21,569 INFO Distance moving down: 4137
+2017-09-05 12:33:21,569 INFO Distance moving up: 4125
+2017-09-05 12:33:21,569 INFO Encoder magnet ok, no drift found
+2017-09-05 12:33:21,569 INFO < execute homing test >
+2017-09-05 12:33:29,707 INFO Homing sequence successful, @ processID 202
+2017-09-05 12:33:29,707 INFO < execute sensors gap test >
+2017-09-05 12:33:29,769 INFO Writing setpoint reg 0 to 0
+2017-09-05 12:33:32,823 INFO Rear sensors within range (mm) 4.12030396435
+2017-09-05 12:33:32,823 INFO Front sensors within range (mm) 4.19019135105
+2017-09-05 12:33:32,823 INFO < execute ZDBF test >
+2017-09-05 12:33:32,871 INFO Writing setpoint reg 0 to 0
+2017-09-05 12:33:43,789 INFO ZDBF: 203
+2017-09-05 12:33:43,901 INFO Writing setpoint reg 0 to 0
+2017-09-05 12:33:43,901 INFO < execute level motor test >
+2017-09-05 12:33:43,950 INFO Writing setpoint reg 0 to 0
+2017-09-05 12:33:51,463 INFO Level motor installed correctly
+2017-09-05 12:33:58,767 INFO Level motor test successful
+2017-09-05 12:33:58,815 INFO ==================== Test Completed ====================
+2017-09-05 12:39:16,095 INFO ==================== Load Settings ====================
+2017-09-05 12:39:16,147 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 12:39:16,147 INFO McDonald Gas Test
+2017-09-05 12:39:16,275 INFO Writing motionPID successful, @ processID 101
+2017-09-05 12:39:16,530 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 12:39:16,739 INFO Writing level sensors successful, @ processID 103
+2017-09-05 12:39:16,786 INFO Writing power sync successful, @ processID 104
+2017-09-05 12:39:16,786 INFO ==================== Test Begins ====================
+2017-09-05 12:39:16,786 INFO < execute voltage reading >
+2017-09-05 12:39:16,898 INFO Phase A: 210.8
+2017-09-05 12:39:16,898 INFO Phase B: 210.8
+2017-09-05 12:39:16,898 INFO Phase C: 208.7
+2017-09-05 12:39:16,898 INFO Frequency: 65
+2017-09-05 12:39:16,898 INFO 24V supply: 24.08
+2017-09-05 12:39:16,898 INFO 12V supply: 12.17
+2017-09-05 12:39:16,898 INFO 5V supply: 4.99
+2017-09-05 12:39:16,900 INFO 3.3V supply: 3.26
+2017-09-05 12:39:16,900 INFO < execute switch test >
+2017-09-05 12:39:20,079 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 12:39:20,704 INFO Reading register 255 failed #1, @ processID 203
+2017-09-05 12:39:20,786 INFO Reading register 255 failed #1, @ processID 203
+2017-09-05 12:39:20,867 INFO Reading register 255 failed #1, @ processID 203
+2017-09-05 12:42:40,707 INFO ==================== Load Settings ====================
+2017-09-05 12:42:40,763 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 12:42:40,763 INFO McDonald Gas Test
+2017-09-05 12:42:40,891 INFO Writing motionPID successful, @ processID 101
+2017-09-05 12:42:41,131 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 12:42:41,354 INFO Writing level sensors successful, @ processID 103
+2017-09-05 12:42:41,401 INFO Writing power sync successful, @ processID 104
+2017-09-05 12:42:41,401 INFO ==================== Test Begins ====================
+2017-09-05 12:42:41,401 INFO < execute voltage reading >
+2017-09-05 12:42:41,515 INFO Phase A: 211.8
+2017-09-05 12:42:41,515 INFO Phase B: 211.3
+2017-09-05 12:42:41,515 INFO Phase C: 213.3
+2017-09-05 12:42:41,515 INFO Frequency: 65
+2017-09-05 12:42:41,515 INFO 24V supply: 24.08
+2017-09-05 12:42:41,515 INFO 12V supply: 12.17
+2017-09-05 12:42:41,515 INFO 5V supply: 4.99
+2017-09-05 12:42:41,515 INFO 3.3V supply: 3.26
+2017-09-05 12:42:41,515 INFO < execute switch test >
+2017-09-05 12:42:44,569 INFO Reading register 255 failed (retry remains 3), @ processID 203
+2017-09-05 12:42:44,650 INFO Reading register 255 failed (retry remains 2), @ processID 203
+2017-09-05 12:42:44,730 INFO Reading register 255 failed (retry remains 1), @ processID 203
+2017-09-05 12:43:58,255 INFO ==================== Load Settings ====================
+2017-09-05 12:43:58,309 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-05 12:43:58,309 INFO McDonald Gas Test
+2017-09-05 12:43:58,453 INFO Writing motionPID successful, @ processID 101
+2017-09-05 12:43:58,710 INFO Writing heaterPID successful, @ processID 102
+2017-09-05 12:43:58,917 INFO Writing level sensors successful, @ processID 103
+2017-09-05 12:43:58,964 INFO Writing power sync successful, @ processID 104
+2017-09-05 12:43:58,966 INFO ==================== Test Begins ====================
+2017-09-05 12:43:58,966 INFO < execute voltage reading >
+2017-09-05 12:43:59,078 INFO Phase A: 209.8
+2017-09-05 12:43:59,078 INFO Phase B: 210.8
+2017-09-05 12:43:59,078 INFO Phase C: 214.3
+2017-09-05 12:43:59,078 INFO Frequency: 65
+2017-09-05 12:43:59,078 INFO 24V supply: 24.08
+2017-09-05 12:43:59,078 INFO 12V supply: 12.17
+2017-09-05 12:43:59,078 INFO 5V supply: 4.99
+2017-09-05 12:43:59,078 INFO 3.3V supply: 3.26
+2017-09-05 12:43:59,078 INFO < execute switch test >
+2017-09-05 12:43:59,348 INFO Seeking upper switch successful, @ processID 203
+2017-09-05 12:44:01,316 INFO Reading register 255 failed (retry remains 3), @ processID 203
+2017-09-05 12:44:01,398 INFO Reading register 255 failed (retry remains 2), @ processID 203
+2017-09-05 12:44:01,479 INFO Reading register 255 failed (retry remains 1), @ processID 203
+2017-09-05 12:44:01,479 INFO Max retry reached @ 203, exiting script...please restart

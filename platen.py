@@ -10,13 +10,13 @@ class sensors():
     com = ''
 
     # adjustable limits
-    rear_target = 13500
-    front_target = 13763
+    sensor_target = [13500, 13763] # [rear, front]
     lvlMotorTime = 4
 
-    def update(self, logger, com):
+    def update(self, logger, com, sensor_target):
         self.logger = logger
         self.com = com
+        self.sensor_target = sensor_target
 
     def readSensor(self, processID):
         # [rear, front]
@@ -59,15 +59,15 @@ class sensors():
         front = read[1]
         #rear = (float(read[0])/32767) * 10000
         #front = (float(read[1])/32767) * 10000
-        if commonFX.rangeCheck(int(rear), self.rear_target, 0.02):
-            self.logger.info("Rear sensors within range " + str(rear/100))
+        if commonFX.rangeCheck(int(rear), self.sensor_target[0], 0.02):
+            self.logger.info("Rear sensors within range (mm) " + str((rear*10.0)/32767))
         else:
-            self.logger.info("Rear sensor out of range " + str(rear/100))
+            self.logger.info("Rear sensor out of range (mm) " + str((rear*10.0)/32767))
             os._exit(1)
-        if commonFX.rangeCheck(int(front), self.front_target, 0.02):
-            self.logger.info("Front sensors within range " + str(front/100))
+        if commonFX.rangeCheck(int(front), self.sensor_target[1], 0.02):
+            self.logger.info("Front sensors within range (mm) " + str((front*10.0)/32767))
         else:
-            self.logger.info("Front sensor out of range" + str(front/100))
+            self.logger.info("Front sensor out of range (mm) " + str((front*10.0)/32767))
             os._exit(1)
 
     def levelMotorTest(self):
@@ -79,15 +79,20 @@ class sensors():
         read = self.readSensor(processID)
         if read[0] > sensorReading[0] + 300:
             self.logger.info("Level motor installed correctly")
+        elif read[0] < sensorReading[0] + 300:
+            self.logger.info("Level motor moving in reverse direction")
         else:
-            self.logger.info("Level motor installed incorrectly, reverse direction")
+            self.logger.info("No level motor movement detected")
             os._exit(1)
 
         # position reset
-        self.moveLvlMotor(1, 1)
         read = self.readSensor(processID)
-        while read[0] >= sensorReading[0] + 100:
+        while commonFX.rangeCheck(read[0], sensorReading[0], 0.001) != True:
             read = self.readSensor(processID)
+            if read[0] > sensorReading[0]:
+                self.moveLvlMotor(1, 1)
+            elif read[0] < sensorReading[0]:
+                self.moveLvlMotor(1, -1)
         self.moveLvlMotor(0, 0)
         self.logger.info("Level motor test successful")
         self.resetMode(processID)

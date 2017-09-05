@@ -29,14 +29,15 @@ class communicate():
                 self.master.execute(self.device, cst.WRITE_MULTIPLE_REGISTERS, startReg, output_value=Data)
                 error = 0
             except modbus_tk.modbus.ModbusInvalidResponseError:
-                print "Write to register %r failed, @ processID %r" % (startReg, processID)
-                self.logger.info("Write to register %r failed, @ processID %r" % (startReg, processID))
+                print "Write to register %r failed (retry remains %r), @ processID %r" % (startReg, retry, processID)
+                self.logger.info("Write to register %r failed (retry remains %r), @ processID %r" % (startReg, retry, processID))
                 error = 1
                 retry -= 1
                 pass
 
         if retry <= 0:
             print "Max retry reached @ %r, exiting script...please restart" % processID
+            self.logger.info("Max retry reached @ %r, exiting script...please restart" % processID)
             os._exit(1)
         else:
             pass
@@ -52,14 +53,15 @@ class communicate():
                 self.master.execute(self.device, cst.WRITE_MULTIPLE_COILS, startReg, output_value=Data)
                 error = 0
             except modbus_tk.modbus.ModbusInvalidResponseError:
-                print "Write to coil %r failed, @ processID %r" % (startReg, processID)
-                self.logger.info("Write to coil %r failed, @ processID %r" % (startReg, processID))
+                print "Write to coil %r failed (retry remains %r), @ processID %r" % (startReg, retry, processID)
+                self.logger.info("Write to coil %r failed (retry remains %r), @ processID %r" % (startReg, retry, processID))
                 error = 1
                 retry -= 1
                 pass
 
         if retry <= 0:
             print "Max retry reached @ %r, exiting script...please restart" % processID
+            self.logger.info("Max retry reached @ %r, exiting script...please restart" % processID)
             os._exit(1)
         else:
             pass
@@ -74,14 +76,15 @@ class communicate():
                 read = self.master.execute(self.device, cst.READ_HOLDING_REGISTERS, startReg, totalReg)
                 error = 0
             except modbus_tk.modbus.ModbusInvalidResponseError:
-                print "Reading register %r failed, @ processID %r" % (startReg, processID)
-                self.logger.info("Reading register %r failed, @ processID %r" % (startReg, processID))
+                print "Reading register %r failed (retry remains %r), @ processID %r" % (startReg, retry, processID)
+                self.logger.info("Reading register %r failed (retry remains %r), @ processID %r" % (startReg, retry, processID))
                 error = 1
                 retry -= 1
                 pass
 
         if retry <= 0:
             print "Max retry reached @ %r, exiting script...please restart" % processID
+            self.logger.info("Max retry reached @ %r, exiting script...please restart" % processID)
             os._exit(1)
         else:
             pass
@@ -97,14 +100,15 @@ class communicate():
                 read = self.master.execute(self.device, cst.READ_COILS, startReg, totalReg)
                 error = 0
             except modbus_tk.modbus.ModbusInvalidResponseError:
-                print "Write to coil %r failed, @ processID %r" % (20, processID)
-                self.logger.info("Write to coil %r failed, @ processID %r" % (20, processID))
+                print "Write to coil %r failed (retry remains %r), @ processID %r" % (20, retry, processID)
+                self.logger.info("Write to coil %r failed (retry remains %r), @ processID %r" % (20, retry, processID))
                 error = 1
                 retry -= 1
             pass
 
         if retry <= 0:
             print "Max retry reached @ %r, exiting script...please restart" % processID
+            self.logger.info("Max retry reached @ %r, exiting script...please restart" % processID)
             os._exit(1)
         else:
             pass

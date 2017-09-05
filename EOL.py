@@ -46,7 +46,39 @@ def setup_logger(name, log_file, level=logging.INFO):
     return logger
 
 
+def testRequired(config):
+    mcDonald = [[12, 20, 28, 42, 44], [13, 21, 29, 38, 50]]
+    GenMarket = [[10, 14, 18, 22, 26, 30, 43, 45], [11, 15, 19, 23, 27, 31, 39, 51]]
+    CFA = [47]
+
+    test_type = config.grillType in mcDonald[0] # Gas
+    if test_type:
+        config.logger.info("McDonald Gas Test")
+        print "McDonald Gas Test"
+        return [1, 1, 1, 1, 1, 1, 1]
+    test_type = config.grillType in mcDonald[1] # Electric
+    if test_type:
+        config.logger.info("McDonald Electric Test")
+        print "McDonald Electric Test"
+        return [1, 1, 1, 1, 1, 1, 1]
+    test_type = config.grillType in GenMarket[0] # Gas
+    if test_type:
+        config.logger.info("General Market Gas Test")
+        print "General Market Gas Test"
+        return [1, 1, 1, 1, 0, 0, 0]
+    test_type = config.grillType in GenMarket[1] # Electric
+    if test_type:
+        config.logger.info("General Market Electric Test")
+        print "General Market Electric Test"
+        return [1, 1, 1, 1, 0, 0, 0]
+    test_type = config.grillType in CFA
+    if test_type:
+        config.logger.info("CFA Gen 2 Test")
+        print "CFA Gen 2 Test"
+        return [1, 1, 1, 1, 1, 1, 0]
+
 class myConfig(object):
+    logger = ''
     device = 1
     restTime = 0.01
     timeout = 30
@@ -59,10 +91,11 @@ class myConfig(object):
     grillType = 0  # load from SIB
     jsonFile = linuxPath + hwcfg + str(grillType) + ".json"
     loadReg_enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors]
-    test_enable =[1, 1, 1, 1, 1, 1, 1, 1]
+    test_enable = [1, 1, 1, 1, 1, 1, 1]
 
     description = "unknown"  # load from json file
     sync_role = 0
+    sensor_target = [13500, 13763] # sensor gap target
 
     def updateJSON(self, grillType):
         self.jsonFile = self.linuxPath + self.hwcfg + str(grillType) + ".json"
@@ -74,6 +107,7 @@ def main():
     master = setup()
 
     logger = setup_logger('event_log', config.logfile)
+    config.logger = logger
     logger.info("==================== Load Settings ====================")
     print "==================== Load Settings ===================="
 
@@ -87,7 +121,9 @@ def main():
     config.grillType = myJSON.grillType(processID)
     config.updateJSON(config.grillType)
     logger.info(config.jsonFile)
+    config.test_enable = testRequired(config)
     print config.jsonFile
+
 
     data = myJSON.readJSON(config.jsonFile)
     config.description, config.sync_role = myJSON.loadHardware(data)
@@ -100,7 +136,7 @@ def main():
     motor.update(logger, com, config.timeout)
 
     pl = platen.sensors()
-    pl.update(logger, com)
+    pl.update(logger, com, config.sensor_target)
 
     logger.info("==================== Test Begins ====================")
     print "==================== Test Begins ===================="
@@ -109,32 +145,41 @@ def main():
     phase_status, supply_voltage = power.voltage(processID)
     power.validate(phase_status, supply_voltage)
 
-    logger.info("< execute switch test >")
-    print "< execute switch test >"
-    motor.switchTest()
-    logger.info("< execute kill switch test >")
-    print "< execute kill switch test >"
-    #motor.killSwitchTest()
-    logger.info("< execute magnet drift test >")
-    print "< execute magnet drift test >"
-    motor.magnetDrift()
-    logger.info("< execute homing test >")
-    print "< execute homing test >"
-    motor.homing()
-    logger.info("< move platen to setpoint >")
-    print "< move platen to setpoint >"
-    motor.setpoint(0)
-    time.sleep(3)
-    logger.info("< execute sensors gap test >")
-    print "< execute sensors gap test >"
-    #pl.sensorGap()
-    logger.info("< execute ZDBF test >")
-    print "< execute ZDBF test >"
-    pl.calZDBF()
-    motor.setpoint(0)
-    logger.info("< execute level motor test >")
-    print "< execute level motor test >"
-    #pl.levelMotorTest()
+    if config.test_enable[0]:
+        logger.info("< execute switch test >")
+        print "< execute switch test >"
+        motor.switchTest()
+    if config.test_enable[1]:
+        logger.info("< execute kill switch test >")
+        print "< execute kill switch test >"
+        motor.killSwitchTest()
+    if config.test_enable[2]:
+        logger.info("< execute magnet drift test >")
+        print "< execute magnet drift test >"
+        motor.magnetDrift()
+    if config.test_enable[3]:
+        logger.info("< execute homing test >")
+        print "< execute homing test >"
+        motor.homing()
+    if config.test_enable[4]:
+        logger.info("< execute sensors gap test >")
+        print "< execute sensors gap test >"
+        motor.setpoint(0)
+        time.sleep(3)
+        pl.sensorGap()
+    if config.test_enable[5]:
+        logger.info("< execute ZDBF test >")
+        print "< execute ZDBF test >"
+        motor.setpoint(0)
+        time.sleep(3)
+        pl.calZDBF()
+        motor.setpoint(0)
+    if config.test_enable[6]:
+        logger.info("< execute level motor test >")
+        print "< execute level motor test >"
+        motor.setpoint(0)
+        time.sleep(3)
+        pl.levelMotorTest()
     logger.info("==================== Test Completed ====================")
     print "==================== Test Completed ===================="
 

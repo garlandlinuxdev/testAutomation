@@ -31,19 +31,19 @@ class measure():
             self.logger.info("Phase A not present, " + str(voltage[4]))
             print "Phase A not present, ", voltage[4]
         else:
-            self.logger.info("Phase A: " + str(voltage[4]))
+            self.logger.info("Phase A: " + str(voltage[4]/10.0))
         if ph_status[1] == 0:
             status[1] = 0
             self.logger.info("Phase B not present, " + str(voltage[5]))
             print "Phase B not present, ", voltage[5]
         else:
-            self.logger.info("Phase B: " + str(voltage[5]))
+            self.logger.info("Phase B: " + str(voltage[5]/10.0))
         if ph_status[2] == 0:
             status[2] = 0
             self.logger.info("Phase C not present, " + str(voltage[6]))
             print "Phase C not present, ", voltage[6]
         else:
-            self.logger.info("Phase C: " + str(voltage[6]))
+            self.logger.info("Phase C: " + str(voltage[6]/10.0))
 
         if 40 <= voltage[7] <= 70:
             self.logger.info("Frequency: " + str(voltage[7]))
