@@ -79,8 +79,9 @@ class sensors():
         read = self.readSensor(processID)
         if read[0] > sensorReading[0] + 300:
             self.logger.info("Level motor installed correctly")
-        elif read[0] < sensorReading[0] + 300:
+        elif read[0] <= sensorReading[0] - 300:
             self.logger.info("Level motor moving in reverse direction")
+            os._exit(1)
         else:
             self.logger.info("No level motor movement detected")
             os._exit(1)
