@@ -102,13 +102,13 @@ def main():
     # main starts here
     config = myConfig()
     master = setup()
-    display = LCD.display()
+    #display = LCD.display()
 
     logger = setup_logger('event_log', config.logfile)
     config.logger = logger
     logger.info("==================== Load Settings ====================")
     print "==================== Load Settings ===================="
-    display.fb_println("=============== Load Settings ===============", 1)
+    #display.fb_println("=============== Load Settings ===============", 1)
 
     com = modbus.communicate()
     com.setup(logger, master, config.device, config.restTime)
@@ -121,7 +121,7 @@ def main():
     config.updateJSON(config.grillType)
     logger.info(config.jsonFile)
     config.test_enable = testRequired(config)
-    display.fb_long_print(str(config.description), 0)
+    #display.fb_long_print(str(config.description), 0)
     print config.jsonFile
 
 
@@ -140,9 +140,9 @@ def main():
 
     logger.info("==================== Test Begins ====================")
     print "==================== Test Begins ===================="
-    display.fb_println("================ Test Begins ================", 1)
+    #display.fb_println("================ Test Begins ================", 1)
     logger.info("< execute voltage reading >")
-    display.fb_println("< execute voltage reading >", 0)
+    #display.fb_println("< execute voltage reading >", 0)
     processID = 2
     phase_status, supply_voltage = power.voltage(processID)
     power.validate(phase_status, supply_voltage)
@@ -150,34 +150,34 @@ def main():
     if config.test_enable[0]:
         logger.info("< execute switch test >")
         print "< execute switch test >"
-        display.fb_println("< execute switch test >", 0)
+        #display.fb_println("< execute switch test >", 0)
         motor.switchTest()
     if config.test_enable[1]:
         logger.info("< execute kill switch test >")
         print "< execute kill switch test >"
-        display.fb_println("< execute kill switch test >", 0)
+        #display.fb_println("< execute kill switch test >", 0)
         motor.killSwitchTest()
     if config.test_enable[2]:
         logger.info("< execute magnet drift test >")
         print "< execute magnet drift test >"
-        display.fb_println("< execute magnet drift test >", 0)
+        #display.fb_println("< execute magnet drift test >", 0)
         motor.magnetDrift()
     if config.test_enable[3]:
         logger.info("< execute homing test >")
         print "< execute homing test >"
-        display.fb_println("< execute homing test >", 0)
+        #display.fb_println("< execute homing test >", 0)
         motor.homing()
     if config.test_enable[4]:
         logger.info("< execute sensors gap test >")
         print "< execute sensors gap test >"
-        display.fb_println("< execute sensors gap test >", 0)
+        #display.fb_println("< execute sensors gap test >", 0)
         motor.setpoint(0)
         time.sleep(3)
         pl.sensorGap()
     if config.test_enable[5]:
         logger.info("< execute ZDBF test >")
         print "< execute ZDBF test >"
-        display.fb_println("< execute ZDBF test >", 0)
+        #display.fb_println("< execute ZDBF test >", 0)
         motor.setpoint(0)
         time.sleep(3)
         pl.calZDBF()
@@ -185,13 +185,13 @@ def main():
     if config.test_enable[6]:
         logger.info("< execute level motor test >")
         print "< execute level motor test >"
-        display.fb_println("< execute level motor test >", 0)
+        #display.fb_println("< execute level motor test >", 0)
         motor.setpoint(0)
         time.sleep(3)
         pl.levelMotorTest()
     logger.info("==================== Test Completed ====================")
     print "==================== Test Completed ===================="
-    display.fb_println("============== Test Completed ==============", 0)
+    #display.fb_println("============== Test Completed ==============", 0)
 
 
 if __name__ == "__main__":
