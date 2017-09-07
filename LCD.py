@@ -7,7 +7,7 @@ import os, time, textwrap
 class display():
     delay = 1
     FB_Y = 10
-    max_line = 360
+    max_line = 468
     linuxPath = os.path.dirname(__file__)
     logPath = '/log/'  # log files storage path
     sysPath = '/system/'  # system required storage path

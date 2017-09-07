@@ -2866,3 +2866,366 @@
 2017-09-05 13:19:23,224 INFO < execute level motor test >
 2017-09-05 13:19:23,273 INFO Writing setpoint reg 0 to 0
 2017-09-05 13:19:30,740 INFO No level motor movement detected
+2017-09-06 10:15:40,517 INFO ==================== Load Settings ====================
+2017-09-06 10:15:40,569 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/42.json
+2017-09-06 10:15:40,569 INFO McDonald Gas Test
+2017-09-06 12:33:27,996 INFO ==================== Load Settings ====================
+2017-09-06 12:33:28,078 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-06 12:33:28,158 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-06 12:33:28,240 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-06 12:33:28,240 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-06 12:33:41,951 INFO ==================== Load Settings ====================
+2017-09-06 12:33:42,005 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-06 12:33:42,006 INFO McDonald Gas Test
+2017-09-06 12:33:42,165 INFO Writing motionPID successful, @ processID 101
+2017-09-06 12:33:42,421 INFO Writing heaterPID successful, @ processID 102
+2017-09-06 12:33:42,645 INFO Writing level sensors successful, @ processID 103
+2017-09-06 12:33:42,693 INFO Writing power sync successful, @ processID 104
+2017-09-06 12:33:42,693 INFO ==================== Test Begins ====================
+2017-09-06 12:33:42,693 INFO < execute voltage reading >
+2017-09-06 12:33:42,805 INFO Phase A: 211.3
+2017-09-06 12:33:42,805 INFO Phase B: 212.3
+2017-09-06 12:33:42,805 INFO Phase C: 211.3
+2017-09-06 12:33:42,805 INFO Frequency: 65
+2017-09-06 12:33:42,805 INFO 24V supply: 24.08
+2017-09-06 12:33:42,805 INFO 12V supply: 12.17
+2017-09-06 12:33:42,805 INFO 5V supply: 4.99
+2017-09-06 12:33:42,805 INFO 3.3V supply: 3.26
+2017-09-06 12:33:42,805 INFO < execute switch test >
+2017-09-06 12:33:46,568 INFO Seeking upper switch successful, @ processID 203
+2017-09-06 12:33:50,661 INFO Seeking lower switch successful, @ processID 203
+2017-09-06 12:33:50,724 INFO Distance between Lift and Home switch (count): 4242
+2017-09-06 12:33:50,724 INFO Time elapse (sec): 4.66100001335
+2017-09-06 12:33:50,724 INFO Actuator speed (count/sec): 910.105125048
+2017-09-06 12:33:50,773 INFO < execute kill switch test >
+2017-09-06 12:33:55,042 INFO Homing sequence successful, @ processID 202
+2017-09-06 12:34:18,069 INFO Home switch remain engaged, switch bracket ok 
+2017-09-06 12:34:18,069 INFO Kill switch test successful
+2017-09-06 12:34:18,117 INFO < execute magnet drift test >
+2017-09-06 12:34:26,158 INFO Seeking upper switch successful, @ processID 204
+2017-09-06 12:34:36,904 INFO Seeking lower switch successful, @ processID 204
+2017-09-06 12:34:40,582 INFO Seeking upper switch successful, @ processID 204
+2017-09-06 12:34:40,677 INFO Time elapse: 3.58200001717
+2017-09-06 12:34:40,677 INFO Distance moving down: 4117
+2017-09-06 12:34:40,677 INFO Distance moving up: 4121
+2017-09-06 12:34:40,677 INFO Encoder magnet ok, no drift found
+2017-09-06 12:34:40,678 INFO < execute homing test >
+2017-09-06 12:34:49,040 INFO Homing sequence successful, @ processID 202
+2017-09-06 12:34:49,042 INFO < execute sensors gap test >
+2017-09-06 12:34:49,105 INFO Writing setpoint reg 0 to 0
+2017-09-06 12:34:52,160 INFO Rear sensors within range (mm) 4.12305063021
+2017-09-06 12:34:52,160 INFO Front sensors within range (mm) 4.19019135105
+2017-09-06 12:34:52,160 INFO < execute ZDBF test >
+2017-09-06 12:34:52,223 INFO Writing setpoint reg 0 to 0
+2017-09-06 12:35:03,305 INFO ZDBF: 107
+2017-09-06 12:35:03,417 INFO Writing setpoint reg 0 to 0
+2017-09-06 12:35:03,417 INFO < execute level motor test >
+2017-09-06 12:35:03,464 INFO Writing setpoint reg 0 to 0
+2017-09-06 12:35:10,933 INFO No level motor movement detected
+2017-09-07 08:43:18,766 INFO ==================== Load Settings ====================
+2017-09-07 08:43:18,780 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:43:18,796 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:43:18,811 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:43:18,811 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:43:43,190 INFO ==================== Load Settings ====================
+2017-09-07 08:43:43,244 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-07 08:43:43,244 INFO McDonald Gas Test
+2017-09-07 08:43:43,369 INFO Writing motionPID successful, @ processID 101
+2017-09-07 08:43:43,609 INFO Writing heaterPID successful, @ processID 102
+2017-09-07 08:43:43,835 INFO Writing level sensors successful, @ processID 103
+2017-09-07 08:43:43,885 INFO Writing power sync successful, @ processID 104
+2017-09-07 08:43:43,885 INFO ==================== Test Begins ====================
+2017-09-07 08:43:43,885 INFO < execute voltage reading >
+2017-09-07 08:43:43,996 INFO Phase A: 209.8
+2017-09-07 08:43:43,996 INFO Phase B: 212.3
+2017-09-07 08:43:43,996 INFO Phase C: 210.8
+2017-09-07 08:43:43,996 INFO Frequency: 64
+2017-09-07 08:43:43,996 INFO 24V supply: 24.08
+2017-09-07 08:43:43,996 INFO 12V supply: 12.15
+2017-09-07 08:43:43,996 INFO 5V supply: 4.98
+2017-09-07 08:43:43,996 INFO 3.3V supply: 3.26
+2017-09-07 08:43:43,996 INFO < execute switch test >
+2017-09-07 08:43:44,555 INFO Seeking upper switch successful, @ processID 203
+2017-09-07 08:43:47,135 INFO Reading register 255 failed (retry remains 3), @ processID 203
+2017-09-07 08:43:47,151 INFO Reading register 255 failed (retry remains 2), @ processID 203
+2017-09-07 08:43:47,165 INFO Reading register 255 failed (retry remains 1), @ processID 203
+2017-09-07 08:43:47,165 INFO Max retry reached @ 203, exiting script...please restart
+2017-09-07 08:43:57,270 INFO ==================== Load Settings ====================
+2017-09-07 08:43:57,355 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:43:57,405 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-07 08:43:57,405 INFO McDonald Gas Test
+2017-09-07 08:43:57,551 INFO Writing motionPID successful, @ processID 101
+2017-09-07 08:43:57,799 INFO Writing heaterPID successful, @ processID 102
+2017-09-07 08:43:58,029 INFO Writing level sensors successful, @ processID 103
+2017-09-07 08:43:58,075 INFO Writing power sync successful, @ processID 104
+2017-09-07 08:43:58,075 INFO ==================== Test Begins ====================
+2017-09-07 08:43:58,075 INFO < execute voltage reading >
+2017-09-07 08:43:58,174 INFO Phase A: 209.3
+2017-09-07 08:43:58,174 INFO Phase B: 209.8
+2017-09-07 08:43:58,174 INFO Phase C: 210.3
+2017-09-07 08:43:58,174 INFO Frequency: 65
+2017-09-07 08:43:58,174 INFO 24V supply: 24.08
+2017-09-07 08:43:58,174 INFO 12V supply: 12.17
+2017-09-07 08:43:58,174 INFO 5V supply: 4.98
+2017-09-07 08:43:58,174 INFO 3.3V supply: 3.26
+2017-09-07 08:43:58,174 INFO < execute switch test >
+2017-09-07 08:44:01,911 INFO Seeking upper switch successful, @ processID 203
+2017-09-07 08:44:05,990 INFO Seeking lower switch successful, @ processID 203
+2017-09-07 08:44:06,036 INFO Distance between Lift and Home switch (count): 4235
+2017-09-07 08:44:06,036 INFO Time elapse (sec): 3.99099993706
+2017-09-07 08:44:06,036 INFO Actuator speed (count/sec): 1061.13757624
+2017-09-07 08:44:06,101 INFO < execute kill switch test >
+2017-09-07 08:44:10,305 INFO Homing sequence successful, @ processID 202
+2017-09-07 08:44:33,098 INFO Home switch remain engaged, switch bracket ok 
+2017-09-07 08:44:33,098 INFO Kill switch test successful
+2017-09-07 08:44:33,163 INFO < execute magnet drift test >
+2017-09-07 08:44:41,173 INFO Seeking upper switch successful, @ processID 204
+2017-09-07 08:44:51,818 INFO Seeking lower switch successful, @ processID 204
+2017-09-07 08:44:55,463 INFO Seeking upper switch successful, @ processID 204
+2017-09-07 08:44:55,578 INFO Time elapse: 4.46300005913
+2017-09-07 08:44:55,578 INFO Distance moving down: 4102
+2017-09-07 08:44:55,578 INFO Distance moving up: 4115
+2017-09-07 08:44:55,578 INFO Encoder magnet ok, no drift found
+2017-09-07 08:44:55,578 INFO < execute homing test >
+2017-09-07 08:45:03,888 INFO Homing sequence successful, @ processID 202
+2017-09-07 08:45:03,888 INFO < execute sensors gap test >
+2017-09-07 08:45:03,937 INFO Writing setpoint reg 0 to 0
+2017-09-07 08:45:06,989 INFO Rear sensors within range (mm) 4.12305063021
+2017-09-07 08:45:06,989 INFO Front sensors within range (mm) 4.19019135105
+2017-09-07 08:45:06,989 INFO < execute ZDBF test >
+2017-09-07 08:45:07,039 INFO Writing setpoint reg 0 to 0
+2017-09-07 08:45:18,099 INFO ZDBF: 105
+2017-09-07 08:45:18,210 INFO Writing setpoint reg 0 to 0
+2017-09-07 08:45:18,210 INFO < execute level motor test >
+2017-09-07 08:45:18,259 INFO Writing setpoint reg 0 to 0
+2017-09-07 08:45:25,740 INFO Level motor installed correctly
+2017-09-07 08:45:30,967 INFO Level motor test successful
+2017-09-07 08:45:31,032 INFO ==================== Test Completed ====================
+2017-09-07 08:46:24,880 INFO ==================== Load Settings ====================
+2017-09-07 08:46:24,894 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:46:24,910 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:46:24,924 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:46:24,924 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:46:31,318 INFO ==================== Load Settings ====================
+2017-09-07 08:46:31,338 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:46:31,362 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:46:31,382 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:46:31,382 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:46:37,614 INFO ==================== Load Settings ====================
+2017-09-07 08:46:37,628 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:46:37,644 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:46:37,658 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:46:37,658 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:46:39,230 INFO ==================== Load Settings ====================
+2017-09-07 08:46:39,250 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:46:39,270 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:46:39,286 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:46:39,286 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:46:41,051 INFO ==================== Load Settings ====================
+2017-09-07 08:46:41,071 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:46:41,085 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:46:41,101 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:46:41,101 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:46:42,308 INFO ==================== Load Settings ====================
+2017-09-07 08:46:42,322 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:46:42,338 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:46:42,352 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:46:42,352 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:46:48,483 INFO ==================== Load Settings ====================
+2017-09-07 08:46:48,497 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:46:48,513 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:46:48,528 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:46:48,528 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:46:50,312 INFO ==================== Load Settings ====================
+2017-09-07 08:46:50,338 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:46:50,352 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:46:50,368 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:46:50,368 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:46:54,956 INFO ==================== Load Settings ====================
+2017-09-07 08:46:54,976 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:46:54,996 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:46:55,016 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:46:55,016 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:46:56,230 INFO ==================== Load Settings ====================
+2017-09-07 08:46:56,246 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:46:56,270 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:46:56,286 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:46:56,286 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:46:57,490 INFO ==================== Load Settings ====================
+2017-09-07 08:46:57,506 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:46:57,520 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:46:57,536 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:46:57,540 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:47:10,494 INFO ==================== Load Settings ====================
+2017-09-07 08:47:10,515 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:47:10,529 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:47:10,549 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:47:10,549 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:48:02,128 INFO ==================== Load Settings ====================
+2017-09-07 08:48:02,142 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:48:02,167 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:48:02,183 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:48:02,183 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:48:12,737 INFO ==================== Load Settings ====================
+2017-09-07 08:48:12,753 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:48:12,767 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:48:12,782 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:48:12,782 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:48:14,433 INFO ==================== Load Settings ====================
+2017-09-07 08:48:14,447 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:48:14,473 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:48:14,493 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:48:14,493 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:48:27,072 INFO ==================== Load Settings ====================
+2017-09-07 08:48:27,086 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:48:27,107 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:48:27,127 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:48:27,127 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:48:28,506 INFO ==================== Load Settings ====================
+2017-09-07 08:48:28,516 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:48:28,530 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:48:28,558 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:48:28,558 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:48:32,221 INFO ==================== Load Settings ====================
+2017-09-07 08:48:32,236 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:48:32,252 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:48:32,266 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:48:32,266 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:48:36,394 INFO ==================== Load Settings ====================
+2017-09-07 08:48:36,414 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:48:36,430 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:48:36,450 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:48:36,450 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:48:48,516 INFO ==================== Load Settings ====================
+2017-09-07 08:48:48,532 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:48:48,546 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:48:48,562 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:48:48,562 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:48:50,568 INFO ==================== Load Settings ====================
+2017-09-07 08:48:50,582 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:48:50,598 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:48:50,612 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:48:50,612 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:48:54,239 INFO ==================== Load Settings ====================
+2017-09-07 08:48:54,253 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:48:54,269 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:48:54,283 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:48:54,283 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:48:56,844 INFO ==================== Load Settings ====================
+2017-09-07 08:48:56,858 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:48:56,874 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:48:56,888 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:48:56,888 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:49:12,048 INFO ==================== Load Settings ====================
+2017-09-07 08:49:12,068 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:49:12,082 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:49:12,102 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:49:12,102 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:49:13,288 INFO ==================== Load Settings ====================
+2017-09-07 08:49:13,302 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:49:13,318 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:49:13,338 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:49:13,338 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:49:14,924 INFO ==================== Load Settings ====================
+2017-09-07 08:49:14,940 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:49:14,960 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:49:14,984 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:49:14,984 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:49:16,263 INFO ==================== Load Settings ====================
+2017-09-07 08:49:16,279 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:49:16,293 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:49:16,309 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:49:16,309 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:49:17,763 INFO ==================== Load Settings ====================
+2017-09-07 08:49:17,782 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:49:17,802 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:49:17,818 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:49:17,818 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:49:24,476 INFO ==================== Load Settings ====================
+2017-09-07 08:49:24,496 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:49:24,516 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:49:24,532 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:49:24,532 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:49:26,420 INFO ==================== Load Settings ====================
+2017-09-07 08:49:26,440 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:49:26,454 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:49:26,470 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:49:26,470 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:49:30,289 INFO ==================== Load Settings ====================
+2017-09-07 08:49:30,305 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:49:30,319 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:49:30,335 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:49:30,335 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:49:31,690 INFO ==================== Load Settings ====================
+2017-09-07 08:49:31,704 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:49:31,724 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:49:31,732 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:49:31,732 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:49:36,641 INFO ==================== Load Settings ====================
+2017-09-07 08:49:36,661 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:49:36,676 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:49:36,690 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:49:36,690 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:49:46,729 INFO ==================== Load Settings ====================
+2017-09-07 08:49:46,749 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:49:46,766 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:49:46,789 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:49:46,789 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:49:47,951 INFO ==================== Load Settings ====================
+2017-09-07 08:49:47,967 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:49:47,982 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:49:47,996 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:49:47,996 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:49:50,907 INFO ==================== Load Settings ====================
+2017-09-07 08:49:50,921 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:49:50,937 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:49:50,957 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:49:50,957 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 08:50:00,887 INFO ==================== Load Settings ====================
+2017-09-07 08:50:00,901 INFO Reading register 32 failed (retry remains 3), @ processID 1
+2017-09-07 08:50:00,921 INFO Reading register 32 failed (retry remains 2), @ processID 1
+2017-09-07 08:50:00,947 INFO Reading register 32 failed (retry remains 1), @ processID 1
+2017-09-07 08:50:00,947 INFO Max retry reached @ 1, exiting script...please restart
+2017-09-07 09:08:54,088 INFO ==================== Load Settings ====================
+2017-09-07 09:08:54,140 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-07 09:08:54,140 INFO McDonald Gas Test
+2017-09-07 09:08:54,267 INFO Writing motionPID successful, @ processID 101
+2017-09-07 09:08:54,523 INFO Writing heaterPID successful, @ processID 102
+2017-09-07 09:08:54,747 INFO Writing level sensors successful, @ processID 103
+2017-09-07 09:08:54,812 INFO Writing power sync successful, @ processID 104
+2017-09-07 09:08:54,812 INFO ==================== Test Begins ====================
+2017-09-07 09:08:54,812 INFO < execute voltage reading >
+2017-09-07 09:08:54,924 INFO Phase A: 211.3
+2017-09-07 09:08:54,924 INFO Phase B: 210.3
+2017-09-07 09:08:54,924 INFO Phase C: 211.8
+2017-09-07 09:08:54,924 INFO Frequency: 65
+2017-09-07 09:08:54,924 INFO 24V supply: 24.08
+2017-09-07 09:08:54,924 INFO 12V supply: 12.17
+2017-09-07 09:08:54,924 INFO 5V supply: 4.98
+2017-09-07 09:08:54,924 INFO 3.3V supply: 3.26
+2017-09-07 09:08:54,924 INFO < execute switch test >
+2017-09-07 09:08:58,631 INFO Seeking upper switch successful, @ processID 203
+2017-09-07 09:09:02,693 INFO Seeking lower switch successful, @ processID 203
+2017-09-07 09:09:02,740 INFO Distance between Lift and Home switch (count): 4215
+2017-09-07 09:09:02,740 INFO Time elapse (sec): 4.6930000782
+2017-09-07 09:09:02,740 INFO Actuator speed (count/sec): 898.146160188
+2017-09-07 09:09:02,788 INFO < execute kill switch test >
+2017-09-07 09:09:06,944 INFO Homing sequence successful, @ processID 202
+2017-09-07 09:09:10,680 INFO ==================== Load Settings ====================
+2017-09-07 09:09:10,732 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-07 09:09:10,733 INFO McDonald Gas Test
+2017-09-07 09:09:10,859 INFO Writing motionPID successful, @ processID 101
+2017-09-07 09:09:11,115 INFO Writing heaterPID successful, @ processID 102
+2017-09-07 09:09:11,323 INFO Writing level sensors successful, @ processID 103
+2017-09-07 09:09:11,371 INFO Writing power sync successful, @ processID 104
+2017-09-07 09:09:11,371 INFO ==================== Test Begins ====================
+2017-09-07 09:09:11,371 INFO < execute voltage reading >
+2017-09-07 09:09:11,483 INFO Phase A: 210.3
+2017-09-07 09:09:11,483 INFO Phase B: 210.8
+2017-09-07 09:09:11,483 INFO Phase C: 212.8
+2017-09-07 09:09:11,484 INFO Frequency: 65
+2017-09-07 09:09:11,484 INFO 24V supply: 23.96
+2017-09-07 09:09:11,484 INFO 12V supply: 12.17
+2017-09-07 09:09:11,484 INFO 5V supply: 4.98
+2017-09-07 09:09:11,484 INFO 3.3V supply: 3.26
+2017-09-07 09:09:11,484 INFO < execute switch test >

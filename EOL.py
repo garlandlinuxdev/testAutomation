@@ -7,12 +7,13 @@ import modbus_tk.modbus_rtu as modbus_rtu
 import serial, os, logging, modbus, time
 import jsonToFile, actuator, voltage, platen, LCD
 
+
 def setup():
     # Configure Hardware Overwrite
     # com_port = 'COM30'  # For windows
     # com_port = '/dev/ttyO4' #For UART4
-    com_port = '/dev/ttyO2' #For UI using UART2
-    # com_port = '/dev/ttyUSB0'  # For USB port
+    # com_port = '/dev/ttyO1' #For UI using UART1
+    com_port = '/dev/ttyUSB0'  # For USB port
 
     baud = 115200
     byte = 8
@@ -88,7 +89,7 @@ class myConfig(object):
     grillType = 0  # load from SIB
     jsonFile = linuxPath + hwcfg + str(grillType) + ".json"
     loadReg_enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors]
-    test_enable = [1, 1, 1, 1, 1, 1, 1]
+    test_enable = [0, 0, 0, 0, 0, 0, 0] # selection for test execution
 
     description = "unknown"  # load from json file
     sync_role = 0
@@ -97,18 +98,48 @@ class myConfig(object):
     def updateJSON(self, grillType):
         self.jsonFile = self.linuxPath + self.hwcfg + str(grillType) + ".json"
 
+def report(display, enable, data):
+    display.fb_clear()
+    voltage = data[0]
+    display.fb_println(" < Test Results > ")
+    display.fb_println("Phase A: %r, Phase B: %r, Phase C: %r" %((voltage[4] / 10.0), (voltage[5] / 10.0), (voltage[6] / 10.0)), 0)
+    if enable[0] == 1:
+        switch = data[1]
+        display.fb_println("Distance between switches (count): %r" %switch[0], 0)
+        display.fb_println("Time elapse (sec): %r" % switch[1], 0)
+    if enable[2] == 1:
+        magnet = data[2]
+        display.fb_println("Distance moving down: %r" % magnet[0], 1)
+        display.fb_println("Distance moving up: %r" % magnet[1], 1)
+        display.fb_println("Drift count: %r" % magnet[3], 1)
+    if enable[4] == 1:
+        sensor = data[3]
+        display.fb_println("Rear sensors gap (mm) %r" % ((sensor[0] * 10.0) / 32767), 0)
+        display.fb_println("Front sensors gap (mm) %r" % ((sensor[1] * 10.0) / 32767), 0)
+    if enable[5] == 1:
+        ZDBF = data[4]
+        display.fb_println("ZDBF: %r" % ZDBF, 0)
+
+    display.fb_println("Equipment passed all required test", 1)
 
 def main():
     # main starts here
     config = myConfig()
     master = setup()
-    #display = LCD.display()
+    display = LCD.display()
+
+    voltage = 0
+    switch = 0
+    magnet = 0
+    sensor = 0
+    ZDBF = 0
 
     logger = setup_logger('event_log', config.logfile)
     config.logger = logger
+    display.fb_clear()
     logger.info("==================== Load Settings ====================")
     print "==================== Load Settings ===================="
-    #display.fb_println("=============== Load Settings ===============", 1)
+    display.fb_println("=============== Load Settings ===============", 1)
 
     com = modbus.communicate()
     com.setup(logger, master, config.device, config.restTime)
@@ -121,7 +152,7 @@ def main():
     config.updateJSON(config.grillType)
     logger.info(config.jsonFile)
     config.test_enable = testRequired(config)
-    #display.fb_long_print(str(config.description), 0)
+    display.fb_long_print(str(config.description), 0)
     print config.jsonFile
 
 
@@ -140,59 +171,71 @@ def main():
 
     logger.info("==================== Test Begins ====================")
     print "==================== Test Begins ===================="
-    #display.fb_println("================ Test Begins ================", 1)
+    display.fb_println("================ Test Begins ================", 1)
     logger.info("< execute voltage reading >")
-    #display.fb_println("< execute voltage reading >", 0)
+    display.fb_println("< execute voltage reading >", 1)
     processID = 2
-    phase_status, supply_voltage = power.voltage(processID)
-    power.validate(phase_status, supply_voltage)
+    power.updateLCD(display.FB_Y)
+    display.FB_Y, phase_status, supply_voltage = power.voltage(processID)
+    power.updateLCD(display.FB_Y)
+    display.FB_Y = power.validate(phase_status, supply_voltage)
 
     if config.test_enable[0]:
         logger.info("< execute switch test >")
         print "< execute switch test >"
-        #display.fb_println("< execute switch test >", 0)
-        motor.switchTest()
+        display.fb_println("< # 1 execute switch test >", 1)
+        motor.updateLCD(display.FB_Y)
+        display.FB_Y, switch = motor.switchTest()
     if config.test_enable[1]:
         logger.info("< execute kill switch test >")
         print "< execute kill switch test >"
-        #display.fb_println("< execute kill switch test >", 0)
-        motor.killSwitchTest()
+        display.fb_println("< # 2 execute kill switch test >", 1)
+        motor.updateLCD(display.FB_Y)
+        display.FB_Y = motor.killSwitchTest()
     if config.test_enable[2]:
         logger.info("< execute magnet drift test >")
         print "< execute magnet drift test >"
-        #display.fb_println("< execute magnet drift test >", 0)
-        motor.magnetDrift()
+        display.fb_clear()
+        display.fb_println("< # 3 execute magnet drift test >", 1)
+        motor.updateLCD(display.FB_Y)
+        display.FB_Y, magnet = motor.magnetDrift()
     if config.test_enable[3]:
         logger.info("< execute homing test >")
         print "< execute homing test >"
-        #display.fb_println("< execute homing test >", 0)
+        display.fb_clear()
+        display.fb_println("< # 4 execute homing test >", 1)
         motor.homing()
     if config.test_enable[4]:
         logger.info("< execute sensors gap test >")
         print "< execute sensors gap test >"
-        #display.fb_println("< execute sensors gap test >", 0)
+        display.fb_println("< # 5 execute sensors gap test >", 1)
         motor.setpoint(0)
         time.sleep(3)
-        pl.sensorGap()
+        pl.updateLCD(display.FB_Y)
+        display.FB_Y, sensor = pl.sensorGap()
     if config.test_enable[5]:
         logger.info("< execute ZDBF test >")
         print "< execute ZDBF test >"
-        #display.fb_println("< execute ZDBF test >", 0)
+        display.fb_println("< # 6 execute ZDBF test >", 1)
         motor.setpoint(0)
         time.sleep(3)
-        pl.calZDBF()
+        pl.updateLCD(display.FB_Y)
+        display.FB_Y, ZDBF = pl.calZDBF()
         motor.setpoint(0)
     if config.test_enable[6]:
         logger.info("< execute level motor test >")
         print "< execute level motor test >"
-        #display.fb_println("< execute level motor test >", 0)
+        display.fb_println("< # 7 execute level motor test >", 1)
         motor.setpoint(0)
         time.sleep(3)
-        pl.levelMotorTest()
+        pl.updateLCD(display.FB_Y)
+        display.FB_Y = pl.levelMotorTest()
+
+    data = [voltage, switch, magnet, sensor, ZDBF]
     logger.info("==================== Test Completed ====================")
     print "==================== Test Completed ===================="
-    #display.fb_println("============== Test Completed ==============", 0)
-
+    display.fb_println("============== Test Completed ==============", 1)
+    report(display, config.test_enable, data)
 
 if __name__ == "__main__":
     main()

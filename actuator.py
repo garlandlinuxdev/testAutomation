@@ -2,13 +2,14 @@
 # Project: EOL
 # Description: Motion control related to actuator
 __author__ = "Adrian Wong"
-import os, time, commonFX
+import os, time, commonFX, LCD
 
 
 class motion():
     # Temporary variables, do not modify here
     logger = ''
     com = ''
+    display = LCD.display()
     timeout = 30  # max time limit for each task completion, flag error when exceeded
 
     # adjustable limits
@@ -17,6 +18,12 @@ class motion():
     lowSP = 5000
     oc_time = 2 # time in seconds required to flag over current error
     oc_runtime = 5 # runtime for over current test
+
+    def updateLCD(self, FB_Y):
+        if FB_Y >= self.display.max_line:
+            self.display.fb_clear()
+        else:
+            self.display.FB_Y = FB_Y
 
     def update(self, logger, com, timeout):
         self.logger = logger
@@ -64,6 +71,7 @@ class motion():
             read = self.com.readReg(processID, 255, 1)
         if read[0] != 5:
             self.logger.info("Seeking upper switch failed, @ processID %r" % processID)
+            self.display.fb_println("Seeking upper switch failed, @ processID %r" % processID, 1)
             self.stopMotion(processID)
             os._exit(1)
         self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
@@ -77,6 +85,7 @@ class motion():
             read = self.com.readReg(processID, 255, 1)
         if read[0] != 8:
             self.logger.info("Seeking lower switch failed, @ processID %r" % processID)
+            self.display.fb_println("Seeking lower switch failed, @ processID %r" % processID, 0)
             self.stopMotion(processID)
             os._exit(1)
         self.logger.info("Seeking lower switch successful, @ processID %r" % processID)
@@ -86,7 +95,11 @@ class motion():
         self.logger.info("Distance between Lift and Home switch (count): " + str(distance))
         self.logger.info("Time elapse (sec): " + str(endTime))
         self.logger.info("Actuator speed (count/sec): " + str(distance / endTime))
+        self.display.fb_println("Distance between switches (count): %r" %distance, 0)
+        self.display.fb_println("Time elapse (sec): %r" %endTime, 0)
+        self.display.fb_println("Actuator speed (count/sec): %r" %(distance / endTime), 0)
         self.resetMode(processID)
+        return self.display.FB_Y, [distance, endTime]
 
     def magnetDrift(self):
         processID = 204
@@ -97,6 +110,7 @@ class motion():
             read = self.com.readReg(processID, 255, 1)
         if read[0] != 5:
             self.logger.info("Seeking upper switch failed, @ processID %r" % processID)
+            self.display.fb_println("Seeking upper switch failed, @ processID %r" % processID, 1)
             self.stopMotion(processID)
             os._exit(1)
         self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
@@ -114,6 +128,7 @@ class motion():
             self.com.setReg(processID, 255, [6])
         if read[0] != 1:
             self.logger.info("Seeking lower switch failed, @ processID %r" % processID)
+            self.display.fb_println("Seeking lower switch failed, @ processID %r" % processID, 1)
             self.stopMotion(processID)
             os._exit(1)
         self.logger.info("Seeking lower switch successful, @ processID %r" % processID)
@@ -127,6 +142,7 @@ class motion():
             read = self.com.readReg(processID, 255, 1)
         if read[0] != 5:
             self.logger.info("Seeking upper switch failed, @ processID %r" % processID)
+            self.display.fb_println("Seeking upper switch failed, @ processID %r" % processID, 1)
             self.stopMotion(processID)
             os._exit(1)
         self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
@@ -142,11 +158,18 @@ class motion():
             self.logger.info("Distance moving down: " + str(distanceDOWN))
             self.logger.info("Distance moving up: " + str(distanceUP))
             self.logger.info("Encoder magnet ok, no drift found")
+            self.display.fb_println("Distance moving down: %r" %distanceDOWN, 0)
+            self.display.fb_println("Distance moving up: %r" %distanceUP, 0)
+            self.display.fb_println("Encoder magnet ok, no drift found", 0)
         else:
             self.logger.info("Distance moving down: " + str(distanceDOWN))
             self.logger.info("Distance moving up: " + str(distanceUP))
             self.logger.info("Check encoder magnet, %r count drift found" %drift)
+            self.display.fb_println("Distance moving down: %r" % distanceDOWN, 1)
+            self.display.fb_println("Distance moving up: %r" % distanceUP, 1)
+            self.display.fb_println("Check encoder magnet, %r count drift found" %drift, 1)
             os._exit(1)
+        return self.display.FB_Y, [distanceDOWN, distanceUP, drift]
 
     def killSwitchTest(self):
         processID = 205
@@ -169,10 +192,12 @@ class motion():
                     timer = time.time()
                 if commonFX.timeCal(timer) >= self.oc_time:
                     self.logger.info("Over current detected, upper kill switch failed")
+                    self.display.fb_println("Over current detected, upper kill switch failed", 1)
                     self.stopMotion(processID)
                     os._exit(1)
         else:
             self.logger.info("Platen did not reach upper switch")
+            self.display.fb_println("Platen did not reach upper switch", 1)
             self.stopMotion(processID)
             os._exit(1)
 
@@ -191,6 +216,7 @@ class motion():
                     timer = time.time()
                 if commonFX.timeCal(timer) >= self.oc_time:
                     self.logger.info("Over current detected, lower kill switch failed")
+                    self.display.fb_println("Over current detected, lower kill switch failed", 1)
                     self.stopMotion(processID)
                     os._exit(1)
 
@@ -199,14 +225,17 @@ class motion():
                 self.logger.info("Home switch remain engaged, switch bracket ok ")
             else:
                 self.logger.info("Home switch disengaged, check switch bracket or crossbar")
+                self.display.fb_println("Home switch disengaged, check switch bracket", 1)
                 self.stopMotion(processID)
                 os._exit(1)
         else:
             self.logger.info("Platen did not reach lower switch")
+            self.display.fb_println("Platen did not reach lower switch", 1)
             self.stopMotion(processID)
             os._exit(1)
         self.logger.info("Kill switch test successful")
         self.stopMotion(processID)
+        return self.display.FB_Y
 
 def main():
     x = 1
