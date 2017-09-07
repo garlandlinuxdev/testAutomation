@@ -22,7 +22,7 @@ class communicate():
     def setReg(self, processID, startReg, Data):
         # For passing condition, no errors should occur and maximum retry is set at 3
         error = 1
-        retry = 3
+        retry = 10
         while error == 1 and retry != 0:
             try:
                 time.sleep(self.restTime)
@@ -46,7 +46,7 @@ class communicate():
     def setCoil(self, processID, startReg, Data):
         # For passing condition, no errors should occur and maximum retry is set at 3
         error = 1
-        retry = 3
+        retry = 10
         while error == 1 and retry != 0:
             try:
                 time.sleep(self.restTime)
@@ -69,7 +69,7 @@ class communicate():
 
     def readReg(self, processID, startReg, totalReg):
         error = 1
-        retry = 3
+        retry = 10
         while error == 1 and retry != 0:
             try:
                 time.sleep(self.restTime)
@@ -93,7 +93,7 @@ class communicate():
 
     def readCoil(self, processID, startReg, totalReg):
         error = 1
-        retry = 3
+        retry = 10
         while error == 1 and retry != 0:
             try:
                 time.sleep(self.restTime)

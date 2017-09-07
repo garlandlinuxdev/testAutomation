@@ -78,7 +78,7 @@ def testRequired(config):
 class myConfig(object):
     logger = ''
     device = 1
-    restTime = 0.01
+    restTime = 0.03
     timeout = 30
     linuxPath = os.path.dirname(__file__)
     logPath = '/log/'  # log files storage path
@@ -100,24 +100,33 @@ class myConfig(object):
 
 def report(display, enable, data):
     display.fb_clear()
-    voltage = data[0]
-    display.fb_println(" < Test Results > ")
-    display.fb_println("Phase A: %r, Phase B: %r, Phase C: %r" %((voltage[4] / 10.0), (voltage[5] / 10.0), (voltage[6] / 10.0)), 0)
+    volt = data[0]
+    print volt
+    display.fb_println(" < Test Results > ", 1)
+    #display.fb_println("Phase A: %r, Phase B: %r, Phase C: %r" %((volt[4] / 10.0), (volt[5] / 10.0), (volt[6] / 10.0)), 0)
+    display.fb_println("Phase A: %r" % (volt[4] / 10.0), 0)
+    display.fb_println("Phase B: %r" % (volt[5] / 10.0), 0)
+    display.fb_println("Phase C: %r" % (volt[6] / 10.0), 0)
+
     if enable[0] == 1:
         switch = data[1]
+        print switch
         display.fb_println("Distance between switches (count): %r" %switch[0], 0)
         display.fb_println("Time elapse (sec): %r" % switch[1], 0)
     if enable[2] == 1:
         magnet = data[2]
-        display.fb_println("Distance moving down: %r" % magnet[0], 1)
-        display.fb_println("Distance moving up: %r" % magnet[1], 1)
-        display.fb_println("Drift count: %r" % magnet[3], 1)
+        print magnet
+        display.fb_println("Distance moving down: %r" % magnet[0], 0)
+        display.fb_println("Distance moving up: %r" % magnet[1], 0)
+        display.fb_println("Drift count: %r" % magnet[3], 0)
     if enable[4] == 1:
         sensor = data[3]
+        print sensor
         display.fb_println("Rear sensors gap (mm) %r" % ((sensor[0] * 10.0) / 32767), 0)
         display.fb_println("Front sensors gap (mm) %r" % ((sensor[1] * 10.0) / 32767), 0)
     if enable[5] == 1:
         ZDBF = data[4]
+        print ZDBF
         display.fb_println("ZDBF: %r" % ZDBF, 0)
 
     display.fb_println("Equipment passed all required test", 1)
@@ -128,7 +137,7 @@ def main():
     master = setup()
     display = LCD.display()
 
-    voltage = 0
+    volt = 0
     switch = 0
     magnet = 0
     sensor = 0
@@ -152,13 +161,12 @@ def main():
     config.updateJSON(config.grillType)
     logger.info(config.jsonFile)
     config.test_enable = testRequired(config)
-    display.fb_long_print(str(config.description), 0)
-    print config.jsonFile
-
 
     data = myJSON.readJSON(config.jsonFile)
     config.description, config.sync_role = myJSON.loadHardware(data)
     myJSON.setDevice(data)
+    display.fb_long_print(str(config.description), 0)
+    print config.jsonFile
 
     power = voltage.measure()
     power.update(logger, com)
@@ -179,6 +187,7 @@ def main():
     display.FB_Y, phase_status, supply_voltage = power.voltage(processID)
     power.updateLCD(display.FB_Y)
     display.FB_Y = power.validate(phase_status, supply_voltage)
+    time.sleep(3)
 
     if config.test_enable[0]:
         logger.info("< execute switch test >")
@@ -195,7 +204,6 @@ def main():
     if config.test_enable[2]:
         logger.info("< execute magnet drift test >")
         print "< execute magnet drift test >"
-        display.fb_clear()
         display.fb_println("< # 3 execute magnet drift test >", 1)
         motor.updateLCD(display.FB_Y)
         display.FB_Y, magnet = motor.magnetDrift()
@@ -231,7 +239,7 @@ def main():
         pl.updateLCD(display.FB_Y)
         display.FB_Y = pl.levelMotorTest()
 
-    data = [voltage, switch, magnet, sensor, ZDBF]
+    data = [supply_voltage, switch, magnet, sensor, ZDBF]
     logger.info("==================== Test Completed ====================")
     print "==================== Test Completed ===================="
     display.fb_println("============== Test Completed ==============", 1)
