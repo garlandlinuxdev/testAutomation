@@ -69,18 +69,18 @@ class sensors():
         rear = read[0]
         front = read[1]
         if commonFX.rangeCheck(int(rear), self.sensor_target[0], 0.02):
-            self.logger.info("Rear sensors within range (mm) " + str((rear*10.0)/32767))
-            self.display.fb_println("Rear sensors within range (mm) %r" %((rear*10.0)/32767), 0)
+            self.logger.info("Rear sensors within range (mm) " + str(10-((rear*10.0)/32767)))
+            self.display.fb_println("Rear sensors within range (mm) %r" %round((10-((rear*10.0)/32767)), 3), 0)
         else:
-            self.logger.info("Rear sensor out of range (mm) " + str((rear*10.0)/32767))
-            self.display.fb_println("Rear sensor out of range (mm) %r" %((rear*10.0)/32767), 0)
+            self.logger.info("Rear sensor out of range (mm) " + str(10-((rear*10.0)/32767)))
+            self.display.fb_println("Rear sensor out of range (mm) %r" %round((10-((rear*10.0)/32767)), 3), 0)
             os._exit(1)
         if commonFX.rangeCheck(int(front), self.sensor_target[1], 0.02):
-            self.logger.info("Front sensors within range (mm) " + str((front*10.0)/32767))
-            self.display.fb_println("Front sensors within range (mm) %r" %((front*10.0)/32767), 0)
+            self.logger.info("Front sensors within range (mm) " + str(10-((front*10.0)/32767)))
+            self.display.fb_println("Front sensors within range (mm) %r" %round((10-((front*10.0)/32767)), 3), 0)
         else:
             self.logger.info("Front sensor out of range (mm) " + str((front*10.0)/32767))
-            self.display.fb_println("Front sensor out of range (mm) %r" %((front*10.0)/32767), 0)
+            self.display.fb_println("Front sensor out of range (mm) %r" %round((10-((front*10.0)/32767)), 3), 0)
             os._exit(1)
         return self.display.FB_Y, read
 
@@ -104,7 +104,7 @@ class sensors():
 
         # position reset
         read = self.readSensor(processID)
-        while commonFX.rangeCheck(read[0], sensorReading[0], 0.001) != True:
+        while commonFX.rangeCheck(read[0], sensorReading[0], 0.005) != True:
             read = self.readSensor(processID)
             if read[0] > sensorReading[0]:
                 self.moveLvlMotor(1, 1)
@@ -123,6 +123,7 @@ class sensors():
         self.com.setReg(processID, 255, [10])
         read = self.com.readReg(processID, 255, 1)
         while read[0] != 14:
+            time.sleep(0.5)
             read = self.com.readReg(processID, 255, 1)
         gap = self.com.readReg(processID, 5, 2)
         ZDBF = gap[0] - gap[1]

@@ -96,7 +96,7 @@ class motion():
         self.logger.info("Time elapse (sec): " + str(endTime))
         self.logger.info("Actuator speed (count/sec): " + str(distance / endTime))
         self.display.fb_println("Distance between switches (count): %r" %distance, 0)
-        self.display.fb_println("Time elapse (sec): %r" %endTime, 0)
+        self.display.fb_println("Time elapse (sec): %r" %round(endTime, 3), 0)
         self.display.fb_println("Actuator speed (count/sec): %r" %(distance / endTime), 0)
         self.resetMode(processID)
         return self.display.FB_Y, [distance, endTime]
