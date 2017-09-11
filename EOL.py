@@ -210,6 +210,7 @@ def main():
     time.sleep(4)
     button = com.readCoil(processID, 30, 1)
     if button[0] == 0:
+        display.fb_long_print("Execute sensors test only", 1)
         config.test_enable = [0, 0, 0, 1, 1, 1, 0]
 
     logger.info("==================== Test Begins ====================")

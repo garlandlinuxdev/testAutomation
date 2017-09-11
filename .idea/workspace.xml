@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8b1b430-cf88-4d12-ae5d-ea818ec56e3d" name="Default" comment="">
+    <list default="true" id="d8b1b430-cf88-4d12-ae5d-ea818ec56e3d" name="Default" comment="switches position added, display format modified">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EOL.py" afterPath="$PROJECT_DIR$/EOL.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +27,8 @@
       <file leaf-file-name="EOL.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EOL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3742">
-              <caret line="283" column="0" lean-forward="true" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
+            <state relative-caret-position="487">
+              <caret line="209" column="17" lean-forward="true" selection-start-line="209" selection-start-column="17" selection-end-line="209" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -492,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505167796517</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="switches position added, display format modified">
+      <created>1505168920694</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1505168920694</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -909,8 +917,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EOL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3742">
-          <caret line="283" column="0" lean-forward="true" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
+        <state relative-caret-position="487">
+          <caret line="209" column="17" lean-forward="true" selection-start-line="209" selection-start-column="17" selection-end-line="209" selection-end-column="17" />
           <folding />
         </state>
       </provider>
