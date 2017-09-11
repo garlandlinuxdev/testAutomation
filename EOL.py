@@ -87,6 +87,7 @@ class myConfig(object):
     usbpath = '/media/usb0/log/'  # usb file path
     logfile = linuxPath + logPath + "event.log"
     jumperFile = linuxPath + sysPath + "jumpers.json"
+    log = "event.log"
     grillType = 0  # load from SIB
     jsonFile = linuxPath + hwcfg + str(grillType) + ".json"
     loadReg_enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors]
@@ -100,56 +101,69 @@ class myConfig(object):
         self.jsonFile = self.linuxPath + self.hwcfg + str(grillType) + ".json"
 
 def report(display, enable, data):
+    #[supply_voltage, switch, killsw_enc, magnet, switch_enc, sensor, ZDBF]
     display.fb_clear()
     volt = data[0]
     display.fb_println(" < Test Results > ", 1)
     #display.fb_println("Phase A: %r, Phase B: %r, Phase C: %r" %((volt[4] / 10.0), (volt[5] / 10.0), (volt[6] / 10.0)), 0)
-    display.fb_println("Phase A: %r" % (volt[4] / 10.0), 0)
-    display.fb_println("Phase B: %r" % (volt[5] / 10.0), 0)
-    display.fb_println("Phase C: %r" % (volt[6] / 10.0), 0)
-    display.fb_println("24V supply: %r" % (float(volt[0]) / 100), 0)
-    display.fb_println("12V supply: %r" % (float(volt[1]) / 100), 0)
-    display.fb_println("5V supply: %r" % (float(volt[2]) / 100), 0)
-    display.fb_println("3.3V supply: %r" % (float(volt[3]) / 100), 0)
+    display.fb_println("Phase A (V):     %r" % (volt[4] / 10.0), 0)
+    display.fb_println("Phase B (V):     %r" % (volt[5] / 10.0), 0)
+    display.fb_println("Phase C (V):     %r" % (volt[6] / 10.0), 0)
+    display.fb_println("24V supply (V):  %r" % (float(volt[0]) / 100), 0)
+    display.fb_println("12V supply (V):  %r" % (float(volt[1]) / 100), 0)
+    display.fb_println("5V supply (V):   %r" % (float(volt[2]) / 100), 0)
+    display.fb_println("3.3V supply (V): %r" % (float(volt[3]) / 100), 0)
 
     if enable[0] == 1:
         switch = data[1]
-        display.fb_println("Distance between switches (count): %r" %switch[0], 0)
-        display.fb_println("Time elapse (sec): %r" % round(switch[1], 3), 0)
+        killsw_enc = data[2]
+        switch_enc = data[4]
+        display.fb_println("Distance between switches (counts): %r" %switch[0], 0)
+        display.fb_println("Time elapse (sec):          %r" % round(switch[1], 3), 0)
+        display.fb_println("Lift switch location:       %r" % switch_enc[0], 0)
+        display.fb_println("Home switch location:       %r" % switch_enc[1], 0)
+        display.fb_println("Upper kill switch location: %r" % killsw_enc[0], 0)
+        display.fb_println("Lower kill switch location: %r" % killsw_enc[1], 0)
+
     if enable[2] == 1:
-        magnet = data[2]
-        display.fb_println("Distance moving down: %r" % magnet[0], 0)
-        display.fb_println("Distance moving up: %r" % magnet[1], 0)
-        display.fb_println("Drift count: %r" % magnet[2], 0)
+        magnet = data[3]
+        display.fb_println("Distance moving down:       %r" % magnet[0], 0)
+        display.fb_println("Distance moving up:         %r" % magnet[1], 0)
+        display.fb_println("Drift count:                %r" % magnet[2], 0)
     if enable[4] == 1:
-        sensor = data[3]
-        display.fb_println("Rear sensors gap (mm) %r" % round((10-((sensor[0] * 10.0) / 32767)), 3), 0)
-        display.fb_println("Front sensors gap (mm) %r" % round((10-((sensor[1] * 10.0) / 32767)), 3), 0)
+        sensor = data[5]
+        display.fb_println("Rear sensors gap (mm)       %r" % round((10-((sensor[0] * 10.0) / 32767)), 3), 0)
+        display.fb_println("Front sensors gap (mm)      %r" % round((10-((sensor[1] * 10.0) / 32767)), 3), 0)
     if enable[5] == 1:
-        ZDBF = data[4]
+        ZDBF = data[6]
         display.fb_println("ZDBF: %r" % ZDBF, 0)
 
     display.fb_println("< Equipment passed all test requirements >", 1)
 
 def copyLog(config, display):
     timestr = time.strftime("%Y%m%d-%H%M%S")
-    print "USB path: ", os.path.isdir(config.usbpath)
+    #print "USB path: ", os.path.isdir(config.usbpath)
     if os.path.exists(config.usbpath) == True:
         config.logger.info("Test logs copy to USB path")
-        os.popen('cp ' + config.filename + ' ' + config.usbpath + timestr + config.log)
+        os.popen('cp ' + config.logfile + ' ' + config.usbpath + timestr + config.log)
         display.fb_println("Test logs copied to USB path", 0)
     else:
         config.logger.info("USB log path not found")
         display.fb_println("USB log path not found", 0)
-    print config.filename
-    print (config.linuxPath + config.logPath + timestr + config.log)
-    os.popen('mv ' + config.filename + ' ' + config.linuxPath + config.logPath + timestr + config.log)
+    #print config.logfile
+    #print (config.linuxPath + config.logPath + timestr + config.log)
+    os.popen('mv ' + config.logfile + ' ' + config.linuxPath + config.logPath + timestr + config.log)
 
 def main():
     # main starts here
     config = myConfig()
-    master = setup()
     display = LCD.display()
+    try:
+        master = setup()
+    except serial.serialutil.SerialException:
+        display.fb_clear()
+        display.fb_long_print("FTDI USB cable not found, please connect cable and restart", 1)
+        os._exit(1)
 
     switch = 0
     magnet = 0
@@ -178,7 +192,7 @@ def main():
     data = myJSON.readJSON(config.jsonFile)
     config.description, config.sync_role = myJSON.loadHardware(data)
     myJSON.setDevice(data)
-    display.fb_long_print(str(config.description), 0)
+    display.fb_long_print(str(config.description), 1)
     #print config.jsonFile
 
     power = voltage.measure()
@@ -192,8 +206,8 @@ def main():
 
     processID = 1
     com.setCoil(processID, 30, [1])
-    display.fb_println("Press button to execute sensors test only", 0)
-    time.sleep(2)
+    display.fb_long_print("Press green button to execute sensors test only", 0)
+    time.sleep(4)
     button = com.readCoil(processID, 30, 1)
     if button[0] == 0:
         config.test_enable = [0, 0, 0, 1, 1, 1, 0]
@@ -221,7 +235,7 @@ def main():
         #print "< execute kill switch test >"
         display.fb_println("< # 2 execute kill switch test >", 1)
         motor.updateLCD(display.FB_Y)
-        display.FB_Y = motor.killSwitchTest()
+        display.FB_Y, killsw_enc = motor.killSwitchTest()
     if config.test_enable[2]:
         logger.info("< execute magnet drift test >")
         #print "< execute magnet drift test >"
@@ -233,7 +247,8 @@ def main():
         #print "< execute homing test >"
         display.fb_clear()
         display.fb_println("< # 4 execute homing test >", 1)
-        motor.homing()
+        motor.updateLCD(display.FB_Y)
+        display.FB_Y, switch_enc = motor.homing()
     if config.test_enable[4]:
         logger.info("< execute sensors gap test >")
         #print "< execute sensors gap test >"
@@ -260,12 +275,23 @@ def main():
         pl.updateLCD(display.FB_Y)
         display.FB_Y = pl.levelMotorTest()
 
-    data = [supply_voltage, switch, magnet, sensor, ZDBF]
+    data = [supply_voltage, switch, killsw_enc, magnet, switch_enc, sensor, ZDBF]
     logger.info("==================== Test Completed ====================")
     #print "==================== Test Completed ===================="
     display.fb_println("============== Test Completed ==============", 1)
     report(display, config.test_enable, data)
     copyLog(config, display)
+
+    processID = 3
+    com.setCoil(processID, 30, [1])
+
+    while True:
+        button = com.readCoil(processID, 30, 1)
+        if button[0] == 0:
+            report(display, config.test_enable, data)
+            com.setCoil(processID, 30, [1])
+        time.sleep(2)
+
 
 if __name__ == "__main__":
     main()

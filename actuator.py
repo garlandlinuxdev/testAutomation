@@ -48,6 +48,7 @@ class motion():
 
     def homing(self):
         processID = 202
+        encoder = [0, 0]
         self.com.setReg(processID, 25, [0])
         self.com.setReg(processID, 255, [1])
         homeStatus = self.com.readReg(processID, 25, 1)
@@ -61,6 +62,31 @@ class motion():
             os._exit(1)
 
         self.logger.info("Homing sequence successful, @ processID %r" % processID)
+
+        # Find switch location
+        self.com.setReg(processID, 255, [3])
+        read = self.com.readReg(processID, 255, 1)
+        startTime = time.time()
+        while read[0] != 5 and commonFX.timeCal(startTime) < self.timeout / 2:
+            read = self.com.readReg(processID, 255, 1)
+        time.sleep(1)
+        encRead = self.com.readReg(processID, 3, 1)
+        encoder[0] = commonFX.signedInt(encRead[0])
+        self.logger.info("Lift switch location: %r" % encoder[0])
+
+        self.com.setReg(processID, 255, [6])
+        read = self.com.readReg(processID, 255, 1)
+        while read[0] != 8 and commonFX.timeCal(startTime) < self.timeout / 2:
+            read = self.com.readReg(processID, 255, 1)
+        time.sleep(1)
+        encRead = self.com.readReg(processID, 3, 1)
+        encoder[1] = commonFX.signedInt(encRead[0])
+        self.logger.info("Home switch location: %r" % encoder[1])
+
+        self.display.fb_println("Lift switch location: %r" % encoder[0], 0)
+        self.display.fb_println("Home switch location: %r" % encoder[1], 0)
+
+        return self.display.FB_Y, encoder
 
     def switchTest(self):
         processID = 203
@@ -76,7 +102,6 @@ class motion():
             os._exit(1)
         self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
         encUP = self.spFeedback()
-
         self.com.setReg(processID, 255, [6])
         timer = time.time()
         read = self.com.readReg(processID, 255, 1)
@@ -88,6 +113,7 @@ class motion():
             self.display.fb_println("Seeking lower switch failed, @ processID %r" % processID, 0)
             self.stopMotion(processID)
             os._exit(1)
+
         self.logger.info("Seeking lower switch successful, @ processID %r" % processID)
         endTime = commonFX.timeCal(timer)
         encDown = self.spFeedback()
@@ -96,8 +122,9 @@ class motion():
         self.logger.info("Time elapse (sec): " + str(endTime))
         self.logger.info("Actuator speed (count/sec): " + str(distance / endTime))
         self.display.fb_println("Distance between switches (count): %r" %distance, 0)
+
         self.display.fb_println("Time elapse (sec): %r" %round(endTime, 3), 0)
-        self.display.fb_println("Actuator speed (count/sec): %r" %(distance / endTime), 0)
+        self.display.fb_println("Actuator speed (count/sec): %r" %round((distance / endTime), 3), 0)
         self.resetMode(processID)
         return self.display.FB_Y, [distance, endTime]
 
@@ -173,6 +200,7 @@ class motion():
 
     def killSwitchTest(self):
         processID = 205
+        encoder = [0, 0]
         status = self.com.readReg(processID, 25, 1)
         if status[0] != 5:
             self.homing()
@@ -200,6 +228,11 @@ class motion():
             self.display.fb_println("Platen did not reach upper switch", 1)
             self.stopMotion(processID)
             os._exit(1)
+
+        encRead = self.com.readReg(processID, 3, 1)
+        encoder[0] = commonFX.signedInt(encRead[0])
+        self.logger.info("Upper kill switch location: %r" %encoder[0])
+        self.display.fb_println("Upper kill switch location: %r" %encoder[0], 0)
 
         self.com.setReg(processID, 0, [self.lowSP])
         time.sleep(8)
@@ -233,9 +266,15 @@ class motion():
             self.display.fb_println("Platen did not reach lower switch", 1)
             self.stopMotion(processID)
             os._exit(1)
+
+        encRead = self.com.readReg(processID, 3, 1)
+        encoder[1] = commonFX.signedInt(encRead[0])
+        self.logger.info("Lower kill switch location: %r" % encoder[1])
+        self.display.fb_println("Lower kill switch location: %r" % encoder[1], 0)
+
         self.logger.info("Kill switch test successful")
         self.stopMotion(processID)
-        return self.display.FB_Y
+        return self.display.FB_Y, encoder
 
 def main():
     x = 1

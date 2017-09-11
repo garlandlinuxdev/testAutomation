@@ -30,8 +30,8 @@ class measure():
         return self.display.FB_Y, phase_status, supply_voltage
 
     def validate(self, ph_status, voltage):
-        print "phase_status: ", str(ph_status)[1:-1]
-        print "Supply Voltage: ", str(voltage)[1:-1]
+        #print "phase_status: ", str(ph_status)[1:-1]
+        #print "Supply Voltage: ", str(voltage)[1:-1]
         status = [1, 1, 1, 1, 1, 1, 1, 1]
         if ph_status[0] == 0:
             status[0] = 0
