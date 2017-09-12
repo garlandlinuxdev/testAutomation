@@ -10,14 +10,13 @@ class motion():
     logger = ''
     com = ''
     display = LCD.display()
-    timeout = 30  # max time limit for each task completion, flag error when exceeded
 
     # adjustable limits
-    magnetTolerance = 0.02 # percentage of error allowed for magnet drift test
-    highSP = -8000
-    lowSP = 5000
-    oc_time = 2 # time in seconds required to flag over current error
-    oc_runtime = 5 # runtime for over current test
+    timeout = 30  # max time limit for each task completion, flag error when exceeded
+    magnetTolerance = 0.02  # percentage of error allowed for magnet drift test
+    killSP = [-8000, 5000]  # [high, low] setpoint for kill switch test
+    oc_time = 2  # time in seconds required to flag over current error
+    oc_runtime = 5  # runtime for over current test
 
     def updateLCD(self, FB_Y):
         if FB_Y >= self.display.max_line:
@@ -25,10 +24,14 @@ class motion():
         else:
             self.display.FB_Y = FB_Y
 
-    def update(self, logger, com, timeout):
+    def update(self, logger, com, timeout, magnet, killsp, oc_time, oc_runtime):
         self.logger = logger
         self.com = com
         self.timeout = timeout
+        self.magnetTolerance = magnet
+        self.killSP = killsp
+        self.oc_time = oc_time
+        self.oc_runtime = oc_runtime
 
     def setpoint(self, SP):
         processID = 200
@@ -121,10 +124,10 @@ class motion():
         self.logger.info("Distance between Lift and Home switch (count): " + str(distance))
         self.logger.info("Time elapse (sec): " + str(endTime))
         self.logger.info("Actuator speed (count/sec): " + str(distance / endTime))
-        self.display.fb_println("Distance between switches (count): %r" %distance, 0)
+        self.display.fb_println("Distance between switches (count): %r" % distance, 0)
 
-        self.display.fb_println("Time elapse (sec): %r" %round(endTime, 3), 0)
-        self.display.fb_println("Actuator speed (count/sec): %r" %round((distance / endTime), 3), 0)
+        self.display.fb_println("Time elapse (sec): %r" % round(endTime, 3), 0)
+        self.display.fb_println("Actuator speed (count/sec): %r" % round((distance / endTime), 3), 0)
         self.resetMode(processID)
         return self.display.FB_Y, [distance, endTime]
 
@@ -185,16 +188,16 @@ class motion():
             self.logger.info("Distance moving down: " + str(distanceDOWN))
             self.logger.info("Distance moving up: " + str(distanceUP))
             self.logger.info("Encoder magnet ok, no drift found")
-            self.display.fb_println("Distance moving down: %r" %distanceDOWN, 0)
-            self.display.fb_println("Distance moving up: %r" %distanceUP, 0)
+            self.display.fb_println("Distance moving down: %r" % distanceDOWN, 0)
+            self.display.fb_println("Distance moving up: %r" % distanceUP, 0)
             self.display.fb_println("Encoder magnet ok, no drift found", 0)
         else:
             self.logger.info("Distance moving down: " + str(distanceDOWN))
             self.logger.info("Distance moving up: " + str(distanceUP))
-            self.logger.info("Check encoder magnet, %r count drift found" %drift)
+            self.logger.info("Check encoder magnet, %r count drift found" % drift)
             self.display.fb_println("Distance moving down: %r" % distanceDOWN, 1)
             self.display.fb_println("Distance moving up: %r" % distanceUP, 1)
-            self.display.fb_println("Check encoder magnet, %r count drift found" %drift, 1)
+            self.display.fb_println("Check encoder magnet, %r count drift found" % drift, 1)
             os._exit(1)
         return self.display.FB_Y, [distanceDOWN, distanceUP, drift]
 
@@ -205,7 +208,7 @@ class motion():
         if status[0] != 5:
             self.homing()
         self.resetMode(processID)
-        self.com.setReg(processID, 0, [self.highSP])
+        self.com.setReg(processID, 0, [self.killSP[0]])
         time.sleep(5)
         startTime = time.time()
         upperSW = self.com.readCoil(processID, 7, 1)
@@ -231,10 +234,10 @@ class motion():
 
         encRead = self.com.readReg(processID, 3, 1)
         encoder[0] = commonFX.signedInt(encRead[0])
-        self.logger.info("Upper kill switch location: %r" %encoder[0])
-        self.display.fb_println("Upper kill switch location: %r" %encoder[0], 0)
+        self.logger.info("Upper kill switch location: %r" % encoder[0])
+        self.display.fb_println("Upper kill switch location: %r" % encoder[0], 0)
 
-        self.com.setReg(processID, 0, [self.lowSP])
+        self.com.setReg(processID, 0, [self.killSP[1]])
         time.sleep(8)
         startTime = time.time()
         lowerSW = self.com.readCoil(processID, 6, 1)
@@ -275,6 +278,7 @@ class motion():
         self.logger.info("Kill switch test successful")
         self.stopMotion(processID)
         return self.display.FB_Y, encoder
+
 
 def main():
     x = 1

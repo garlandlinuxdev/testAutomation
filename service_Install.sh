@@ -18,6 +18,8 @@ fi
 
 if [ -e $SCRIPT_DIR/$SERVICE ]; then
 	echo "Enable services..."
+	chmod 755 $SCRIPT_DIR/system/fbutil
+	chmod 744 $SCRIPT_DIR/$SERVICE
 	chmod 555 $SCRIPT_DIR/$RUN_SCRIPT
 	dos2unix $SCRIPT_DIR/$RUN_SCRIPT
 	dos2unix $SCRIPT_DIR/$SERVICE

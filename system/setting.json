@@ -1,0 +1,21 @@
+{
+	"voltage":{
+		"tolerance": 0.05,
+		"frequency": [ 40, 70 ]
+	},
+	
+	"platen":{
+		"sensor_target": [ 13500, 13763 ],
+		"sensor_tolerance": 0.02,
+		"level_motor_adjTime": 4,
+		"level_motor_tolerance": 0.005
+	},
+	
+	"actuator":{
+		"timeout": 30,
+		"magnet_drift_tolerance": 0.02,
+		"kill_sw_setpoint": [ -8000, 5000 ],
+		"over_current_time": 2,
+		"oc_runtime": 5
+	}
+}

@@ -1,8 +1,9 @@
 #!/usr/bin/python
-#Project: EOL
-#Description: 
+# Project: EOL
+# Description:
 __author__ = "Adrian Wong"
 import os, time, commonFX, LCD
+
 
 class sensors():
     # Temporary variables, do not modify here
@@ -11,8 +12,10 @@ class sensors():
     display = LCD.display()
 
     # adjustable limits
-    sensor_target = [13500, 13763] # [rear, front]
-    lvlMotorTime = 4
+    sensor_target = [13500, 13763]  # [rear, front]
+    sensorGapTolerance = 0.02  # tolerance for sensor gap
+    lvlMotorTime = 4  # time (sec) for level motor to offset
+    lvlMotorTolerance = 0.005  # tolerance for level motor reset position
 
     def updateLCD(self, FB_Y):
         if FB_Y >= self.display.max_line:
@@ -20,10 +23,13 @@ class sensors():
         else:
             self.display.FB_Y = FB_Y
 
-    def update(self, logger, com, sensor_target):
+    def update(self, logger, com, sensor_target, sensorGapTol, lvlMotorTime, lvlMotorTol):
         self.logger = logger
         self.com = com
         self.sensor_target = sensor_target
+        self.sensorGapTolerance = sensorGapTol
+        self.lvlMotorTime = lvlMotorTime
+        self.lvlMotorTolerance = lvlMotorTol
 
     def readSensor(self, processID):
         # [rear, front]
@@ -68,19 +74,19 @@ class sensors():
         read = self.readSensor(processID)
         rear = read[0]
         front = read[1]
-        if commonFX.rangeCheck(int(rear), self.sensor_target[0], 0.02):
-            self.logger.info("Rear sensors within range (mm) " + str(10-((rear*10.0)/32767)))
-            self.display.fb_println("Rear sensors within range (mm) %r" %round((10-((rear*10.0)/32767)), 3), 0)
+        if commonFX.rangeCheck(int(rear), self.sensor_target[0], self.sensorGapTolerance):
+            self.logger.info("Rear sensors within range (mm) " + str(10 - ((rear * 10.0) / 32767)))
+            self.display.fb_println("Rear sensors within range (mm) %r" % round((10 - ((rear * 10.0) / 32767)), 3), 0)
         else:
-            self.logger.info("Rear sensor out of range (mm) " + str(10-((rear*10.0)/32767)))
-            self.display.fb_println("Rear sensor out of range (mm) %r" %round((10-((rear*10.0)/32767)), 3), 0)
+            self.logger.info("Rear sensor out of range (mm) " + str(10 - ((rear * 10.0) / 32767)))
+            self.display.fb_println("Rear sensor out of range (mm) %r" % round((10 - ((rear * 10.0) / 32767)), 3), 0)
             os._exit(1)
-        if commonFX.rangeCheck(int(front), self.sensor_target[1], 0.02):
-            self.logger.info("Front sensors within range (mm) " + str(10-((front*10.0)/32767)))
-            self.display.fb_println("Front sensors within range (mm) %r" %round((10-((front*10.0)/32767)), 3), 0)
+        if commonFX.rangeCheck(int(front), self.sensor_target[1], self.sensorGapTolerance):
+            self.logger.info("Front sensors within range (mm) " + str(10 - ((front * 10.0) / 32767)))
+            self.display.fb_println("Front sensors within range (mm) %r" % round((10 - ((front * 10.0) / 32767)), 3), 0)
         else:
-            self.logger.info("Front sensor out of range (mm) " + str((front*10.0)/32767))
-            self.display.fb_println("Front sensor out of range (mm) %r" %round((10-((front*10.0)/32767)), 3), 0)
+            self.logger.info("Front sensor out of range (mm) " + str((front * 10.0) / 32767))
+            self.display.fb_println("Front sensor out of range (mm) %r" % round((10 - ((front * 10.0) / 32767)), 3), 0)
             os._exit(1)
         return self.display.FB_Y, read
 
@@ -128,9 +134,6 @@ class sensors():
         gap = self.com.readReg(processID, 5, 2)
         ZDBF = gap[0] - gap[1]
         self.logger.info("ZDBF: " + str(ZDBF))
-        self.display.fb_println("ZDBF: %r" %ZDBF, 0)
+        self.display.fb_println("ZDBF: %r" % ZDBF, 0)
         self.resetMode(processID)
         return self.display.FB_Y, ZDBF
-
-
-

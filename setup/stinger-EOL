@@ -67,7 +67,7 @@ end_of_line()
 {
 	fb_clear
 	echo 1 > /sys/bus/usb/devices/3-1/bConfigurationValue
-    	echo 1 > /sys/bus/usb/devices/1-1/bConfigurationValue
+    echo 1 > /sys/bus/usb/devices/1-1/bConfigurationValue
 	chmod 666 $FTDI_CABLE
 	cd /
 	sleep 5
@@ -76,19 +76,11 @@ end_of_line()
 	
 }
 
-wireless()
-{
-	ifdown wlan0
-	sleep 5
-	ifup wlan0
-}
-
 
 case "$1" in
     start)
 	#factory_reset
     end_of_line
-    wireless
     ;;
     restart|reload|force-reload)
         ;;

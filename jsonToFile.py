@@ -3,6 +3,7 @@
 # Program designed by Adrian Wong
 import json
 
+
 class loadJSON():
     motorPIDreg = 300
     current_limit_Reg = 515
@@ -44,6 +45,25 @@ class loadJSON():
             grilltype.append(data["jumper"][i]["grill_type"])
 
         return description, jumper, grilltype
+
+    def loadSettings(self, data):
+        voltage = []
+        platen = []
+        actuator = []
+
+        voltage.append(data["voltage"]["tolerance"])
+        voltage.append(data["voltage"]["frequency"])
+        platen.append(data["platen"]["sensor_target"])
+        platen.append(data["platen"]["sensor_tolerance"])
+        platen.append(data["platen"]["level_motor_adjTime"])
+        platen.append(data["platen"]["level_motor_tolerance"])
+        actuator.append(data["actuator"]["timeout"])
+        actuator.append(data["actuator"]["magnet_drift_tolerance"])
+        actuator.append(data["actuator"]["kill_sw_setpoint"])
+        actuator.append(data["actuator"]["over_current_time"])
+        actuator.append(data["actuator"]["oc_runtime"])
+
+        return voltage, platen, actuator
 
     def loadMotorPID(self, data):
         motorPID = []
