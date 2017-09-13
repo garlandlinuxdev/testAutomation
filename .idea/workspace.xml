@@ -4,11 +4,6 @@
     <list default="true" id="d8b1b430-cf88-4d12-ae5d-ea818ec56e3d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EOL.py" afterPath="$PROJECT_DIR$/EOL.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LCD.py" afterPath="$PROJECT_DIR$/LCD.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/actuator.py" afterPath="$PROJECT_DIR$/actuator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsonToFile.py" afterPath="$PROJECT_DIR$/jsonToFile.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platen.py" afterPath="$PROJECT_DIR$/platen.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/setting.json" afterPath="$PROJECT_DIR$/system/setting.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,8 +27,8 @@
       <file leaf-file-name="EOL.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EOL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="165" column="22" lean-forward="true" selection-start-line="165" selection-start-column="22" selection-end-line="165" selection-end-column="22" />
+            <state relative-caret-position="85">
+              <caret line="290" column="5" lean-forward="true" selection-start-line="290" selection-start-column="5" selection-end-line="290" selection-end-column="5" />
               <folding>
                 <element signature="e#76#117#0" expanded="true" />
               </folding>
@@ -64,7 +59,7 @@
       <file leaf-file-name="platen.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/platen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3465">
+            <state relative-caret-position="2419">
               <caret line="165" column="30" lean-forward="true" selection-start-line="165" selection-start-column="30" selection-end-line="165" selection-end-column="30" />
               <folding />
             </state>
@@ -84,8 +79,8 @@
       <file leaf-file-name="actuator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/actuator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="129" column="39" lean-forward="true" selection-start-line="129" selection-start-column="39" selection-end-line="129" selection-end-column="39" />
+            <state relative-caret-position="382">
+              <caret line="124" column="47" lean-forward="false" selection-start-line="124" selection-start-column="47" selection-end-line="124" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -548,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505310993653</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="platen sensors verification modified">
+      <created>1505330873432</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1505330873432</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -949,7 +951,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3465">
+        <state relative-caret-position="2419">
           <caret line="165" column="30" lean-forward="true" selection-start-line="165" selection-start-column="30" selection-end-line="165" selection-end-column="30" />
           <folding />
         </state>
@@ -957,16 +959,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/actuator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="129" column="39" lean-forward="true" selection-start-line="129" selection-start-column="39" selection-end-line="129" selection-end-column="39" />
+        <state relative-caret-position="382">
+          <caret line="124" column="47" lean-forward="false" selection-start-line="124" selection-start-column="47" selection-end-line="124" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EOL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="165" column="22" lean-forward="true" selection-start-line="165" selection-start-column="22" selection-end-line="165" selection-end-column="22" />
+        <state relative-caret-position="85">
+          <caret line="290" column="5" lean-forward="true" selection-start-line="290" selection-start-column="5" selection-end-line="290" selection-end-column="5" />
           <folding>
             <element signature="e#76#117#0" expanded="true" />
           </folding>

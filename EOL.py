@@ -128,7 +128,6 @@ def report(display, enable, data):
     if enable[0] == 1:
         switch = data[1]
         killsw_enc = data[2]
-        switch_enc = data[4]
         grillplate = data[7]
         error = data[8]
         display.fb_println("Time elapse upwards (sec):    %r" % round(switch[2], 3), 0)
@@ -138,13 +137,13 @@ def report(display, enable, data):
         else:
             display.fb_println("Grill plate location (inch):  %r >tolerance" % grillplate, 1)
         if error[1] != 1:
-            display.fb_println("Lift switch location (inch):  %r" % switch_enc[0], 0)
+            display.fb_println("Lift switch location (inch):  %r" % switch[0], 0)
         else:
-            display.fb_println("Lift switch location (inch):  %r >tolerance" % switch_enc[0], 1)
+            display.fb_println("Lift switch location (inch):  %r >tolerance" % switch[0], 1)
         if error[2] != 1:
-            display.fb_println("Home switch location (inch):  %r" % switch_enc[1], 0)
+            display.fb_println("Home switch location (inch):  %r" % switch[1], 0)
         else:
-            display.fb_println("Home switch location (inch):  %r >tolerance" % switch_enc[1], 1)
+            display.fb_println("Home switch location (inch):  %r >tolerance" % switch[1], 1)
         if error[3] != 1:
             display.fb_println("Upper killsw location(inch):  %r" % killsw_enc[0], 0)
         else:
@@ -232,7 +231,7 @@ def calEncoderRef(config, switch, enc, gap, switch_enc, killsw_enc):
         config.logger.info("lower kill switch location not in range")
         error[4] = 1
 
-    return round(grill_plate, 3), [round(lift_sw, 3), round(home_sw, 3)], [round(killsw_high, 3), round(killlsw_low, 3)], error
+    return round(grill_plate, 3), [round(lift_sw, 3), round(home_sw, 3), switch_enc[2], switch_enc[4]], [round(killsw_high, 3), round(killlsw_low, 3)], error
 
 
 def main():
@@ -368,9 +367,9 @@ def main():
     if config.test_enable[7]:
         logger.info("< calculate encoder references >")
         display.fb_println("< # 8 calculate encoder references >", 1)
-        grill_plate, switch_enc, killsw_enc, error = calEncoderRef(config, sw, motor.encoder_conv, gap, switch_enc, killsw_enc)
+        grill_plate, switch, killsw_enc, error = calEncoderRef(config, sw, motor.encoder_conv, gap, switch, killsw_enc)
 
-    data = [supply_voltage, switch, killsw_enc, magnet, switch_enc, sensor, ZDBF, grill_plate, error]
+    data = [supply_voltage, switch, killsw_enc, magnet, sensor, ZDBF, grill_plate, error]
     logger.info("==================== Test Completed ====================")
     # print "==================== Test Completed ===================="
     display.fb_println("============== Test Completed ==============", 1)
