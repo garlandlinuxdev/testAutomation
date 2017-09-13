@@ -54,8 +54,10 @@ class display():
         os.popen(self.FBUTIL + ' -c')
 
     def keepON(self):
-        time.sleep(self.delay * 10)
-        os.popen(self.FBUTIL + ' -y ' + str(self.FB_Y) + ' ' + " ")
+        os.popen(self.FBUTIL + ' -C ' + self.linuxPath + self.sysPath + 'image')
+        while True:
+            time.sleep(self.delay * 10)
+            os.popen(self.FBUTIL + ' -R ' + self.linuxPath + self.sysPath + 'image')
 
 
 def main():

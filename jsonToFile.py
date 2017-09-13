@@ -50,6 +50,7 @@ class loadJSON():
         voltage = []
         platen = []
         actuator = []
+        switch = []
 
         voltage.append(data["voltage"]["tolerance"])
         voltage.append(data["voltage"]["frequency"])
@@ -62,8 +63,15 @@ class loadJSON():
         actuator.append(data["actuator"]["kill_sw_setpoint"])
         actuator.append(data["actuator"]["over_current_time"])
         actuator.append(data["actuator"]["oc_runtime"])
+        actuator.append(data["actuator"]["encoder_conv"])
+        switch.append(data["switch"]["tolerance"])
+        switch.append(data["switch"]["grill_plate"])
+        switch.append(data["switch"]["Lift"])
+        switch.append(data["switch"]["Home"])
+        switch.append(data["switch"]["killsw_high"])
+        switch.append(data["switch"]["killsw_low"])
 
-        return voltage, platen, actuator
+        return voltage, platen, actuator, switch
 
     def loadMotorPID(self, data):
         motorPID = []

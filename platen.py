@@ -156,7 +156,6 @@ class sensors():
 
     def calZDBF(self):
         processID = 305
-        sensor = self.com.readReg(processID, 460, 2)
 
         self.com.setReg(processID, 255, [10])
         read = self.com.readReg(processID, 255, 1)
@@ -168,4 +167,4 @@ class sensors():
         self.logger.info("ZDBF: " + str(ZDBF))
         self.display.fb_println("ZDBF: %r" % ZDBF, 0)
         self.resetMode(processID)
-        return self.display.FB_Y, ZDBF
+        return self.display.FB_Y, ZDBF, gap
