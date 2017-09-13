@@ -71,23 +71,55 @@ class sensors():
 
     def sensorGap(self):
         processID = 303
-        read = self.readSensor(processID)
-        rear = read[0]
-        front = read[1]
-        if commonFX.rangeCheck(int(rear), self.sensor_target[0], self.sensorGapTolerance):
-            self.logger.info("Rear sensors within range (mm) " + str(10 - ((rear * 10.0) / 32767)))
-            self.display.fb_println("Rear sensors within range (mm) %r" % round((10 - ((rear * 10.0) / 32767)), 3), 0)
-        else:
-            self.logger.info("Rear sensor out of range (mm) " + str(10 - ((rear * 10.0) / 32767)))
-            self.display.fb_println("Rear sensor out of range (mm) %r" % round((10 - ((rear * 10.0) / 32767)), 3), 0)
-            os._exit(1)
-        if commonFX.rangeCheck(int(front), self.sensor_target[1], self.sensorGapTolerance):
-            self.logger.info("Front sensors within range (mm) " + str(10 - ((front * 10.0) / 32767)))
-            self.display.fb_println("Front sensors within range (mm) %r" % round((10 - ((front * 10.0) / 32767)), 3), 0)
-        else:
-            self.logger.info("Front sensor out of range (mm) " + str((front * 10.0) / 32767))
-            self.display.fb_println("Front sensor out of range (mm) %r" % round((10 - ((front * 10.0) / 32767)), 3), 0)
-            os._exit(1)
+        check = 0
+        status = 1
+        while check != 2:
+
+            read = self.readSensor(processID)
+            rear = read[0]
+            front = read[1]
+            self.com.setCoil(processID, 30, [1])  # reset button coil
+
+            if commonFX.rangeCheck(int(rear), self.sensor_target[0], self.sensorGapTolerance):
+                self.logger.info("Rear sensors within range (mm) " + str(10 - ((rear * 10.0) / 32767)))
+                self.display.fb_println("Rear sensors within range (mm) %r" % round((10 - ((rear * 10.0) / 32767)), 3),
+                                        0)
+                check += 1
+            else:
+                self.logger.info("Rear sensor out of range (mm) " + str(10 - ((rear * 10.0) / 32767)))
+                self.display.fb_println("Rear sensor out of range (mm) %r" % round((10 - ((rear * 10.0) / 32767)), 3),
+                                        0)
+                status = 0
+            if commonFX.rangeCheck(int(front), self.sensor_target[1], self.sensorGapTolerance):
+                self.logger.info("Front sensors within range (mm) " + str(10 - ((front * 10.0) / 32767)))
+                self.display.fb_println(
+                    "Front sensors within range (mm) %r" % round((10 - ((front * 10.0) / 32767)), 3), 0)
+                check += 1
+            else:
+                self.logger.info("Front sensor out of range (mm) " + str((front * 10.0) / 32767))
+                self.display.fb_println("Front sensor out of range (mm) %r" % round((10 - ((front * 10.0) / 32767)), 3),
+                                        0)
+                status = 0
+
+            if status == 0:
+                self.logger.info("Waiting for adjustment")
+
+            while status == 0:
+                read = self.readSensor(processID)
+
+                self.display.fb_clear()
+                self.display.fb_println("Adjust sensor gap to ~ 6.35 mm", 1)
+                self.display.fb_println("Rear sensors range (mm) %r" % round((10 - ((read[0] * 10.0) / 32767)), 3), 0)
+                self.display.fb_println("Front sensors range (mm) %r" % round((10 - ((read[1] * 10.0) / 32767)), 3), 0)
+                self.display.fb_println("Press Green button to proceed after adjustment", 1)
+
+                button = self.com.readCoil(processID, 30, 1)
+                if button[0] == 0:
+                    self.com.setCoil(processID, 30, [1])
+                    check = 0
+                    status = 1
+                time.sleep(1)
+
         return self.display.FB_Y, read
 
     def levelMotorTest(self):

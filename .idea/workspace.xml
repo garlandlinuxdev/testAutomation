@@ -4,15 +4,7 @@
     <list default="true" id="d8b1b430-cf88-4d12-ae5d-ea818ec56e3d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EOL.py" afterPath="$PROJECT_DIR$/EOL.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LCD.py" afterPath="$PROJECT_DIR$/LCD.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/actuator.py" afterPath="$PROJECT_DIR$/actuator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commonFX.py" afterPath="$PROJECT_DIR$/commonFX.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsonToFile.py" afterPath="$PROJECT_DIR$/jsonToFile.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modbus.py" afterPath="$PROJECT_DIR$/modbus.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platen.py" afterPath="$PROJECT_DIR$/platen.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service_Install.sh" afterPath="$PROJECT_DIR$/service_Install.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stinger-EOL" afterPath="$PROJECT_DIR$/stinger-EOL" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/voltage.py" afterPath="$PROJECT_DIR$/voltage.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="EOL.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EOL.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EOL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4477">
-              <caret line="308" column="23" lean-forward="false" selection-start-line="308" selection-start-column="23" selection-end-line="308" selection-end-column="23" />
+            <state relative-caret-position="273">
+              <caret line="165" column="52" lean-forward="true" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -46,7 +38,7 @@
       <file leaf-file-name="jsonToFile.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jsonToFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2600">
+            <state relative-caret-position="613">
               <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
             </state>
@@ -63,11 +55,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="platen.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="platen.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/platen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            <state relative-caret-position="385">
+              <caret line="110" column="64" lean-forward="false" selection-start-line="110" selection-start-column="64" selection-end-line="110" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LCD.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LCD.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -76,8 +78,8 @@
       <file leaf-file-name="actuator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/actuator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3843">
-              <caret line="186" column="77" lean-forward="false" selection-start-line="186" selection-start-column="77" selection-end-line="186" selection-end-column="77" />
+            <state relative-caret-position="-4998">
+              <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -112,14 +114,14 @@
       <list>
         <option value="$PROJECT_DIR$/system/jumpers.json" />
         <option value="$PROJECT_DIR$/motion.py" />
-        <option value="$PROJECT_DIR$/EOL.py" />
         <option value="$PROJECT_DIR$/jsonToFile.py" />
         <option value="$PROJECT_DIR$/voltage.py" />
-        <option value="$PROJECT_DIR$/platen.py" />
         <option value="$PROJECT_DIR$/actuator.py" />
         <option value="$PROJECT_DIR$/LCD.py" />
         <option value="$PROJECT_DIR$/modbus.py" />
         <option value="$PROJECT_DIR$/commonFX.py" />
+        <option value="$PROJECT_DIR$/EOL.py" />
+        <option value="$PROJECT_DIR$/platen.py" />
       </list>
     </option>
   </component>
@@ -526,22 +528,30 @@
       <option name="project" value="LOCAL" />
       <updated>1505169838902</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="load settings from json function added">
+      <created>1505239539038</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1505239539038</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14070891" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14070891" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32807216" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -550,7 +560,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -575,7 +584,8 @@
     <MESSAGE value="sensors test sequenced updated" />
     <MESSAGE value="LCD display updated" />
     <MESSAGE value="switches position added, display format modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="switches position added, display format modified" />
+    <MESSAGE value="load settings from json function added" />
+    <option name="LAST_COMMIT_MESSAGE" value="load settings from json function added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -883,14 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LCD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modbus.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -907,22 +909,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/actuator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3843">
-          <caret line="186" column="77" lean-forward="false" selection-start-line="186" selection-start-column="77" selection-end-line="186" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/voltage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -931,18 +917,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/actuator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4998">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jsonToFile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2600">
+        <state relative-caret-position="613">
           <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LCD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EOL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4477">
-          <caret line="308" column="23" lean-forward="false" selection-start-line="308" selection-start-column="23" selection-end-line="308" selection-end-column="23" />
+        <state relative-caret-position="273">
+          <caret line="165" column="52" lean-forward="true" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="110" column="64" lean-forward="false" selection-start-line="110" selection-start-column="64" selection-end-line="110" selection-end-column="64" />
           <folding />
         </state>
       </provider>

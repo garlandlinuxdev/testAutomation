@@ -98,7 +98,7 @@ class myConfig(object):
     hwcfg = '/hwcfg/'  # library of all json configurations
     usbPath = '/media/usb0/'
     usb_logpath = 'log/'  # usb file path
-    logfile = linuxPath + logPath + "event.log"
+    logfile = linuxPath + logPath
     settingsFile = linuxPath + sysPath + "settings.json"
     log = "event.log"
     grillType = 0  # load from SIB
@@ -157,18 +157,17 @@ def report(display, enable, data):
 def copyLog(config, display):
     timestr = time.strftime("%Y%m%d-%H%M%S")
     # print "USB path: ", os.path.isdir(config.usbpath)
-    if os.path.exists(config.usbpath) == True:
+    if os.path.exists(config.usbPath + config.usb_logpath) == True:
         config.logger.info("Test logs copy to USB path")
-        os.popen('mv ' + config.logfile + ' ' + config.linuxPath + config.logPath + timestr + config.log)
-        os.popen('cp ' + '*.log' + ' ' + config.usbPath + config.usb_logpath)
+        os.popen('mv ' + config.logfile + config.log + ' ' + config.linuxPath + config.logPath + timestr + config.log)
+        os.popen('mv ' + config.logfile + '*.log' + ' ' + config.usbPath + config.usb_logpath)
         display.fb_println("Test logs copied to USB path", 0)
     else:
         config.logger.info("USB log path not found")
         display.fb_println("USB log path not found", 0)
+        os.popen('mv ' + config.logfile + config.log + ' ' + config.linuxPath + config.logPath + timestr + config.log)
     # print config.logfile
     # print (config.linuxPath + config.logPath + timestr + config.log)
-    os.popen('mv ' + config.logfile + ' ' + config.linuxPath + config.logPath + timestr + config.log)
-
 
 def updateSettings(config, display):
     if os.path.exists(config.usbPath + 'settings.json') == True:
@@ -202,7 +201,7 @@ def main():
     sensor = [0, 0]
     ZDBF = 0
 
-    logger = setup_logger('event_log', config.logfile)
+    logger = setup_logger('event_log', config.logfile + config.log)
     config.logger = logger
     config.display = display
     updateSettings(config, display)
