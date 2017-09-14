@@ -88,10 +88,11 @@ def testRequired(config):
 
 class myConfig(object):
     logger = ''
-    display = ''
+    display = LCD.display()
     device = 1
     restTime = 0.1
     timeout = 30
+    encoder_conv = 0.00049126  # encoder to inch conversion, update from json
     linuxPath = os.path.dirname(__file__)
     logPath = '/log/'  # log files storage path
     sysPath = '/system/'  # system files storage path
@@ -109,169 +110,184 @@ class myConfig(object):
     description = "unknown"  # load from json file
     sync_role = 0
 
+    # storage
+    voltage_config = ''
+    platen_config = ''
+    actuator_config = ''
+    switch_config = ''
+    phase_status = ''
+    supply_voltage = ''
+    switch = [0, 0]
+    time_elapse = [0, 0]
+    killsw_enc = [0, 0]
+    magnet = [0, 0, 0]
+    sensor = [0, 0]
+    ZDBF = 0
+    gap = 0
+    grill_plate = 0
+    error = [0, 0, 0, 0, 0]
+
     def updateJSON(self, grillType):
         self.jsonFile = self.linuxPath + self.hwcfg + str(grillType) + ".json"
 
-
-def report(display, enable, data):
-    display.fb_clear()
-    volt = data[0]
-    display.fb_println(" < Test Results > ", 1)
-    display.fb_println("Phase A (V):     %r" % (volt[4] / 10.0), 0)
-    display.fb_println("Phase B (V):     %r" % (volt[5] / 10.0), 0)
-    display.fb_println("Phase C (V):     %r" % (volt[6] / 10.0), 0)
-    display.fb_println("24V supply (V):  %r" % (float(volt[0]) / 100), 0)
-    display.fb_println("12V supply (V):  %r" % (float(volt[1]) / 100), 0)
-    display.fb_println("5V supply (V):   %r" % (float(volt[2]) / 100), 0)
-    display.fb_println("3.3V supply (V): %r" % (float(volt[3]) / 100), 0)
-
-    if enable[0] == 1:
-        switch = data[1]
-        killsw_enc = data[2]
-        grillplate = data[7]
-        error = data[8]
-        display.fb_println("Time elapse upwards (sec):    %r" % round(switch[2], 3), 0)
-        display.fb_println("Time elapse downwards (sec):  %r" % round(switch[3], 3), 0)
-        if error[0] != 1:
-            display.fb_println("Grill plate location (inch):  %r" % grillplate, 0)
+    def updateSettings(self):
+        if os.path.exists(self.linuxPath + self.sysPath + 'image') == True:
+            os.popen('rm ' + self.linuxPath + self.sysPath + 'image')
+        if os.path.exists(self.usbPath + 'settings.json') == True:
+            os.popen('cp ' + ' ' + self.usbPath + 'settings.json' + ' ' + self.settingsFile)
+            self.logger.info("EOL settings updated...")
+            self.display.fb_clear()
+            self.display.fb_long_print("EOL settings updated...", 0)
+        if os.path.exists(self.usbPath + 'hwcfg/*.json') == True:
+            os.popen('cp ' + ' ' + '-u' + ' ' + self.usbPath + 'hwcfg/*.json' + ' ' + self.linuxPath + 'hwcfg/')
+            self.logger.info("json files updated...")
+            self.display.fb_clear()
+            self.display.fb_long_print("json files updated...", 0)
         else:
-            display.fb_println("Grill plate location (inch):  %r >tolerance" % grillplate, 1)
-        if error[1] != 1:
-            display.fb_println("Lift switch location (inch):  %r" % switch[0], 0)
+            self.logger.info("No updated required...")
+            self.display.fb_clear()
+            self.display.fb_long_print("No updated required...", 0)
+
+    def copyLog(self):
+        timestr = time.strftime("%Y%m%d-%H%M%S")
+        # print "USB path: ", os.path.isdir(config.usbpath)
+        if os.path.exists(self.usbPath + self.usb_logpath) == True:
+            self.logger.info("Test logs copy to USB path")
+            os.popen(
+                'mv ' + self.logfile + self.log + ' ' + self.linuxPath + self.logPath + timestr + self.log)
+            os.popen('mv ' + self.logfile + '*.log' + ' ' + self.usbPath + self.usb_logpath)
+            self.display.fb_println("Test logs copied to USB path", 0)
         else:
-            display.fb_println("Lift switch location (inch):  %r >tolerance" % switch[0], 1)
-        if error[2] != 1:
-            display.fb_println("Home switch location (inch):  %r" % switch[1], 0)
+            self.logger.info("USB log path not found")
+            self.display.fb_println("USB log path not found", 0)
+            os.popen(
+                'mv ' + self.logfile + self.log + ' ' + self.linuxPath + self.logPath + timestr + self.log)
+            # print config.logfile
+            # print (config.linuxPath + config.logPath + timestr + config.log)
+
+    def report(self):
+        self.display.fb_clear()
+        self.display.fb_println("< Test Results > ", 1)
+        self.display.fb_println("Phase A (V):     %r" % (self.supply_voltage[4] / 10.0), 0)
+        self.display.fb_println("Phase B (V):     %r" % (self.supply_voltage[5] / 10.0), 0)
+        self.display.fb_println("Phase C (V):     %r" % (self.supply_voltage[6] / 10.0), 0)
+        self.display.fb_println("24V supply (V):  %r" % (float(self.supply_voltage[0]) / 100), 0)
+        self.display.fb_println("12V supply (V):  %r" % (float(self.supply_voltage[1]) / 100), 0)
+        self.display.fb_println("5V supply (V):   %r" % (float(self.supply_voltage[2]) / 100), 0)
+        self.display.fb_println("3.3V supply (V): %r" % (float(self.supply_voltage[3]) / 100), 0)
+
+        if self.test_enable[0] == 1:
+            self.display.fb_println("Time elapse upwards (sec):    %r" % round(self.time_elapse[0], 3), 0)
+            self.display.fb_println("Time elapse downwards (sec):  %r" % round(self.time_elapse[1], 3), 0)
+            if self.error[0] != 1:
+                self.display.fb_println("Grill plate to Home (inch):   %r" % self.grill_plate, 0)
+            else:
+                self.display.fb_println("Grill plate to Home (inch):  %r >tolerance" % self.grill_plate, 1)
+            if self.error[1] != 1:
+                self.display.fb_println("Lift switch location (inch):  %r" % self.switch[0], 0)
+            else:
+                self.display.fb_println("Lift switch location (inch):  %r >tolerance" % self.switch[0], 1)
+            if self.error[2] != 1:
+                self.display.fb_println("Home switch location (inch):  %r" % self.switch[1], 0)
+            else:
+                self.display.fb_println("Home switch location (inch):  %r >tolerance" % self.switch[1], 1)
+            if self.error[3] != 1:
+                self.display.fb_println("Upper killsw location(inch):  %r" % self.killsw_enc[0], 0)
+            else:
+                self.display.fb_println("Upper killsw location(inch):  %r >tolerance" % self.killsw_enc[0], 1)
+            if self.error[4] != 1:
+                self.display.fb_println("Lower killsw location(inch): %r" % self.killsw_enc[1], 0)
+            else:
+                self.display.fb_println("Lower killsw location(inch): %r >tolerance" % self.killsw_enc[1], 1)
+
+        if self.test_enable[2] == 1:
+            self.display.fb_println("Distance moving down (count): %r" % self.magnet[0], 0)
+            self.display.fb_println("Distance moving up (count):   %r" % self.magnet[1], 0)
+            self.display.fb_println("Drift count (count):          %r" % self.magnet[2], 0)
+        if self.test_enable[4] == 1:
+            self.display.fb_println(
+                "Rear sensors gap (mm)         %r" % round((10 - ((self.sensor[0] * 10.0) / 32767)), 3), 0)
+            self.display.fb_println(
+                "Front sensors gap (mm)        %r" % round((10 - ((self.sensor[1] * 10.0) / 32767)), 3), 0)
+        if self.test_enable[5] == 1:
+            self.display.fb_println("ZDBF: %r" % self.ZDBF, 0)
+
+        if 1 in self.error:
+            self.display.fb_long_print("Switches position not in range, adjustment required", 1)
         else:
-            display.fb_println("Home switch location (inch):  %r >tolerance" % switch[1], 1)
-        if error[3] != 1:
-            display.fb_println("Upper killsw location(inch):  %r" % killsw_enc[0], 0)
-        else:
-            display.fb_println("Upper killsw location(inch):  %r >tolerance" % killsw_enc[0], 1)
-        if error[4] != 1:
-            display.fb_println("Lower killsw location(inch): %r" % killsw_enc[1], 0)
-        else:
-            display.fb_println("Lower killsw location(inch): %r >tolerance" % killsw_enc[1], 1)
+            self.display.fb_println("< Equipment passed all test requirements >", 1)
 
-    if enable[2] == 1:
-        magnet = data[3]
-        display.fb_println("Distance moving down (count): %r" % magnet[0], 0)
-        display.fb_println("Distance moving up (count):   %r" % magnet[1], 0)
-        display.fb_println("Drift count (count):          %r" % magnet[2], 0)
-    if enable[4] == 1:
-        sensor = data[5]
-        display.fb_println("Rear sensors gap (mm)         %r" % round((10 - ((sensor[0] * 10.0) / 32767)), 3), 0)
-        display.fb_println("Front sensors gap (mm)        %r" % round((10 - ((sensor[1] * 10.0) / 32767)), 3), 0)
-    if enable[5] == 1:
-        ZDBF = data[6]
-        display.fb_println("ZDBF: %r" % ZDBF, 0)
+    def calEncoderRef(self):
+        grill_plate = self.gap[0] * self.encoder_conv
+        lift_sw = (self.gap[0] - self.switch[0]) * self.encoder_conv
+        home_sw = (self.gap[0] - self.switch[1]) * self.encoder_conv
+        killsw_high = (self.gap[0] - self.killsw_enc[0]) * self.encoder_conv
+        killlsw_low = (self.gap[0] - self.killsw_enc[1]) * self.encoder_conv
+        self.logger.info("grill plate to home sw (inch): %r" % grill_plate)
+        self.logger.info("lift switch location (inch):   %r" % lift_sw)
+        self.logger.info("home switch location (inch):   %r" % home_sw)
+        self.logger.info("upper killsw location (inch):  %r" % killsw_high)
+        self.logger.info("lower killsw location (inch):  %r" % killlsw_low)
 
-    display.fb_println("< Equipment passed all test requirements >", 1)
+        error = [0, 0, 0, 0, 0]
 
+        if commonFX.rangeCheck(grill_plate, self.switch_config[1], self.switch_config[0]) != True:
+            self.logger.info("grill plate to home distance not in range")
+            error[0] = 1
+        if commonFX.rangeCheck(lift_sw, self.switch_config[2], self.switch_config[0]) != True:
+            self.logger.info("lift switch location not in range")
+            error[1] = 1
+        if commonFX.rangeCheck(home_sw, self.switch_config[3], self.switch_config[0]) != True:
+            self.logger.info("home switch location not in range")
+            error[2] = 1
+        if commonFX.rangeCheck(killsw_high, self.switch_config[4], self.switch_config[0]) != True:
+            self.logger.info("upper kill switch location not in range")
+            error[3] = 1
+        if commonFX.rangeCheck(killlsw_low, self.switch_config[5], self.switch_config[0]) != True:
+            self.logger.info("lower kill switch location not in range")
+            error[4] = 1
 
-def copyLog(config, display):
-    timestr = time.strftime("%Y%m%d-%H%M%S")
-    # print "USB path: ", os.path.isdir(config.usbpath)
-    if os.path.exists(config.usbPath + config.usb_logpath) == True:
-        config.logger.info("Test logs copy to USB path")
-        os.popen('mv ' + config.logfile + config.log + ' ' + config.linuxPath + config.logPath + timestr + config.log)
-        os.popen('mv ' + config.logfile + '*.log' + ' ' + config.usbPath + config.usb_logpath)
-        display.fb_println("Test logs copied to USB path", 0)
-    else:
-        config.logger.info("USB log path not found")
-        display.fb_println("USB log path not found", 0)
-        os.popen('mv ' + config.logfile + config.log + ' ' + config.linuxPath + config.logPath + timestr + config.log)
-        # print config.logfile
-        # print (config.linuxPath + config.logPath + timestr + config.log)
-
-
-def updateSettings(config, display):
-    if os.path.exists(config.linuxPath + config.sysPath + 'image') == True:
-        os.popen('rm ' + config.linuxPath + config.sysPath + 'image')
-    if os.path.exists(config.usbPath + 'settings.json') == True:
-        os.popen('cp ' + ' ' + config.usbPath + 'settings.json' + ' ' + config.settingsFile)
-        display.fb_clear()
-        display.fb_long_print("EOL settings updated...", 0)
-    if os.path.exists(config.usbPath + 'hwcfg/*.json') == True:
-        os.popen('cp ' + ' ' + '-u' + ' ' + config.usbPath + 'hwcfg/*.json' + ' ' + config.linuxPath + 'hwcfg/')
-        display.fb_clear()
-        display.fb_long_print("json file updated...", 0)
-    else:
-        display.fb_clear()
-        display.fb_long_print("No updated required...", 0)
-
-
-def calEncoderRef(config, switch, enc, gap, switch_enc, killsw_enc):
-    grill_plate = gap[0] * enc
-    lift_sw = (gap[0] - switch_enc[0]) * enc
-    home_sw = (gap[0] - switch_enc[1]) * enc
-    killsw_high = (gap[0] - killsw_enc[0]) * enc
-    killlsw_low = (gap[0] - killsw_enc[1]) * enc
-    config.logger.info("grill plate to home sw (inch): %r" % grill_plate)
-    config.logger.info("lift switch location (inch):   %r" % lift_sw)
-    config.logger.info("home switch location (inch):   %r" % home_sw)
-    config.logger.info("upper killsw location (inch):  %r" % killsw_high)
-    config.logger.info("lower killsw location (inch):  %r" % killlsw_low)
-
-    error = [0, 0, 0, 0, 0]
-
-    if commonFX.rangeCheck(grill_plate, switch[1], switch[0]) != True:
-        config.logger.info("grill plate to home distance not in range")
-        error[0] = 1
-    if commonFX.rangeCheck(lift_sw, switch[2], switch[0]) != True:
-        config.logger.info("lift switch location not in range")
-        error[1] = 1
-    if commonFX.rangeCheck(home_sw, switch[3], switch[0]) != True:
-        config.logger.info("home switch location not in range")
-        error[2] = 1
-    if commonFX.rangeCheck(killsw_high, switch[4], switch[0]) != True:
-        config.logger.info("upper kill switch location not in range")
-        error[3] = 1
-    if commonFX.rangeCheck(killlsw_low, switch[5], switch[0]) != True:
-        config.logger.info("lower kill switch location not in range")
-        error[4] = 1
-
-    return round(grill_plate, 3), [round(lift_sw, 3), round(home_sw, 3), switch_enc[2], switch_enc[4]], [round(killsw_high, 3), round(killlsw_low, 3)], error
+        self.grill_plate = round(grill_plate, 3)
+        self.switch = [round(lift_sw, 3), round(home_sw, 3)]
+        self.killsw_enc = [round(killsw_high, 3), round(killlsw_low, 3)]
+        self.error = error
 
 
 def main():
     # main starts here
     config = myConfig()
-    display = LCD.display()
+
     try:
         master = setup()
     except serial.serialutil.SerialException:
-        display.fb_clear()
-        display.fb_long_print("FTDI USB cable not found, please connect cable and restart", 1)
+        config.display.fb_clear()
+        config.display.fb_long_print("FTDI USB cable not found, please connect cable and restart", 1)
         os._exit(1)
-
-    switch = [0, 0, 0, 0]
-    killsw_enc = [0, 0]
-    magnet = [0, 0, 0]
-    switch_enc = [0, 0]
-    sensor = [0, 0]
-    ZDBF = 0
-    grill_plate = 0
-    error = [0, 0, 0, 0, 0]
 
     logger = setup_logger('event_log', config.logfile + config.log)
     config.logger = logger
-    config.display = display
-    updateSettings(config, display)
+    config.updateSettings()
 
-    display.fb_clear()
+    config.display.fb_clear()
     logger.info("==================== Load Settings ====================")
     # print "==================== Load Settings ===================="
-    display.fb_println("=============== Load Settings ===============", 1)
+    config.display.fb_println("=============== Load Settings ===============", 1)
 
     com = modbus.communicate()
     com.setup(logger, master, config.device, config.restTime)
 
     myJSON = jsonToFile.loadJSON()
 
-    info = myJSON.readJSON(config.linuxPath + config.sysPath + 'setting.json')
+    try:
+        info = myJSON.readJSON(config.linuxPath + config.sysPath + 'settings.json')
+    except ValueError:
+        logger.info("settings.json file corrupted, update settings required")
+        config.display.fb_long_print("settings.json file corrupted, update settings required")
+        os._exit(1)
+
     myJSON.update(logger, com, config.loadReg_enable)
-    vlt, plat, act, sw = myJSON.loadSettings(info)
+    config.voltage_config, config.platen_config, config.actuator_config, config.switch_config = myJSON.loadSettings(
+        info)
 
     processID = 1
     config.grillType = myJSON.grillType(processID)
@@ -282,101 +298,104 @@ def main():
     data = myJSON.readJSON(config.jsonFile)
     config.description, config.sync_role = myJSON.loadHardware(data)
     myJSON.setDevice(data)
-    display.fb_long_print(str(config.description), 1)
+    config.display.fb_long_print(str(config.description), 1)
     # print config.jsonFile
 
     power = voltage.measure()
-    power.update(logger, com, vlt[0], vlt[1])
+    power.update(logger, com, config)
 
     motor = actuator.motion()
-    motor.update(logger, com, act[0], act[1], act[2], act[3], act[4], act[5])
+    motor.update(logger, com, config)
+    config.encoder_conv = motor.encoder_conv
 
     pl = platen.sensors()
-    pl.update(logger, com, plat[0], plat[1], plat[2], plat[3])
+    pl.update(logger, com, config)
 
     processID = 1
-    display.fb_long_print("Press green button to execute sensors test only", 0)
+    config.display.fb_long_print("Press green button to execute sensors test only", 0)
     time.sleep(5)
+
+    # seek upper switch
+    com.setReg(processID, 255, [3])
+
     button = com.readCoil(processID, 30, 1)
     if button[0] == 0:
-        display.fb_long_print("Execute sensors test only", 1)
+        config.display.fb_long_print("Execute sensors test only", 1)
         com.setCoil(processID, 30, [1])
         config.test_enable = [0, 0, 0, 1, 1, 1, 0, 1]
 
     logger.info("==================== Test Begins ====================")
     # print "==================== Test Begins ===================="
-    display.fb_println("================ Test Begins ================", 1)
+    config.display.fb_println("================ Test Begins ================", 1)
     logger.info("< execute voltage reading >")
-    display.fb_println("< execute voltage reading >", 1)
+    config.display.fb_println("< execute voltage reading >", 1)
     processID = 2
-    power.updateLCD(display.FB_Y)
-    display.FB_Y, phase_status, supply_voltage = power.voltage(processID)
-    power.updateLCD(display.FB_Y)
-    display.FB_Y = power.validate(phase_status, supply_voltage)
+    power.updateLCD(config.display.FB_Y)
+    config.display.FB_Y, config.phase_status, config.supply_voltage = power.voltage(processID)
+    power.updateLCD(config.display.FB_Y)
+    config.display.FB_Y = power.validate(config)
 
     if config.test_enable[0]:
         logger.info("< execute switch test >")
         # print "< execute switch test >"
-        display.fb_println("< # 1 execute switch test >", 1)
-        motor.updateLCD(display.FB_Y)
-        display.FB_Y, switch = motor.switchTest()
+        config.display.fb_println("< # 1 execute switch test >", 1)
+        motor.updateLCD(config.display.FB_Y)
+        config.display.FB_Y, config.switch, config.time_elapse = motor.switchTest(config)
     if config.test_enable[1]:
         logger.info("< execute kill switch test >")
         # print "< execute kill switch test >"
-        display.fb_println("< # 2 execute kill switch test >", 1)
-        motor.updateLCD(display.FB_Y)
-        display.FB_Y, killsw_enc = motor.killSwitchTest()
+        config.display.fb_println("< # 2 execute kill switch test >", 1)
+        motor.updateLCD(config.display.FB_Y)
+        config.display.FB_Y, config.killsw_enc = motor.killSwitchTest()
     if config.test_enable[2]:
         logger.info("< execute magnet drift test >")
         # print "< execute magnet drift test >"
-        display.fb_println("< # 3 execute magnet drift test >", 1)
-        motor.updateLCD(display.FB_Y)
-        display.FB_Y, magnet = motor.magnetDrift()
+        config.display.fb_println("< # 3 execute magnet drift test >", 1)
+        motor.updateLCD(config.display.FB_Y)
+        config.display.FB_Y, config.magnet = motor.magnetDrift()
     if config.test_enable[3]:
         logger.info("< execute homing test >")
         # print "< execute homing test >"
-        display.fb_clear()
-        display.fb_println("< # 4 execute homing test >", 1)
-        motor.updateLCD(display.FB_Y)
+        config.display.fb_clear()
+        config.display.fb_println("< # 4 execute homing test >", 1)
+        motor.updateLCD(config.display.FB_Y)
         motor.homing()
     if config.test_enable[4]:
         logger.info("< execute sensors gap test >")
         # print "< execute sensors gap test >"
-        display.fb_println("< # 5 execute sensors gap test >", 1)
+        config.display.fb_println("< # 5 execute sensors gap test >", 1)
         motor.setpoint(0)
         time.sleep(3)
-        pl.updateLCD(display.FB_Y)
-        display.FB_Y, sensor = pl.sensorGap()
+        pl.updateLCD(config.display.FB_Y)
+        config.display.FB_Y, config.sensor = pl.sensorGap()
     if config.test_enable[5]:
         logger.info("< execute ZDBF test >")
         # print "< execute ZDBF test >"
-        display.fb_println("< # 6 execute ZDBF test >", 1)
+        config.display.fb_println("< # 6 execute ZDBF test >", 1)
         motor.setpoint(0)
         time.sleep(3)
-        pl.updateLCD(display.FB_Y)
-        display.FB_Y, ZDBF, gap = pl.calZDBF()
+        pl.updateLCD(config.display.FB_Y)
+        config.display.FB_Y, config.ZDBF, config.gap = pl.calZDBF()
         motor.setpoint(0)
     if config.test_enable[6]:
         logger.info("< execute level motor test >")
         # print "< execute level motor test >"
-        display.fb_println("< # 7 execute level motor test >", 1)
+        config.display.fb_println("< # 7 execute level motor test >", 1)
         motor.setpoint(0)
         time.sleep(3)
-        pl.updateLCD(display.FB_Y)
-        display.FB_Y = pl.levelMotorTest()
+        pl.updateLCD(config.display.FB_Y)
+        config.display.FB_Y = pl.levelMotorTest()
     if config.test_enable[7]:
         logger.info("< calculate encoder references >")
-        display.fb_println("< # 8 calculate encoder references >", 1)
-        grill_plate, switch, killsw_enc, error = calEncoderRef(config, sw, motor.encoder_conv, gap, switch, killsw_enc)
+        config.display.fb_println("< # 8 calculate encoder references >", 1)
+        config.calEncoderRef()
 
-    data = [supply_voltage, switch, killsw_enc, magnet, sensor, ZDBF, grill_plate, error]
     logger.info("==================== Test Completed ====================")
     # print "==================== Test Completed ===================="
-    display.fb_println("============== Test Completed ==============", 1)
-    report(display, config.test_enable, data)
-    copyLog(config, display)
-
-    display.keepON()
+    config.display.fb_println("============== Test Completed ==============", 1)
+    config.report()
+    config.copyLog()
+    config.display.keepON()
 
     # processID = 3
     # com.setCoil(processID, 30, [1])

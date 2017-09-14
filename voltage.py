@@ -4,7 +4,6 @@
 __author__ = "Adrian Wong"
 import os, commonFX, LCD
 
-
 class measure():
     # Temporary variables, do not modify here
     logger = ''
@@ -21,18 +20,20 @@ class measure():
         else:
             self.display.FB_Y = FB_Y
 
-    def update(self, logger, com, voltageTol, freq):
+    def update(self, logger, com, config):
         self.logger = logger
         self.com = com
-        self.voltageTolerance = voltageTol
-        self.freq = freq
+        self.voltageTolerance = config.voltage_config[0]
+        self.freq = config.voltage_config[1]
 
     def voltage(self, processID):
         phase_status = self.com.readCoil(processID, 49, 4)
         supply_voltage = self.com.readReg(processID, 33, 9)
         return self.display.FB_Y, phase_status, supply_voltage
 
-    def validate(self, ph_status, voltage):
+    def validate(self, config):
+        ph_status = config.phase_status
+        voltage = config.supply_voltage
         # print "phase_status: ", str(ph_status)[1:-1]
         # print "Supply Voltage: ", str(voltage)[1:-1]
         status = [1, 1, 1, 1, 1, 1, 1, 1]
@@ -113,13 +114,3 @@ class measure():
         self.display.fb_println("3.3V supply: %r" % (float(voltage[3]) / 100), 0)
 
         return self.display.FB_Y
-
-
-def main():
-    x = 1
-
-
-# main starts here
-
-if __name__ == "__main__":
-    main()

@@ -56,7 +56,7 @@ class display():
     def keepON(self):
         os.popen(self.FBUTIL + ' -C ' + self.linuxPath + self.sysPath + 'image')
         while True:
-            time.sleep(self.delay * 10)
+            time.sleep(self.delay * 5)
             os.popen(self.FBUTIL + ' -R ' + self.linuxPath + self.sysPath + 'image')
 
 

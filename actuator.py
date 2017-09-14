@@ -17,7 +17,7 @@ class motion():
     killSP = [-8000, 5000]  # [high, low] setpoint for kill switch test
     oc_time = 2  # time in seconds required to flag over current error
     oc_runtime = 5  # runtime for over current test
-    encoder_conv = 0.492126 # conversion from encoder count to inches
+    encoder_conv = 0.492126  # conversion from encoder count to inches
 
     def updateLCD(self, FB_Y):
         if FB_Y >= self.display.max_line:
@@ -25,15 +25,15 @@ class motion():
         else:
             self.display.FB_Y = FB_Y
 
-    def update(self, logger, com, timeout, magnet, killsp, oc_time, oc_runtime, encoder_conv):
+    def update(self, logger, com, config):
         self.logger = logger
         self.com = com
-        self.timeout = timeout
-        self.magnetTolerance = magnet
-        self.killSP = killsp
-        self.oc_time = oc_time
-        self.oc_runtime = oc_runtime
-        self.encoder_conv = encoder_conv
+        self.timeout = config.actuator_config[0]
+        self.magnetTolerance = config.actuator_config[1]
+        self.killSP = config.actuator_config[2]
+        self.oc_time = config.actuator_config[3]
+        self.oc_runtime = config.actuator_config[4]
+        self.encoder_conv = config.actuator_config[5]
 
     def setpoint(self, SP):
         processID = 200
@@ -67,32 +67,7 @@ class motion():
 
         self.logger.info("Homing sequence successful, @ processID %r" % processID)
 
-        # Find switch location
-        # self.com.setReg(processID, 255, [3])
-        # read = self.com.readReg(processID, 255, 1)
-        # startTime = time.time()
-        # while read[0] != 5 and commonFX.timeCal(startTime) < self.timeout / 2:
-        #     read = self.com.readReg(processID, 255, 1)
-        # time.sleep(1)
-        # encRead = self.com.readReg(processID, 3, 1)
-        # encoder[0] = commonFX.signedInt(encRead[0])
-        # self.logger.info("Lift switch location: %r" % encoder[0])
-        #
-        # self.com.setReg(processID, 255, [6])
-        # read = self.com.readReg(processID, 255, 1)
-        # while read[0] != 8 and commonFX.timeCal(startTime) < self.timeout / 2:
-        #     read = self.com.readReg(processID, 255, 1)
-        # time.sleep(1)
-        # encRead = self.com.readReg(processID, 3, 1)
-        # encoder[1] = commonFX.signedInt(encRead[0])
-        # self.logger.info("Home switch location: %r" % encoder[1])
-        #
-        # self.display.fb_println("Lift switch location: %r" % encoder[0], 0)
-        # self.display.fb_println("Home switch location: %r" % encoder[1], 0)
-
-        #return self.display.FB_Y
-
-    def switchTest(self):
+    def switchTest(self, config):
         processID = 203
         # lower switch
         self.com.setReg(processID, 255, [6])
@@ -105,13 +80,12 @@ class motion():
             self.display.fb_println("Seeking lower switch failed, @ processID %r" % processID, 0)
             self.stopMotion(processID)
             os._exit(1)
-
         self.logger.info("Seeking lower switch successful, @ processID %r" % processID)
         endTimeDN = commonFX.timeCal(startTime)
         time.sleep(1)
         encDown = self.spFeedback()
 
-        #upper switch
+        # upper switch
         self.com.setReg(processID, 255, [3])
         read = self.com.readReg(processID, 255, 1)
         startTime = time.time()
@@ -127,13 +101,18 @@ class motion():
         time.sleep(1)
         encUP = self.spFeedback()
 
-        distance = abs(encUP - encDown)
-        self.logger.info("Distance between Lift and Home switch (count): " + str(distance))
-        self.logger.info("Moving downwards time elapse (sec): " + str(endTimeDN))
+        # results
+        distance = abs(encUP - encDown) * config.encoder_conv
+        self.logger.info("Distance between Lift and Home switch (inch): " + str(distance))
+        self.logger.info("Lift switch location (count): %r" % encUP)
+        self.logger.info("Home switch location (count): %r" % encDown)
         self.logger.info("Moving upwards time elapse (sec): " + str(endTimeUP))
-        self.logger.info("Actuator speed downwards (count/sec): " + str(distance / endTimeDN))
-        self.logger.info("Actuator speed upwards (count/sec): " + str(distance / endTimeDN))
-        return self.display.FB_Y, [encUP, encDown, endTimeUP, endTimeDN]
+        self.logger.info("Moving downwards time elapse (sec): " + str(endTimeDN))
+        self.logger.info("Actuator speed upwards (inch/sec): " + str(distance / endTimeUP))
+        self.logger.info("Actuator speed downwards (inch/sec): " + str(distance / endTimeDN))
+        self.display.fb_println("Home switch location (count): %r" % encDown, 0)
+        self.display.fb_println("Lift switch location (count): %r" % encUP, 0)
+        return self.display.FB_Y, [encUP, encDown], [endTimeUP, endTimeDN]
 
     def magnetDrift(self):
         processID = 204
@@ -213,7 +192,7 @@ class motion():
             self.homing()
         self.resetMode(processID)
         self.com.setReg(processID, 0, [self.killSP[0]])
-        time.sleep(5)
+        time.sleep(3)
         startTime = time.time()
         upperSW = self.com.readCoil(processID, 7, 1)
         if upperSW[0]:
@@ -282,13 +261,3 @@ class motion():
         self.logger.info("Kill switch test successful")
         self.stopMotion(processID)
         return self.display.FB_Y, encoder
-
-
-def main():
-    x = 1
-
-    # main starts here
-
-
-if __name__ == "__main__":
-    main()

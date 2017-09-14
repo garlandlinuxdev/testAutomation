@@ -23,13 +23,13 @@ class sensors():
         else:
             self.display.FB_Y = FB_Y
 
-    def update(self, logger, com, sensor_target, sensorGapTol, lvlMotorTime, lvlMotorTol):
+    def update(self, logger, com, config):
         self.logger = logger
         self.com = com
-        self.sensor_target = sensor_target
-        self.sensorGapTolerance = sensorGapTol
-        self.lvlMotorTime = lvlMotorTime
-        self.lvlMotorTolerance = lvlMotorTol
+        self.sensor_target = config.platen_config[0]
+        self.sensorGapTolerance = config.platen_config[1]
+        self.lvlMotorTime = config.platen_config[2]
+        self.lvlMotorTolerance = config.platen_config[3]
 
     def readSensor(self, processID):
         # [rear, front]
