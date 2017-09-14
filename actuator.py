@@ -130,7 +130,6 @@ class motion():
         encUP = self.spFeedback()
 
         self.com.setReg(processID, 255, [6])
-        timer = time.time()
         read = self.com.readCoil(processID, 6, 1)
         startTime = time.time()
         while read[0] != 1 and commonFX.timeCal(startTime) < self.timeout / 2:
@@ -159,13 +158,10 @@ class motion():
             self.stopMotion(processID)
             os._exit(1)
         self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
-        endTime = commonFX.timeCal(startTime)
         self.resetMode(processID)
         encUP = self.spFeedback()
         distanceUP = abs(encDown - encUP)
         drift = abs(distanceUP - distanceDOWN)
-
-        self.logger.info("Time elapse: " + str(endTime))
 
         if commonFX.rangeCheck(distanceDOWN, distanceUP, self.magnetTolerance):
             self.logger.info("Distance moving down: " + str(distanceDOWN))

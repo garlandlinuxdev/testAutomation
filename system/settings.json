@@ -1,0 +1,35 @@
+{
+	"voltage":{
+		"tolerance": 0.05,
+		"frequency": [ 40, 70 ]
+	},
+	
+	"platen":{
+		"sensor_target": [ 11960, 11960 ],
+		"sensor_tolerance": 0.02,
+		"level_motor_adjTime": 30,
+		"level_motor_tolerance": [ 0.05, 0.05 ] 
+		"level_motor_range": [ 6553, 6553 ],
+		"sensor_trigger": 50,
+		"sensor_to_enc": [ 46.21 , 60 ],
+		"ZDBF_limit": 8
+	},
+	
+	"actuator":{
+		"timeout": 30,
+		"magnet_drift_tolerance": 0.02,
+		"kill_sw_setpoint": [ -8000, 5000 ],
+		"over_current_time": 2,
+		"oc_runtime": 5,
+		"encoder_conv": 0.000492126
+	},
+	"switch":{
+		"tolerance": 0.05,
+		"grill_plate": 2.154,
+		"Lift": 4.227,
+		"Home": 2.147,
+		"killsw_high": 4.786,
+		"killsw_low": -0.233
+	}
+	
+}
