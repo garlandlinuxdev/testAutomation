@@ -8,10 +8,10 @@
 		"sensor_target": [ 11960, 11960 ],
 		"sensor_tolerance": 0.02,
 		"level_motor_adjTime": 30,
-		"level_motor_tolerance": [ 0.05, 0.05 ] 
-		"level_motor_range": [ 6553, 6553 ],
-		"sensor_trigger": 50,
-		"sensor_to_enc": [ 46.21 , 60 ],
+		"level_motor_tolerance": [ 0.05, 0.05, 0.10 ], 
+		"level_motor_range": [ 6449, 6553, 6553 ],
+		"movement_trigger": 200,
+		"sensor_to_enc": [ 36 , 60 ],
 		"ZDBF_limit": 8
 	},
 	
@@ -23,6 +23,7 @@
 		"oc_runtime": 5,
 		"encoder_conv": 0.000492126
 	},
+	
 	"switch":{
 		"tolerance": 0.05,
 		"grill_plate": 2.154,

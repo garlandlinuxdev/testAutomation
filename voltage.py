@@ -2,7 +2,7 @@
 # Project: EOL
 # Description:
 __author__ = "Adrian Wong"
-import os, commonFX, LCD
+import os, commonFX, LCD, subfile
 
 class measure():
     # Temporary variables, do not modify here
@@ -14,12 +14,6 @@ class measure():
     voltageTolerance = 0.05  # percentage of error allowed for voltage test
     freq = [40, 70]  # frequency range
 
-    def updateLCD(self, FB_Y):
-        if FB_Y >= self.display.max_line:
-            self.display.fb_clear()
-        else:
-            self.display.FB_Y = FB_Y
-
     def update(self, logger, com, config):
         self.logger = logger
         self.com = com
@@ -29,7 +23,7 @@ class measure():
     def voltage(self, processID):
         phase_status = self.com.readCoil(processID, 49, 4)
         supply_voltage = self.com.readReg(processID, 33, 9)
-        return self.display.FB_Y, phase_status, supply_voltage
+        return phase_status, supply_voltage
 
     def validate(self, config):
         ph_status = config.phase_status
@@ -113,4 +107,3 @@ class measure():
         self.display.fb_println("5V supply: %r" % (float(voltage[2]) / 100), 0)
         self.display.fb_println("3.3V supply: %r" % (float(voltage[3]) / 100), 0)
 
-        return self.display.FB_Y

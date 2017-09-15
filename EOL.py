@@ -6,7 +6,9 @@ __author__ = "Adrian Wong"
 import modbus_tk.modbus_rtu as modbus_rtu
 import serial, os, logging, modbus, time
 import jsonToFile, actuator, voltage, platen, commonFX, LCD
+from sys import platform
 
+FB_Y = 10 # global Y position of LCD, update using subfile module
 
 def setup():
     # Configure Hardware Overwrite
@@ -50,36 +52,36 @@ def testRequired(config):
     CFA = [47]
 
     status = 0
-    test_type = config.grillType in mcDonald[0]  # Gas
-    if test_type:
+    if config.grillType in mcDonald[0]:  # Gas
         status = 1
         config.logger.info("McDonald Gas Test")
         # print "McDonald Gas Test"
         return [1, 1, 1, 1, 1, 1, 1, 1]
-    test_type = config.grillType in mcDonald[1]  # Electric
-    if test_type:
+
+    if config.grillType in mcDonald[1]:  # Electric
         status = 1
         config.logger.info("McDonald Electric Test")
         # print "McDonald Electric Test"
         return [1, 1, 1, 1, 1, 1, 1, 1]
-    test_type = config.grillType in GenMarket[0]  # Gas
-    if test_type:
+
+    if config.grillType in GenMarket[0]:  # Gas
         status = 1
         config.logger.info("General Market Gas Test")
         # print "General Market Gas Test"
         return [1, 1, 1, 1, 0, 0, 0, 0]
-    test_type = config.grillType in GenMarket[1]  # Electric
-    if test_type:
+
+    if config.grillType in GenMarket[1]:  # Electric
         status = 1
         config.logger.info("General Market Electric Test")
         # print "General Market Electric Test"
         return [1, 1, 1, 1, 0, 0, 0, 0]
-    test_type = config.grillType in CFA
-    if test_type:
+
+    if config.grillType in CFA:  # CFA
         status = 1
         config.logger.info("CFA Gen 2 Test")
         # print "CFA Gen 2 Test"
         return [1, 1, 1, 1, 1, 1, 0, 1]
+
     if status == 0:
         config.logger.info("Grill Type %r not found" % config.grillType)
         config.display.fb_println("Grill Type %r not found" % config.grillType)
@@ -94,6 +96,7 @@ class myConfig(object):
     timeout = 30
     encoder_conv = 0.00049126  # encoder to inch conversion, update from json
     linuxPath = os.path.dirname(__file__)
+    myPlatform = False
     logPath = '/log/'  # log files storage path
     sysPath = '/system/'  # system files storage path
     hwcfg = '/hwcfg/'  # library of all json configurations
@@ -125,14 +128,30 @@ class myConfig(object):
     ZDBF = 0
     gap = 0
     grill_plate = 0
-    error = [0, 0, 0, 0, 0, 0, 0]
-    motor_range = [0, 0]
+    error = [0, 0, 0, 0, 0, 0, 0, 0]
+    motor_range = [0, 0, 0]
     newZDBF = 0
 
     def updateJSON(self, grillType):
         self.jsonFile = self.linuxPath + self.hwcfg + str(grillType) + ".json"
 
     def updateSettings(self):
+
+        if platform == "linux" or platform == "linux2":
+            # linux
+            self.myPlatform = True
+            self.logger.info("Script running on Linux platform, LCD enabled")
+        elif platform == "darwin":
+            # OS X
+            self.myPlatform = False
+            self.logger.info("Script running on OS X platform, LCD disabled")
+        elif platform == "win32" or platform == "cygwin":
+            # Windows...
+            self.myPlatform = False
+            self.logger.info("Script running on windows platform, LCD disabled")
+
+        if self.myPlatform == False:
+            return
         if os.path.exists(self.linuxPath + self.sysPath + 'image') == True:
             os.popen('rm ' + self.linuxPath + self.sysPath + 'image')
         if os.path.exists(self.usbPath + 'settings.json') == True:
@@ -215,16 +234,32 @@ class myConfig(object):
             self.display.fb_println("ZDBF: %r" % self.ZDBF, 0)
 
         if self.test_enable[6] == 1:
-            self.display.fb_println(
-                "Level motor position (mm): %r" % round((10 - ((self.motor_range[0] * 10.0) / 32767)), 3), 0)
-            self.display.fb_println(
-                "Level motor upper limit (mm): %r" % round((10 - ((self.motor_range[1] * 10.0) / 32767)), 3), 0)
-            self.display.fb_println(
-                "Level motor lower limit (mm): %r" % round((10 - ((self.motor_range[2] * 10.0) / 32767)), 3), 0)
-            self.display.fb_println("New ZDBF: %r "%self.newZDBF, 0)
+            if self.error[5] != 1:
+                self.display.fb_println(
+                    "Level motor position (mm):    %r" % round((10 - ((self.motor_range[0] * 10.0) / 32767)), 3), 0)
+            else:
+                self.display.fb_println(
+                    "Level motor position (mm):    %r >tolerance" % round((10 - ((self.motor_range[0] * 10.0) / 32767)),
+                                                                          3), 1)
+            if self.error[6] != 1:
+                self.display.fb_println(
+                    "Level motor upper limit (mm): %r" % round((10 - ((self.motor_range[1] * 10.0) / 32767)), 3), 0)
+            else:
+                self.display.fb_println(
+                    "Level motor upper limit (mm): %r >tolerance" % round((10 - ((self.motor_range[1] * 10.0) / 32767)),
+                                                                          3), 1)
+            if self.error[7] != 1:
+                self.display.fb_println(
+                    "Level motor lower limit (mm): %r" % round((10 - ((self.motor_range[2] * 10.0) / 32767)), 3), 0)
+            else:
+                self.display.fb_println(
+                    "Level motor lower limit (mm): %r >tolerance" % round((10 - ((self.motor_range[2] * 10.0) / 32767)),
+                                                                          3), 1)
+
+            self.display.fb_println("New ZDBF: %r " % self.newZDBF, 0)
 
         if 1 in self.error:
-            self.display.fb_long_print("Switches position not in range, adjustment required", 1)
+            self.display.fb_long_print("Tolerances not in range, adjustment required", 1)
         else:
             self.display.fb_println("< Equipment passed all test requirements >", 1)
 
@@ -240,7 +275,7 @@ class myConfig(object):
         self.logger.info("upper killsw location (inch):  %r" % killsw_high)
         self.logger.info("lower killsw location (inch):  %r" % killlsw_low)
 
-        error = [0, 0, 0, 0, 0, 0, 0]
+        error = [0, 0, 0, 0, 0, 0, 0, 0]
 
         if self.test_enable[0] == 1:
             if commonFX.rangeCheck(grill_plate, self.switch_config[1], self.switch_config[0]) != True:
@@ -260,12 +295,14 @@ class myConfig(object):
                 error[4] = 1
 
         if self.test_enable[7] == 1:
-            if commonFX.rangeCheck(self.motor_range[0], self.platen_config[4][0], self.platen_config[3]):
-                self.logger.info("level motor upper limit not in range")
+            delta = abs(self.motor_range[1] - self.motor_range[2])
+            midpoint = delta/2
+            if commonFX.rangeCheck(self.motor_range[0], midpoint, self.platen_config[3][0], self.platen_config[3][1]):
+                self.logger.info("level motor position in range")
+            else:
+                self.logger.info("level motor position not in range, midpoint: %r, delta: %r" %(midpoint, delta))
                 error[5] = 1
-            if commonFX.rangeCheck(self.motor_range[1], self.platen_config[4][1], self.platen_config[3]):
-                self.logger.info("level motor lower limit not in range")
-                error[6] = 1
+            # correction later...
 
         self.grill_plate = round(grill_plate, 3)
         self.switch = [round(lift_sw, 3), round(home_sw, 3)]
@@ -276,16 +313,16 @@ class myConfig(object):
 def main():
     # main starts here
     config = myConfig()
-
+    logger = setup_logger('event_log', config.logfile + config.log)
+    config.logger = logger
     try:
         master = setup()
     except serial.serialutil.SerialException:
         config.display.fb_clear()
         config.display.fb_long_print("FTDI USB cable not found, please connect cable and restart", 1)
+        logger.info("FTDI USB cable not found, please connect cable and restart")
         os._exit(1)
 
-    logger = setup_logger('event_log', config.logfile + config.log)
-    config.logger = logger
     config.updateSettings()
 
     config.display.fb_clear()
@@ -302,7 +339,7 @@ def main():
         info = myJSON.readJSON(config.linuxPath + config.sysPath + 'settings.json')
     except ValueError:
         logger.info("settings.json file corrupted, update settings required")
-        config.display.fb_long_print("settings.json file corrupted, update settings required")
+        config.display.fb_long_print("settings.json file corrupted, update settings required", 0)
         os._exit(1)
 
     myJSON.update(logger, com, config.loadReg_enable)
@@ -350,35 +387,29 @@ def main():
     logger.info("< execute voltage reading >")
     config.display.fb_println("< execute voltage reading >", 1)
     processID = 2
-    power.updateLCD(config.display.FB_Y)
-    config.display.FB_Y, config.phase_status, config.supply_voltage = power.voltage(processID)
-    power.updateLCD(config.display.FB_Y)
-    config.display.FB_Y = power.validate(config)
+    config.phase_status, config.supply_voltage = power.voltage(processID)
+    power.validate(config)
 
     if config.test_enable[0]:
         logger.info("< execute switch test >")
         # print "< execute switch test >"
         config.display.fb_println("< # 1 execute switch test >", 1)
-        motor.updateLCD(config.display.FB_Y)
-        config.display.FB_Y, config.switch, config.time_elapse = motor.switchTest(config)
+        config.switch, config.time_elapse = motor.switchTest(config)
     if config.test_enable[1]:
         logger.info("< execute kill switch test >")
         # print "< execute kill switch test >"
         config.display.fb_println("< # 2 execute kill switch test >", 1)
-        motor.updateLCD(config.display.FB_Y)
-        config.display.FB_Y, config.killsw_enc = motor.killSwitchTest()
+        config.killsw_enc = motor.killSwitchTest()
     if config.test_enable[2]:
         logger.info("< execute magnet drift test >")
         # print "< execute magnet drift test >"
         config.display.fb_println("< # 3 execute magnet drift test >", 1)
-        motor.updateLCD(config.display.FB_Y)
-        config.display.FB_Y, config.magnet = motor.magnetDrift()
+        config.magnet = motor.magnetDrift(config)
     if config.test_enable[3]:
         logger.info("< execute homing test >")
         # print "< execute homing test >"
         config.display.fb_clear()
         config.display.fb_println("< # 4 execute homing test >", 1)
-        motor.updateLCD(config.display.FB_Y)
         motor.homing()
     if config.test_enable[4]:
         logger.info("< execute sensors gap test >")
@@ -386,16 +417,14 @@ def main():
         config.display.fb_println("< # 5 execute sensors gap test >", 1)
         motor.setpoint(0)
         time.sleep(3)
-        pl.updateLCD(config.display.FB_Y)
-        config.display.FB_Y, config.sensor = pl.sensorGap()
+        config.sensor = pl.sensorGap()
     if config.test_enable[5]:
         logger.info("< execute ZDBF test >")
         # print "< execute ZDBF test >"
         config.display.fb_println("< # 6 execute ZDBF test >", 1)
         motor.setpoint(0)
         time.sleep(3)
-        pl.updateLCD(config.display.FB_Y)
-        config.display.FB_Y, config.ZDBF, config.gap = pl.calZDBF()
+        config.ZDBF, config.gap = pl.calZDBF()
         motor.setpoint(0)
     if config.test_enable[6]:
         logger.info("< execute level motor test >")
@@ -403,9 +432,7 @@ def main():
         config.display.fb_println("< # 7 execute level motor test >", 1)
         motor.setpoint(0)
         time.sleep(3)
-        pl.updateLCD(config.display.FB_Y)
-        # config.display.FB_Y = pl.levelMotorTest()
-        config.display.FB_Y, config.motor_range, config.newZDBF = pl.motorRangeTest(config)
+        config.motor_range, config.newZDBF = pl.motorRangeTest(config)
     if config.test_enable[7]:
         logger.info("< calculate results >")
         config.display.fb_println("< # 8 calculate results >", 1)

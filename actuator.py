@@ -19,12 +19,6 @@ class motion():
     oc_runtime = 5  # runtime for over current test
     encoder_conv = 0.492126  # conversion from encoder count to inches
 
-    def updateLCD(self, FB_Y):
-        if FB_Y >= self.display.max_line:
-            self.display.fb_clear()
-        else:
-            self.display.FB_Y = FB_Y
-
     def update(self, logger, com, config):
         self.logger = logger
         self.com = com
@@ -112,14 +106,14 @@ class motion():
         self.logger.info("Actuator speed downwards (inch/sec): " + str(distance / endTimeDN))
         self.display.fb_println("Home switch location (count): %r" % encDown, 0)
         self.display.fb_println("Lift switch location (count): %r" % encUP, 0)
-        return self.display.FB_Y, [encUP, encDown], [endTimeUP, endTimeDN]
+        return [encUP, encDown], [endTimeUP, endTimeDN]
 
-    def magnetDrift(self):
+    def magnetDrift(self, config):
         processID = 204
         self.com.setReg(processID, 255, [3])
         read = self.com.readReg(processID, 255, 1)
         startTime = time.time()
-        while read[0] != 5 and commonFX.timeCal(startTime) < self.timeout / 2:
+        while read[0] != 5 and commonFX.timeCal(startTime) < self.timeout:
             read = self.com.readReg(processID, 255, 1)
         if read[0] != 5:
             self.logger.info("Seeking upper switch failed, @ processID %r" % processID)
@@ -129,15 +123,18 @@ class motion():
         self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
         encUP = self.spFeedback()
 
-        self.com.setReg(processID, 255, [6])
+        #self.setpoint(config.switch[1])
+        self.setpoint(0)
+        self.com.setReg(processID, 255, [2])
+        #self.com.setReg(processID, 255, [6])
         read = self.com.readCoil(processID, 6, 1)
         startTime = time.time()
-        while read[0] != 1 and commonFX.timeCal(startTime) < self.timeout / 2:
+        while read[0] != 1 and commonFX.timeCal(startTime) < self.timeout:
             read = self.com.readCoil(processID, 6, 1)
-            time.sleep(0.5)
+            time.sleep(0.4)
             self.com.setReg(processID, 255, [0])
-            time.sleep(0.5)
-            self.com.setReg(processID, 255, [6])
+            time.sleep(0.4)
+            self.com.setReg(processID, 255, [2])
         if read[0] != 1:
             self.logger.info("Seeking lower switch failed, @ processID %r" % processID)
             self.display.fb_println("Seeking lower switch failed, @ processID %r" % processID, 1)
@@ -178,7 +175,7 @@ class motion():
             self.display.fb_println("Distance moving up: %r" % distanceUP, 1)
             self.display.fb_println("Check encoder magnet, %r count drift found" % drift, 1)
             os._exit(1)
-        return self.display.FB_Y, [distanceDOWN, distanceUP, drift]
+        return [distanceDOWN, distanceUP, drift]
 
     def killSwitchTest(self):
         processID = 205
@@ -256,4 +253,4 @@ class motion():
 
         self.logger.info("Kill switch test successful")
         self.stopMotion(processID)
-        return self.display.FB_Y, encoder
+        return encoder

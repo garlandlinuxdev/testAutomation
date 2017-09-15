@@ -8,7 +8,7 @@ class loadJSON():
     motorPIDreg = 300
     current_limit_Reg = 515
     heaterPIDconfig = 0  # ["Standard Grilled", "Water Based", "Future Use 1", "Future Use 2", "Preheat"]
-    setpoint = -4500  # initial position setpoint
+    setpoint = -32768  # initial position setpoint
     enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors]
     temp_Limit = [1794, 2400, 1794, 2400, 1794, 0, 0, 0]  # temperature limit
     heaterTemp = [0, 0, 0, 0, 0, 0, 0, 0]  # temperature setpoint
@@ -59,7 +59,7 @@ class loadJSON():
         platen.append(data["platen"]["level_motor_adjTime"])
         platen.append(data["platen"]["level_motor_tolerance"])
         platen.append(data["platen"]["level_motor_range"])
-        platen.append(data["platen"]["sensor_trigger"])
+        platen.append(data["platen"]["movement_trigger"])
         platen.append(data["platen"]["sensor_to_enc"])
         platen.append(data["platen"]["ZDBF_limit"])
         actuator.append(data["actuator"]["timeout"])
