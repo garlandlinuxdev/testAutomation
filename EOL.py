@@ -8,7 +8,8 @@ import serial, os, logging, modbus, time
 import jsonToFile, actuator, voltage, platen, commonFX, LCD
 from sys import platform
 
-FB_Y = 10 # global Y position of LCD, update using subfile module
+FB_Y = 10  # global Y position of LCD, update using subfile module
+
 
 def setup():
     # Configure Hardware Overwrite
@@ -130,6 +131,7 @@ class myConfig(object):
     grill_plate = 0
     error = [0, 0, 0, 0, 0, 0, 0, 0]
     motor_range = [0, 0, 0]
+    motor_limit = [0, 0, 0, 0, 0]
     newZDBF = 0
 
     def updateJSON(self, grillType):
@@ -227,34 +229,24 @@ class myConfig(object):
             self.display.fb_println("Drift count (count):          %r" % self.magnet[2], 0)
         if self.test_enable[4] == 1:
             self.display.fb_println(
-                "Rear sensors gap (mm)         %r" % round((10 - ((self.sensor[0] * 10.0) / 32767)), 3), 0)
+                "Rear sensors gap (mm)         %r" % round(commonFX.baumerToMM(self.sensor[0]), 3), 0)
             self.display.fb_println(
-                "Front sensors gap (mm)        %r" % round((10 - ((self.sensor[1] * 10.0) / 32767)), 3), 0)
+                "Front sensors gap (mm)        %r" % round(commonFX.baumerToMM(self.sensor[1]), 3), 0)
         if self.test_enable[5] == 1 and self.test_enable[6] != 1:
             self.display.fb_println("ZDBF: %r" % self.ZDBF, 0)
 
         if self.test_enable[6] == 1:
+
             if self.error[5] != 1:
-                self.display.fb_println(
-                    "Level motor position (mm):    %r" % round((10 - ((self.motor_range[0] * 10.0) / 32767)), 3), 0)
+                self.display.fb_println("Level motor position (mm):    %r" % round(self.motor_limit[0], 3), 0)
+                self.display.fb_println("Level motor upper range (mm): %r" % round(self.motor_limit[1], 3), 0)
+                self.display.fb_println("Level motor lower range (mm): %r" % round(self.motor_limit[2], 3), 0)
+
             else:
-                self.display.fb_println(
-                    "Level motor position (mm):    %r >tolerance" % round((10 - ((self.motor_range[0] * 10.0) / 32767)),
-                                                                          3), 1)
-            if self.error[6] != 1:
-                self.display.fb_println(
-                    "Level motor upper limit (mm): %r" % round((10 - ((self.motor_range[1] * 10.0) / 32767)), 3), 0)
-            else:
-                self.display.fb_println(
-                    "Level motor upper limit (mm): %r >tolerance" % round((10 - ((self.motor_range[1] * 10.0) / 32767)),
-                                                                          3), 1)
-            if self.error[7] != 1:
-                self.display.fb_println(
-                    "Level motor lower limit (mm): %r" % round((10 - ((self.motor_range[2] * 10.0) / 32767)), 3), 0)
-            else:
-                self.display.fb_println(
-                    "Level motor lower limit (mm): %r >tolerance" % round((10 - ((self.motor_range[2] * 10.0) / 32767)),
-                                                                          3), 1)
+                self.display.fb_println("Level motor position (mm):    %r <required" % round(self.motor_limit[0], 3),
+                                        1)
+                self.display.fb_println("Level motor upper range (mm): %r" % round(self.motor_limit[1], 3), 0)
+                self.display.fb_println("Level motor lower range (mm): %r" % round(self.motor_limit[2], 3), 0)
 
             self.display.fb_println("New ZDBF: %r " % self.newZDBF, 0)
 
@@ -264,20 +256,20 @@ class myConfig(object):
             self.display.fb_println("< Equipment passed all test requirements >", 1)
 
     def calculate(self):
-        grill_plate = self.gap[0] * self.encoder_conv
-        lift_sw = (self.gap[0] - self.switch[0]) * self.encoder_conv
-        home_sw = (self.gap[0] - self.switch[1]) * self.encoder_conv
-        killsw_high = (self.gap[0] - self.killsw_enc[0]) * self.encoder_conv
-        killlsw_low = (self.gap[0] - self.killsw_enc[1]) * self.encoder_conv
-        self.logger.info("grill plate to home sw (inch): %r" % grill_plate)
-        self.logger.info("lift switch location (inch):   %r" % lift_sw)
-        self.logger.info("home switch location (inch):   %r" % home_sw)
-        self.logger.info("upper killsw location (inch):  %r" % killsw_high)
-        self.logger.info("lower killsw location (inch):  %r" % killlsw_low)
-
         error = [0, 0, 0, 0, 0, 0, 0, 0]
 
         if self.test_enable[0] == 1:
+            grill_plate = self.gap[0] * self.encoder_conv
+            lift_sw = (self.gap[0] - self.switch[0]) * self.encoder_conv
+            home_sw = (self.gap[0] - self.switch[1]) * self.encoder_conv
+            killsw_high = (self.gap[0] - self.killsw_enc[0]) * self.encoder_conv
+            killlsw_low = (self.gap[0] - self.killsw_enc[1]) * self.encoder_conv
+            self.logger.info("grill plate to home sw (inch): %r" % grill_plate)
+            self.logger.info("lift switch location (inch):   %r" % lift_sw)
+            self.logger.info("home switch location (inch):   %r" % home_sw)
+            self.logger.info("upper killsw location (inch):  %r" % killsw_high)
+            self.logger.info("lower killsw location (inch):  %r" % killlsw_low)
+
             if commonFX.rangeCheck(grill_plate, self.switch_config[1], self.switch_config[0]) != True:
                 self.logger.info("grill plate to home distance not in range")
                 error[0] = 1
@@ -294,19 +286,23 @@ class myConfig(object):
                 self.logger.info("lower kill switch location not in range")
                 error[4] = 1
 
-        if self.test_enable[7] == 1:
-            delta = abs(self.motor_range[1] - self.motor_range[2])
-            midpoint = delta/2
-            if commonFX.rangeCheck(self.motor_range[0], midpoint, self.platen_config[3][0], self.platen_config[3][1]):
-                self.logger.info("level motor position in range")
-            else:
-                self.logger.info("level motor position not in range, midpoint: %r, delta: %r" %(midpoint, delta))
-                error[5] = 1
-            # correction later...
+            self.grill_plate = round(grill_plate, 3)
+            self.switch = [round(lift_sw, 3), round(home_sw, 3)]
+            self.killsw_enc = [round(killsw_high, 3), round(killlsw_low, 3)]
 
-        self.grill_plate = round(grill_plate, 3)
-        self.switch = [round(lift_sw, 3), round(home_sw, 3)]
-        self.killsw_enc = [round(killsw_high, 3), round(killlsw_low, 3)]
+        if self.test_enable[7] == 1:
+            position = commonFX.baumerToMM(self.motor_range[0])
+            upper_limit = position - self.platen_config[6][0]
+            lower_limit = position + self.platen_config[6][1]
+            # upper limit = 5%, lower limit = 10%
+            if upper_limit < position < lower_limit:
+                self.logger.info("level motor position in range")
+
+            else:
+                self.logger.info("level motor position not in range, midpoint: %r, delta: %r")
+
+                error[5] = 1
+
         self.error = error
 
 
@@ -432,7 +428,7 @@ def main():
         config.display.fb_println("< # 7 execute level motor test >", 1)
         motor.setpoint(0)
         time.sleep(3)
-        config.motor_range, config.newZDBF = pl.motorRangeTest(config)
+        config.motor_range, config.motor_limit, config.newZDBF = pl.motorRangeTest(config)
     if config.test_enable[7]:
         logger.info("< calculate results >")
         config.display.fb_println("< # 8 calculate results >", 1)

@@ -104,8 +104,8 @@ class motion():
         self.logger.info("Moving downwards time elapse (sec): " + str(endTimeDN))
         self.logger.info("Actuator speed upwards (inch/sec): " + str(distance / endTimeUP))
         self.logger.info("Actuator speed downwards (inch/sec): " + str(distance / endTimeDN))
-        self.display.fb_println("Home switch location (count): %r" % encDown, 0)
         self.display.fb_println("Lift switch location (count): %r" % encUP, 0)
+        self.display.fb_println("Home switch location (count): %r" % encDown, 0)
         return [encUP, encDown], [endTimeUP, endTimeDN]
 
     def magnetDrift(self, config):
@@ -161,18 +161,18 @@ class motion():
         drift = abs(distanceUP - distanceDOWN)
 
         if commonFX.rangeCheck(distanceDOWN, distanceUP, self.magnetTolerance):
-            self.logger.info("Distance moving down: " + str(distanceDOWN))
             self.logger.info("Distance moving up: " + str(distanceUP))
+            self.logger.info("Distance moving down: " + str(distanceDOWN))
             self.logger.info("Encoder magnet ok, no drift found")
-            self.display.fb_println("Distance moving down: %r" % distanceDOWN, 0)
             self.display.fb_println("Distance moving up: %r" % distanceUP, 0)
+            self.display.fb_println("Distance moving down: %r" % distanceDOWN, 0)
             self.display.fb_println("Encoder magnet ok, no drift found", 0)
         else:
-            self.logger.info("Distance moving down: " + str(distanceDOWN))
             self.logger.info("Distance moving up: " + str(distanceUP))
+            self.logger.info("Distance moving down: " + str(distanceDOWN))
             self.logger.info("Check encoder magnet, %r count drift found" % drift)
-            self.display.fb_println("Distance moving down: %r" % distanceDOWN, 1)
             self.display.fb_println("Distance moving up: %r" % distanceUP, 1)
+            self.display.fb_println("Distance moving down: %r" % distanceDOWN, 1)
             self.display.fb_println("Check encoder magnet, %r count drift found" % drift, 1)
             os._exit(1)
         return [distanceDOWN, distanceUP, drift]

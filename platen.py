@@ -17,9 +17,10 @@ class sensors():
     lvlMotorTime = 4  # time (sec) for level motor to offset
     lvlMotorTolerance = [ 0.05, 0.05, 0.05]  # tolerance for level motor range [motor, upper, lower]
     level_motor_range = [0, 0, 0]  # [motor_position limit, high limit, low limit]
-    movement_trigger = 0.01
+    movement_trigger = [150, 300] # [ upper trigger, lower trigger ] sensors reading differences for motor adjustment
     conversion = [46.21, 60] # [conversion_down, conversion_up]
     ZDBF_limit = 5  # differences required for adjustment, between target ZDBF to current ZDBF
+    offset_required = [2, 2] # [up, down] distance require for motor moving down (mm)
 
     def update(self, logger, com, config):
         self.logger = logger
@@ -30,8 +31,9 @@ class sensors():
         self.lvlMotorTolerance = config.platen_config[3]
         self.level_motor_range = config.platen_config[4]
         self.movement_trigger = config.platen_config[5]
-        self.conversion = config.platen_config[6]
-        self.ZDBF_limit = config.platen_config[7]
+        self.offset_required = config.platen_config[6]
+        self.conversion = config.platen_config[7]
+        self.ZDBF_limit = config.platen_config[8]
 
     def readSensor(self, processID):
         # [rear, front]
@@ -235,18 +237,25 @@ class sensors():
         sample.append(sensorReading[0]) # initial
         sample.append(sensorReading[0] * 2) # ensure it's not the same as initial
 
+        offset = commonFX.baumerToMM(motor_range[0]) - self.offset_required[0]
+        target = int(commonFX.mmToBaumer(offset))
+
         # adjustment upwards
+        self.logger.info("Adjusting level motor up, gap target: %r" %int(offset))
         self.display.fb_println("Adjusting level motor up", 0)
         self.moveLvlMotor(1, -1)
-        time.sleep(1)
+
         startTime = time.time()
-        while commonFX.below_threshold(sample[-1], sample[-2], self.movement_trigger) != True and commonFX.timeCal(startTime) < self.lvlMotorTime:
+        while sensorReading[0] < target and commonFX.timeCal(startTime) < self.lvlMotorTime:
             sensorReading = self.readSensor(processID)
             sample.append(sensorReading[0])
-            print sensorReading[0]
+            #print sensorReading[0]
             time.sleep(1)
 
         self.moveLvlMotor(0, 0)
+        if commonFX.timeCal(startTime) > self.lvlMotorTime:
+            self.logger.info("level motor did not reach max position, timed out at %r (sec)" %self.lvlMotorTime)
+
         sensorReading = self.readSensor(processID)
         motor_range[1] = sensorReading[0]
         try:
@@ -254,11 +263,11 @@ class sensors():
                 self.logger.info("No level motor movement detected")
                 self.display.fb_println("No level motor movement detected", 1)
                 os._exit(1)
-            elif sample[0] > sample[-1] - self.movement_trigger :
+            elif sample[0] > sample[-1] - self.movement_trigger[0] :
                 self.logger.info("Level motor moving in reverse direction")
                 self.display.fb_println("Level motor moving in reverse direction", 1)
                 os._exit(1)
-            elif sample[0] < sample[-1] + self.movement_trigger:
+            elif sample[0] < sample[-1] + self.movement_trigger[0]:
                 self.logger.info("Level motor installed correctly")
                 self.display.fb_println("Level motor installed correctly", 0)
 
@@ -277,20 +286,23 @@ class sensors():
         self.moveLvlMotor(0, 0)
 
         # adjustment downwards
+        offset = commonFX.baumerToMM(motor_range[0]) + self.offset_required[1]
+        target = int(commonFX.mmToBaumer(offset))
         sensorReading = self.readSensor(processID)
+        self.logger.info("Adjusting level motor down, gap target: %r" %int(offset))
         self.display.fb_println("Adjusting level motor down", 0)
         self.moveLvlMotor(1, 1)
-        time.sleep(1)
         startTime = time.time()
-        sample[:] = []
-        sample.append(sensorReading[0])  # initial
-        sample.append(20000)  # ensure it's not the same as initial
-        while commonFX.below_threshold(sample[-1], sample[-2], self.movement_trigger) != True and commonFX.timeCal(startTime) < self.lvlMotorTime:
+
+        while sensorReading[0] > target and commonFX.timeCal(startTime) < self.lvlMotorTime:
             sensorReading = self.readSensor(processID)
-            sample.append(sensorReading[0])
-            print sensorReading[0]
+            #print sensorReading[0]
             time.sleep(1)
+
         self.moveLvlMotor(0, 0)
+        if commonFX.timeCal(startTime) > self.lvlMotorTime:
+            self.logger.info("level motor did not reach max position, timed out at %r (sec)" % self.lvlMotorTime)
+
         sensorReading = self.readSensor(processID)
         motor_range[2] = sensorReading[0]
 
@@ -304,8 +316,10 @@ class sensors():
             self.autolevel(processID, direction, adjustment)
             newZDBF, direction, adjustment = self.resetGAP(config)
 
-        self.logger.info("level motor position: %r" % (10 - ((motor_range[0] * 10.0) / 32767)))
-        self.logger.info("level motor upper limit: %r" % (10 - ((motor_range[1] * 10.0) / 32767)))
-        self.logger.info("level motor lower limit: %r" % (10 - ((motor_range[2] * 10.0) / 32767)))
+        position = commonFX.baumerToMM(motor_range[0])
+        upperLimit = commonFX.baumerToMM(motor_range[1])
+        lowerLimit = commonFX.baumerToMM(motor_range[2])
+
+        self.logger.info("Sensor Reading {position: %r, upper range: %r, lower range: %r}" %(position, upperLimit, lowerLimit))
         self.logger.info("New ZDBF: %r" %newZDBF)
-        return motor_range, newZDBF
+        return motor_range, [position, upperLimit, lowerLimit], newZDBF
