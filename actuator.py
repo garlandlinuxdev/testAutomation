@@ -63,21 +63,6 @@ class motion():
 
     def switchTest(self, config):
         processID = 203
-        # lower switch
-        self.com.setReg(processID, 255, [6])
-        read = self.com.readReg(processID, 255, 1)
-        startTime = time.time()
-        while read[0] != 8 and commonFX.timeCal(startTime) < self.timeout / 2:
-            read = self.com.readReg(processID, 255, 1)
-        if read[0] != 8:
-            self.logger.info("Seeking lower switch failed, @ processID %r" % processID)
-            self.display.fb_println("Seeking lower switch failed, @ processID %r" % processID, 0)
-            self.stopMotion(processID)
-            os._exit(1)
-        self.logger.info("Seeking lower switch successful, @ processID %r" % processID)
-        endTimeDN = commonFX.timeCal(startTime)
-        time.sleep(1)
-        encDown = self.spFeedback()
 
         # upper switch
         self.com.setReg(processID, 255, [3])
@@ -94,6 +79,22 @@ class motion():
         endTimeUP = commonFX.timeCal(startTime)
         time.sleep(1)
         encUP = self.spFeedback()
+
+        # lower switch
+        self.com.setReg(processID, 255, [6])
+        read = self.com.readReg(processID, 255, 1)
+        startTime = time.time()
+        while read[0] != 8 and commonFX.timeCal(startTime) < self.timeout / 2:
+            read = self.com.readReg(processID, 255, 1)
+        if read[0] != 8:
+            self.logger.info("Seeking lower switch failed, @ processID %r" % processID)
+            self.display.fb_println("Seeking lower switch failed, @ processID %r" % processID, 0)
+            self.stopMotion(processID)
+            os._exit(1)
+        self.logger.info("Seeking lower switch successful, @ processID %r" % processID)
+        endTimeDN = commonFX.timeCal(startTime)
+        time.sleep(1)
+        encDown = self.spFeedback()
 
         # results
         distance = abs(encUP - encDown) * config.encoder_conv

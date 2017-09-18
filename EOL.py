@@ -191,9 +191,9 @@ class myConfig(object):
     def report(self):
         self.display.fb_clear()
         self.display.fb_println("< Test Results > ", 1)
-        self.display.fb_println("Phase A (V):     %r" % (self.supply_voltage[4] / 10.0), 0)
-        self.display.fb_println("Phase B (V):     %r" % (self.supply_voltage[5] / 10.0), 0)
-        self.display.fb_println("Phase C (V):     %r" % (self.supply_voltage[6] / 10.0), 0)
+        self.display.fb_println("Line 1 (V):     %r" % (self.supply_voltage[4] / 10.0), 0)
+        self.display.fb_println("Line 2 (V):     %r" % (self.supply_voltage[5] / 10.0), 0)
+        self.display.fb_println("Line 3 (V):     %r" % (self.supply_voltage[6] / 10.0), 0)
         # self.display.fb_println("24V supply (V):  %r" % (float(self.supply_voltage[0]) / 100), 0)
         # self.display.fb_println("12V supply (V):  %r" % (float(self.supply_voltage[1]) / 100), 0)
         # self.display.fb_println("5V supply (V):   %r" % (float(self.supply_voltage[2]) / 100), 0)
@@ -236,17 +236,21 @@ class myConfig(object):
             self.display.fb_println("ZDBF: %r" % self.ZDBF, 0)
 
         if self.test_enable[6] == 1:
+            up_limit = round(commonFX.baumerToMM(self.motor_range[0]) - self.platen_config[6][1], 3)
+            low_limit = round(commonFX.baumerToMM(self.motor_range[0]) + self.platen_config[6][1], 3)
 
-            if self.error[5] != 1:
-                self.display.fb_println("Level motor position (mm):    %r" % round(self.motor_limit[0], 3), 0)
-                self.display.fb_println("Level motor upper range (mm): %r" % round(self.motor_limit[1], 3), 0)
-                self.display.fb_println("Level motor lower range (mm): %r" % round(self.motor_limit[2], 3), 0)
-
+            self.display.fb_println("Level motor position (mm):    %r" % round(self.motor_limit[0], 3), 0)
+            if self.error[5] == 1:
+                self.display.fb_println(
+                    "upper travel range (mm):       %r > %r" % (round(self.motor_limit[1], 3), up_limit), 1)
             else:
-                self.display.fb_println("Level motor position (mm):    %r <required" % round(self.motor_limit[0], 3),
-                                        1)
-                self.display.fb_println("Level motor upper range (mm): %r" % round(self.motor_limit[1], 3), 0)
-                self.display.fb_println("Level motor lower range (mm): %r" % round(self.motor_limit[2], 3), 0)
+                self.display.fb_println("upper travel range (mm):      %r" % round(self.motor_limit[1], 3), 0)
+
+            if self.error[6] == 1:
+                self.display.fb_println(
+                    "lower travel range (mm):       %r < %r" % (round(self.motor_limit[2], 3), low_limit), 1)
+            else:
+                self.display.fb_println("lower travel range (mm):      %r" % round(self.motor_limit[2], 3), 0)
 
             self.display.fb_println("New ZDBF: %r " % self.newZDBF, 0)
 
@@ -290,18 +294,24 @@ class myConfig(object):
             self.switch = [round(lift_sw, 3), round(home_sw, 3)]
             self.killsw_enc = [round(killsw_high, 3), round(killlsw_low, 3)]
 
-        if self.test_enable[7] == 1:
+        if self.test_enable[6] == 1:
             position = commonFX.baumerToMM(self.motor_range[0])
             upper_limit = position - self.platen_config[6][0]
             lower_limit = position + self.platen_config[6][1]
-            # upper limit = 5%, lower limit = 10%
-            if upper_limit < position < lower_limit:
+            if commonFX.baumerToMM(self.motor_range[1]) <= upper_limit and commonFX.baumerToMM(
+                    self.motor_range[2]) >= lower_limit:
                 self.logger.info("level motor position in range")
-
-            else:
-                self.logger.info("level motor position not in range, midpoint: %r, delta: %r")
-
+            if commonFX.baumerToMM(self.motor_range[1]) > upper_limit:
+                self.logger.info("upper travel limit not in range of %r" % upper_limit)
                 error[5] = 1
+            else:
+                self.logger.info("upper travel limit within range of %r" % upper_limit)
+            if commonFX.baumerToMM(self.motor_range[2]) < lower_limit:
+                self.logger.info("lower travel limit not in range of %r" % lower_limit)
+                error[6] = 1
+            else:
+                self.logger.info("lower travel limit within range of %r" % lower_limit)
+
 
         self.error = error
 

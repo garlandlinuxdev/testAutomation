@@ -33,30 +33,30 @@ class measure():
         status = [1, 1, 1, 1, 1, 1, 1, 1]
         if ph_status[0] == 0:
             status[0] = 0
-            self.logger.info("Phase A not present, " + str(voltage[4]))
-            self.display.fb_println("Phase A not present, %r" % voltage[4], 1)
+            self.logger.info("Line 1 not present, " + str(voltage[4]))
+            self.display.fb_println("Line 1 not present, %r" % voltage[4], 1)
             # print "Phase A not present, ", voltage[4]
         else:
-            self.logger.info("Phase A: " + str(voltage[4] / 10.0))
-            self.display.fb_println("Phase A: %r" % (voltage[4] / 10.0), 0)
+            self.logger.info("Line 1: " + str(voltage[4] / 10.0))
+            self.display.fb_println("Line 1: %r" % (voltage[4] / 10.0), 0)
 
         if ph_status[1] == 0:
             status[1] = 0
-            self.logger.info("Phase B not present, " + str(voltage[5]))
-            self.display.fb_println("Phase B not present, %r" % voltage[5], 1)
+            self.logger.info("Line 2 not present, " + str(voltage[5]))
+            self.display.fb_println("Line 2  not present, %r" % voltage[5], 1)
             # print "Phase B not present, ", voltage[5]
         else:
-            self.logger.info("Phase B: " + str(voltage[5] / 10.0))
-            self.display.fb_println("Phase B: %r" % (voltage[5] / 10.0), 0)
+            self.logger.info("Line 2 : " + str(voltage[5] / 10.0))
+            self.display.fb_println("Line 2 : %r" % (voltage[5] / 10.0), 0)
 
         if ph_status[2] == 0:
             status[2] = 0
-            self.logger.info("Phase C not present, " + str(voltage[6]))
-            self.display.fb_println("Phase C not present, %r" % voltage[6], 1)
+            self.logger.info("Line 3 not present, " + str(voltage[6]))
+            self.display.fb_println("Line 3 not present, %r" % voltage[6], 1)
             # print "Phase C not present, ", voltage[6]
         else:
-            self.logger.info("Phase C: " + str(voltage[6] / 10.0))
-            self.display.fb_println("Phase C: %r" % (voltage[6] / 10.0), 0)
+            self.logger.info("Line 3: " + str(voltage[6] / 10.0))
+            self.display.fb_println("Line 3: %r" % (voltage[6] / 10.0), 0)
 
         if self.freq[0] <= voltage[7] <= self.freq[1]:
             self.logger.info("Frequency: " + str(voltage[7]))
