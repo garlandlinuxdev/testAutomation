@@ -46,8 +46,8 @@ class measure():
             self.display.fb_println("Line 2  not present, %r" % voltage[5], 1)
             # print "Phase B not present, ", voltage[5]
         else:
-            self.logger.info("Line 2 : " + str(voltage[5] / 10.0))
-            self.display.fb_println("Line 2 : %r" % (voltage[5] / 10.0), 0)
+            self.logger.info("Line 2: " + str(voltage[5] / 10.0))
+            self.display.fb_println("Line 2: %r" % (voltage[5] / 10.0), 0)
 
         if ph_status[2] == 0:
             status[2] = 0

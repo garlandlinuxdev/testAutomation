@@ -18,6 +18,13 @@ def mmToBaumer(arg):
     count = ((10 - arg) * 32767) / 10
     return count
 
+def encToInch(arg, conv = None):
+    if conv == None:
+        enc = arg * 0.000492126
+    else:
+        enc = arg * conv
+    return enc
+
 def rangeCheck(reading, target, tolerance, lower_limit=None):
     if lower_limit is None:  # same tolerance for upper and lower
         if target < 0:

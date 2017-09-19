@@ -20,12 +20,15 @@ class display():
         if platform == "linux" or platform == "linux2":
             # linux
             self.myPlatform = True
+            return True
         elif platform == "darwin":
             # OS X
             self.myPlatform = False
+            return False
         elif platform == "win32" or platform == "cygwin":
             # Windows...
             self.myPlatform = False
+            return False
 
     def updateFB_Y(self):
         subfile.storage(self.FB_Y) # update global Y position

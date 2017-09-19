@@ -194,10 +194,18 @@ class sensors():
 
         elif ZDBF > target:  # Rear higher than front
             direction = 1  # move CCW down
-            adjustment = (target - ZDBF) * self.conversion[0]
+            if self.ZDBF_limit < abs(target - ZDBF) < self.ZDBF_limit + 10:
+                adjustment = (target - ZDBF) * self.conversion[0]/2
+            else:
+                adjustment = (target - ZDBF) * self.conversion[0]
+
         elif ZDBF < target:  # Rear lower than front
             direction = -1  # move CW up
-            adjustment = (target - ZDBF) * self.conversion[1]
+            if self.ZDBF_limit < abs(target - ZDBF) < self.ZDBF_limit + 10:
+                adjustment = (target - ZDBF) * self.conversion[1]/2
+            else:
+                adjustment = (target - ZDBF) * self.conversion[1]
+
 
         self.logger.info("ZDBF: %r, direction: %r, adjustment: %r" % (ZDBF, direction, adjustment))
         return ZDBF, direction, adjustment
@@ -308,6 +316,14 @@ class sensors():
         sensorReading = self.readSensor(processID)
         motor_range[2] = sensorReading[0]
 
+        # log data
+        position = commonFX.baumerToMM(motor_range[0])
+        upperLimit = commonFX.baumerToMM(motor_range[1])
+        lowerLimit = commonFX.baumerToMM(motor_range[2])
+
+        self.logger.info("Sensor Reading {position: %r, upper range: %r, lower range: %r}" % (
+            round(position, 3), round(upperLimit, 3), round(lowerLimit, 3)))
+
         # reset
         self.logger.info("Resetting platen level")
         self.display.fb_println("Resetting platen level", 0)
@@ -318,11 +334,6 @@ class sensors():
             self.autolevel(processID, direction, adjustment)
             newZDBF, direction, adjustment = self.resetGAP(config)
 
-        position = commonFX.baumerToMM(motor_range[0])
-        upperLimit = commonFX.baumerToMM(motor_range[1])
-        lowerLimit = commonFX.baumerToMM(motor_range[2])
-
-        self.logger.info("Sensor Reading {position: %r, upper range: %r, lower range: %r}" % (
-            round(position, 3), round(upperLimit, 3), round(lowerLimit, 3)))
         self.logger.info("New ZDBF: %r" % newZDBF)
+
         return motor_range, [position, upperLimit, lowerLimit], newZDBF

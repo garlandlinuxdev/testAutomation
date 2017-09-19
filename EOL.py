@@ -115,6 +115,7 @@ class myConfig(object):
     sync_role = 0
 
     # storage
+    json_test_config = ''
     voltage_config = ''
     platen_config = ''
     actuator_config = ''
@@ -127,7 +128,7 @@ class myConfig(object):
     magnet = [0, 0, 0]
     sensor = [0, 0]
     ZDBF = 0
-    gap = 0
+    gap = [0, 0]
     grill_plate = 0
     error = [0, 0, 0, 0, 0, 0, 0, 0]
     motor_range = [0, 0, 0]
@@ -174,14 +175,22 @@ class myConfig(object):
     def copyLog(self):
         timestr = time.strftime("%Y%m%d-%H%M%S")
         # print "USB path: ", os.path.isdir(config.usbpath)
-        if os.path.exists(self.usbPath + self.usb_logpath) == True:
-            self.logger.info("Test logs copy to USB path")
+        if os.path.isfile(self.logfile + self.log) == True:
             os.popen(
                 'mv ' + self.logfile + self.log + ' ' + self.linuxPath + self.logPath + timestr + self.log)
+
+        if os.path.exists(self.usbPath + self.usb_logpath) == True:
+            try:
+                self.logger.info("Test logs copy to USB path")
+            except AttributeError:
+                pass
             os.popen('mv ' + self.logfile + '*.log' + ' ' + self.usbPath + self.usb_logpath)
             self.display.fb_println("Test logs copied to USB path", 0)
         else:
-            self.logger.info("USB log path not found")
+            try:
+                self.logger.info("USB log path not found")
+            except AttributeError:
+                pass
             self.display.fb_println("USB log path not found", 0)
             os.popen(
                 'mv ' + self.logfile + self.log + ' ' + self.linuxPath + self.logPath + timestr + self.log)
@@ -189,6 +198,14 @@ class myConfig(object):
             # print (config.linuxPath + config.logPath + timestr + config.log)
 
     def report(self):
+        self.logger.info("< Test Results >")
+        self.logger.info("Line 1 (V):     %r" % (self.supply_voltage[4] / 10.0))
+        self.logger.info("Line 2 (V):     %r" % (self.supply_voltage[5] / 10.0))
+        self.logger.info("Line 3 (V):     %r" % (self.supply_voltage[6] / 10.0))
+        self.logger.info("24V supply (V):  %r" % (float(self.supply_voltage[0]) / 100))
+        self.logger.info("12V supply (V):  %r" % (float(self.supply_voltage[1]) / 100))
+        self.logger.info("5V supply (V):   %r" % (float(self.supply_voltage[2]) / 100))
+        self.logger.info("3.3V supply (V): %r" % (float(self.supply_voltage[3]) / 100))
         self.display.fb_clear()
         self.display.fb_println("< Test Results > ", 1)
         self.display.fb_println("Line 1 (V):     %r" % (self.supply_voltage[4] / 10.0), 0)
@@ -200,10 +217,12 @@ class myConfig(object):
         # self.display.fb_println("3.3V supply (V): %r" % (float(self.supply_voltage[3]) / 100), 0)
 
         if self.test_enable[0] == 1:
+            self.logger.info("Time elapse upwards (sec):    %r" % round(self.time_elapse[0], 3))
+            self.logger.info("Time elapse downwards (sec):  %r" % round(self.time_elapse[1], 3))
             self.display.fb_println("Time elapse upwards (sec):    %r" % round(self.time_elapse[0], 3), 0)
             self.display.fb_println("Time elapse downwards (sec):  %r" % round(self.time_elapse[1], 3), 0)
             if self.error[0] != 1:
-                self.display.fb_println("Grill plate to Home (inch):   %r" % self.grill_plate, 0)
+                self.display.fb_println("Grill plate to Home (inch):  %r" % self.grill_plate, 0)
             else:
                 self.display.fb_println("Grill plate to Home (inch):  %r >tolerance" % self.grill_plate, 1)
             if self.error[1] != 1:
@@ -224,70 +243,85 @@ class myConfig(object):
                 self.display.fb_println("Lower killsw location(inch): %r >tolerance" % self.killsw_enc[1], 1)
 
         if self.test_enable[2] == 1:
+            self.logger.info("Distance moving down (count): %r" % self.magnet[0])
+            self.logger.info("Distance moving up (count):   %r" % self.magnet[1])
+            self.logger.info("Drift count (count):          %r" % self.magnet[2])
             self.display.fb_println("Distance moving down (count): %r" % self.magnet[0], 0)
             self.display.fb_println("Distance moving up (count):   %r" % self.magnet[1], 0)
             self.display.fb_println("Drift count (count):          %r" % self.magnet[2], 0)
         if self.test_enable[4] == 1:
+            self.logger.info("Rear sensors gap (mm)         %r" % round(commonFX.baumerToMM(self.sensor[0]), 3))
+            self.logger.info("Front sensors gap (mm)        %r" % round(commonFX.baumerToMM(self.sensor[1]), 3))
             self.display.fb_println(
                 "Rear sensors gap (mm)         %r" % round(commonFX.baumerToMM(self.sensor[0]), 3), 0)
             self.display.fb_println(
                 "Front sensors gap (mm)        %r" % round(commonFX.baumerToMM(self.sensor[1]), 3), 0)
         if self.test_enable[5] == 1 and self.test_enable[6] != 1:
+            self.logger.info("ZDBF: %r" % self.ZDBF)
             self.display.fb_println("ZDBF: %r" % self.ZDBF, 0)
 
         if self.test_enable[6] == 1:
             up_limit = round(commonFX.baumerToMM(self.motor_range[0]) - self.platen_config[6][1], 3)
             low_limit = round(commonFX.baumerToMM(self.motor_range[0]) + self.platen_config[6][1], 3)
-
+            self.logger.info("Level motor position (mm):    %r" % round(self.motor_limit[0], 3))
             self.display.fb_println("Level motor position (mm):    %r" % round(self.motor_limit[0], 3), 0)
             if self.error[5] == 1:
+                self.logger.info("upper travel range (mm):      %r > %r" % (round(self.motor_limit[1], 3), up_limit))
                 self.display.fb_println(
-                    "upper travel range (mm):       %r > %r" % (round(self.motor_limit[1], 3), up_limit), 1)
+                    "upper travel range (mm):      %r > %r" % (round(self.motor_limit[1], 3), up_limit), 1)
             else:
+                self.logger.info("upper travel range (mm):      %r" % round(self.motor_limit[1], 3))
                 self.display.fb_println("upper travel range (mm):      %r" % round(self.motor_limit[1], 3), 0)
 
             if self.error[6] == 1:
+                self.logger.info("lower travel range (mm):      %r < %r" % (round(self.motor_limit[2], 3), low_limit))
                 self.display.fb_println(
-                    "lower travel range (mm):       %r < %r" % (round(self.motor_limit[2], 3), low_limit), 1)
+                    "lower travel range (mm):      %r < %r" % (round(self.motor_limit[2], 3), low_limit), 1)
             else:
+                self.logger.info("lower travel range (mm):      %r" % round(self.motor_limit[2], 3))
                 self.display.fb_println("lower travel range (mm):      %r" % round(self.motor_limit[2], 3), 0)
 
-            self.display.fb_println("New ZDBF: %r " % self.newZDBF, 0)
+            self.logger.info("ZDBF: %r " % self.newZDBF)
+            self.display.fb_println("ZDBF: %r " % self.newZDBF, 0)
 
         if 1 in self.error:
+            self.logger.info("Tolerances not in range, adjustment required")
             self.display.fb_long_print("Tolerances not in range, adjustment required", 1)
         else:
+            self.logger.info("< Equipment passed all test requirements >")
             self.display.fb_println("< Equipment passed all test requirements >", 1)
 
     def calculate(self):
         error = [0, 0, 0, 0, 0, 0, 0, 0]
 
         if self.test_enable[0] == 1:
-            grill_plate = self.gap[0] * self.encoder_conv
-            lift_sw = (self.gap[0] - self.switch[0]) * self.encoder_conv
-            home_sw = (self.gap[0] - self.switch[1]) * self.encoder_conv
-            killsw_high = (self.gap[0] - self.killsw_enc[0]) * self.encoder_conv
-            killlsw_low = (self.gap[0] - self.killsw_enc[1]) * self.encoder_conv
-            self.logger.info("grill plate to home sw (inch): %r" % grill_plate)
-            self.logger.info("lift switch location (inch):   %r" % lift_sw)
-            self.logger.info("home switch location (inch):   %r" % home_sw)
-            self.logger.info("upper killsw location (inch):  %r" % killsw_high)
-            self.logger.info("lower killsw location (inch):  %r" % killlsw_low)
+            home_sw = commonFX.encToInch(self.switch[1], self.encoder_conv)
+            grill_plate = home_sw - commonFX.encToInch(self.gap[0])
+            lift_sw = home_sw - commonFX.encToInch(self.switch[0], self.encoder_conv)
+            killsw_high = home_sw - commonFX.encToInch(self.killsw_enc[0], self.encoder_conv)
+            killlsw_low = home_sw - commonFX.encToInch(self.killsw_enc[1], self.encoder_conv)
+            self.logger.info("Raw output:{%r, %r, %r, %r, %r}" % (
+                self.gap[0], self.switch[0], self.switch[1], self.killsw_enc[0], self.killsw_enc[1]))
+            self.logger.info("grill plate to home sw (inch):  %r" % grill_plate)
+            self.logger.info("lift switch location (inch):    %r" % lift_sw)
+            self.logger.info("home switch location (inch):    %r" % home_sw)
+            self.logger.info("upper killsw location (inch):   %r" % killsw_high)
+            self.logger.info("lower killsw location (inch):   %r" % killlsw_low)
 
-            if commonFX.rangeCheck(grill_plate, self.switch_config[1], self.switch_config[0]) != True:
-                self.logger.info("grill plate to home distance not in range")
+            if commonFX.rangeCheck(round(grill_plate, 3), self.switch_config[1], self.switch_config[0]) != True:
+                self.logger.info("grill plate to home distance not in range, target: %r +/- %r%%" %(self.switch_config[1], self.switch_config[0]*100))
                 error[0] = 1
-            if commonFX.rangeCheck(lift_sw, self.switch_config[2], self.switch_config[0]) != True:
-                self.logger.info("lift switch location not in range")
+            if commonFX.rangeCheck(round(lift_sw, 3), self.switch_config[2], self.switch_config[0]) != True:
+                self.logger.info("lift switch location not in range, target: %r +/- %r%%" %(self.switch_config[2], self.switch_config[0]*100))
                 error[1] = 1
-            if commonFX.rangeCheck(home_sw, self.switch_config[3], self.switch_config[0]) != True:
-                self.logger.info("home switch location not in range")
+            if commonFX.rangeCheck(round(home_sw, 1), self.switch_config[3], self.switch_config[0]) != True:
+                self.logger.info("home switch location not in range, target: %r +/- %r%%" %(self.switch_config[3], self.switch_config[0]*100))
                 error[2] = 1
-            if commonFX.rangeCheck(killsw_high, self.switch_config[4], self.switch_config[0]) != True:
-                self.logger.info("upper kill switch location not in range")
+            if commonFX.rangeCheck(round(killsw_high, 3), self.switch_config[4], self.switch_config[0]) != True:
+                self.logger.info("upper kill switch location not in range, target: %r +/- %r%%" %(self.switch_config[4], self.switch_config[0]*100))
                 error[3] = 1
-            if commonFX.rangeCheck(killlsw_low, self.switch_config[5], self.switch_config[0]) != True:
-                self.logger.info("lower kill switch location not in range")
+            if commonFX.rangeCheck(round(killlsw_low, 3), self.switch_config[5], self.switch_config[0]) != True:
+                self.logger.info("lower kill switch location not in range, target: %r +/- %r%%" %(self.switch_config[5], self.switch_config[0]*100))
                 error[4] = 1
 
             self.grill_plate = round(grill_plate, 3)
@@ -302,16 +336,15 @@ class myConfig(object):
                     self.motor_range[2]) >= lower_limit:
                 self.logger.info("level motor position in range")
             if commonFX.baumerToMM(self.motor_range[1]) > upper_limit:
-                self.logger.info("upper travel limit not in range of %r" % upper_limit)
+                self.logger.info("upper travel limit not in range of %r" % round(upper_limit, 3))
                 error[5] = 1
             else:
-                self.logger.info("upper travel limit within range of %r" % upper_limit)
+                self.logger.info("upper travel limit within range of %r" % round(upper_limit, 3))
             if commonFX.baumerToMM(self.motor_range[2]) < lower_limit:
-                self.logger.info("lower travel limit not in range of %r" % lower_limit)
+                self.logger.info("lower travel limit not in range of %r" % round(lower_limit))
                 error[6] = 1
             else:
-                self.logger.info("lower travel limit within range of %r" % lower_limit)
-
+                self.logger.info("lower travel limit within range of %r" % round(lower_limit))
 
         self.error = error
 
@@ -319,6 +352,8 @@ class myConfig(object):
 def main():
     # main starts here
     config = myConfig()
+    if config.display.checkOS() == True:
+        config.copyLog()
     logger = setup_logger('event_log', config.logfile + config.log)
     config.logger = logger
     try:
@@ -349,7 +384,7 @@ def main():
         os._exit(1)
 
     myJSON.update(logger, com, config.loadReg_enable)
-    config.voltage_config, config.platen_config, config.actuator_config, config.switch_config = myJSON.loadSettings(
+    config.json_test_config, config.voltage_config, config.platen_config, config.actuator_config, config.switch_config = myJSON.loadSettings(
         info)
 
     processID = 1
@@ -362,7 +397,6 @@ def main():
     config.description, config.sync_role = myJSON.loadHardware(data)
     myJSON.setDevice(data)
     config.display.fb_long_print(str(config.description), 1)
-    # print config.jsonFile
 
     power = voltage.measure()
     power.update(logger, com, config)
@@ -383,9 +417,9 @@ def main():
 
     button = com.readCoil(processID, 30, 1)
     if button[0] == 0:
-        config.display.fb_long_print("Execute sensors test only", 1)
+        config.display.fb_long_print("< execute customized test sequence >", 1)
         com.setCoil(processID, 30, [1])
-        config.test_enable = [0, 0, 0, 1, 1, 1, 1, 1]
+        config.test_enable = config.json_test_config
 
     logger.info("==================== Test Begins ====================")
     # print "==================== Test Begins ===================="
@@ -422,22 +456,20 @@ def main():
         # print "< execute sensors gap test >"
         config.display.fb_println("< # 5 execute sensors gap test >", 1)
         motor.setpoint(0)
-        time.sleep(3)
+        time.sleep(2)
         config.sensor = pl.sensorGap()
     if config.test_enable[5]:
         logger.info("< execute ZDBF test >")
         # print "< execute ZDBF test >"
         config.display.fb_println("< # 6 execute ZDBF test >", 1)
         motor.setpoint(0)
-        time.sleep(3)
+        time.sleep(2)
         config.ZDBF, config.gap = pl.calZDBF()
-        motor.setpoint(0)
     if config.test_enable[6]:
         logger.info("< execute level motor test >")
         # print "< execute level motor test >"
         config.display.fb_println("< # 7 execute level motor test >", 1)
-        motor.setpoint(0)
-        time.sleep(3)
+        time.sleep(2)
         config.motor_range, config.motor_limit, config.newZDBF = pl.motorRangeTest(config)
     if config.test_enable[7]:
         logger.info("< calculate results >")
@@ -448,18 +480,20 @@ def main():
     # print "==================== Test Completed ===================="
     config.display.fb_println("============== Test Completed ==============", 1)
     config.report()
-    config.copyLog()
-    config.display.keepON()
+    config.display.checkOS()
+    if config.display.myPlatform == True:
+        config.copyLog()
+        config.display.keepON()
 
-    # processID = 3
-    # com.setCoil(processID, 30, [1])
+        # processID = 3
+        # com.setCoil(processID, 30, [1])
 
-    # while True:
-    #     button = com.readCoil(processID, 30, 1)
-    #     if button[0] == 0:
-    #         report(display, config.test_enable, data)
-    #         com.setCoil(processID, 30, [1])
-    #     time.sleep(2)
+        # while True:
+        #     button = com.readCoil(processID, 30, 1)
+        #     if button[0] == 0:
+        #         report(display, config.test_enable, data)
+        #         com.setCoil(processID, 30, [1])
+        #     time.sleep(2)
 
 
 if __name__ == "__main__":

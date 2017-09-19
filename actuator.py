@@ -17,7 +17,7 @@ class motion():
     killSP = [-8000, 5000]  # [high, low] setpoint for kill switch test
     oc_time = 2  # time in seconds required to flag over current error
     oc_runtime = 5  # runtime for over current test
-    encoder_conv = 0.492126  # conversion from encoder count to inches
+    encoder_conv = 0.000492126  # conversion from encoder count to inches
 
     def update(self, logger, com, config):
         self.logger = logger
@@ -64,7 +64,20 @@ class motion():
     def switchTest(self, config):
         processID = 203
 
-        # upper switch
+        # seek lower switch for initial position
+        self.com.setReg(processID, 255, [6])
+        read = self.com.readReg(processID, 255, 1)
+        startTime = time.time()
+        while read[0] != 8 and commonFX.timeCal(startTime) < self.timeout / 2:
+            read = self.com.readReg(processID, 255, 1)
+        if read[0] != 8:
+            self.logger.info("Seeking lower switch failed, @ processID %r" % processID)
+            self.display.fb_println("Seeking lower switch failed, @ processID %r" % processID, 0)
+            self.stopMotion(processID)
+            os._exit(1)
+        self.logger.info("Seeking lower switch successful, @ processID %r" % processID)
+
+        # seek upper switch
         self.com.setReg(processID, 255, [3])
         read = self.com.readReg(processID, 255, 1)
         startTime = time.time()
@@ -80,7 +93,7 @@ class motion():
         time.sleep(1)
         encUP = self.spFeedback()
 
-        # lower switch
+        # seek lower switch
         self.com.setReg(processID, 255, [6])
         read = self.com.readReg(processID, 255, 1)
         startTime = time.time()
@@ -124,19 +137,21 @@ class motion():
         self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
         encUP = self.spFeedback()
 
-        #self.setpoint(config.switch[1])
-        self.setpoint(0)
-        self.com.setReg(processID, 255, [2])
-        #self.com.setReg(processID, 255, [6])
-        read = self.com.readCoil(processID, 6, 1)
+        # seek lower reference switch
+        #self.com.setReg(processID, 255, [2])
+        self.com.setReg(processID, 255, [6])
+        #read = self.com.readCoil(processID, 6, 1)
         startTime = time.time()
-        while read[0] != 1 and commonFX.timeCal(startTime) < self.timeout:
-            read = self.com.readCoil(processID, 6, 1)
-            time.sleep(0.4)
-            self.com.setReg(processID, 255, [0])
-            time.sleep(0.4)
-            self.com.setReg(processID, 255, [2])
-        if read[0] != 1:
+        while read[0] != 8 and commonFX.timeCal(startTime) < self.timeout:
+            #read = self.com.readCoil(processID, 6, 1)
+            read = self.com.readReg(processID, 255, 1)
+            if read[0] != 8:
+                time.sleep(0.4)
+                self.com.setReg(processID, 255, [0])
+                time.sleep(0.4)
+                self.com.setReg(processID, 255, [read[0]])
+
+        if read[0] != 8:
             self.logger.info("Seeking lower switch failed, @ processID %r" % processID)
             self.display.fb_println("Seeking lower switch failed, @ processID %r" % processID, 1)
             self.stopMotion(processID)
@@ -145,6 +160,7 @@ class motion():
         encDown = self.spFeedback()
         distanceDOWN = abs(encUP - encDown)
 
+        # seek upper reference switch
         self.com.setReg(processID, 255, [3])
         read = self.com.readReg(processID, 255, 1)
         startTime = time.time()
@@ -185,8 +201,24 @@ class motion():
         if status[0] != 5:
             self.homing()
         self.resetMode(processID)
+
+        # seek upper switch
+        self.com.setReg(processID, 255, [3])
+        read = self.com.readReg(processID, 255, 1)
+        startTime = time.time()
+        while read[0] != 5 and commonFX.timeCal(startTime) < self.timeout / 2:
+            read = self.com.readReg(processID, 255, 1)
+        if read[0] != 5:
+            self.logger.info("Seeking upper switch failed, @ processID %r" % processID)
+            self.display.fb_println("Seeking upper switch failed, @ processID %r" % processID, 1)
+            self.stopMotion(processID)
+            os._exit(1)
+        self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
+        self.resetMode(processID)
+
+        # move to high setpoint
         self.com.setReg(processID, 0, [self.killSP[0]])
-        time.sleep(3)
+        time.sleep(4)
         startTime = time.time()
         upperSW = self.com.readCoil(processID, 7, 1)
         if upperSW[0]:
@@ -204,8 +236,8 @@ class motion():
                     self.stopMotion(processID)
                     os._exit(1)
         else:
-            self.logger.info("Platen did not reach upper switch")
-            self.display.fb_println("Platen did not reach upper switch", 1)
+            self.logger.info("Platen did not reach upper position")
+            self.display.fb_println("Platen did not reach upper position", 1)
             self.stopMotion(processID)
             os._exit(1)
 
@@ -214,8 +246,24 @@ class motion():
         self.logger.info("Upper kill switch location: %r" % encoder[0])
         self.display.fb_println("Upper kill switch location: %r" % encoder[0], 0)
 
+        # seek lower reference switch
+        self.com.setReg(processID, 255, [6])
+        read = self.com.readReg(processID, 255, 1)
+        startTime = time.time()
+        while read[0] != 8 and commonFX.timeCal(startTime) < self.timeout:
+            read = self.com.readReg(processID, 255, 1)
+
+        if read[0] != 8:
+            self.logger.info("Seeking lower switch failed, @ processID %r" % processID)
+            self.display.fb_println("Seeking lower switch failed, @ processID %r" % processID, 1)
+            self.stopMotion(processID)
+            os._exit(1)
+        self.logger.info("Seeking lower switch successful, @ processID %r" % processID)
+        self.resetMode(processID)
+
+        # move to low setpoint
         self.com.setReg(processID, 0, [self.killSP[1]])
-        time.sleep(8)
+        time.sleep(5)
         startTime = time.time()
         lowerSW = self.com.readCoil(processID, 6, 1)
         if lowerSW[0]:
@@ -242,8 +290,8 @@ class motion():
                 self.stopMotion(processID)
                 os._exit(1)
         else:
-            self.logger.info("Platen did not reach lower switch")
-            self.display.fb_println("Platen did not reach lower switch", 1)
+            self.logger.info("Platen did not reach lower position")
+            self.display.fb_println("Platen did not reach lower position", 1)
             self.stopMotion(processID)
             os._exit(1)
 
@@ -251,7 +299,7 @@ class motion():
         encoder[1] = commonFX.signedInt(encRead[0])
         self.logger.info("Lower kill switch location: %r" % encoder[1])
         self.display.fb_println("Lower kill switch location: %r" % encoder[1], 0)
-
         self.logger.info("Kill switch test successful")
+        self.resetMode(processID)
         self.stopMotion(processID)
         return encoder
