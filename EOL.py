@@ -55,33 +55,38 @@ def testRequired(config):
     status = 0
     if config.grillType in mcDonald[0]:  # Gas
         status = 1
+        customer = 1
         config.logger.info("McDonald Gas Test")
         # print "McDonald Gas Test"
-        return [1, 1, 1, 1, 1, 1, 1, 1]
+        return [1, 1, 1, 1, 1, 1, 1, 1], customer
 
     if config.grillType in mcDonald[1]:  # Electric
         status = 1
+        customer = 1
         config.logger.info("McDonald Electric Test")
         # print "McDonald Electric Test"
-        return [1, 1, 1, 1, 1, 1, 1, 1]
+        return [1, 1, 1, 1, 1, 1, 1, 1], customer
 
     if config.grillType in GenMarket[0]:  # Gas
         status = 1
+        customer = 2
         config.logger.info("General Market Gas Test")
         # print "General Market Gas Test"
-        return [1, 1, 1, 1, 0, 0, 0, 0]
+        return [1, 1, 1, 1, 0, 0, 0, 0], customer
 
     if config.grillType in GenMarket[1]:  # Electric
         status = 1
+        customer = 2
         config.logger.info("General Market Electric Test")
         # print "General Market Electric Test"
-        return [1, 1, 1, 1, 0, 0, 0, 0]
+        return [1, 1, 1, 1, 0, 0, 0, 0], customer
 
     if config.grillType in CFA:  # CFA
         status = 1
+        customer = 3
         config.logger.info("CFA Gen 2 Test")
         # print "CFA Gen 2 Test"
-        return [1, 1, 1, 1, 1, 1, 0, 1]
+        return [1, 1, 1, 1, 1, 1, 0, 1], customer
 
     if status == 0:
         config.logger.info("Grill Type %r not found" % config.grillType)
@@ -110,7 +115,7 @@ class myConfig(object):
     jsonFile = linuxPath + hwcfg + str(grillType) + ".json"
     loadReg_enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors]
     test_enable = [0, 0, 0, 0, 0, 0, 0]  # selection for test execution
-
+    customer = 1 # 1
     description = "unknown"  # load from json file
     sync_role = 0
 
@@ -375,6 +380,7 @@ def main():
     com.setup(logger, master, config.device, config.restTime)
 
     myJSON = jsonToFile.loadJSON()
+    myJSON.update(logger, com, config.loadReg_enable)
 
     try:
         info = myJSON.readJSON(config.linuxPath + config.sysPath + 'settings.json')
@@ -383,15 +389,14 @@ def main():
         config.display.fb_long_print("settings.json file corrupted, update settings required", 0)
         os._exit(1)
 
-    myJSON.update(logger, com, config.loadReg_enable)
-    config.json_test_config, config.voltage_config, config.platen_config, config.actuator_config, config.switch_config = myJSON.loadSettings(
-        info)
-
     processID = 1
     config.grillType = myJSON.grillType(processID)
     config.updateJSON(config.grillType)
     logger.info(config.jsonFile)
-    config.test_enable = testRequired(config)
+    config.test_enable, config.customer = testRequired(config)
+
+    config.json_test_config, config.voltage_config, config.platen_config, config.actuator_config, config.switch_config = myJSON.loadSettings(
+        info, config.customer)
 
     data = myJSON.readJSON(config.jsonFile)
     config.description, config.sync_role = myJSON.loadHardware(data)

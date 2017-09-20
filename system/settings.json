@@ -1,16 +1,15 @@
 {
+	"custom_test":{
+		"switch": 1,
+		"kill_switch": 1,
+		"magnet_drift": 0,
+		"homing": 1,
+		"sensors": 1,
+		"ZDBF": 1,
+		"level_motor": 0,
+		"results": 1
+	},
 	"Pearl":{
-		"custom_test":{
-			"switch": 1,
-			"kill_switch": 1,
-			"magnet_drift": 0,
-			"homing": 1,
-			"sensors": 1,
-			"ZDBF": 1,
-			"level_motor": 0,
-			"results": 1
-		},
-		
 		"voltage":{
 			"tolerance": 0.05,
 			"frequency": [ 40, 70 ]
@@ -47,6 +46,39 @@
 		}
 	},
 	"CFA":{
-	
+		"voltage":{
+			"tolerance": 0.05,
+			"frequency": [ 40, 70 ]
+		},
+		
+		"platen":{
+			"sensor_target": [ 11960, 11960 ],
+			"sensor_tolerance": 0.02,
+			"level_motor_adjTime": 0,
+			"level_motor_tolerance": [ 0, 0 ], 
+			"level_motor_range": [ 0, 0 ],
+			"movement_trigger": [ 0, 0 ],
+			"offset_required": [ 0 , 0 ],
+			"sensor_to_enc": [ 0 , 0 ],
+			"ZDBF_limit": 0
+		},
+		
+		"actuator":{
+			"timeout": 30,
+			"magnet_drift_tolerance": 0.02,
+			"kill_sw_setpoint": [ -8000, 5000 ],
+			"over_current_time": 2,
+			"oc_runtime": 5,
+			"encoder_conv": 0.000492126
+		},
+		
+		"switch":{
+			"tolerance": 0.10,
+			"grill_plate": -2.154,
+			"Lift": 2.237,
+			"Home": 0,
+			"killsw_high": 2.596,
+			"killsw_low": -2.237
+		}
 	}
 }
