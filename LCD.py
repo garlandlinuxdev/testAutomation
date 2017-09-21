@@ -36,7 +36,9 @@ class display():
     def fb_println(self, msg, color):
         self.checkOS()
         if self.myPlatform == False:
+            print msg
             return
+
         # Print a line on framebuffer.
         # '-x' Default is 10, 18 pixels = 16 + 2 = Font_Height + Line_Spacing.
         # y = 26 lines x = 46 characters
@@ -58,7 +60,10 @@ class display():
     def fb_long_print(self, msg, color):
         self.checkOS()
         if self.myPlatform == False:
+            print msg
             return
+        else:
+            print msg
         list = textwrap.wrap(msg, 46)
         self.FB_Y = subfile.getStorage()
         if color == 1:

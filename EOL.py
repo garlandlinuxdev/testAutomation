@@ -13,10 +13,10 @@ FB_Y = 10  # global Y position of LCD, update using subfile module
 
 def setup():
     # Configure Hardware Overwrite
-    # com_port = 'COM30'  # For windows
+    com_port = 'COM7'  # For windows
     # com_port = '/dev/ttyO4' #For UART4
     # com_port = '/dev/ttyO1' #For UI using UART1
-    com_port = '/dev/ttyUSB0'  # For USB port
+    # com_port = '/dev/ttyUSB0'  # For USB port
 
     baud = 115200
     byte = 8
@@ -414,7 +414,7 @@ def main():
     pl.update(logger, com, config)
 
     processID = 1
-    config.display.fb_long_print("Press green button to execute sensors test only", 0)
+    config.display.fb_long_print("Press green button to execute custom test", 0)
     time.sleep(5)
 
     # seek upper switch

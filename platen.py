@@ -213,7 +213,10 @@ class sensors():
     def autolevel(self, processID, direction, adjustment):
         initial = self.com.readReg(processID, 460, 1)
         self.com.setReg(processID, 255, [28])
-        self.com.setReg(processID, 255, [29])
+        time.sleep(1)
+        read = self.com.readReg(processID, 255, 1)
+        if read[0] != 29:
+            self.com.setReg(processID, 255, [29])
         if direction == -1:
             self.logger.info("adjusting level motor up")
             target = initial[0] + abs(adjustment)
