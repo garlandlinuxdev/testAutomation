@@ -13,10 +13,10 @@ FB_Y = 10  # global Y position of LCD, update using subfile module
 
 def setup():
     # Configure Hardware Overwrite
-    com_port = 'COM7'  # For windows
+    # com_port = 'COM30'  # For windows
     # com_port = '/dev/ttyO4' #For UART4
     # com_port = '/dev/ttyO1' #For UI using UART1
-    # com_port = '/dev/ttyUSB0'  # For USB port
+    com_port = '/dev/ttyUSB0'  # For USB port
 
     baud = 115200
     byte = 8
@@ -57,35 +57,30 @@ def testRequired(config):
         status = 1
         customer = 1
         config.logger.info("McDonald Gas Test")
-        # print "McDonald Gas Test"
         return [1, 1, 1, 1, 1, 1, 1, 1], customer
 
     if config.grillType in mcDonald[1]:  # Electric
         status = 1
         customer = 1
         config.logger.info("McDonald Electric Test")
-        # print "McDonald Electric Test"
         return [1, 1, 1, 1, 1, 1, 1, 1], customer
 
     if config.grillType in GenMarket[0]:  # Gas
         status = 1
         customer = 2
         config.logger.info("General Market Gas Test")
-        # print "General Market Gas Test"
         return [1, 1, 1, 1, 0, 0, 0, 0], customer
 
     if config.grillType in GenMarket[1]:  # Electric
         status = 1
         customer = 2
         config.logger.info("General Market Electric Test")
-        # print "General Market Electric Test"
         return [1, 1, 1, 1, 0, 0, 0, 0], customer
 
     if config.grillType in CFA:  # CFA
         status = 1
         customer = 3
         config.logger.info("CFA Gen 2 Test")
-        # print "CFA Gen 2 Test"
         return [1, 1, 1, 1, 1, 1, 0, 1], customer
 
     if status == 0:
@@ -179,7 +174,6 @@ class myConfig(object):
 
     def copyLog(self):
         timestr = time.strftime("%Y%m%d-%H%M%S")
-        # print "USB path: ", os.path.isdir(config.usbpath)
         if os.path.isfile(self.logfile + self.log) == True:
             os.popen(
                 'mv ' + self.logfile + self.log + ' ' + self.linuxPath + self.logPath + timestr + self.log)
@@ -199,8 +193,6 @@ class myConfig(object):
             self.display.fb_println("USB log path not found", 0)
             os.popen(
                 'mv ' + self.logfile + self.log + ' ' + self.linuxPath + self.logPath + timestr + self.log)
-            # print config.logfile
-            # print (config.linuxPath + config.logPath + timestr + config.log)
 
     def report(self):
         self.logger.info("< Test Results >")
@@ -358,6 +350,7 @@ def main():
     # main starts here
     config = myConfig()
     if config.display.checkOS() == True:
+        config.display.fb_clear()
         config.copyLog()
     logger = setup_logger('event_log', config.logfile + config.log)
     config.logger = logger
@@ -373,7 +366,6 @@ def main():
 
     config.display.fb_clear()
     logger.info("==================== Load Settings ====================")
-    # print "==================== Load Settings ===================="
     config.display.fb_println("=============== Load Settings ===============", 1)
 
     com = modbus.communicate()
@@ -419,7 +411,7 @@ def main():
     config.display.fb_long_print("Press green button to execute custom test", 0)
     button = com.readCoil(processID, 30, 1)
     startTime = time.time()
-    while button != 0 and commonFX.timeCal(startTime) < 6:
+    while button != 0 and commonFX.timeCal(startTime) < 10:
         button = com.readCoil(processID, 30, 1)
         if button[0] == 0:
             config.display.fb_long_print("< execute customized test sequence >", 1)
@@ -432,7 +424,6 @@ def main():
     com.setReg(processID, 255, [3])
 
     logger.info("==================== Test Begins ====================")
-    # print "==================== Test Begins ===================="
     config.display.fb_println("================ Test Begins ================", 1)
     logger.info("< execute voltage reading >")
     config.display.fb_println("< execute voltage reading >", 1)
@@ -442,42 +433,35 @@ def main():
 
     if config.test_enable[0]:
         logger.info("< execute switch test >")
-        # print "< execute switch test >"
         config.display.fb_println("< # 1 execute switch test >", 1)
         config.switch, config.time_elapse = motor.switchTest(config)
     if config.test_enable[1]:
         logger.info("< execute kill switch test >")
-        # print "< execute kill switch test >"
         config.display.fb_println("< # 2 execute kill switch test >", 1)
         config.killsw_enc = motor.killSwitchTest()
     if config.test_enable[2]:
         logger.info("< execute magnet drift test >")
-        # print "< execute magnet drift test >"
         config.display.fb_println("< # 3 execute magnet drift test >", 1)
         config.magnet = motor.magnetDrift(config)
     if config.test_enable[3]:
         logger.info("< execute homing test >")
-        # print "< execute homing test >"
         config.display.fb_clear()
         config.display.fb_println("< # 4 execute homing test >", 1)
         motor.homing()
     if config.test_enable[4]:
         logger.info("< execute sensors gap test >")
-        # print "< execute sensors gap test >"
         config.display.fb_println("< # 5 execute sensors gap test >", 1)
         motor.setpoint(0)
         time.sleep(2)
         config.sensor = pl.sensorGap()
     if config.test_enable[5]:
         logger.info("< execute ZDBF test >")
-        # print "< execute ZDBF test >"
         config.display.fb_println("< # 6 execute ZDBF test >", 1)
         motor.setpoint(0)
         time.sleep(2)
         config.ZDBF, config.gap = pl.calZDBF()
     if config.test_enable[6]:
         logger.info("< execute level motor test >")
-        # print "< execute level motor test >"
         config.display.fb_println("< # 7 execute level motor test >", 1)
         time.sleep(2)
         config.motor_range, config.motor_limit, config.newZDBF = pl.motorRangeTest(config)
@@ -487,7 +471,6 @@ def main():
         config.calculate()
 
     logger.info("==================== Test Completed ====================")
-    # print "==================== Test Completed ===================="
     config.display.fb_println("============== Test Completed ==============", 1)
     config.report()
     config.display.checkOS()

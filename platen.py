@@ -90,24 +90,20 @@ class sensors():
             self.com.setCoil(processID, 30, [1])  # reset button coil
 
             if commonFX.rangeCheck(int(rear), self.sensor_target[0], self.sensorGapTolerance):
-                self.logger.info("Rear sensors within range (mm) " + str(10 - ((rear * 10.0) / 32767)))
-                self.display.fb_println("Rear sensors within range (mm) %r" % round((10 - ((rear * 10.0) / 32767)), 3),
-                                        0)
+                self.logger.info("Rear sensors within range (mm) " + str(commonFX.baumerToMM(rear)))
+                self.display.fb_println("Rear sensors within range (mm) %r" % round(commonFX.baumerToMM(rear), 3), 0)
                 check += 1
             else:
-                self.logger.info("Rear sensor out of range (mm) " + str(10 - ((rear * 10.0) / 32767)))
-                self.display.fb_println("Rear sensor out of range (mm) %r" % round((10 - ((rear * 10.0) / 32767)), 3),
-                                        0)
+                self.logger.info("Rear sensor out of range (mm) " + str(commonFX.baumerToMM(rear)))
+                self.display.fb_println("Rear sensor out of range (mm) %r" % round(commonFX.baumerToMM(rear), 3), 1)
                 status = 0
             if commonFX.rangeCheck(int(front), self.sensor_target[1], self.sensorGapTolerance):
-                self.logger.info("Front sensors within range (mm) " + str(10 - ((front * 10.0) / 32767)))
-                self.display.fb_println(
-                    "Front sensors within range (mm) %r" % round((10 - ((front * 10.0) / 32767)), 3), 0)
+                self.logger.info("Front sensors within range (mm) " + str(commonFX.baumerToMM(front)))
+                self.display.fb_println("Front sensors within range (mm) %r" % round(commonFX.baumerToMM(front), 3), 0)
                 check += 1
             else:
-                self.logger.info("Front sensor out of range (mm) " + str((front * 10.0) / 32767))
-                self.display.fb_println("Front sensor out of range (mm) %r" % round((10 - ((front * 10.0) / 32767)), 3),
-                                        0)
+                self.logger.info("Front sensor out of range (mm) " + str(commonFX.baumerToMM(front)))
+                self.display.fb_println("Front sensor out of range (mm) %r" % round(commonFX.baumerToMM(front), 3), 1)
                 status = 0
 
             if status == 0:
@@ -118,8 +114,8 @@ class sensors():
 
                 self.display.fb_clear()
                 self.display.fb_println("Adjust sensor gap to ~ 6.35 mm", 1)
-                self.display.fb_println("Rear sensors range (mm) %r" % round((10 - ((read[0] * 10.0) / 32767)), 3), 0)
-                self.display.fb_println("Front sensors range (mm) %r" % round((10 - ((read[1] * 10.0) / 32767)), 3), 0)
+                self.display.fb_println("Rear sensors range (mm) %r" % round(commonFX.baumerToMM(read[0]), 3), 0)
+                self.display.fb_println("Front sensors range (mm) %r" % round(commonFX.baumerToMM(read[1]), 3), 0)
                 self.display.fb_println("Press Green button to proceed after adjustment", 1)
 
                 button = self.com.readCoil(processID, 30, 1)
@@ -208,7 +204,8 @@ class sensors():
                 adjustment = (target - ZDBF) * self.conversion[1]
 
 
-        self.logger.info("ZDBF: %r, direction: %r, adjustment: %r" % (ZDBF, direction, adjustment))
+        self.logger.info("ZDBF: %r, direction: %r, adjustment: %r mm" % (ZDBF, direction, commonFX.gapToMM(adjustment)))
+        self.display.fb_println("ZDBF: %r, direction: %r, adjustment: %r mm" % (ZDBF, direction, commonFX.gapToMM(adjustment)), 0)
         return ZDBF, direction, adjustment
 
     def autolevel(self, processID, direction, adjustment):
@@ -224,9 +221,13 @@ class sensors():
             target = initial[0] + abs(adjustment)
             read = self.com.readReg(processID, 460, 1)
             self.moveLvlMotor(1, direction)
-            while read[0] < target:
+            startTime = time.time()
+            while read[0] < target and commonFX.timeCal(startTime) < self.lvlMotorTime:
                 read = self.com.readReg(processID, 460, 1)
             self.moveLvlMotor(0, 0)
+            if commonFX.timeCal(startTime) > self.lvlMotorTime:
+                self.logger.info("level motor did not reach target, timed out at %r (sec)" % self.lvlMotorTime)
+                self.display.fb_println("level motor did not reach target >%r (sec)" % self.lvlMotorTime, 1)
 
         if direction == 1:
             self.logger.info("adjusting level motor down")
@@ -234,12 +235,16 @@ class sensors():
             target = initial[0] - abs(adjustment)
             read = self.com.readReg(processID, 460, 1)
             self.moveLvlMotor(1, direction)
-            while read[0] > target:
+            startTime = time.time()
+            while read[0] > target and commonFX.timeCal(startTime) < self.lvlMotorTime:
                 read = self.com.readReg(processID, 460, 1)
             self.moveLvlMotor(0, 0)
+            if commonFX.timeCal(startTime) > self.lvlMotorTime:
+                self.logger.info("level motor did not reach target, timed out at %r (sec)" % self.lvlMotorTime)
+                self.display.fb_println("level motor did not reach target >%r (sec)" % self.lvlMotorTime, 1)
 
         self.logger.info("adjustment completed")
-        self.display.fb_println("adjusting completed", 0)
+        self.display.fb_println("adjustment completed", 0)
 
     def motorRangeTest(self, config):
         processID = 307
@@ -305,7 +310,7 @@ class sensors():
         self.moveLvlMotor(0, 0)
         if commonFX.timeCal(startTime) > self.lvlMotorTime:
             self.logger.info("level motor did not reach target, timed out at %r (sec)" % self.lvlMotorTime)
-        self.display.fb_println("level motor did not reach target >%r (sec)" % self.lvlMotorTime, 1)
+            self.display.fb_println("level motor did not reach target >%r (sec)" % self.lvlMotorTime, 1)
 
         # adjustment downwards
         offset = commonFX.baumerToMM(motor_range[0]) + self.offset_required[1]
@@ -315,7 +320,6 @@ class sensors():
         self.display.fb_println("Adjusting level motor down", 0)
         self.moveLvlMotor(1, 1)
         startTime = time.time()
-
         while sensorReading[0] > target and commonFX.timeCal(startTime) < self.lvlMotorTime:
             sensorReading = self.readSensor(processID)
             # print sensorReading[0]

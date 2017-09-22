@@ -18,7 +18,7 @@
 		"platen":{
 			"sensor_target": [ 11960, 11960 ],
 			"sensor_tolerance": 0.02,
-			"level_motor_adjTime": 30,
+			"level_motor_adjTime": 60,
 			"level_motor_tolerance": [ 0.05, 0.10 ], 
 			"level_motor_range": [ 6449, 6553 ],
 			"movement_trigger": [ 150, 250 ],

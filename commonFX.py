@@ -11,7 +11,11 @@ def timeCal(arg):  # time calculation
 
 
 def baumerToMM(arg):
-    mm = 10 - ((arg * 10.0) / 32767)
+    mm = 10 - ((abs(arg) * 10.0) / 32767)
+    return mm
+
+def gapToMM(arg):
+    mm = round(((abs(arg) * 10.0) / 32767), 3)
     return mm
 
 def mmToBaumer(arg):

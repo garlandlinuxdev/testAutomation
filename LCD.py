@@ -62,8 +62,7 @@ class display():
         if self.myPlatform == False:
             print msg
             return
-        else:
-            print msg
+
         list = textwrap.wrap(msg, 46)
         self.FB_Y = subfile.getStorage()
         if color == 1:
