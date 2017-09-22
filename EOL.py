@@ -346,10 +346,10 @@ class myConfig(object):
             else:
                 self.logger.info("upper travel limit within range of %r" % round(upper_limit, 3))
             if commonFX.baumerToMM(self.motor_range[2]) < lower_limit:
-                self.logger.info("lower travel limit not in range of %r" % round(lower_limit))
+                self.logger.info("lower travel limit not in range of %r" % round(lower_limit, 3))
                 error[6] = 1
             else:
-                self.logger.info("lower travel limit within range of %r" % round(lower_limit))
+                self.logger.info("lower travel limit within range of %r" % round(lower_limit, 3))
 
         self.error = error
 
@@ -378,6 +378,9 @@ def main():
 
     com = modbus.communicate()
     com.setup(logger, master, config.device, config.restTime)
+
+    processID = 0
+    com.setCoil(processID, 30, [1]) # reset button status
 
     myJSON = jsonToFile.loadJSON()
     myJSON.update(logger, com, config.loadReg_enable)
@@ -413,18 +416,20 @@ def main():
     pl = platen.sensors()
     pl.update(logger, com, config)
 
-    processID = 1
     config.display.fb_long_print("Press green button to execute custom test", 0)
-    time.sleep(5)
+    button = com.readCoil(processID, 30, 1)
+    startTime = time.time()
+    while button != 0 and commonFX.timeCal(startTime) < 6:
+        button = com.readCoil(processID, 30, 1)
+        if button[0] == 0:
+            config.display.fb_long_print("< execute customized test sequence >", 1)
+            com.setCoil(processID, 30, [1])
+            config.test_enable = config.json_test_config
+            break
 
     # seek upper switch
+    processID = 1
     com.setReg(processID, 255, [3])
-
-    button = com.readCoil(processID, 30, 1)
-    if button[0] == 0:
-        config.display.fb_long_print("< execute customized test sequence >", 1)
-        com.setCoil(processID, 30, [1])
-        config.test_enable = config.json_test_config
 
     logger.info("==================== Test Begins ====================")
     # print "==================== Test Begins ===================="

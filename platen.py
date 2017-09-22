@@ -76,6 +76,7 @@ class sensors():
             self.com.setCoil(processID, 56, [status])
             self.resetMode(processID)
             self.com.setReg(processID, 483, [direction])
+            time.sleep(1)
 
     def sensorGap(self):
         processID = 303
@@ -219,6 +220,7 @@ class sensors():
             self.com.setReg(processID, 255, [29])
         if direction == -1:
             self.logger.info("adjusting level motor up")
+            self.display.fb_println("adjusting level motor up", 0)
             target = initial[0] + abs(adjustment)
             read = self.com.readReg(processID, 460, 1)
             self.moveLvlMotor(1, direction)
@@ -228,6 +230,7 @@ class sensors():
 
         if direction == 1:
             self.logger.info("adjusting level motor down")
+            self.display.fb_println("adjusting level motor down", 0)
             target = initial[0] - abs(adjustment)
             read = self.com.readReg(processID, 460, 1)
             self.moveLvlMotor(1, direction)
@@ -236,6 +239,7 @@ class sensors():
             self.moveLvlMotor(0, 0)
 
         self.logger.info("adjustment completed")
+        self.display.fb_println("adjusting completed", 0)
 
     def motorRangeTest(self, config):
         processID = 307
@@ -266,6 +270,7 @@ class sensors():
         self.moveLvlMotor(0, 0)
         if commonFX.timeCal(startTime) > self.lvlMotorTime:
             self.logger.info("level motor did not reach target, timed out at %r (sec)" % self.lvlMotorTime)
+            self.display.fb_println("level motor did not reach target >%r (sec)" % self.lvlMotorTime, 1)
 
         sensorReading = self.readSensor(processID)
         motor_range[1] = sensorReading[0]
@@ -293,10 +298,14 @@ class sensors():
         self.display.fb_println("Reset level motor to inital position", 0)
         sensorReading = self.readSensor(processID)
         self.moveLvlMotor(1, 1)
-        while sensorReading[0] > sample[0]:
+        startTime = time.time()
+        while sensorReading[0] > sample[0] and commonFX.timeCal(startTime) < self.lvlMotorTime:
             sensorReading = self.readSensor(processID)
             time.sleep(0.5)
         self.moveLvlMotor(0, 0)
+        if commonFX.timeCal(startTime) > self.lvlMotorTime:
+            self.logger.info("level motor did not reach target, timed out at %r (sec)" % self.lvlMotorTime)
+        self.display.fb_println("level motor did not reach target >%r (sec)" % self.lvlMotorTime, 1)
 
         # adjustment downwards
         offset = commonFX.baumerToMM(motor_range[0]) + self.offset_required[1]
@@ -315,6 +324,7 @@ class sensors():
         self.moveLvlMotor(0, 0)
         if commonFX.timeCal(startTime) > self.lvlMotorTime:
             self.logger.info("level motor did not reach target, timed out at %r (sec)" % self.lvlMotorTime)
+            self.display.fb_println("level motor did not reach target >%r (sec)" % self.lvlMotorTime, 1)
 
         sensorReading = self.readSensor(processID)
         motor_range[2] = sensorReading[0]
