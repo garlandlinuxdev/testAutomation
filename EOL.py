@@ -110,7 +110,7 @@ class myConfig(object):
     jsonFile = linuxPath + hwcfg + str(grillType) + ".json"
     loadReg_enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors]
     test_enable = [0, 0, 0, 0, 0, 0, 0]  # selection for test execution
-    customer = 1 # 1
+    customer = 1  # 1
     description = "unknown"  # load from json file
     sync_role = 0
 
@@ -175,8 +175,8 @@ class myConfig(object):
     def copyLog(self):
         timestr = time.strftime("%Y%m%d-%H%M%S")
         if os.path.isfile(self.logfile + self.log) == True:
-            os.popen(
-                'mv ' + self.logfile + self.log + ' ' + self.linuxPath + self.logPath + timestr + self.log)
+            os.popen('mv ' + self.logfile + self.log + ' ' + self.linuxPath + self.logPath + timestr + '-' + str(
+                    self.grillType) + '.log')
 
         if os.path.exists(self.usbPath + self.usb_logpath) == True:
             try:
@@ -191,8 +191,8 @@ class myConfig(object):
             except AttributeError:
                 pass
             self.display.fb_println("USB log path not found", 0)
-            os.popen(
-                'mv ' + self.logfile + self.log + ' ' + self.linuxPath + self.logPath + timestr + self.log)
+            os.popen('mv ' + self.logfile + self.log + ' ' + self.linuxPath + self.logPath + timestr + '-' + str(
+                    self.grillType) + '.log')
 
     def report(self):
         self.logger.info("< Test Results >")
@@ -306,19 +306,24 @@ class myConfig(object):
             self.logger.info("lower killsw location (inch):   %r" % killlsw_low)
 
             if commonFX.rangeCheck(round(grill_plate, 3), self.switch_config[1], self.switch_config[0]) != True:
-                self.logger.info("grill plate to home distance not in range, target: %r +/- %r%%" %(self.switch_config[1], self.switch_config[0]*100))
+                self.logger.info("grill plate to home distance not in range, target: %r +/- %r%%" % (
+                self.switch_config[1], self.switch_config[0] * 100))
                 error[0] = 1
             if commonFX.rangeCheck(round(lift_sw, 3), self.switch_config[2], self.switch_config[0]) != True:
-                self.logger.info("lift switch location not in range, target: %r +/- %r%%" %(self.switch_config[2], self.switch_config[0]*100))
+                self.logger.info("lift switch location not in range, target: %r +/- %r%%" % (
+                self.switch_config[2], self.switch_config[0] * 100))
                 error[1] = 1
             if commonFX.rangeCheck(round(home_sw, 1), self.switch_config[3], self.switch_config[0]) != True:
-                self.logger.info("home switch location not in range, target: %r +/- %r%%" %(self.switch_config[3], self.switch_config[0]*100))
+                self.logger.info("home switch location not in range, target: %r +/- %r%%" % (
+                self.switch_config[3], self.switch_config[0] * 100))
                 error[2] = 1
             if commonFX.rangeCheck(round(killsw_high, 3), self.switch_config[4], self.switch_config[0]) != True:
-                self.logger.info("upper kill switch location not in range, target: %r +/- %r%%" %(self.switch_config[4], self.switch_config[0]*100))
+                self.logger.info("upper kill switch location not in range, target: %r +/- %r%%" % (
+                self.switch_config[4], self.switch_config[0] * 100))
                 error[3] = 1
             if commonFX.rangeCheck(round(killlsw_low, 3), self.switch_config[5], self.switch_config[0]) != True:
-                self.logger.info("lower kill switch location not in range, target: %r +/- %r%%" %(self.switch_config[5], self.switch_config[0]*100))
+                self.logger.info("lower kill switch location not in range, target: %r +/- %r%%" % (
+                self.switch_config[5], self.switch_config[0] * 100))
                 error[4] = 1
 
             self.grill_plate = round(grill_plate, 3)
@@ -372,7 +377,7 @@ def main():
     com.setup(logger, master, config.device, config.restTime)
 
     processID = 0
-    com.setCoil(processID, 30, [1]) # reset button status
+    com.setCoil(processID, 30, [1])  # reset button status
 
     myJSON = jsonToFile.loadJSON()
     myJSON.update(logger, com, config.loadReg_enable)
