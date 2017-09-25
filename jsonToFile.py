@@ -3,11 +3,12 @@
 # Program designed by Adrian Wong
 import json
 
+
 class loadJSON():
     motorPIDreg = 300
     current_limit_Reg = 515
     heaterPIDconfig = 0  # ["Standard Grilled", "Water Based", "Future Use 1", "Future Use 2", "Preheat"]
-    setpoint = -4500  # initial position setpoint
+    setpoint = -32768  # initial position setpoint
     enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors]
     temp_Limit = [1794, 2400, 1794, 2400, 1794, 0, 0, 0]  # temperature limit
     heaterTemp = [0, 0, 0, 0, 0, 0, 0, 0]  # temperature setpoint
@@ -44,6 +45,80 @@ class loadJSON():
             grilltype.append(data["jumper"][i]["grill_type"])
 
         return description, jumper, grilltype
+
+    def loadSettings(self, data, customer):
+        test = []
+        voltage = []
+        platen = []
+        actuator = []
+        switch = []
+
+        test.append(data["custom_test"]["switch"])
+        test.append(data["custom_test"]["kill_switch"])
+        test.append(data["custom_test"]["magnet_drift"])
+        test.append(data["custom_test"]["homing"])
+        test.append(data["custom_test"]["sensors"])
+        test.append(data["custom_test"]["ZDBF"])
+        test.append(data["custom_test"]["level_motor"])
+        test.append(data["custom_test"]["results"])
+
+        if customer == 1 or customer == 2:
+            voltage.append(data["Pearl"]["voltage"]["tolerance"])
+            voltage.append(data["Pearl"]["voltage"]["frequency"])
+
+            platen.append(data["Pearl"]["platen"]["sensor_target"])
+            platen.append(data["Pearl"]["platen"]["sensor_tolerance"])
+            platen.append(data["Pearl"]["platen"]["level_motor_adjTime"])
+            platen.append(data["Pearl"]["platen"]["level_motor_tolerance"])
+            platen.append(data["Pearl"]["platen"]["level_motor_range"])
+            platen.append(data["Pearl"]["platen"]["movement_trigger"])
+            platen.append(data["Pearl"]["platen"]["offset_required"])
+            platen.append(data["Pearl"]["platen"]["sensor_to_enc"])
+            platen.append(data["Pearl"]["platen"]["ZDBF_limit"])
+
+            actuator.append(data["Pearl"]["actuator"]["timeout"])
+            actuator.append(data["Pearl"]["actuator"]["magnet_drift_tolerance"])
+            actuator.append(data["Pearl"]["actuator"]["kill_sw_setpoint"])
+            actuator.append(data["Pearl"]["actuator"]["over_current_time"])
+            actuator.append(data["Pearl"]["actuator"]["oc_runtime"])
+            actuator.append(data["Pearl"]["actuator"]["encoder_conv"])
+
+            switch.append(data["Pearl"]["switch"]["tolerance"])
+            switch.append(data["Pearl"]["switch"]["grill_plate"])
+            switch.append(data["Pearl"]["switch"]["Lift"])
+            switch.append(data["Pearl"]["switch"]["Home"])
+            switch.append(data["Pearl"]["switch"]["killsw_high"])
+            switch.append(data["Pearl"]["switch"]["killsw_low"])
+
+        if customer == 3:
+            voltage.append(data["CFA"]["voltage"]["tolerance"])
+            voltage.append(data["CFA"]["voltage"]["frequency"])
+
+            platen.append(data["CFA"]["platen"]["sensor_target"])
+            platen.append(data["CFA"]["platen"]["sensor_tolerance"])
+            platen.append(data["CFA"]["platen"]["level_motor_adjTime"])
+            platen.append(data["CFA"]["platen"]["level_motor_tolerance"])
+            platen.append(data["CFA"]["platen"]["level_motor_range"])
+            platen.append(data["CFA"]["platen"]["movement_trigger"])
+            platen.append(data["CFA"]["platen"]["offset_required"])
+            platen.append(data["CFA"]["platen"]["sensor_to_enc"])
+            platen.append(data["CFA"]["platen"]["ZDBF_limit"])
+
+            actuator.append(data["CFA"]["actuator"]["timeout"])
+            actuator.append(data["CFA"]["actuator"]["magnet_drift_tolerance"])
+            actuator.append(data["CFA"]["actuator"]["kill_sw_setpoint"])
+            actuator.append(data["CFA"]["actuator"]["over_current_time"])
+            actuator.append(data["CFA"]["actuator"]["oc_runtime"])
+            actuator.append(data["CFA"]["actuator"]["encoder_conv"])
+
+            switch.append(data["CFA"]["switch"]["tolerance"])
+            switch.append(data["CFA"]["switch"]["grill_plate"])
+            switch.append(data["CFA"]["switch"]["Lift"])
+            switch.append(data["CFA"]["switch"]["Home"])
+            switch.append(data["CFA"]["switch"]["killsw_high"])
+            switch.append(data["CFA"]["switch"]["killsw_low"])
+
+        return test, voltage, platen, actuator, switch
 
     def loadMotorPID(self, data):
         motorPID = []
