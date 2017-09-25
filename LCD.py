@@ -16,8 +16,6 @@ class display():
     FBUTIL = linuxPath + sysPath + 'fbutil'
     myPlatform = False
 
-    logger = ''
-
     def checkOS(self):
         if platform == "linux" or platform == "linux2":
             # linux

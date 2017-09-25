@@ -1,0 +1,103 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          stinger-EOL
+# Required-Start: 	 $remote_fs $syslog	
+# Required-Stop: 	 $remote_fs $syslog
+# Default-Start:     2 3 5
+# Default-Stop:      0 1 6 
+# Short-Description: execute EOL script.
+### END INIT INFO
+
+
+#set -x
+
+
+# --- Global Variables. -------------------------------------------
+
+USBDRV=/media/usb0
+
+TIMESTAMP=$(date +%Y%m%d%H%M%S)
+LOGFILE=`basename $0`_$TIMESTAMP.log
+
+# Custom functions variables
+FTDI_CABLE=/dev/ttyUSB0
+EOL_script=/project/EOL/EOL.py
+
+
+# --- FBUTIL HELPERS ----------------------------------------------
+
+# fbutil shell script library.
+
+# This provides common features to all shell scripts that uses fbutil.
+
+# fbutil is a very simple utility that allows the users to print to the
+# framebuffer on HRCB.
+
+# We start at 10 pixels from the top for readability.
+FB_Y=10
+FBUTIL=/stinger/app/bin/fbutil
+
+# ----------------------------------------------------------------------
+# Print a line to the framebuffer console, and automatically increment
+# line positions in pixels.
+# ----------------------------------------------------------------------
+
+fb_println()
+{
+    # Print a line on framebuffer.
+
+    # We manually have to advance lines correctly in pixels because
+    # fbutil is a oneshot utility.  Linux framebuffer driver manages the
+    # buffer.  We do not have to worry about fadeout.
+
+    # Notice that we don't use '-x'. Default is 10, and that works well.
+    # 18 pixels = 16 + 2 = Font_Height + Line_Spacing.
+
+    $FBUTIL -y $FB_Y "$*"
+    FB_Y=$((FB_Y + 18))
+}
+
+fb_clear()
+{
+    FB_Y=10
+    $FBUTIL -c
+}
+
+end_of_line()
+{
+	fb_clear
+	echo 1 > /sys/bus/usb/devices/3-1/bConfigurationValue
+    	echo 1 > /sys/bus/usb/devices/1-1/bConfigurationValue
+	chmod 666 $FTDI_CABLE
+	cd /
+	sleep 5
+	fb_println "Starting EOL functions"
+	python2.7 $EOL_script &
+	
+}
+
+wireless()
+{
+	ifdown wlan0
+	sleep 5
+	ifup wlan0
+}
+
+
+case "$1" in
+    start)
+	#factory_reset
+    end_of_line
+    wireless
+    ;;
+    restart|reload|force-reload)
+        ;;
+    stop)
+        ;;
+    *)
+        echo "Usage: $0 start|restart|stop" >&2
+        exit 3
+        ;;
+esac
+
+exit 0

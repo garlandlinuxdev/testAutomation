@@ -168,9 +168,9 @@ class myConfig(object):
             self.display.fb_clear()
             self.display.fb_long_print("json files updated...", 0)
         else:
-            self.logger.info("No update required...")
+            self.logger.info("No updated required...")
             self.display.fb_clear()
-            self.display.fb_long_print("No update required...", 0)
+            self.display.fb_long_print("No updated required...", 0)
 
     def copyLog(self):
         timestr = time.strftime("%Y%m%d-%H%M%S")
