@@ -113,7 +113,7 @@ class sensors():
                 read = self.readSensor(processID)
 
                 self.display.fb_clear()
-                self.display.fb_println("Adjust sensor gap to ~ 6.35 mm", 1)
+                self.display.fb_println("Adjust sensor gap to ~ %r mm" %round(commonFX.baumerToMM(self.sensor_target[0]), 2) , 1)
                 self.display.fb_println("Rear sensors range (mm) %r" % round(commonFX.baumerToMM(read[0]), 3), 0)
                 self.display.fb_println("Front sensors range (mm) %r" % round(commonFX.baumerToMM(read[1]), 3), 0)
                 self.display.fb_println("Press Green button to proceed after adjustment", 1)
