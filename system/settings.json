@@ -1,11 +1,11 @@
 {
 	"custom_test":{
-		"switch": 1,
-		"kill_switch": 1,
-		"magnet_drift": 0,
-		"homing": 1,
-		"sensors": 1,
-		"ZDBF": 1,
+		"switch": 0,
+		"kill_switch": 0,
+		"magnet_drift": 1,
+		"homing": 0,
+		"sensors": 0,
+		"ZDBF": 0,
 		"level_motor": 0,
 		"results": 1
 	},
@@ -29,7 +29,10 @@
 		
 		"actuator":{
 			"timeout": 30,
-			"magnet_drift_tolerance": 0.02,
+			"magnet_drift_tolerance": 0.01,
+			"magnet_drift_target": 50,
+			"magnet_setpoint": -1000,
+			"magnet_testrun": 3,
 			"kill_sw_setpoint": [ -8000, 5000 ],
 			"over_current_time": 2,
 			"oc_runtime": 5,
@@ -54,18 +57,21 @@
 		"platen":{
 			"sensor_target": [ 11960, 11960 ],
 			"sensor_tolerance": 0.02,
-			"level_motor_adjTime": 0,
-			"level_motor_tolerance": [ 0, 0 ], 
-			"level_motor_range": [ 0, 0 ],
-			"movement_trigger": [ 0, 0 ],
-			"offset_required": [ 0 , 0 ],
-			"sensor_to_enc": [ 0 , 0 ],
-			"ZDBF_limit": 0
+			"level_motor_adjTime": 50,
+			"level_motor_tolerance": [ 0.05, 0.10 ], 
+			"level_motor_range": [ 6449, 6553 ],
+			"movement_trigger": [ 150, 250 ],
+			"offset_required": [ 1.5 , 2 ],
+			"sensor_to_enc": [ 42 , 60 ],
+			"ZDBF_limit": 8
 		},
 		
 		"actuator":{
 			"timeout": 30,
-			"magnet_drift_tolerance": 0.02,
+			"magnet_drift_tolerance": 0.01,
+			"magnet_drift_target": 50,
+			"magnet_setpoint": -1000,
+			"magnet_testrun": 3,
 			"kill_sw_setpoint": [ -8000, 5000 ],
 			"over_current_time": 2,
 			"oc_runtime": 5,

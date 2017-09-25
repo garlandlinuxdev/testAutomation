@@ -78,6 +78,9 @@ class loadJSON():
 
             actuator.append(data["Pearl"]["actuator"]["timeout"])
             actuator.append(data["Pearl"]["actuator"]["magnet_drift_tolerance"])
+            actuator.append(data["Pearl"]["actuator"]["magnet_drift_target"])
+            actuator.append(data["Pearl"]["actuator"]["magnet_setpoint"])
+            actuator.append(data["Pearl"]["actuator"]["magnet_testrun"])
             actuator.append(data["Pearl"]["actuator"]["kill_sw_setpoint"])
             actuator.append(data["Pearl"]["actuator"]["over_current_time"])
             actuator.append(data["Pearl"]["actuator"]["oc_runtime"])

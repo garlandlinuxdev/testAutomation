@@ -14,6 +14,9 @@ class motion():
     # adjustable limits
     timeout = 30  # max time limit for each task completion, flag error when exceeded
     magnetTolerance = 0.02  # percentage of error allowed for magnet drift test
+    magnet_drift_target = 50 # maximum drift target
+    magnet_setpoint = -1000 # lower position for magnet drift test (before hitting home switch)
+    magnet_testrun = 3 # total amount of test run for magnet drift test
     killSP = [-8000, 5000]  # [high, low] setpoint for kill switch test
     oc_time = 2  # time in seconds required to flag over current error
     oc_runtime = 5  # runtime for over current test
@@ -24,10 +27,13 @@ class motion():
         self.com = com
         self.timeout = config.actuator_config[0]
         self.magnetTolerance = config.actuator_config[1]
-        self.killSP = config.actuator_config[2]
-        self.oc_time = config.actuator_config[3]
-        self.oc_runtime = config.actuator_config[4]
-        self.encoder_conv = config.actuator_config[5]
+        self.magnet_drift_target = config.actuator_config[2]
+        self.magnet_setpoint = config.actuator_config[3]
+        self.magnet_testrun = config.actuator_config[4]
+        self.killSP = config.actuator_config[5]
+        self.oc_time = config.actuator_config[6]
+        self.oc_runtime = config.actuator_config[7]
+        self.encoder_conv = config.actuator_config[8]
 
     def setpoint(self, SP):
         processID = 200
@@ -124,74 +130,97 @@ class motion():
 
     def magnetDrift(self, config):
         processID = 204
-        self.com.setReg(processID, 255, [3])
-        read = self.com.readReg(processID, 255, 1)
-        startTime = time.time()
-        while read[0] != 5 and commonFX.timeCal(startTime) < self.timeout:
+        test = 1
+        error = 0
+
+        while test <= self.magnet_testrun:
+            self.homing()
+            self.logger.info("Test run #%r" % test)
+            self.display.fb_println("Test run #%r" % test, 0)
+            # seek upper reference switch
+            self.com.setReg(processID, 255, [3])
             read = self.com.readReg(processID, 255, 1)
-        if read[0] != 5:
-            self.logger.info("Seeking upper switch failed, @ processID %r" % processID)
-            self.display.fb_println("Seeking upper switch failed, @ processID %r" % processID, 1)
-            self.stopMotion(processID)
-            os._exit(1)
-        self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
-        encUP = self.spFeedback()
+            startTime = time.time()
+            while read[0] != 5 and commonFX.timeCal(startTime) < self.timeout:
+                read = self.com.readReg(processID, 255, 1)
+            if read[0] != 5:
+                self.logger.info("Seeking upper switch failed, @ processID %r" % processID)
+                self.display.fb_println("Seeking upper switch failed, @ processID %r" % processID, 1)
+                self.stopMotion(processID)
+                os._exit(1)
+            self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
+            encUPintial = self.spFeedback()
 
-        # seek lower reference switch
-        #self.com.setReg(processID, 255, [2])
-        self.com.setReg(processID, 255, [6])
-        #read = self.com.readCoil(processID, 6, 1)
-        startTime = time.time()
-        while read[0] != 8 and commonFX.timeCal(startTime) < self.timeout:
-            #read = self.com.readCoil(processID, 6, 1)
+            # move to lower test setpoint
+            self.setpoint(self.magnet_setpoint)
+            self.resetMode(processID)
+            read = self.com.readReg(processID, 0, 1)
+            startTime = time.time()
+            while commonFX.signedInt(read[0]) != -32768 and commonFX.timeCal(startTime) < self.timeout:
+                read = self.com.readReg(processID, 0, 1)
+                if commonFX.signedInt(read[0]) != -32768:
+                    time.sleep(0.4)
+                    self.com.setReg(processID, 255, [0])
+                    time.sleep(0.4)
+                    self.resetMode(processID)
+
+            if commonFX.timeCal(startTime) > self.timeout:
+                self.logger.info("Motor did not reach lower target > %r" %self.timeout)
+                self.display.fb_println("Motor did not reach lower target > %r" %self.timeout, 1)
+                self.stopMotion(processID)
+                os._exit(1)
+
+            read = self.com.readCoil(processID, 6, 1)
+            if read[0] == 1:
+                self.logger.info("Reduce lower setpoint required, home switch pressed")
+                self.display.fb_println("Reduce lower setpoint required, home switch pressed")
+                self.stopMotion(processID)
+                os._exit(1)
+
+            self.resetMode(processID)
+            encDown = self.spFeedback()
+            distanceDOWN = abs(encUPintial - encDown)
+
+            # seek upper reference switch
+            self.com.setReg(processID, 255, [3])
             read = self.com.readReg(processID, 255, 1)
-            if read[0] != 8:
-                time.sleep(0.4)
-                self.com.setReg(processID, 255, [0])
-                time.sleep(0.4)
-                self.com.setReg(processID, 255, [read[0]])
+            startTime = time.time()
+            while read[0] != 5 and commonFX.timeCal(startTime) < self.timeout / 2:
+                read = self.com.readReg(processID, 255, 1)
+            if read[0] != 5:
+                self.logger.info("Seeking upper switch failed, @ processID %r" % processID)
+                self.display.fb_println("Seeking upper switch failed, @ processID %r" % processID, 1)
+                self.stopMotion(processID)
+                os._exit(1)
+            self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
+            self.resetMode(processID)
+            encUP = self.spFeedback()
+            distanceUP = abs(encDown - encUP)
+            drift = abs(distanceUP - distanceDOWN)
 
-        if read[0] != 8:
-            self.logger.info("Seeking lower switch failed, @ processID %r" % processID)
-            self.display.fb_println("Seeking lower switch failed, @ processID %r" % processID, 1)
-            self.stopMotion(processID)
-            os._exit(1)
-        self.logger.info("Seeking lower switch successful, @ processID %r" % processID)
-        encDown = self.spFeedback()
-        distanceDOWN = abs(encUP - encDown)
+            if drift <= self.magnet_drift_target:
+                self.logger.info("Distance moving up: " + str(distanceUP))
+                self.logger.info("Distance moving down: " + str(distanceDOWN))
+                self.logger.info("Encoder magnet ok, no drift found (%r)" %drift)
+                self.display.fb_println("Distance moving up: %r" % distanceUP, 0)
+                self.display.fb_println("Distance moving down: %r" % distanceDOWN, 0)
+                self.display.fb_println("Encoder magnet ok, no drift found", 0)
+            else:
+                self.logger.info("Distance moving up: " + str(distanceUP))
+                self.logger.info("Distance moving down: " + str(distanceDOWN))
+                self.logger.info("Check encoder magnet, %r count drift found" % drift)
+                self.display.fb_println("Distance moving up: %r" % distanceUP, 1)
+                self.display.fb_println("Distance moving down: %r" % distanceDOWN, 1)
+                self.display.fb_println("Check encoder magnet, %r count drift found" % drift, 1)
+                error += 1
+                #os._exit(1)
+            test += 1
 
-        # seek upper reference switch
-        self.com.setReg(processID, 255, [3])
-        read = self.com.readReg(processID, 255, 1)
-        startTime = time.time()
-        while read[0] != 5 and commonFX.timeCal(startTime) < self.timeout / 2:
-            read = self.com.readReg(processID, 255, 1)
-        if read[0] != 5:
-            self.logger.info("Seeking upper switch failed, @ processID %r" % processID)
-            self.display.fb_println("Seeking upper switch failed, @ processID %r" % processID, 1)
-            self.stopMotion(processID)
-            os._exit(1)
-        self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
-        self.resetMode(processID)
-        encUP = self.spFeedback()
-        distanceUP = abs(encDown - encUP)
-        drift = abs(distanceUP - distanceDOWN)
+            if error >= 2:
+                self.logger.info("Check encoder magnet, %r count drift found" % drift)
+                self.display.fb_println("Check encoder magnet, %r count drift found" % drift, 1)
+                os._exit(1)
 
-        if commonFX.rangeCheck(distanceDOWN, distanceUP, self.magnetTolerance):
-            self.logger.info("Distance moving up: " + str(distanceUP))
-            self.logger.info("Distance moving down: " + str(distanceDOWN))
-            self.logger.info("Encoder magnet ok, no drift found")
-            self.display.fb_println("Distance moving up: %r" % distanceUP, 0)
-            self.display.fb_println("Distance moving down: %r" % distanceDOWN, 0)
-            self.display.fb_println("Encoder magnet ok, no drift found", 0)
-        else:
-            self.logger.info("Distance moving up: " + str(distanceUP))
-            self.logger.info("Distance moving down: " + str(distanceDOWN))
-            self.logger.info("Check encoder magnet, %r count drift found" % drift)
-            self.display.fb_println("Distance moving up: %r" % distanceUP, 1)
-            self.display.fb_println("Distance moving down: %r" % distanceDOWN, 1)
-            self.display.fb_println("Check encoder magnet, %r count drift found" % drift, 1)
-            os._exit(1)
         return [distanceDOWN, distanceUP, drift]
 
     def killSwitchTest(self):
