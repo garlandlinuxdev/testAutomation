@@ -13,10 +13,10 @@ FB_Y = 10  # global Y position of LCD, update using subfile module
 
 def setup():
     # Configure Hardware Overwrite
-    com_port = 'COM30'  # For windows
+    # com_port = 'COM30'  # For windows
     # com_port = '/dev/ttyO4' #For UART4
     # com_port = '/dev/ttyO1' #For UI using UART1
-    # com_port = '/dev/ttyUSB0'  # For USB port
+    com_port = '/dev/ttyUSB0'  # For USB port
 
     baud = 115200
     byte = 8
@@ -242,10 +242,10 @@ class myConfig(object):
         if self.test_enable[2] == 1:
             self.logger.info("Distance moving down (count): %r" % self.magnet[0])
             self.logger.info("Distance moving up (count):   %r" % self.magnet[1])
-            self.logger.info("Drift count (count):          %r" % self.magnet[2])
+            self.logger.info("Max Drift count (count):      %r" % self.magnet[2])
             self.display.fb_println("Distance moving down (count): %r" % self.magnet[0], 0)
             self.display.fb_println("Distance moving up (count):   %r" % self.magnet[1], 0)
-            self.display.fb_println("Drift count (count):          %r" % self.magnet[2], 0)
+            self.display.fb_println("Max Drift count (count):      %r" % self.magnet[2], 0)
         if self.test_enable[4] == 1:
             self.logger.info("Rear sensors gap (mm)         %r" % round(commonFX.baumerToMM(self.sensor[0]), 3))
             self.logger.info("Front sensors gap (mm)        %r" % round(commonFX.baumerToMM(self.sensor[1]), 3))
@@ -452,7 +452,7 @@ def main():
         logger.info("< execute homing test >")
         config.display.fb_clear()
         config.display.fb_println("< # 4 execute homing test >", 1)
-        motor.homing()
+        motor.homing(processID)
     if config.test_enable[4]:
         logger.info("< execute sensors gap test >")
         config.display.fb_println("< # 5 execute sensors gap test >", 1)

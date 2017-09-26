@@ -424,3 +424,373 @@
 2017-09-25 15:54:14,426 INFO Distance moving up (count):   3331
 2017-09-25 15:54:14,426 INFO Drift count (count):          43
 2017-09-25 15:54:14,426 INFO < Equipment passed all test requirements >
+2017-09-26 07:35:33,105 INFO Script running on windows platform, LCD disabled
+2017-09-26 07:35:33,105 INFO ==================== Load Settings ====================
+2017-09-26 07:35:33,401 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-26 07:35:33,401 INFO McDonald Gas Test
+2017-09-26 07:35:33,721 INFO Writing motionPID successful, @ processID 101
+2017-09-26 07:35:34,345 INFO Writing heaterPID successful, @ processID 102
+2017-09-26 07:35:34,921 INFO Writing level sensors successful, @ processID 103
+2017-09-26 07:35:35,065 INFO Writing power sync successful, @ processID 104
+2017-09-26 07:35:36,934 INFO ==================== Test Begins ====================
+2017-09-26 07:35:36,934 INFO < execute voltage reading >
+2017-09-26 07:35:37,223 INFO Line 1: 209.3
+2017-09-26 07:35:37,223 INFO Line 2: 208.7
+2017-09-26 07:35:37,223 INFO Line 3: 209.8
+2017-09-26 07:35:37,223 INFO Frequency: 64
+2017-09-26 07:35:37,223 INFO 24V supply: 24.08
+2017-09-26 07:35:37,223 INFO 12V supply: 12.15
+2017-09-26 07:35:37,223 INFO 5V supply: 4.98
+2017-09-26 07:35:37,223 INFO 3.3V supply: 3.26
+2017-09-26 07:35:37,223 INFO < execute magnet drift test >
+2017-09-26 07:35:44,414 INFO Homing sequence successful, @ processID 202
+2017-09-26 07:35:44,414 INFO Test run #1
+2017-09-26 07:35:48,586 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:35:48,875 INFO Writing setpoint reg 0 to -1000
+2017-09-26 07:36:00,286 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:36:00,573 INFO Distance moving up: 3338
+2017-09-26 07:36:00,573 INFO Distance moving down: 3385
+2017-09-26 07:36:00,573 INFO Encoder magnet ok, no drift found (47)
+2017-09-26 07:36:10,644 INFO Homing sequence successful, @ processID 202
+2017-09-26 07:36:10,644 INFO Test run #2
+2017-09-26 07:36:14,671 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:36:14,960 INFO Writing setpoint reg 0 to -1000
+2017-09-26 07:36:26,227 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:36:26,516 INFO Distance moving up: 3343
+2017-09-26 07:36:26,516 INFO Distance moving down: 3389
+2017-09-26 07:36:26,516 INFO Encoder magnet ok, no drift found (46)
+2017-09-26 07:36:36,443 INFO Homing sequence successful, @ processID 202
+2017-09-26 07:36:36,443 INFO Test run #3
+2017-09-26 07:36:40,470 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:36:40,757 INFO Writing setpoint reg 0 to -1000
+2017-09-26 07:36:52,026 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:36:52,315 INFO Distance moving up: 3353
+2017-09-26 07:36:52,315 INFO Distance moving down: 3392
+2017-09-26 07:36:52,315 INFO Encoder magnet ok, no drift found (39)
+2017-09-26 07:36:52,315 INFO < calculate results >
+2017-09-26 07:36:52,315 INFO ==================== Test Completed ====================
+2017-09-26 07:36:52,315 INFO < Test Results >
+2017-09-26 07:36:52,315 INFO Line 1 (V):     209.3
+2017-09-26 07:36:52,315 INFO Line 2 (V):     208.7
+2017-09-26 07:36:52,315 INFO Line 3 (V):     209.8
+2017-09-26 07:36:52,315 INFO 24V supply (V):  24.08
+2017-09-26 07:36:52,315 INFO 12V supply (V):  12.15
+2017-09-26 07:36:52,315 INFO 5V supply (V):   4.98
+2017-09-26 07:36:52,315 INFO 3.3V supply (V): 3.26
+2017-09-26 07:36:52,315 INFO Distance moving down (count): 3392
+2017-09-26 07:36:52,315 INFO Distance moving up (count):   3353
+2017-09-26 07:36:52,315 INFO Drift count (count):          39
+2017-09-26 07:36:52,315 INFO < Equipment passed all test requirements >
+2017-09-26 07:37:31,823 INFO Script running on windows platform, LCD disabled
+2017-09-26 07:37:31,823 INFO ==================== Load Settings ====================
+2017-09-26 07:37:32,121 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-26 07:37:32,121 INFO McDonald Gas Test
+2017-09-26 07:37:32,440 INFO Writing motionPID successful, @ processID 101
+2017-09-26 07:37:33,063 INFO Writing heaterPID successful, @ processID 102
+2017-09-26 07:37:33,638 INFO Writing level sensors successful, @ processID 103
+2017-09-26 07:37:33,782 INFO Writing power sync successful, @ processID 104
+2017-09-26 07:37:35,078 INFO ==================== Test Begins ====================
+2017-09-26 07:37:35,078 INFO < execute voltage reading >
+2017-09-26 07:37:35,365 INFO Line 1: 210.3
+2017-09-26 07:37:35,365 INFO Line 2: 210.3
+2017-09-26 07:37:35,365 INFO Line 3: 210.8
+2017-09-26 07:37:35,365 INFO Frequency: 65
+2017-09-26 07:37:35,365 INFO 24V supply: 23.9
+2017-09-26 07:37:35,365 INFO 12V supply: 12.15
+2017-09-26 07:37:35,367 INFO 5V supply: 4.98
+2017-09-26 07:37:35,367 INFO 3.3V supply: 3.26
+2017-09-26 07:37:35,367 INFO < execute magnet drift test >
+2017-09-26 07:37:42,413 INFO Homing sequence successful, @ processID 202
+2017-09-26 07:37:42,413 INFO Test run #1
+2017-09-26 07:37:46,298 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:37:46,585 INFO Writing setpoint reg 0 to -1000
+2017-09-26 07:37:57,855 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:37:58,141 INFO Distance moving up: 3351
+2017-09-26 07:37:58,141 INFO Distance moving down: 3387
+2017-09-26 07:37:58,141 INFO Encoder magnet ok, no drift found (36)
+2017-09-26 07:38:08,078 INFO Homing sequence successful, @ processID 202
+2017-09-26 07:38:08,078 INFO Test run #2
+2017-09-26 07:38:11,963 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:38:12,250 INFO Writing setpoint reg 0 to -1000
+2017-09-26 07:38:23,519 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:38:23,808 INFO Distance moving up: 3359
+2017-09-26 07:38:23,808 INFO Distance moving down: 3383
+2017-09-26 07:38:23,808 INFO Encoder magnet ok, no drift found (24)
+2017-09-26 07:38:33,733 INFO Homing sequence successful, @ processID 202
+2017-09-26 07:38:33,733 INFO Test run #3
+2017-09-26 07:38:37,618 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:38:37,905 INFO Writing setpoint reg 0 to -1000
+2017-09-26 07:38:49,174 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:38:49,461 INFO Distance moving up: 3368
+2017-09-26 07:38:49,463 INFO Distance moving down: 3389
+2017-09-26 07:38:49,463 INFO Encoder magnet ok, no drift found (21)
+2017-09-26 07:38:49,463 INFO < calculate results >
+2017-09-26 07:38:49,463 INFO ==================== Test Completed ====================
+2017-09-26 07:38:49,463 INFO < Test Results >
+2017-09-26 07:38:49,463 INFO Line 1 (V):     210.3
+2017-09-26 07:38:49,463 INFO Line 2 (V):     210.3
+2017-09-26 07:38:49,463 INFO Line 3 (V):     210.8
+2017-09-26 07:38:49,463 INFO 24V supply (V):  23.9
+2017-09-26 07:38:49,463 INFO 12V supply (V):  12.15
+2017-09-26 07:38:49,463 INFO 5V supply (V):   4.98
+2017-09-26 07:38:49,463 INFO 3.3V supply (V): 3.26
+2017-09-26 07:38:49,463 INFO Distance moving down (count): 3389
+2017-09-26 07:38:49,463 INFO Distance moving up (count):   3368
+2017-09-26 07:38:49,463 INFO Drift count (count):          21
+2017-09-26 07:38:49,463 INFO < Equipment passed all test requirements >
+2017-09-26 07:40:17,473 INFO Script running on windows platform, LCD disabled
+2017-09-26 07:40:17,473 INFO ==================== Load Settings ====================
+2017-09-26 07:40:17,753 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-26 07:40:17,753 INFO McDonald Gas Test
+2017-09-26 07:40:18,072 INFO Writing motionPID successful, @ processID 101
+2017-09-26 07:40:18,696 INFO Writing heaterPID successful, @ processID 102
+2017-09-26 07:40:19,272 INFO Writing level sensors successful, @ processID 103
+2017-09-26 07:40:19,415 INFO Writing power sync successful, @ processID 104
+2017-09-26 07:40:22,292 INFO ==================== Test Begins ====================
+2017-09-26 07:40:22,292 INFO < execute voltage reading >
+2017-09-26 07:40:22,581 INFO Line 1: 210.8
+2017-09-26 07:40:22,581 INFO Line 2: 210.8
+2017-09-26 07:40:22,581 INFO Line 3: 211.3
+2017-09-26 07:40:22,581 INFO Frequency: 65
+2017-09-26 07:40:22,581 INFO 24V supply: 24.08
+2017-09-26 07:40:22,582 INFO 12V supply: 12.17
+2017-09-26 07:40:22,582 INFO 5V supply: 4.98
+2017-09-26 07:40:22,582 INFO 3.3V supply: 3.26
+2017-09-26 07:40:22,582 INFO < execute magnet drift test >
+2017-09-26 07:40:29,630 INFO Homing sequence successful, @ processID 202
+2017-09-26 07:40:29,630 INFO Test run #1
+2017-09-26 07:40:33,657 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:40:33,944 INFO Writing setpoint reg 0 to -1000
+2017-09-26 07:40:45,213 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:40:45,502 INFO Distance moving up: 3362
+2017-09-26 07:40:45,502 INFO Distance moving down: 3387
+2017-09-26 07:40:45,502 INFO Encoder magnet ok, no drift found (25)
+2017-09-26 07:40:55,282 INFO Homing sequence successful, @ processID 202
+2017-09-26 07:40:55,283 INFO Test run #2
+2017-09-26 07:40:59,312 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:40:59,598 INFO Writing setpoint reg 0 to -1000
+2017-09-26 07:41:10,868 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:41:11,157 INFO Distance moving up: 3370
+2017-09-26 07:41:11,157 INFO Distance moving down: 3393
+2017-09-26 07:41:11,157 INFO Encoder magnet ok, no drift found (23)
+2017-09-26 07:41:20,938 INFO Homing sequence successful, @ processID 202
+2017-09-26 07:41:20,938 INFO Test run #3
+2017-09-26 07:41:24,967 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:41:25,255 INFO Writing setpoint reg 0 to -1000
+2017-09-26 07:41:36,523 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 07:41:36,811 INFO Distance moving up: 3355
+2017-09-26 07:41:36,811 INFO Distance moving down: 3391
+2017-09-26 07:41:36,811 INFO Encoder magnet ok, no drift found (36)
+2017-09-26 07:41:36,811 INFO < calculate results >
+2017-09-26 07:41:36,811 INFO ==================== Test Completed ====================
+2017-09-26 07:41:36,811 INFO < Test Results >
+2017-09-26 07:41:36,812 INFO Line 1 (V):     210.8
+2017-09-26 07:41:36,812 INFO Line 2 (V):     210.8
+2017-09-26 07:41:36,812 INFO Line 3 (V):     211.3
+2017-09-26 07:41:36,812 INFO 24V supply (V):  24.08
+2017-09-26 07:41:36,812 INFO 12V supply (V):  12.17
+2017-09-26 07:41:36,812 INFO 5V supply (V):   4.98
+2017-09-26 07:41:36,812 INFO 3.3V supply (V): 3.26
+2017-09-26 07:41:36,812 INFO Distance moving down (count): 3391
+2017-09-26 07:41:36,812 INFO Distance moving up (count):   3355
+2017-09-26 07:41:36,812 INFO Drift count (count):          36
+2017-09-26 07:41:36,812 INFO < Equipment passed all test requirements >
+2017-09-26 08:10:19,000 INFO Script running on windows platform, LCD disabled
+2017-09-26 08:10:19,002 INFO ==================== Load Settings ====================
+2017-09-26 08:10:19,298 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-26 08:10:19,298 INFO McDonald Gas Test
+2017-09-26 08:10:19,618 INFO Writing motionPID successful, @ processID 101
+2017-09-26 08:10:20,240 INFO Writing heaterPID successful, @ processID 102
+2017-09-26 08:10:20,816 INFO Writing level sensors successful, @ processID 103
+2017-09-26 08:10:20,960 INFO Writing power sync successful, @ processID 104
+2017-09-26 08:10:22,974 INFO ==================== Test Begins ====================
+2017-09-26 08:10:22,974 INFO < execute voltage reading >
+2017-09-26 08:10:23,263 INFO Line 1: 212.3
+2017-09-26 08:10:23,263 INFO Line 2: 211.8
+2017-09-26 08:10:23,263 INFO Line 3: 212.3
+2017-09-26 08:10:23,263 INFO Frequency: 66
+2017-09-26 08:10:23,263 INFO 24V supply: 24.08
+2017-09-26 08:10:23,263 INFO 12V supply: 12.17
+2017-09-26 08:10:23,263 INFO 5V supply: 4.99
+2017-09-26 08:10:23,263 INFO 3.3V supply: 3.26
+2017-09-26 08:10:23,263 INFO < execute magnet drift test >
+2017-09-26 08:10:30,456 INFO Homing sequence successful, @ processID 202
+2017-09-26 08:10:30,456 INFO Test run #1
+2017-09-26 08:10:34,338 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:10:34,627 INFO Writing setpoint reg 0 to -1000
+2017-09-26 08:10:46,039 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:10:46,326 INFO Distance moving up: 3370
+2017-09-26 08:10:46,326 INFO Distance moving down: 3391
+2017-09-26 08:10:46,328 INFO Encoder magnet ok, no drift found (21)
+2017-09-26 08:10:56,253 INFO Homing sequence successful, @ processID 202
+2017-09-26 08:10:56,253 INFO Test run #2
+2017-09-26 08:11:00,282 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:11:00,569 INFO Writing setpoint reg 0 to -1000
+2017-09-26 08:11:11,838 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:11:12,125 INFO Distance moving up: 3358
+2017-09-26 08:11:12,125 INFO Distance moving down: 3397
+2017-09-26 08:11:12,125 INFO Encoder magnet ok, no drift found (39)
+2017-09-26 08:11:22,052 INFO Homing sequence successful, @ processID 202
+2017-09-26 08:11:22,052 INFO Test run #3
+2017-09-26 08:11:25,934 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:11:26,223 INFO Writing setpoint reg 0 to -1000
+2017-09-26 08:11:37,492 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:11:37,779 INFO Distance moving up: 3366
+2017-09-26 08:11:37,779 INFO Distance moving down: 3387
+2017-09-26 08:11:37,779 INFO Encoder magnet ok, no drift found (21)
+2017-09-26 08:11:37,779 INFO < calculate results >
+2017-09-26 08:11:37,779 INFO ==================== Test Completed ====================
+2017-09-26 08:11:37,779 INFO < Test Results >
+2017-09-26 08:11:37,779 INFO Line 1 (V):     212.3
+2017-09-26 08:11:37,779 INFO Line 2 (V):     211.8
+2017-09-26 08:11:37,779 INFO Line 3 (V):     212.3
+2017-09-26 08:11:37,779 INFO 24V supply (V):  24.08
+2017-09-26 08:11:37,780 INFO 12V supply (V):  12.17
+2017-09-26 08:11:37,780 INFO 5V supply (V):   4.99
+2017-09-26 08:11:37,780 INFO 3.3V supply (V): 3.26
+2017-09-26 08:11:37,780 INFO Distance moving down (count): 3387
+2017-09-26 08:11:37,780 INFO Distance moving up (count):   3366
+2017-09-26 08:11:37,780 INFO Max Drift count (count):      39
+2017-09-26 08:11:37,780 INFO < Equipment passed all test requirements >
+2017-09-26 08:18:41,707 INFO Script running on windows platform, LCD disabled
+2017-09-26 08:18:41,707 INFO ==================== Load Settings ====================
+2017-09-26 08:18:42,003 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-26 08:18:42,003 INFO McDonald Gas Test
+2017-09-26 08:18:42,322 INFO Writing motionPID successful, @ processID 101
+2017-09-26 08:18:42,961 INFO Writing heaterPID successful, @ processID 102
+2017-09-26 08:18:43,536 INFO Writing level sensors successful, @ processID 103
+2017-09-26 08:18:43,680 INFO Writing power sync successful, @ processID 104
+2017-09-26 08:18:45,119 INFO ==================== Test Begins ====================
+2017-09-26 08:18:45,119 INFO < execute voltage reading >
+2017-09-26 08:18:45,407 INFO Line 1: 211.8
+2017-09-26 08:18:45,407 INFO Line 2: 211.8
+2017-09-26 08:18:45,407 INFO Line 3: 212.3
+2017-09-26 08:18:45,407 INFO Frequency: 66
+2017-09-26 08:18:45,407 INFO 24V supply: 24.08
+2017-09-26 08:18:45,407 INFO 12V supply: 12.17
+2017-09-26 08:18:45,407 INFO 5V supply: 4.99
+2017-09-26 08:18:45,407 INFO 3.3V supply: 3.26
+2017-09-26 08:18:45,407 INFO < execute magnet drift test >
+2017-09-26 08:18:52,599 INFO Homing sequence successful, @ processID 202
+2017-09-26 08:18:52,599 INFO Test run #1
+2017-09-26 08:18:56,483 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:18:56,770 INFO Writing setpoint reg 0 to -1000
+2017-09-26 08:19:08,040 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:19:08,328 INFO Distance moving up: [0, 3355]
+2017-09-26 08:19:08,328 INFO Distance moving down: [0, 3391]
+2017-09-26 08:19:08,328 INFO Check encoder magnet, 36 count drift found
+2017-09-26 08:19:22,933 INFO Script running on windows platform, LCD disabled
+2017-09-26 08:19:22,934 INFO ==================== Load Settings ====================
+2017-09-26 08:19:23,213 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-26 08:19:23,213 INFO McDonald Gas Test
+2017-09-26 08:19:23,533 INFO Writing motionPID successful, @ processID 101
+2017-09-26 08:19:24,157 INFO Writing heaterPID successful, @ processID 102
+2017-09-26 08:19:24,733 INFO Writing level sensors successful, @ processID 103
+2017-09-26 08:19:24,877 INFO Writing power sync successful, @ processID 104
+2017-09-26 08:19:26,028 INFO ==================== Test Begins ====================
+2017-09-26 08:19:26,028 INFO < execute voltage reading >
+2017-09-26 08:19:26,315 INFO Line 1: 211.8
+2017-09-26 08:19:26,315 INFO Line 2: 211.8
+2017-09-26 08:19:26,315 INFO Line 3: 212.8
+2017-09-26 08:19:26,315 INFO Frequency: 66
+2017-09-26 08:19:26,316 INFO 24V supply: 24.08
+2017-09-26 08:19:26,316 INFO 12V supply: 12.17
+2017-09-26 08:19:26,316 INFO 5V supply: 4.99
+2017-09-26 08:19:26,316 INFO 3.3V supply: 3.26
+2017-09-26 08:19:26,316 INFO < execute magnet drift test >
+2017-09-26 08:19:33,365 INFO Homing sequence successful, @ processID 202
+2017-09-26 08:19:33,365 INFO Test run #1
+2017-09-26 08:19:37,392 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:19:37,680 INFO Writing setpoint reg 0 to -1000
+2017-09-26 08:19:48,948 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:19:49,236 INFO Distance moving up: [0, 3343]
+2017-09-26 08:19:49,236 INFO Distance moving down: [0, 3387]
+2017-09-26 08:19:49,236 INFO Encoder magnet ok, no drift found (44)
+2017-09-26 08:19:59,163 INFO Homing sequence successful, @ processID 202
+2017-09-26 08:19:59,163 INFO Test run #2
+2017-09-26 08:20:03,190 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:20:03,477 INFO Writing setpoint reg 0 to -1000
+2017-09-26 08:20:14,763 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:20:15,051 INFO Distance moving up: [0, 3343, 3372]
+2017-09-26 08:20:15,051 INFO Distance moving down: [0, 3387, 3389]
+2017-09-26 08:20:15,051 INFO Encoder magnet ok, no drift found (17)
+2017-09-26 08:20:24,976 INFO Homing sequence successful, @ processID 202
+2017-09-26 08:20:24,976 INFO Test run #3
+2017-09-26 08:20:28,859 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:20:29,148 INFO Writing setpoint reg 0 to -1000
+2017-09-26 08:20:40,417 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:20:40,703 INFO Distance moving up: [0, 3343, 3372, 3357]
+2017-09-26 08:20:40,703 INFO Distance moving down: [0, 3387, 3389, 3379]
+2017-09-26 08:20:40,703 INFO Encoder magnet ok, no drift found (22)
+2017-09-26 08:20:40,704 INFO < calculate results >
+2017-09-26 08:20:40,704 INFO ==================== Test Completed ====================
+2017-09-26 08:20:40,704 INFO < Test Results >
+2017-09-26 08:20:40,704 INFO Line 1 (V):     211.8
+2017-09-26 08:20:40,704 INFO Line 2 (V):     211.8
+2017-09-26 08:20:40,704 INFO Line 3 (V):     212.8
+2017-09-26 08:20:40,704 INFO 24V supply (V):  24.08
+2017-09-26 08:20:40,704 INFO 12V supply (V):  12.17
+2017-09-26 08:20:40,704 INFO 5V supply (V):   4.99
+2017-09-26 08:20:40,704 INFO 3.3V supply (V): 3.26
+2017-09-26 08:20:40,704 INFO Distance moving down (count): 3387
+2017-09-26 08:20:40,704 INFO Distance moving up (count):   3343
+2017-09-26 08:20:40,704 INFO Max Drift count (count):      44
+2017-09-26 08:20:40,704 INFO < Equipment passed all test requirements >
+2017-09-26 08:21:01,016 INFO Script running on windows platform, LCD disabled
+2017-09-26 08:21:01,016 INFO ==================== Load Settings ====================
+2017-09-26 08:21:01,312 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
+2017-09-26 08:21:01,312 INFO McDonald Gas Test
+2017-09-26 08:21:01,631 INFO Writing motionPID successful, @ processID 101
+2017-09-26 08:21:02,255 INFO Writing heaterPID successful, @ processID 102
+2017-09-26 08:21:02,831 INFO Writing level sensors successful, @ processID 103
+2017-09-26 08:21:02,974 INFO Writing power sync successful, @ processID 104
+2017-09-26 08:21:04,987 INFO ==================== Test Begins ====================
+2017-09-26 08:21:04,987 INFO < execute voltage reading >
+2017-09-26 08:21:05,276 INFO Line 1: 211.8
+2017-09-26 08:21:05,276 INFO Line 2: 211.8
+2017-09-26 08:21:05,276 INFO Line 3: 211.3
+2017-09-26 08:21:05,276 INFO Frequency: 66
+2017-09-26 08:21:05,276 INFO 24V supply: 24.08
+2017-09-26 08:21:05,276 INFO 12V supply: 12.17
+2017-09-26 08:21:05,276 INFO 5V supply: 4.99
+2017-09-26 08:21:05,276 INFO 3.3V supply: 3.26
+2017-09-26 08:21:05,276 INFO < execute magnet drift test >
+2017-09-26 08:21:12,180 INFO Homing sequence successful, @ processID 202
+2017-09-26 08:21:12,180 INFO Test run #1
+2017-09-26 08:21:16,209 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:21:16,496 INFO Writing setpoint reg 0 to -1000
+2017-09-26 08:21:27,766 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:21:28,053 INFO Distance moving up: 3364
+2017-09-26 08:21:28,053 INFO Distance moving down: 3388
+2017-09-26 08:21:28,053 INFO Encoder magnet ok, no drift found (24)
+2017-09-26 08:21:37,835 INFO Homing sequence successful, @ processID 202
+2017-09-26 08:21:37,836 INFO Test run #2
+2017-09-26 08:21:41,720 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:21:42,006 INFO Writing setpoint reg 0 to -1000
+2017-09-26 08:21:53,276 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:21:53,563 INFO Distance moving up: 3365
+2017-09-26 08:21:53,563 INFO Distance moving down: 3390
+2017-09-26 08:21:53,563 INFO Encoder magnet ok, no drift found (25)
+2017-09-26 08:22:03,345 INFO Homing sequence successful, @ processID 202
+2017-09-26 08:22:03,345 INFO Test run #3
+2017-09-26 08:22:07,233 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:22:07,522 INFO Writing setpoint reg 0 to -1000
+2017-09-26 08:22:18,789 INFO Seeking upper switch successful, @ processID 204
+2017-09-26 08:22:19,078 INFO Distance moving up: 3342
+2017-09-26 08:22:19,078 INFO Distance moving down: 3382
+2017-09-26 08:22:19,078 INFO Encoder magnet ok, no drift found (40)
+2017-09-26 08:22:19,078 INFO < calculate results >
+2017-09-26 08:22:19,078 INFO ==================== Test Completed ====================
+2017-09-26 08:22:19,078 INFO < Test Results >
+2017-09-26 08:22:19,078 INFO Line 1 (V):     211.8
+2017-09-26 08:22:19,078 INFO Line 2 (V):     211.8
+2017-09-26 08:22:19,078 INFO Line 3 (V):     211.3
+2017-09-26 08:22:19,078 INFO 24V supply (V):  24.08
+2017-09-26 08:22:19,078 INFO 12V supply (V):  12.17
+2017-09-26 08:22:19,078 INFO 5V supply (V):   4.99
+2017-09-26 08:22:19,078 INFO 3.3V supply (V): 3.26
+2017-09-26 08:22:19,078 INFO Distance moving down (count): 3382
+2017-09-26 08:22:19,078 INFO Distance moving up (count):   3342
+2017-09-26 08:22:19,078 INFO Max Drift count (count):      40
+2017-09-26 08:22:19,078 INFO < Equipment passed all test requirements >
+2017-09-26 10:36:40,713 INFO FTDI USB cable not found, please connect cable and restart

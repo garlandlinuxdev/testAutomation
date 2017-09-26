@@ -51,8 +51,7 @@ class motion():
     def stopMotion(self, processID):
         self.com.setReg(processID, 255, [0])
 
-    def homing(self):
-        processID = 202
+    def homing(self, processID):
         self.com.setReg(processID, 25, [0])
         self.com.setReg(processID, 255, [1])
         homeStatus = self.com.readReg(processID, 25, 1)
@@ -132,9 +131,12 @@ class motion():
         processID = 204
         test = 1
         error = 0
+        distanceUP = [0]
+        distanceDOWN = [0]
+        drift = [0]
 
         while test <= self.magnet_testrun:
-            self.homing()
+            self.homing(processID)
             self.logger.info("Test run #%r" % test)
             self.display.fb_println("Test run #%r" % test, 0)
             # seek upper reference switch
@@ -179,7 +181,7 @@ class motion():
 
             self.resetMode(processID)
             encDown = self.spFeedback()
-            distanceDOWN = abs(encUPintial - encDown)
+            distanceDOWN.append(abs(encUPintial - encDown))
 
             # seek upper reference switch
             self.com.setReg(processID, 255, [3])
@@ -195,40 +197,43 @@ class motion():
             self.logger.info("Seeking upper switch successful, @ processID %r" % processID)
             self.resetMode(processID)
             encUP = self.spFeedback()
-            distanceUP = abs(encDown - encUP)
-            drift = abs(distanceUP - distanceDOWN)
+            distanceUP.append(abs(encDown - encUP))
+            drift.append(abs(distanceUP[test] - distanceDOWN[test]))
 
-            if drift <= self.magnet_drift_target:
-                self.logger.info("Distance moving up: " + str(distanceUP))
-                self.logger.info("Distance moving down: " + str(distanceDOWN))
-                self.logger.info("Encoder magnet ok, no drift found (%r)" %drift)
-                self.display.fb_println("Distance moving up: %r" % distanceUP, 0)
-                self.display.fb_println("Distance moving down: %r" % distanceDOWN, 0)
-                self.display.fb_println("Encoder magnet ok, no drift found", 0)
+            if drift[test] <= self.magnet_drift_target:
+                self.logger.info("Distance moving up: " + str(distanceUP[test]))
+                self.logger.info("Distance moving down: " + str(distanceDOWN[test]))
+                self.logger.info("Encoder magnet ok, no drift found (%r)" %drift[test])
+                self.display.fb_println("Distance moving up: %r" % distanceUP[test], 0)
+                self.display.fb_println("Distance moving down: %r" % distanceDOWN[test], 0)
+                self.display.fb_println("Encoder magnet ok, no drift found (%r)" %drift[test], 0)
             else:
-                self.logger.info("Distance moving up: " + str(distanceUP))
-                self.logger.info("Distance moving down: " + str(distanceDOWN))
-                self.logger.info("Check encoder magnet, %r count drift found" % drift)
-                self.display.fb_println("Distance moving up: %r" % distanceUP, 1)
-                self.display.fb_println("Distance moving down: %r" % distanceDOWN, 1)
-                self.display.fb_println("Check encoder magnet, %r count drift found" % drift, 1)
+                self.logger.info("Distance moving up: " + str(distanceUP[test]))
+                self.logger.info("Distance moving down: " + str(distanceDOWN[test]))
+                self.logger.info("Check encoder magnet, %r count drift found" % drift[test])
+                self.display.fb_println("Distance moving up: %r" % distanceUP[test], 1)
+                self.display.fb_println("Distance moving down: %r" % distanceDOWN[test], 1)
+                self.display.fb_println("Check encoder magnet, %r count drift found" % drift[test], 1)
                 error += 1
                 #os._exit(1)
+
             test += 1
 
-            if error >= 2:
-                self.logger.info("Check encoder magnet, %r count drift found" % drift)
-                self.display.fb_println("Check encoder magnet, %r count drift found" % drift, 1)
-                os._exit(1)
+        if error >= 2:
+            self.logger.info("Check encoder magnet, max drift count (%r)" % max(drift))
+            self.display.fb_println("Magnet test failed, max drift count (%r)" % max(drift), 1)
+            os._exit(1)
 
-        return [distanceDOWN, distanceUP, drift]
+        index = drift.index(max(drift))
+
+        return [distanceDOWN[index], distanceUP[index], max(drift)]
 
     def killSwitchTest(self):
         processID = 205
         encoder = [0, 0]
         status = self.com.readReg(processID, 25, 1)
         if status[0] != 5:
-            self.homing()
+            self.homing(processID)
         self.resetMode(processID)
 
         # seek upper switch

@@ -2,7 +2,7 @@
 # Project: EOL
 # Description:
 __author__ = "Adrian Wong"
-import os, commonFX, LCD, subfile
+import os, commonFX, LCD
 
 class measure():
     # Temporary variables, do not modify here
