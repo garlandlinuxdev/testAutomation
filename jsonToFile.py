@@ -75,6 +75,7 @@ class loadJSON():
             platen.append(data["Pearl"]["platen"]["offset_required"])
             platen.append(data["Pearl"]["platen"]["sensor_to_enc"])
             platen.append(data["Pearl"]["platen"]["ZDBF_limit"])
+            platen.append(data["Pearl"]["platen"]["ZDBF_limit_offset"])
 
             actuator.append(data["Pearl"]["actuator"]["timeout"])
             actuator.append(data["Pearl"]["actuator"]["magnet_drift_tolerance"])
@@ -106,9 +107,13 @@ class loadJSON():
             platen.append(data["CFA"]["platen"]["offset_required"])
             platen.append(data["CFA"]["platen"]["sensor_to_enc"])
             platen.append(data["CFA"]["platen"]["ZDBF_limit"])
+            platen.append(data["CFA"]["platen"]["ZDBF_limit_offset"])
 
             actuator.append(data["CFA"]["actuator"]["timeout"])
             actuator.append(data["CFA"]["actuator"]["magnet_drift_tolerance"])
+            actuator.append(data["CFA"]["actuator"]["magnet_drift_target"])
+            actuator.append(data["CFA"]["actuator"]["magnet_setpoint"])
+            actuator.append(data["CFA"]["actuator"]["magnet_testrun"])
             actuator.append(data["CFA"]["actuator"]["kill_sw_setpoint"])
             actuator.append(data["CFA"]["actuator"]["over_current_time"])
             actuator.append(data["CFA"]["actuator"]["oc_runtime"])

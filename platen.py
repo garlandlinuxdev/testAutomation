@@ -18,9 +18,10 @@ class sensors():
     lvlMotorTolerance = [0.05, 0.05, 0.05]  # tolerance for level motor range [motor, upper, lower]
     level_motor_range = [0, 0, 0]  # [motor_position limit, high limit, low limit]
     movement_trigger = [150, 300]  # [ upper trigger, lower trigger ] sensors reading differences for motor adjustment
+    offset_required = [2, 2]  # [up, down] distance require for motor moving down (mm)
     conversion = [46.21, 60]  # [conversion_down, conversion_up]
     ZDBF_limit = 5  # differences required for adjustment, between target ZDBF to current ZDBF
-    offset_required = [2, 2]  # [up, down] distance require for motor moving down (mm)
+    ZDBF_limit_offset = 5 # offset limits for reduced adjustment conversion
 
     def update(self, logger, com, config):
         self.logger = logger
@@ -34,6 +35,7 @@ class sensors():
         self.offset_required = config.platen_config[6]
         self.conversion = config.platen_config[7]
         self.ZDBF_limit = config.platen_config[8]
+        self.ZDBF_limit_offset = config.platen_config[9]
 
     def readSensor(self, processID):
         # [rear, front]
@@ -191,14 +193,14 @@ class sensors():
 
         elif ZDBF > target:  # Rear higher than front
             direction = 1  # move CCW down
-            if self.ZDBF_limit < abs(target - ZDBF) < self.ZDBF_limit + 10:
+            if self.ZDBF_limit < abs(target - ZDBF) < self.ZDBF_limit + self.ZDBF_limit_offset:
                 adjustment = (target - ZDBF) * self.conversion[0]/2
             else:
                 adjustment = (target - ZDBF) * self.conversion[0]
 
         elif ZDBF < target:  # Rear lower than front
             direction = -1  # move CW up
-            if self.ZDBF_limit < abs(target - ZDBF) < self.ZDBF_limit + 10:
+            if self.ZDBF_limit < abs(target - ZDBF) < self.ZDBF_limit + self.ZDBF_limit_offset:
                 adjustment = (target - ZDBF) * self.conversion[1]/2
             else:
                 adjustment = (target - ZDBF) * self.conversion[1]

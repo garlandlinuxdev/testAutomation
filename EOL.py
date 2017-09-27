@@ -218,7 +218,7 @@ class myConfig(object):
             self.logger.info("Time elapse downwards (sec):  %r" % round(self.time_elapse[1], 3))
             self.display.fb_println("Time elapse upwards (sec):    %r" % round(self.time_elapse[0], 3), 0)
             self.display.fb_println("Time elapse downwards (sec):  %r" % round(self.time_elapse[1], 3), 0)
-            if self.error[0] != 1:
+            if self.error[0] == 0:
                 self.display.fb_println("Grill plate to Home (inch):  %r" % self.grill_plate, 0)
             else:
                 self.display.fb_println("Grill plate to Home (inch):  %r >tolerance" % self.grill_plate, 1)
@@ -308,7 +308,7 @@ class myConfig(object):
             if commonFX.rangeCheck(round(grill_plate, 3), self.switch_config[1], self.switch_config[0]) != True:
                 self.logger.info("grill plate to home distance not in range, target: %r +/- %r%%" % (
                 self.switch_config[1], self.switch_config[0] * 100))
-                error[0] = 1
+                error[0] = -1
             if commonFX.rangeCheck(round(lift_sw, 3), self.switch_config[2], self.switch_config[0]) != True:
                 self.logger.info("lift switch location not in range, target: %r +/- %r%%" % (
                 self.switch_config[2], self.switch_config[0] * 100))
