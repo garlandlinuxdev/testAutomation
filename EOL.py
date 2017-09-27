@@ -221,7 +221,7 @@ class myConfig(object):
             if self.error[0] == 0:
                 self.display.fb_println("Grill plate to Home (inch):  %r" % self.grill_plate, 0)
             else:
-                self.display.fb_println("Grill plate to Home (inch):  %r >tolerance" % self.grill_plate, 1)
+                self.display.fb_println("Grill plate to Home (inch):  %r >tolerance" % self.grill_plate, 0)
             if self.error[1] != 1:
                 self.display.fb_println("Lift switch location (inch):  %r" % self.switch[0], 0)
             else:
@@ -382,6 +382,7 @@ def main():
     myJSON = jsonToFile.loadJSON()
     myJSON.update(logger, com, config.loadReg_enable)
 
+    #info = myJSON.readJSON(config.linuxPath + config.sysPath + 'settings.json')
     try:
         info = myJSON.readJSON(config.linuxPath + config.sysPath + 'settings.json')
     except ValueError:

@@ -22,6 +22,7 @@ class sensors():
     conversion = [46.21, 60]  # [conversion_down, conversion_up]
     ZDBF_limit = 5  # differences required for adjustment, between target ZDBF to current ZDBF
     ZDBF_limit_offset = 5 # offset limits for reduced adjustment conversion
+    ZDBF_conv_reduction = 0.5 # multipler for reducing adjustment conversion
 
     def update(self, logger, com, config):
         self.logger = logger
@@ -36,6 +37,7 @@ class sensors():
         self.conversion = config.platen_config[7]
         self.ZDBF_limit = config.platen_config[8]
         self.ZDBF_limit_offset = config.platen_config[9]
+        self.ZDBF_conv_reduction = config.platen_config[10]
 
     def readSensor(self, processID):
         # [rear, front]
@@ -194,20 +196,20 @@ class sensors():
         elif ZDBF > target:  # Rear higher than front
             direction = 1  # move CCW down
             if self.ZDBF_limit < abs(target - ZDBF) < self.ZDBF_limit + self.ZDBF_limit_offset:
-                adjustment = (target - ZDBF) * self.conversion[0]/2
+                adjustment = (target - ZDBF) * self.conversion[0] * self.ZDBF_conv_reduction
             else:
                 adjustment = (target - ZDBF) * self.conversion[0]
 
         elif ZDBF < target:  # Rear lower than front
             direction = -1  # move CW up
             if self.ZDBF_limit < abs(target - ZDBF) < self.ZDBF_limit + self.ZDBF_limit_offset:
-                adjustment = (target - ZDBF) * self.conversion[1]/2
+                adjustment = (target - ZDBF) * self.conversion[1] * self.ZDBF_conv_reduction
             else:
                 adjustment = (target - ZDBF) * self.conversion[1]
 
 
-        self.logger.info("ZDBF: %r, direction: %r, adjustment: %r mm" % (ZDBF, direction, commonFX.gapToMM(adjustment)))
-        self.display.fb_println("ZDBF: %r, direction: %r, adjustment: %r mm" % (ZDBF, direction, commonFX.gapToMM(adjustment)), 0)
+        self.logger.info("ZDBF: %r, direction: %r, adjustment: %r" % (ZDBF, direction, adjustment))
+        self.display.fb_println("ZDBF: %r, direction: %r, adjustment: %r" % (ZDBF, direction, adjustment), 0)
         return ZDBF, direction, adjustment
 
     def autolevel(self, processID, direction, adjustment):

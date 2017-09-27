@@ -76,6 +76,7 @@ class loadJSON():
             platen.append(data["Pearl"]["platen"]["sensor_to_enc"])
             platen.append(data["Pearl"]["platen"]["ZDBF_limit"])
             platen.append(data["Pearl"]["platen"]["ZDBF_limit_offset"])
+            platen.append(data["Pearl"]["platen"]["ZDBF_conv_reduction"])
 
             actuator.append(data["Pearl"]["actuator"]["timeout"])
             actuator.append(data["Pearl"]["actuator"]["magnet_drift_tolerance"])
@@ -108,6 +109,7 @@ class loadJSON():
             platen.append(data["CFA"]["platen"]["sensor_to_enc"])
             platen.append(data["CFA"]["platen"]["ZDBF_limit"])
             platen.append(data["CFA"]["platen"]["ZDBF_limit_offset"])
+            platen.append(data["CFA"]["platen"]["ZDBF_conv_reduction"])
 
             actuator.append(data["CFA"]["actuator"]["timeout"])
             actuator.append(data["CFA"]["actuator"]["magnet_drift_tolerance"])

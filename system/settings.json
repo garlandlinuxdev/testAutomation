@@ -23,9 +23,10 @@
 			"level_motor_range": [ 6449, 6553 ],
 			"movement_trigger": [ 150, 250 ],
 			"offset_required": [ 1.5 , 2 ],
-			"sensor_to_enc": [ 46 , 60 ],
-			"ZDBF_limit": 8,
-			"ZDBF_limit_offset": 2
+			"sensor_to_enc": [ 46 , 80 ],
+			"ZDBF_limit": 4,
+			"ZDBF_limit_offset": 2,
+			"ZDBF_conv_reduction": 0.8
 		},
 		
 		"actuator":{
@@ -65,7 +66,8 @@
 			"offset_required": [ 1.5 , 2 ],
 			"sensor_to_enc": [ 42 , 60 ],
 			"ZDBF_limit": 8,
-			"ZDBF_limit_offset": 5
+			"ZDBF_limit_offset": 5,
+			"ZDBF_conv_reduction": 0.8
 		},
 		
 		"actuator":{
