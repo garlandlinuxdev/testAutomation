@@ -52,9 +52,10 @@ class motion():
         self.com.setReg(processID, 255, [0])
 
     def homing(self, processID):
-        self.com.setReg(processID, 25, [0])
-        self.com.setReg(processID, 255, [1])
         homeStatus = self.com.readReg(processID, 25, 1)
+        if homeStatus[0] != 5:
+            self.com.setReg(processID, 25, [0])
+            self.com.setReg(processID, 255, [1])
         startTime = time.time()
         while homeStatus[0] != 5 and commonFX.timeCal(startTime) < self.timeout:
             homeStatus = self.com.readReg(processID, 25, 1)

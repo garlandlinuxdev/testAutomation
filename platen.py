@@ -22,7 +22,7 @@ class sensors():
     conversion = [46.21, 60]  # [conversion_down, conversion_up]
     ZDBF_limit = 5  # differences required for adjustment, between target ZDBF to current ZDBF
     ZDBF_limit_offset = 5 # offset limits for reduced adjustment conversion
-    ZDBF_conv_reduction = 0.5 # multipler for reducing adjustment conversion
+    ZDBF_conv_correction = 0.5 # multipler for adjustment conversion
 
     def update(self, logger, com, config):
         self.logger = logger
@@ -37,7 +37,7 @@ class sensors():
         self.conversion = config.platen_config[7]
         self.ZDBF_limit = config.platen_config[8]
         self.ZDBF_limit_offset = config.platen_config[9]
-        self.ZDBF_conv_reduction = config.platen_config[10]
+        self.ZDBF_conv_correction = config.platen_config[10]
 
     def readSensor(self, processID):
         # [rear, front]
@@ -131,37 +131,6 @@ class sensors():
 
         return read
 
-    def levelMotorTest(self):
-        processID = 304
-        sensorReading = self.readSensor(processID)
-        self.moveLvlMotor(1, -1)
-        time.sleep(self.lvlMotorTime)
-        self.moveLvlMotor(0, 0)
-        read = self.readSensor(processID)
-        if read[0] > sensorReading[0] + 300:
-            self.logger.info("Level motor installed correctly")
-        elif read[0] <= sensorReading[0] - 300:
-            self.logger.info("Level motor moving in reverse direction")
-            self.display.fb_println("Level motor moving in reverse direction", 1)
-            os._exit(1)
-        else:
-            self.logger.info("No level motor movement detected")
-            self.display.fb_println("No level motor movement detected", 1)
-            os._exit(1)
-
-        # position reset
-        read = self.readSensor(processID)
-        while commonFX.rangeCheck(read[0], sensorReading[0], 0.005) != True:
-            read = self.readSensor(processID)
-            if read[0] > sensorReading[0]:
-                self.moveLvlMotor(1, 1)
-            elif read[0] < sensorReading[0]:
-                self.moveLvlMotor(1, -1)
-        self.moveLvlMotor(0, 0)
-        self.logger.info("Level motor test successful")
-        self.display.fb_println("Level motor test successful", 0)
-        self.resetMode(processID)
-
     def calZDBF(self):
         processID = 305
         self.com.setReg(processID, 255, [10])
@@ -195,22 +164,25 @@ class sensors():
 
         elif ZDBF > target:  # Rear higher than front
             direction = 1  # move CCW down
-            if self.ZDBF_limit < abs(target - ZDBF) < self.ZDBF_limit + self.ZDBF_limit_offset:
-                adjustment = (target - ZDBF) * self.conversion[0] * self.ZDBF_conv_reduction
+            if abs(target - ZDBF) > self.ZDBF_limit + 15:
+                adjustment = commonFX.encToSensor((target - ZDBF), config.encoder_conv) * self.ZDBF_conv_correction
+            elif self.ZDBF_limit < abs(target - ZDBF) < self.ZDBF_limit + self.ZDBF_limit_offset:
+                adjustment = commonFX.encToSensor((target - ZDBF), config.encoder_conv)
             else:
-                adjustment = (target - ZDBF) * self.conversion[0]
+                adjustment = commonFX.encToSensor((target - ZDBF), config.encoder_conv) * self.ZDBF_conv_correction / 2
 
         elif ZDBF < target:  # Rear lower than front
             direction = -1  # move CW up
-            if self.ZDBF_limit < abs(target - ZDBF) < self.ZDBF_limit + self.ZDBF_limit_offset:
-                adjustment = (target - ZDBF) * self.conversion[1] * self.ZDBF_conv_reduction
+            if abs(target - ZDBF) > self.ZDBF_limit + 15:
+                adjustment = commonFX.encToSensor((target - ZDBF), config.encoder_conv) * self.ZDBF_conv_correction
+            elif self.ZDBF_limit < abs(target - ZDBF) < self.ZDBF_limit + self.ZDBF_limit_offset:
+                adjustment = commonFX.encToSensor((target - ZDBF), config.encoder_conv)
             else:
-                adjustment = (target - ZDBF) * self.conversion[1]
-
+                adjustment = commonFX.encToSensor((target - ZDBF), config.encoder_conv) * self.ZDBF_conv_correction / 2
 
         self.logger.info("ZDBF: %r, direction: %r, adjustment: %r" % (ZDBF, direction, adjustment))
         self.display.fb_println("ZDBF: %r, direction: %r, adjustment: %r" % (ZDBF, direction, adjustment), 0)
-        return ZDBF, direction, adjustment
+        return ZDBF, direction, int(adjustment)
 
     def autolevel(self, processID, direction, adjustment):
         initial = self.com.readReg(processID, 460, 1)
@@ -226,7 +198,9 @@ class sensors():
             read = self.com.readReg(processID, 460, 1)
             self.moveLvlMotor(1, direction)
             startTime = time.time()
-            while read[0] < target and commonFX.timeCal(startTime) < self.lvlMotorTime:
+            self.logger.info("inital: %r, target: %r" %(initial[0], target))
+            self.display.fb_println("inital: %r, target: %r" %(initial[0], target), 0)
+            while read[0] <= target and commonFX.timeCal(startTime) < self.lvlMotorTime:
                 read = self.com.readReg(processID, 460, 1)
             self.moveLvlMotor(0, 0)
             if commonFX.timeCal(startTime) > self.lvlMotorTime:
@@ -240,7 +214,9 @@ class sensors():
             read = self.com.readReg(processID, 460, 1)
             self.moveLvlMotor(1, direction)
             startTime = time.time()
-            while read[0] > target and commonFX.timeCal(startTime) < self.lvlMotorTime:
+            self.logger.info("inital: %r, target: %r" % (initial[0], target))
+            self.display.fb_println("inital: %r, target: %r" % (initial[0], target), 0)
+            while read[0] >= target and commonFX.timeCal(startTime) < self.lvlMotorTime:
                 read = self.com.readReg(processID, 460, 1)
             self.moveLvlMotor(0, 0)
             if commonFX.timeCal(startTime) > self.lvlMotorTime:
@@ -352,9 +328,11 @@ class sensors():
 
         while direction != 0:
             self.resetMode(processID)
+            time.sleep(2)
             self.autolevel(processID, direction, adjustment)
             newZDBF, direction, adjustment = self.resetGAP(config)
 
+        self.resetMode(processID)
         self.logger.info("New ZDBF: %r" % newZDBF)
 
         return motor_range, [position, upperLimit, lowerLimit], newZDBF

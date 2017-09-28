@@ -2,11 +2,11 @@
 	"custom_test":{
 		"switch": 0,
 		"kill_switch": 0,
-		"magnet_drift": 1,
+		"magnet_drift": 0,
 		"homing": 0,
 		"sensors": 0,
-		"ZDBF": 0,
-		"level_motor": 0,
+		"ZDBF": 1,
+		"level_motor": 1,
 		"results": 1
 	},
 	"Pearl":{
@@ -26,7 +26,7 @@
 			"sensor_to_enc": [ 46 , 80 ],
 			"ZDBF_limit": 4,
 			"ZDBF_limit_offset": 2,
-			"ZDBF_conv_reduction": 0.8
+			"ZDBF_conv_correction": 3
 		},
 		
 		"actuator":{
@@ -67,7 +67,7 @@
 			"sensor_to_enc": [ 42 , 60 ],
 			"ZDBF_limit": 8,
 			"ZDBF_limit_offset": 5,
-			"ZDBF_conv_reduction": 0.8
+			"ZDBF_conv_correction": 0.8
 		},
 		
 		"actuator":{

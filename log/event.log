@@ -1,796 +1,1054 @@
-2017-09-25 15:38:47,789 INFO Script running on windows platform, LCD disabled
-2017-09-25 15:38:47,789 INFO ==================== Load Settings ====================
-2017-09-25 15:38:48,085 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-25 15:38:48,085 INFO McDonald Gas Test
-2017-09-25 15:38:48,407 INFO Writing motionPID successful, @ processID 101
-2017-09-25 15:38:49,029 INFO Writing heaterPID successful, @ processID 102
-2017-09-25 15:38:49,605 INFO Writing level sensors successful, @ processID 103
-2017-09-25 15:38:49,747 INFO Writing power sync successful, @ processID 104
-2017-09-25 15:38:51,763 INFO ==================== Test Begins ====================
-2017-09-25 15:38:51,763 INFO < execute voltage reading >
-2017-09-25 15:38:52,049 INFO Line 1: 211.8
-2017-09-25 15:38:52,051 INFO Line 2: 211.8
-2017-09-25 15:38:52,051 INFO Line 3: 212.3
-2017-09-25 15:38:52,051 INFO Frequency: 67
-2017-09-25 15:38:52,051 INFO 24V supply: 23.99
-2017-09-25 15:38:52,051 INFO 12V supply: 12.17
-2017-09-25 15:38:52,051 INFO 5V supply: 4.99
-2017-09-25 15:38:52,051 INFO 3.3V supply: 3.26
-2017-09-25 15:38:52,051 INFO < execute magnet drift test >
-2017-09-25 15:39:01,546 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:39:01,546 INFO Test run #1
-2017-09-25 15:39:05,573 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:39:05,861 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:39:17,132 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:39:17,421 INFO Distance moving up: 3351
-2017-09-25 15:39:17,421 INFO Distance moving down: 3371
-2017-09-25 15:39:17,421 INFO Encoder magnet ok, no drift found (20)
-2017-09-25 15:39:27,203 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:39:27,203 INFO Test run #2
-2017-09-25 15:39:31,088 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:39:31,377 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:39:42,645 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:39:42,933 INFO Distance moving up: 3355
-2017-09-25 15:39:42,934 INFO Distance moving down: 3401
-2017-09-25 15:39:42,934 INFO Encoder magnet ok, no drift found (46)
-2017-09-25 15:39:52,717 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:39:52,717 INFO Test run #3
-2017-09-25 15:39:56,601 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:39:56,890 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:40:08,160 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:40:08,447 INFO Distance moving up: 3358
-2017-09-25 15:40:08,447 INFO Distance moving down: 3386
-2017-09-25 15:40:08,447 INFO Encoder magnet ok, no drift found (28)
-2017-09-25 15:40:08,447 INFO < calculate results >
-2017-09-25 15:40:08,447 INFO ==================== Test Completed ====================
-2017-09-25 15:40:08,447 INFO < Test Results >
-2017-09-25 15:40:08,447 INFO Line 1 (V):     211.8
-2017-09-25 15:40:08,447 INFO Line 2 (V):     211.8
-2017-09-25 15:40:08,447 INFO Line 3 (V):     212.3
-2017-09-25 15:40:08,447 INFO 24V supply (V):  23.99
-2017-09-25 15:40:08,447 INFO 12V supply (V):  12.17
-2017-09-25 15:40:08,447 INFO 5V supply (V):   4.99
-2017-09-25 15:40:08,447 INFO 3.3V supply (V): 3.26
-2017-09-25 15:40:08,447 INFO Distance moving down (count): 3386
-2017-09-25 15:40:08,447 INFO Distance moving up (count):   3358
-2017-09-25 15:40:08,447 INFO Drift count (count):          28
-2017-09-25 15:40:08,447 INFO < Equipment passed all test requirements >
-2017-09-25 15:40:42,782 INFO Script running on windows platform, LCD disabled
-2017-09-25 15:40:42,782 INFO ==================== Load Settings ====================
-2017-09-25 15:40:43,076 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-25 15:40:43,076 INFO McDonald Gas Test
-2017-09-25 15:40:43,381 INFO Writing motionPID successful, @ processID 101
-2017-09-25 15:40:44,019 INFO Writing heaterPID successful, @ processID 102
-2017-09-25 15:40:44,595 INFO Writing level sensors successful, @ processID 103
-2017-09-25 15:40:44,740 INFO Writing power sync successful, @ processID 104
-2017-09-25 15:40:46,611 INFO ==================== Test Begins ====================
-2017-09-25 15:40:46,611 INFO < execute voltage reading >
-2017-09-25 15:40:46,898 INFO Line 1: 212.3
-2017-09-25 15:40:46,898 INFO Line 2: 210.3
-2017-09-25 15:40:46,898 INFO Line 3: 212.8
-2017-09-25 15:40:46,898 INFO Frequency: 67
-2017-09-25 15:40:46,898 INFO 24V supply: 24.08
-2017-09-25 15:40:46,898 INFO 12V supply: 12.17
-2017-09-25 15:40:46,898 INFO 5V supply: 4.99
-2017-09-25 15:40:46,900 INFO 3.3V supply: 3.26
-2017-09-25 15:40:46,900 INFO < execute magnet drift test >
-2017-09-25 15:40:53,946 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:40:53,947 INFO Test run #1
-2017-09-25 15:40:57,832 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:40:58,118 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:41:09,388 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:41:09,677 INFO Distance moving up: 3359
-2017-09-25 15:41:09,677 INFO Distance moving down: 3388
-2017-09-25 15:41:09,677 INFO Encoder magnet ok, no drift found (29)
-2017-09-25 15:41:19,460 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:41:19,460 INFO Test run #2
-2017-09-25 15:41:23,345 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:41:23,632 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:41:34,901 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:41:35,190 INFO Distance moving up: 3365
-2017-09-25 15:41:35,190 INFO Distance moving down: 3386
-2017-09-25 15:41:35,190 INFO Encoder magnet ok, no drift found (21)
-2017-09-25 15:41:44,829 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:41:44,829 INFO Test run #3
-2017-09-25 15:41:48,858 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:41:49,147 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:42:00,417 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:42:00,703 INFO Distance moving up: 3372
-2017-09-25 15:42:00,704 INFO Distance moving down: 3391
-2017-09-25 15:42:00,704 INFO Encoder magnet ok, no drift found (19)
-2017-09-25 15:42:00,704 INFO < calculate results >
-2017-09-25 15:42:00,704 INFO ==================== Test Completed ====================
-2017-09-25 15:42:00,704 INFO < Test Results >
-2017-09-25 15:42:00,704 INFO Line 1 (V):     212.3
-2017-09-25 15:42:00,704 INFO Line 2 (V):     210.3
-2017-09-25 15:42:00,704 INFO Line 3 (V):     212.8
-2017-09-25 15:42:00,704 INFO 24V supply (V):  24.08
-2017-09-25 15:42:00,704 INFO 12V supply (V):  12.17
-2017-09-25 15:42:00,704 INFO 5V supply (V):   4.99
-2017-09-25 15:42:00,704 INFO 3.3V supply (V): 3.26
-2017-09-25 15:42:00,704 INFO Distance moving down (count): 3391
-2017-09-25 15:42:00,706 INFO Distance moving up (count):   3372
-2017-09-25 15:42:00,706 INFO Drift count (count):          19
-2017-09-25 15:42:00,706 INFO < Equipment passed all test requirements >
-2017-09-25 15:42:17,673 INFO Script running on windows platform, LCD disabled
-2017-09-25 15:42:17,673 INFO ==================== Load Settings ====================
-2017-09-25 15:42:17,967 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-25 15:42:17,967 INFO McDonald Gas Test
-2017-09-25 15:42:18,270 INFO Writing motionPID successful, @ processID 101
-2017-09-25 15:42:18,862 INFO Writing heaterPID successful, @ processID 102
-2017-09-25 15:42:19,437 INFO Writing level sensors successful, @ processID 103
-2017-09-25 15:42:19,582 INFO Writing power sync successful, @ processID 104
-2017-09-25 15:42:22,602 INFO ==================== Test Begins ====================
-2017-09-25 15:42:22,602 INFO < execute voltage reading >
-2017-09-25 15:42:22,891 INFO Line 1: 212.3
-2017-09-25 15:42:22,891 INFO Line 2: 209.8
-2017-09-25 15:42:22,891 INFO Line 3: 212.3
-2017-09-25 15:42:22,891 INFO Frequency: 66
-2017-09-25 15:42:22,891 INFO 24V supply: 23.93
-2017-09-25 15:42:22,891 INFO 12V supply: 12.17
-2017-09-25 15:42:22,891 INFO 5V supply: 4.99
-2017-09-25 15:42:22,891 INFO 3.3V supply: 3.26
-2017-09-25 15:42:22,891 INFO < execute magnet drift test >
-2017-09-25 15:42:29,796 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:42:29,796 INFO Test run #1
-2017-09-25 15:42:33,825 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:42:34,112 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:42:45,382 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:42:45,671 INFO Distance moving up: 3373
-2017-09-25 15:42:45,671 INFO Distance moving down: 3394
-2017-09-25 15:42:45,671 INFO Encoder magnet ok, no drift found (21)
-2017-09-25 15:42:55,309 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:42:55,309 INFO Test run #2
-2017-09-25 15:42:59,338 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:42:59,627 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:43:10,895 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:43:11,184 INFO Distance moving up: 3373
-2017-09-25 15:43:11,184 INFO Distance moving down: 3403
-2017-09-25 15:43:11,184 INFO Encoder magnet ok, no drift found (30)
-2017-09-25 15:43:20,822 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:43:20,822 INFO Test run #3
-2017-09-25 15:43:24,707 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:43:24,994 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:43:36,266 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:43:36,553 INFO Distance moving up: 3378
-2017-09-25 15:43:36,553 INFO Distance moving down: 3409
-2017-09-25 15:43:36,555 INFO Encoder magnet ok, no drift found (31)
-2017-09-25 15:43:36,555 INFO < calculate results >
-2017-09-25 15:43:36,555 INFO ==================== Test Completed ====================
-2017-09-25 15:43:36,555 INFO < Test Results >
-2017-09-25 15:43:36,555 INFO Line 1 (V):     212.3
-2017-09-25 15:43:36,555 INFO Line 2 (V):     209.8
-2017-09-25 15:43:36,555 INFO Line 3 (V):     212.3
-2017-09-25 15:43:36,555 INFO 24V supply (V):  23.93
-2017-09-25 15:43:36,555 INFO 12V supply (V):  12.17
-2017-09-25 15:43:36,555 INFO 5V supply (V):   4.99
-2017-09-25 15:43:36,555 INFO 3.3V supply (V): 3.26
-2017-09-25 15:43:36,555 INFO Distance moving down (count): 3409
-2017-09-25 15:43:36,555 INFO Distance moving up (count):   3378
-2017-09-25 15:43:36,555 INFO Drift count (count):          31
-2017-09-25 15:43:36,555 INFO < Equipment passed all test requirements >
-2017-09-25 15:43:51,161 INFO Script running on windows platform, LCD disabled
-2017-09-25 15:43:51,161 INFO ==================== Load Settings ====================
-2017-09-25 15:43:51,454 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-25 15:43:51,454 INFO McDonald Gas Test
-2017-09-25 15:43:51,775 INFO Writing motionPID successful, @ processID 101
-2017-09-25 15:43:52,381 INFO Writing heaterPID successful, @ processID 102
-2017-09-25 15:43:52,957 INFO Writing level sensors successful, @ processID 103
-2017-09-25 15:43:53,101 INFO Writing power sync successful, @ processID 104
-2017-09-25 15:43:55,259 INFO ==================== Test Begins ====================
-2017-09-25 15:43:55,259 INFO < execute voltage reading >
-2017-09-25 15:43:55,548 INFO Line 1: 211.8
-2017-09-25 15:43:55,548 INFO Line 2: 211.8
-2017-09-25 15:43:55,548 INFO Line 3: 210.3
-2017-09-25 15:43:55,548 INFO Frequency: 66
-2017-09-25 15:43:55,548 INFO 24V supply: 24.08
-2017-09-25 15:43:55,548 INFO 12V supply: 12.17
-2017-09-25 15:43:55,548 INFO 5V supply: 4.99
-2017-09-25 15:43:55,548 INFO 3.3V supply: 3.26
-2017-09-25 15:43:55,548 INFO < execute magnet drift test >
-2017-09-25 15:44:02,453 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:44:02,453 INFO Test run #1
-2017-09-25 15:44:06,483 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:44:06,769 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:44:18,039 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:44:18,328 INFO Distance moving up: 3356
-2017-09-25 15:44:18,328 INFO Distance moving down: 3408
-2017-09-25 15:44:18,328 INFO Check encoder magnet, 52 count drift found
-2017-09-25 15:46:53,217 INFO Script running on windows platform, LCD disabled
-2017-09-25 15:46:53,217 INFO ==================== Load Settings ====================
-2017-09-25 15:46:53,513 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-25 15:46:53,513 INFO McDonald Gas Test
-2017-09-25 15:46:53,832 INFO Writing motionPID successful, @ processID 101
-2017-09-25 15:46:54,457 INFO Writing heaterPID successful, @ processID 102
-2017-09-25 15:46:55,032 INFO Writing level sensors successful, @ processID 103
-2017-09-25 15:46:55,176 INFO Writing power sync successful, @ processID 104
-2017-09-25 15:46:56,615 INFO ==================== Test Begins ====================
-2017-09-25 15:46:56,615 INFO < execute voltage reading >
-2017-09-25 15:46:56,918 INFO Line 1: 209.8
-2017-09-25 15:46:56,918 INFO Line 2: 212.3
-2017-09-25 15:46:56,918 INFO Line 3: 212.8
-2017-09-25 15:46:56,920 INFO Frequency: 66
-2017-09-25 15:46:56,920 INFO 24V supply: 24.08
-2017-09-25 15:46:56,920 INFO 12V supply: 12.17
-2017-09-25 15:46:56,920 INFO 5V supply: 4.99
-2017-09-25 15:46:56,920 INFO 3.3V supply: 3.26
-2017-09-25 15:46:56,920 INFO < execute magnet drift test >
-2017-09-25 15:47:03,823 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:47:03,825 INFO Test run #1
-2017-09-25 15:47:07,854 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:47:08,141 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:47:19,411 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:47:19,698 INFO Distance moving up: 3345
-2017-09-25 15:47:19,698 INFO Distance moving down: 3390
-2017-09-25 15:47:19,698 INFO Encoder magnet ok, no drift found (45)
-2017-09-25 15:47:29,482 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:47:29,482 INFO Test run #2
-2017-09-25 15:47:33,365 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:47:33,654 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:47:44,924 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:47:45,211 INFO Distance moving up: 3376
-2017-09-25 15:47:45,211 INFO Distance moving down: 3402
-2017-09-25 15:47:45,211 INFO Encoder magnet ok, no drift found (26)
-2017-09-25 15:47:54,851 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:47:54,851 INFO Test run #3
-2017-09-25 15:47:58,880 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:47:59,167 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:48:10,453 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:48:10,740 INFO Distance moving up: 3356
-2017-09-25 15:48:10,742 INFO Distance moving down: 3405
-2017-09-25 15:48:10,742 INFO Encoder magnet ok, no drift found (49)
-2017-09-25 15:48:10,742 INFO < calculate results >
-2017-09-25 15:48:10,742 INFO ==================== Test Completed ====================
-2017-09-25 15:48:10,742 INFO < Test Results >
-2017-09-25 15:48:10,742 INFO Line 1 (V):     209.8
-2017-09-25 15:48:10,742 INFO Line 2 (V):     212.3
-2017-09-25 15:48:10,742 INFO Line 3 (V):     212.8
-2017-09-25 15:48:10,742 INFO 24V supply (V):  24.08
-2017-09-25 15:48:10,742 INFO 12V supply (V):  12.17
-2017-09-25 15:48:10,742 INFO 5V supply (V):   4.99
-2017-09-25 15:48:10,742 INFO 3.3V supply (V): 3.26
-2017-09-25 15:48:10,742 INFO Distance moving down (count): 3405
-2017-09-25 15:48:10,743 INFO Distance moving up (count):   3356
-2017-09-25 15:48:10,743 INFO Drift count (count):          49
-2017-09-25 15:48:10,743 INFO < Equipment passed all test requirements >
-2017-09-25 15:48:32,380 INFO Script running on windows platform, LCD disabled
-2017-09-25 15:48:32,380 INFO ==================== Load Settings ====================
-2017-09-25 15:48:32,676 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-25 15:48:32,677 INFO McDonald Gas Test
-2017-09-25 15:48:32,996 INFO Writing motionPID successful, @ processID 101
-2017-09-25 15:48:33,588 INFO Writing heaterPID successful, @ processID 102
-2017-09-25 15:48:34,163 INFO Writing level sensors successful, @ processID 103
-2017-09-25 15:48:34,306 INFO Writing power sync successful, @ processID 104
-2017-09-25 15:48:36,032 INFO ==================== Test Begins ====================
-2017-09-25 15:48:36,032 INFO < execute voltage reading >
-2017-09-25 15:48:36,322 INFO Line 1: 212.3
-2017-09-25 15:48:36,322 INFO Line 2: 211.8
-2017-09-25 15:48:36,322 INFO Line 3: 210.3
-2017-09-25 15:48:36,322 INFO Frequency: 66
-2017-09-25 15:48:36,322 INFO 24V supply: 24.08
-2017-09-25 15:48:36,322 INFO 12V supply: 12.17
-2017-09-25 15:48:36,322 INFO 5V supply: 4.99
-2017-09-25 15:48:36,322 INFO 3.3V supply: 3.26
-2017-09-25 15:48:36,322 INFO < execute magnet drift test >
-2017-09-25 15:48:43,226 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:48:43,226 INFO Test run #1
-2017-09-25 15:48:47,256 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:48:47,543 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:48:58,813 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:48:59,101 INFO Distance moving up: 3360
-2017-09-25 15:48:59,101 INFO Distance moving down: 3377
-2017-09-25 15:48:59,101 INFO Encoder magnet ok, no drift found (17)
-2017-09-25 15:49:08,740 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:49:08,740 INFO Test run #2
-2017-09-25 15:49:12,625 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:49:12,913 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:49:24,184 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:49:24,471 INFO Distance moving up: 3361
-2017-09-25 15:49:24,471 INFO Distance moving down: 3370
-2017-09-25 15:49:24,471 INFO Encoder magnet ok, no drift found (9)
-2017-09-25 15:49:34,111 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:49:34,111 INFO Test run #3
-2017-09-25 15:49:37,996 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:49:38,283 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:49:49,553 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:49:49,842 INFO Distance moving up: 3350
-2017-09-25 15:49:49,842 INFO Distance moving down: 3391
-2017-09-25 15:49:49,842 INFO Encoder magnet ok, no drift found (41)
-2017-09-25 15:49:49,842 INFO < calculate results >
-2017-09-25 15:49:49,842 INFO ==================== Test Completed ====================
-2017-09-25 15:49:49,842 INFO < Test Results >
-2017-09-25 15:49:49,842 INFO Line 1 (V):     212.3
-2017-09-25 15:49:49,842 INFO Line 2 (V):     211.8
-2017-09-25 15:49:49,842 INFO Line 3 (V):     210.3
-2017-09-25 15:49:49,842 INFO 24V supply (V):  24.08
-2017-09-25 15:49:49,842 INFO 12V supply (V):  12.17
-2017-09-25 15:49:49,842 INFO 5V supply (V):   4.99
-2017-09-25 15:49:49,842 INFO 3.3V supply (V): 3.26
-2017-09-25 15:49:49,842 INFO Distance moving down (count): 3391
-2017-09-25 15:49:49,842 INFO Distance moving up (count):   3350
-2017-09-25 15:49:49,842 INFO Drift count (count):          41
-2017-09-25 15:49:49,842 INFO < Equipment passed all test requirements >
-2017-09-25 15:50:29,697 INFO Script running on windows platform, LCD disabled
-2017-09-25 15:50:29,697 INFO ==================== Load Settings ====================
-2017-09-25 15:50:29,993 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-25 15:50:29,993 INFO McDonald Gas Test
-2017-09-25 15:50:30,312 INFO Writing motionPID successful, @ processID 101
-2017-09-25 15:50:30,951 INFO Writing heaterPID successful, @ processID 102
-2017-09-25 15:50:31,528 INFO Writing level sensors successful, @ processID 103
-2017-09-25 15:50:31,671 INFO Writing power sync successful, @ processID 104
-2017-09-25 15:50:33,109 INFO ==================== Test Begins ====================
-2017-09-25 15:50:33,111 INFO < execute voltage reading >
-2017-09-25 15:50:33,398 INFO Line 1: 212.3
-2017-09-25 15:50:33,398 INFO Line 2: 209.8
-2017-09-25 15:50:33,398 INFO Line 3: 212.8
-2017-09-25 15:50:33,398 INFO Frequency: 66
-2017-09-25 15:50:33,398 INFO 24V supply: 24.08
-2017-09-25 15:50:33,398 INFO 12V supply: 12.17
-2017-09-25 15:50:33,398 INFO 5V supply: 4.99
-2017-09-25 15:50:33,398 INFO 3.3V supply: 3.26
-2017-09-25 15:50:33,398 INFO < execute magnet drift test >
-2017-09-25 15:50:40,303 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:50:40,303 INFO Test run #1
-2017-09-25 15:50:44,187 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:50:44,476 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:50:55,746 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:50:56,033 INFO Distance moving up: 3365
-2017-09-25 15:50:56,033 INFO Distance moving down: 3388
-2017-09-25 15:50:56,033 INFO Encoder magnet ok, no drift found (23)
-2017-09-25 15:51:05,673 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:51:05,673 INFO Test run #2
-2017-09-25 15:51:09,558 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:51:09,845 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:51:21,115 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:51:21,404 INFO Distance moving up: 3367
-2017-09-25 15:51:21,404 INFO Distance moving down: 3393
-2017-09-25 15:51:21,404 INFO Encoder magnet ok, no drift found (26)
-2017-09-25 15:51:31,043 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:51:31,043 INFO Test run #3
-2017-09-25 15:51:34,927 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:51:35,214 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:51:46,486 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:51:46,773 INFO Distance moving up: 3346
-2017-09-25 15:51:46,773 INFO Distance moving down: 3380
-2017-09-25 15:51:46,773 INFO Encoder magnet ok, no drift found (34)
-2017-09-25 15:51:46,773 INFO < calculate results >
-2017-09-25 15:51:46,773 INFO ==================== Test Completed ====================
-2017-09-25 15:51:46,773 INFO < Test Results >
-2017-09-25 15:51:46,775 INFO Line 1 (V):     212.3
-2017-09-25 15:51:46,775 INFO Line 2 (V):     209.8
-2017-09-25 15:51:46,775 INFO Line 3 (V):     212.8
-2017-09-25 15:51:46,775 INFO 24V supply (V):  24.08
-2017-09-25 15:51:46,775 INFO 12V supply (V):  12.17
-2017-09-25 15:51:46,775 INFO 5V supply (V):   4.99
-2017-09-25 15:51:46,775 INFO 3.3V supply (V): 3.26
-2017-09-25 15:51:46,775 INFO Distance moving down (count): 3380
-2017-09-25 15:51:46,775 INFO Distance moving up (count):   3346
-2017-09-25 15:51:46,775 INFO Drift count (count):          34
-2017-09-25 15:51:46,775 INFO < Equipment passed all test requirements >
-2017-09-25 15:52:56,075 INFO Script running on windows platform, LCD disabled
-2017-09-25 15:52:56,075 INFO ==================== Load Settings ====================
-2017-09-25 15:52:56,371 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-25 15:52:56,371 INFO McDonald Gas Test
-2017-09-25 15:52:56,690 INFO Writing motionPID successful, @ processID 101
-2017-09-25 15:52:57,313 INFO Writing heaterPID successful, @ processID 102
-2017-09-25 15:52:57,890 INFO Writing level sensors successful, @ processID 103
-2017-09-25 15:52:58,033 INFO Writing power sync successful, @ processID 104
-2017-09-25 15:53:00,767 INFO ==================== Test Begins ====================
-2017-09-25 15:53:00,767 INFO < execute voltage reading >
-2017-09-25 15:53:01,055 INFO Line 1: 212.3
-2017-09-25 15:53:01,055 INFO Line 2: 209.8
-2017-09-25 15:53:01,055 INFO Line 3: 212.8
-2017-09-25 15:53:01,055 INFO Frequency: 66
-2017-09-25 15:53:01,055 INFO 24V supply: 24.08
-2017-09-25 15:53:01,055 INFO 12V supply: 12.17
-2017-09-25 15:53:01,055 INFO 5V supply: 4.99
-2017-09-25 15:53:01,055 INFO 3.3V supply: 3.26
-2017-09-25 15:53:01,055 INFO < execute magnet drift test >
-2017-09-25 15:53:07,960 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:53:07,960 INFO Test run #1
-2017-09-25 15:53:11,845 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:53:12,132 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:53:23,403 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:53:23,690 INFO Distance moving up: 3368
-2017-09-25 15:53:23,690 INFO Distance moving down: 3384
-2017-09-25 15:53:23,690 INFO Encoder magnet ok, no drift found (16)
-2017-09-25 15:53:33,329 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:53:33,329 INFO Test run #2
-2017-09-25 15:53:37,214 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:53:37,503 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:53:48,773 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:53:49,061 INFO Distance moving up: 3346
-2017-09-25 15:53:49,061 INFO Distance moving down: 3373
-2017-09-25 15:53:49,061 INFO Encoder magnet ok, no drift found (27)
-2017-09-25 15:53:58,698 INFO Homing sequence successful, @ processID 202
-2017-09-25 15:53:58,698 INFO Test run #3
-2017-09-25 15:54:02,578 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:54:02,867 INFO Writing setpoint reg 0 to -1000
-2017-09-25 15:54:14,137 INFO Seeking upper switch successful, @ processID 204
-2017-09-25 15:54:14,424 INFO Distance moving up: 3331
-2017-09-25 15:54:14,424 INFO Distance moving down: 3374
-2017-09-25 15:54:14,424 INFO Encoder magnet ok, no drift found (43)
-2017-09-25 15:54:14,424 INFO < calculate results >
-2017-09-25 15:54:14,424 INFO ==================== Test Completed ====================
-2017-09-25 15:54:14,424 INFO < Test Results >
-2017-09-25 15:54:14,424 INFO Line 1 (V):     212.3
-2017-09-25 15:54:14,426 INFO Line 2 (V):     209.8
-2017-09-25 15:54:14,426 INFO Line 3 (V):     212.8
-2017-09-25 15:54:14,426 INFO 24V supply (V):  24.08
-2017-09-25 15:54:14,426 INFO 12V supply (V):  12.17
-2017-09-25 15:54:14,426 INFO 5V supply (V):   4.99
-2017-09-25 15:54:14,426 INFO 3.3V supply (V): 3.26
-2017-09-25 15:54:14,426 INFO Distance moving down (count): 3374
-2017-09-25 15:54:14,426 INFO Distance moving up (count):   3331
-2017-09-25 15:54:14,426 INFO Drift count (count):          43
-2017-09-25 15:54:14,426 INFO < Equipment passed all test requirements >
-2017-09-26 07:35:33,105 INFO Script running on windows platform, LCD disabled
-2017-09-26 07:35:33,105 INFO ==================== Load Settings ====================
-2017-09-26 07:35:33,401 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-26 07:35:33,401 INFO McDonald Gas Test
-2017-09-26 07:35:33,721 INFO Writing motionPID successful, @ processID 101
-2017-09-26 07:35:34,345 INFO Writing heaterPID successful, @ processID 102
-2017-09-26 07:35:34,921 INFO Writing level sensors successful, @ processID 103
-2017-09-26 07:35:35,065 INFO Writing power sync successful, @ processID 104
-2017-09-26 07:35:36,934 INFO ==================== Test Begins ====================
-2017-09-26 07:35:36,934 INFO < execute voltage reading >
-2017-09-26 07:35:37,223 INFO Line 1: 209.3
-2017-09-26 07:35:37,223 INFO Line 2: 208.7
-2017-09-26 07:35:37,223 INFO Line 3: 209.8
-2017-09-26 07:35:37,223 INFO Frequency: 64
-2017-09-26 07:35:37,223 INFO 24V supply: 24.08
-2017-09-26 07:35:37,223 INFO 12V supply: 12.15
-2017-09-26 07:35:37,223 INFO 5V supply: 4.98
-2017-09-26 07:35:37,223 INFO 3.3V supply: 3.26
-2017-09-26 07:35:37,223 INFO < execute magnet drift test >
-2017-09-26 07:35:44,414 INFO Homing sequence successful, @ processID 202
-2017-09-26 07:35:44,414 INFO Test run #1
-2017-09-26 07:35:48,586 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:35:48,875 INFO Writing setpoint reg 0 to -1000
-2017-09-26 07:36:00,286 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:36:00,573 INFO Distance moving up: 3338
-2017-09-26 07:36:00,573 INFO Distance moving down: 3385
-2017-09-26 07:36:00,573 INFO Encoder magnet ok, no drift found (47)
-2017-09-26 07:36:10,644 INFO Homing sequence successful, @ processID 202
-2017-09-26 07:36:10,644 INFO Test run #2
-2017-09-26 07:36:14,671 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:36:14,960 INFO Writing setpoint reg 0 to -1000
-2017-09-26 07:36:26,227 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:36:26,516 INFO Distance moving up: 3343
-2017-09-26 07:36:26,516 INFO Distance moving down: 3389
-2017-09-26 07:36:26,516 INFO Encoder magnet ok, no drift found (46)
-2017-09-26 07:36:36,443 INFO Homing sequence successful, @ processID 202
-2017-09-26 07:36:36,443 INFO Test run #3
-2017-09-26 07:36:40,470 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:36:40,757 INFO Writing setpoint reg 0 to -1000
-2017-09-26 07:36:52,026 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:36:52,315 INFO Distance moving up: 3353
-2017-09-26 07:36:52,315 INFO Distance moving down: 3392
-2017-09-26 07:36:52,315 INFO Encoder magnet ok, no drift found (39)
-2017-09-26 07:36:52,315 INFO < calculate results >
-2017-09-26 07:36:52,315 INFO ==================== Test Completed ====================
-2017-09-26 07:36:52,315 INFO < Test Results >
-2017-09-26 07:36:52,315 INFO Line 1 (V):     209.3
-2017-09-26 07:36:52,315 INFO Line 2 (V):     208.7
-2017-09-26 07:36:52,315 INFO Line 3 (V):     209.8
-2017-09-26 07:36:52,315 INFO 24V supply (V):  24.08
-2017-09-26 07:36:52,315 INFO 12V supply (V):  12.15
-2017-09-26 07:36:52,315 INFO 5V supply (V):   4.98
-2017-09-26 07:36:52,315 INFO 3.3V supply (V): 3.26
-2017-09-26 07:36:52,315 INFO Distance moving down (count): 3392
-2017-09-26 07:36:52,315 INFO Distance moving up (count):   3353
-2017-09-26 07:36:52,315 INFO Drift count (count):          39
-2017-09-26 07:36:52,315 INFO < Equipment passed all test requirements >
-2017-09-26 07:37:31,823 INFO Script running on windows platform, LCD disabled
-2017-09-26 07:37:31,823 INFO ==================== Load Settings ====================
-2017-09-26 07:37:32,121 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-26 07:37:32,121 INFO McDonald Gas Test
-2017-09-26 07:37:32,440 INFO Writing motionPID successful, @ processID 101
-2017-09-26 07:37:33,063 INFO Writing heaterPID successful, @ processID 102
-2017-09-26 07:37:33,638 INFO Writing level sensors successful, @ processID 103
-2017-09-26 07:37:33,782 INFO Writing power sync successful, @ processID 104
-2017-09-26 07:37:35,078 INFO ==================== Test Begins ====================
-2017-09-26 07:37:35,078 INFO < execute voltage reading >
-2017-09-26 07:37:35,365 INFO Line 1: 210.3
-2017-09-26 07:37:35,365 INFO Line 2: 210.3
-2017-09-26 07:37:35,365 INFO Line 3: 210.8
-2017-09-26 07:37:35,365 INFO Frequency: 65
-2017-09-26 07:37:35,365 INFO 24V supply: 23.9
-2017-09-26 07:37:35,365 INFO 12V supply: 12.15
-2017-09-26 07:37:35,367 INFO 5V supply: 4.98
-2017-09-26 07:37:35,367 INFO 3.3V supply: 3.26
-2017-09-26 07:37:35,367 INFO < execute magnet drift test >
-2017-09-26 07:37:42,413 INFO Homing sequence successful, @ processID 202
-2017-09-26 07:37:42,413 INFO Test run #1
-2017-09-26 07:37:46,298 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:37:46,585 INFO Writing setpoint reg 0 to -1000
-2017-09-26 07:37:57,855 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:37:58,141 INFO Distance moving up: 3351
-2017-09-26 07:37:58,141 INFO Distance moving down: 3387
-2017-09-26 07:37:58,141 INFO Encoder magnet ok, no drift found (36)
-2017-09-26 07:38:08,078 INFO Homing sequence successful, @ processID 202
-2017-09-26 07:38:08,078 INFO Test run #2
-2017-09-26 07:38:11,963 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:38:12,250 INFO Writing setpoint reg 0 to -1000
-2017-09-26 07:38:23,519 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:38:23,808 INFO Distance moving up: 3359
-2017-09-26 07:38:23,808 INFO Distance moving down: 3383
-2017-09-26 07:38:23,808 INFO Encoder magnet ok, no drift found (24)
-2017-09-26 07:38:33,733 INFO Homing sequence successful, @ processID 202
-2017-09-26 07:38:33,733 INFO Test run #3
-2017-09-26 07:38:37,618 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:38:37,905 INFO Writing setpoint reg 0 to -1000
-2017-09-26 07:38:49,174 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:38:49,461 INFO Distance moving up: 3368
-2017-09-26 07:38:49,463 INFO Distance moving down: 3389
-2017-09-26 07:38:49,463 INFO Encoder magnet ok, no drift found (21)
-2017-09-26 07:38:49,463 INFO < calculate results >
-2017-09-26 07:38:49,463 INFO ==================== Test Completed ====================
-2017-09-26 07:38:49,463 INFO < Test Results >
-2017-09-26 07:38:49,463 INFO Line 1 (V):     210.3
-2017-09-26 07:38:49,463 INFO Line 2 (V):     210.3
-2017-09-26 07:38:49,463 INFO Line 3 (V):     210.8
-2017-09-26 07:38:49,463 INFO 24V supply (V):  23.9
-2017-09-26 07:38:49,463 INFO 12V supply (V):  12.15
-2017-09-26 07:38:49,463 INFO 5V supply (V):   4.98
-2017-09-26 07:38:49,463 INFO 3.3V supply (V): 3.26
-2017-09-26 07:38:49,463 INFO Distance moving down (count): 3389
-2017-09-26 07:38:49,463 INFO Distance moving up (count):   3368
-2017-09-26 07:38:49,463 INFO Drift count (count):          21
-2017-09-26 07:38:49,463 INFO < Equipment passed all test requirements >
-2017-09-26 07:40:17,473 INFO Script running on windows platform, LCD disabled
-2017-09-26 07:40:17,473 INFO ==================== Load Settings ====================
-2017-09-26 07:40:17,753 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-26 07:40:17,753 INFO McDonald Gas Test
-2017-09-26 07:40:18,072 INFO Writing motionPID successful, @ processID 101
-2017-09-26 07:40:18,696 INFO Writing heaterPID successful, @ processID 102
-2017-09-26 07:40:19,272 INFO Writing level sensors successful, @ processID 103
-2017-09-26 07:40:19,415 INFO Writing power sync successful, @ processID 104
-2017-09-26 07:40:22,292 INFO ==================== Test Begins ====================
-2017-09-26 07:40:22,292 INFO < execute voltage reading >
-2017-09-26 07:40:22,581 INFO Line 1: 210.8
-2017-09-26 07:40:22,581 INFO Line 2: 210.8
-2017-09-26 07:40:22,581 INFO Line 3: 211.3
-2017-09-26 07:40:22,581 INFO Frequency: 65
-2017-09-26 07:40:22,581 INFO 24V supply: 24.08
-2017-09-26 07:40:22,582 INFO 12V supply: 12.17
-2017-09-26 07:40:22,582 INFO 5V supply: 4.98
-2017-09-26 07:40:22,582 INFO 3.3V supply: 3.26
-2017-09-26 07:40:22,582 INFO < execute magnet drift test >
-2017-09-26 07:40:29,630 INFO Homing sequence successful, @ processID 202
-2017-09-26 07:40:29,630 INFO Test run #1
-2017-09-26 07:40:33,657 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:40:33,944 INFO Writing setpoint reg 0 to -1000
-2017-09-26 07:40:45,213 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:40:45,502 INFO Distance moving up: 3362
-2017-09-26 07:40:45,502 INFO Distance moving down: 3387
-2017-09-26 07:40:45,502 INFO Encoder magnet ok, no drift found (25)
-2017-09-26 07:40:55,282 INFO Homing sequence successful, @ processID 202
-2017-09-26 07:40:55,283 INFO Test run #2
-2017-09-26 07:40:59,312 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:40:59,598 INFO Writing setpoint reg 0 to -1000
-2017-09-26 07:41:10,868 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:41:11,157 INFO Distance moving up: 3370
-2017-09-26 07:41:11,157 INFO Distance moving down: 3393
-2017-09-26 07:41:11,157 INFO Encoder magnet ok, no drift found (23)
-2017-09-26 07:41:20,938 INFO Homing sequence successful, @ processID 202
-2017-09-26 07:41:20,938 INFO Test run #3
-2017-09-26 07:41:24,967 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:41:25,255 INFO Writing setpoint reg 0 to -1000
-2017-09-26 07:41:36,523 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 07:41:36,811 INFO Distance moving up: 3355
-2017-09-26 07:41:36,811 INFO Distance moving down: 3391
-2017-09-26 07:41:36,811 INFO Encoder magnet ok, no drift found (36)
-2017-09-26 07:41:36,811 INFO < calculate results >
-2017-09-26 07:41:36,811 INFO ==================== Test Completed ====================
-2017-09-26 07:41:36,811 INFO < Test Results >
-2017-09-26 07:41:36,812 INFO Line 1 (V):     210.8
-2017-09-26 07:41:36,812 INFO Line 2 (V):     210.8
-2017-09-26 07:41:36,812 INFO Line 3 (V):     211.3
-2017-09-26 07:41:36,812 INFO 24V supply (V):  24.08
-2017-09-26 07:41:36,812 INFO 12V supply (V):  12.17
-2017-09-26 07:41:36,812 INFO 5V supply (V):   4.98
-2017-09-26 07:41:36,812 INFO 3.3V supply (V): 3.26
-2017-09-26 07:41:36,812 INFO Distance moving down (count): 3391
-2017-09-26 07:41:36,812 INFO Distance moving up (count):   3355
-2017-09-26 07:41:36,812 INFO Drift count (count):          36
-2017-09-26 07:41:36,812 INFO < Equipment passed all test requirements >
-2017-09-26 08:10:19,000 INFO Script running on windows platform, LCD disabled
-2017-09-26 08:10:19,002 INFO ==================== Load Settings ====================
-2017-09-26 08:10:19,298 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-26 08:10:19,298 INFO McDonald Gas Test
-2017-09-26 08:10:19,618 INFO Writing motionPID successful, @ processID 101
-2017-09-26 08:10:20,240 INFO Writing heaterPID successful, @ processID 102
-2017-09-26 08:10:20,816 INFO Writing level sensors successful, @ processID 103
-2017-09-26 08:10:20,960 INFO Writing power sync successful, @ processID 104
-2017-09-26 08:10:22,974 INFO ==================== Test Begins ====================
-2017-09-26 08:10:22,974 INFO < execute voltage reading >
-2017-09-26 08:10:23,263 INFO Line 1: 212.3
-2017-09-26 08:10:23,263 INFO Line 2: 211.8
-2017-09-26 08:10:23,263 INFO Line 3: 212.3
-2017-09-26 08:10:23,263 INFO Frequency: 66
-2017-09-26 08:10:23,263 INFO 24V supply: 24.08
-2017-09-26 08:10:23,263 INFO 12V supply: 12.17
-2017-09-26 08:10:23,263 INFO 5V supply: 4.99
-2017-09-26 08:10:23,263 INFO 3.3V supply: 3.26
-2017-09-26 08:10:23,263 INFO < execute magnet drift test >
-2017-09-26 08:10:30,456 INFO Homing sequence successful, @ processID 202
-2017-09-26 08:10:30,456 INFO Test run #1
-2017-09-26 08:10:34,338 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:10:34,627 INFO Writing setpoint reg 0 to -1000
-2017-09-26 08:10:46,039 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:10:46,326 INFO Distance moving up: 3370
-2017-09-26 08:10:46,326 INFO Distance moving down: 3391
-2017-09-26 08:10:46,328 INFO Encoder magnet ok, no drift found (21)
-2017-09-26 08:10:56,253 INFO Homing sequence successful, @ processID 202
-2017-09-26 08:10:56,253 INFO Test run #2
-2017-09-26 08:11:00,282 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:11:00,569 INFO Writing setpoint reg 0 to -1000
-2017-09-26 08:11:11,838 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:11:12,125 INFO Distance moving up: 3358
-2017-09-26 08:11:12,125 INFO Distance moving down: 3397
-2017-09-26 08:11:12,125 INFO Encoder magnet ok, no drift found (39)
-2017-09-26 08:11:22,052 INFO Homing sequence successful, @ processID 202
-2017-09-26 08:11:22,052 INFO Test run #3
-2017-09-26 08:11:25,934 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:11:26,223 INFO Writing setpoint reg 0 to -1000
-2017-09-26 08:11:37,492 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:11:37,779 INFO Distance moving up: 3366
-2017-09-26 08:11:37,779 INFO Distance moving down: 3387
-2017-09-26 08:11:37,779 INFO Encoder magnet ok, no drift found (21)
-2017-09-26 08:11:37,779 INFO < calculate results >
-2017-09-26 08:11:37,779 INFO ==================== Test Completed ====================
-2017-09-26 08:11:37,779 INFO < Test Results >
-2017-09-26 08:11:37,779 INFO Line 1 (V):     212.3
-2017-09-26 08:11:37,779 INFO Line 2 (V):     211.8
-2017-09-26 08:11:37,779 INFO Line 3 (V):     212.3
-2017-09-26 08:11:37,779 INFO 24V supply (V):  24.08
-2017-09-26 08:11:37,780 INFO 12V supply (V):  12.17
-2017-09-26 08:11:37,780 INFO 5V supply (V):   4.99
-2017-09-26 08:11:37,780 INFO 3.3V supply (V): 3.26
-2017-09-26 08:11:37,780 INFO Distance moving down (count): 3387
-2017-09-26 08:11:37,780 INFO Distance moving up (count):   3366
-2017-09-26 08:11:37,780 INFO Max Drift count (count):      39
-2017-09-26 08:11:37,780 INFO < Equipment passed all test requirements >
-2017-09-26 08:18:41,707 INFO Script running on windows platform, LCD disabled
-2017-09-26 08:18:41,707 INFO ==================== Load Settings ====================
-2017-09-26 08:18:42,003 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-26 08:18:42,003 INFO McDonald Gas Test
-2017-09-26 08:18:42,322 INFO Writing motionPID successful, @ processID 101
-2017-09-26 08:18:42,961 INFO Writing heaterPID successful, @ processID 102
-2017-09-26 08:18:43,536 INFO Writing level sensors successful, @ processID 103
-2017-09-26 08:18:43,680 INFO Writing power sync successful, @ processID 104
-2017-09-26 08:18:45,119 INFO ==================== Test Begins ====================
-2017-09-26 08:18:45,119 INFO < execute voltage reading >
-2017-09-26 08:18:45,407 INFO Line 1: 211.8
-2017-09-26 08:18:45,407 INFO Line 2: 211.8
-2017-09-26 08:18:45,407 INFO Line 3: 212.3
-2017-09-26 08:18:45,407 INFO Frequency: 66
-2017-09-26 08:18:45,407 INFO 24V supply: 24.08
-2017-09-26 08:18:45,407 INFO 12V supply: 12.17
-2017-09-26 08:18:45,407 INFO 5V supply: 4.99
-2017-09-26 08:18:45,407 INFO 3.3V supply: 3.26
-2017-09-26 08:18:45,407 INFO < execute magnet drift test >
-2017-09-26 08:18:52,599 INFO Homing sequence successful, @ processID 202
-2017-09-26 08:18:52,599 INFO Test run #1
-2017-09-26 08:18:56,483 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:18:56,770 INFO Writing setpoint reg 0 to -1000
-2017-09-26 08:19:08,040 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:19:08,328 INFO Distance moving up: [0, 3355]
-2017-09-26 08:19:08,328 INFO Distance moving down: [0, 3391]
-2017-09-26 08:19:08,328 INFO Check encoder magnet, 36 count drift found
-2017-09-26 08:19:22,933 INFO Script running on windows platform, LCD disabled
-2017-09-26 08:19:22,934 INFO ==================== Load Settings ====================
-2017-09-26 08:19:23,213 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-26 08:19:23,213 INFO McDonald Gas Test
-2017-09-26 08:19:23,533 INFO Writing motionPID successful, @ processID 101
-2017-09-26 08:19:24,157 INFO Writing heaterPID successful, @ processID 102
-2017-09-26 08:19:24,733 INFO Writing level sensors successful, @ processID 103
-2017-09-26 08:19:24,877 INFO Writing power sync successful, @ processID 104
-2017-09-26 08:19:26,028 INFO ==================== Test Begins ====================
-2017-09-26 08:19:26,028 INFO < execute voltage reading >
-2017-09-26 08:19:26,315 INFO Line 1: 211.8
-2017-09-26 08:19:26,315 INFO Line 2: 211.8
-2017-09-26 08:19:26,315 INFO Line 3: 212.8
-2017-09-26 08:19:26,315 INFO Frequency: 66
-2017-09-26 08:19:26,316 INFO 24V supply: 24.08
-2017-09-26 08:19:26,316 INFO 12V supply: 12.17
-2017-09-26 08:19:26,316 INFO 5V supply: 4.99
-2017-09-26 08:19:26,316 INFO 3.3V supply: 3.26
-2017-09-26 08:19:26,316 INFO < execute magnet drift test >
-2017-09-26 08:19:33,365 INFO Homing sequence successful, @ processID 202
-2017-09-26 08:19:33,365 INFO Test run #1
-2017-09-26 08:19:37,392 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:19:37,680 INFO Writing setpoint reg 0 to -1000
-2017-09-26 08:19:48,948 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:19:49,236 INFO Distance moving up: [0, 3343]
-2017-09-26 08:19:49,236 INFO Distance moving down: [0, 3387]
-2017-09-26 08:19:49,236 INFO Encoder magnet ok, no drift found (44)
-2017-09-26 08:19:59,163 INFO Homing sequence successful, @ processID 202
-2017-09-26 08:19:59,163 INFO Test run #2
-2017-09-26 08:20:03,190 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:20:03,477 INFO Writing setpoint reg 0 to -1000
-2017-09-26 08:20:14,763 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:20:15,051 INFO Distance moving up: [0, 3343, 3372]
-2017-09-26 08:20:15,051 INFO Distance moving down: [0, 3387, 3389]
-2017-09-26 08:20:15,051 INFO Encoder magnet ok, no drift found (17)
-2017-09-26 08:20:24,976 INFO Homing sequence successful, @ processID 202
-2017-09-26 08:20:24,976 INFO Test run #3
-2017-09-26 08:20:28,859 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:20:29,148 INFO Writing setpoint reg 0 to -1000
-2017-09-26 08:20:40,417 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:20:40,703 INFO Distance moving up: [0, 3343, 3372, 3357]
-2017-09-26 08:20:40,703 INFO Distance moving down: [0, 3387, 3389, 3379]
-2017-09-26 08:20:40,703 INFO Encoder magnet ok, no drift found (22)
-2017-09-26 08:20:40,704 INFO < calculate results >
-2017-09-26 08:20:40,704 INFO ==================== Test Completed ====================
-2017-09-26 08:20:40,704 INFO < Test Results >
-2017-09-26 08:20:40,704 INFO Line 1 (V):     211.8
-2017-09-26 08:20:40,704 INFO Line 2 (V):     211.8
-2017-09-26 08:20:40,704 INFO Line 3 (V):     212.8
-2017-09-26 08:20:40,704 INFO 24V supply (V):  24.08
-2017-09-26 08:20:40,704 INFO 12V supply (V):  12.17
-2017-09-26 08:20:40,704 INFO 5V supply (V):   4.99
-2017-09-26 08:20:40,704 INFO 3.3V supply (V): 3.26
-2017-09-26 08:20:40,704 INFO Distance moving down (count): 3387
-2017-09-26 08:20:40,704 INFO Distance moving up (count):   3343
-2017-09-26 08:20:40,704 INFO Max Drift count (count):      44
-2017-09-26 08:20:40,704 INFO < Equipment passed all test requirements >
-2017-09-26 08:21:01,016 INFO Script running on windows platform, LCD disabled
-2017-09-26 08:21:01,016 INFO ==================== Load Settings ====================
-2017-09-26 08:21:01,312 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/20.json
-2017-09-26 08:21:01,312 INFO McDonald Gas Test
-2017-09-26 08:21:01,631 INFO Writing motionPID successful, @ processID 101
-2017-09-26 08:21:02,255 INFO Writing heaterPID successful, @ processID 102
-2017-09-26 08:21:02,831 INFO Writing level sensors successful, @ processID 103
-2017-09-26 08:21:02,974 INFO Writing power sync successful, @ processID 104
-2017-09-26 08:21:04,987 INFO ==================== Test Begins ====================
-2017-09-26 08:21:04,987 INFO < execute voltage reading >
-2017-09-26 08:21:05,276 INFO Line 1: 211.8
-2017-09-26 08:21:05,276 INFO Line 2: 211.8
-2017-09-26 08:21:05,276 INFO Line 3: 211.3
-2017-09-26 08:21:05,276 INFO Frequency: 66
-2017-09-26 08:21:05,276 INFO 24V supply: 24.08
-2017-09-26 08:21:05,276 INFO 12V supply: 12.17
-2017-09-26 08:21:05,276 INFO 5V supply: 4.99
-2017-09-26 08:21:05,276 INFO 3.3V supply: 3.26
-2017-09-26 08:21:05,276 INFO < execute magnet drift test >
-2017-09-26 08:21:12,180 INFO Homing sequence successful, @ processID 202
-2017-09-26 08:21:12,180 INFO Test run #1
-2017-09-26 08:21:16,209 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:21:16,496 INFO Writing setpoint reg 0 to -1000
-2017-09-26 08:21:27,766 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:21:28,053 INFO Distance moving up: 3364
-2017-09-26 08:21:28,053 INFO Distance moving down: 3388
-2017-09-26 08:21:28,053 INFO Encoder magnet ok, no drift found (24)
-2017-09-26 08:21:37,835 INFO Homing sequence successful, @ processID 202
-2017-09-26 08:21:37,836 INFO Test run #2
-2017-09-26 08:21:41,720 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:21:42,006 INFO Writing setpoint reg 0 to -1000
-2017-09-26 08:21:53,276 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:21:53,563 INFO Distance moving up: 3365
-2017-09-26 08:21:53,563 INFO Distance moving down: 3390
-2017-09-26 08:21:53,563 INFO Encoder magnet ok, no drift found (25)
-2017-09-26 08:22:03,345 INFO Homing sequence successful, @ processID 202
-2017-09-26 08:22:03,345 INFO Test run #3
-2017-09-26 08:22:07,233 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:22:07,522 INFO Writing setpoint reg 0 to -1000
-2017-09-26 08:22:18,789 INFO Seeking upper switch successful, @ processID 204
-2017-09-26 08:22:19,078 INFO Distance moving up: 3342
-2017-09-26 08:22:19,078 INFO Distance moving down: 3382
-2017-09-26 08:22:19,078 INFO Encoder magnet ok, no drift found (40)
-2017-09-26 08:22:19,078 INFO < calculate results >
-2017-09-26 08:22:19,078 INFO ==================== Test Completed ====================
-2017-09-26 08:22:19,078 INFO < Test Results >
-2017-09-26 08:22:19,078 INFO Line 1 (V):     211.8
-2017-09-26 08:22:19,078 INFO Line 2 (V):     211.8
-2017-09-26 08:22:19,078 INFO Line 3 (V):     211.3
-2017-09-26 08:22:19,078 INFO 24V supply (V):  24.08
-2017-09-26 08:22:19,078 INFO 12V supply (V):  12.17
-2017-09-26 08:22:19,078 INFO 5V supply (V):   4.99
-2017-09-26 08:22:19,078 INFO 3.3V supply (V): 3.26
-2017-09-26 08:22:19,078 INFO Distance moving down (count): 3382
-2017-09-26 08:22:19,078 INFO Distance moving up (count):   3342
-2017-09-26 08:22:19,078 INFO Max Drift count (count):      40
-2017-09-26 08:22:19,078 INFO < Equipment passed all test requirements >
-2017-09-26 10:36:40,713 INFO FTDI USB cable not found, please connect cable and restart
+2017-09-28 08:41:12,279 INFO Script running on windows platform, LCD disabled
+2017-09-28 08:41:12,279 INFO ==================== Load Settings ====================
+2017-09-28 08:41:12,469 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/13.json
+2017-09-28 08:41:12,469 INFO McDonald Electric Test
+2017-09-28 08:41:12,677 INFO Writing motionPID successful, @ processID 101
+2017-09-28 08:41:13,092 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 08:41:13,476 INFO Writing level sensors successful, @ processID 103
+2017-09-28 08:41:13,572 INFO Writing power sync successful, @ processID 104
+2017-09-28 08:41:15,394 INFO ==================== Test Begins ====================
+2017-09-28 08:41:15,394 INFO < execute voltage reading >
+2017-09-28 08:41:15,585 INFO Line 1: 207.7
+2017-09-28 08:41:15,585 INFO Line 2: 211.3
+2017-09-28 08:41:15,585 INFO Line 3: 210.3
+2017-09-28 08:41:15,585 INFO Frequency: 64
+2017-09-28 08:41:15,585 INFO 24V supply: 24.11
+2017-09-28 08:41:15,585 INFO 12V supply: 12.12
+2017-09-28 08:41:15,585 INFO 5V supply: 4.92
+2017-09-28 08:41:15,585 INFO 3.3V supply: 3.25
+2017-09-28 08:41:15,585 INFO < execute ZDBF test >
+2017-09-28 08:41:15,680 INFO Homing sequence successful, @ processID 2
+2017-09-28 08:41:15,776 INFO Writing setpoint reg 0 to 0
+2017-09-28 08:41:27,553 INFO ZDBF: -60
+2017-09-28 08:41:27,650 INFO < execute level motor test >
+2017-09-28 08:41:29,743 INFO Writing setpoint reg 0 to 0
+2017-09-28 08:41:29,839 INFO Adjusting level motor up, gap target (mm): 4.905
+2017-09-28 08:41:56,829 INFO Level motor installed correctly
+2017-09-28 08:41:56,829 INFO Reset level motor to inital position
+2017-09-28 08:42:18,289 INFO Adjusting level motor down, gap target (mm): 8.405
+2017-09-28 08:42:48,548 INFO Sensor Reading {position: 6.405, upper range: 4.753, lower range: 8.468}
+2017-09-28 08:42:48,549 INFO Resetting platen level
+2017-09-28 08:42:55,467 INFO ZDBF: -93, direction: -1, adjustment: 1351
+2017-09-28 08:42:58,839 INFO adjusting level motor up
+2017-09-28 08:42:59,319 INFO inital: 5018, target: 6369
+2017-09-28 08:43:09,812 INFO adjustment completed
+2017-09-28 08:43:17,312 INFO ZDBF: -87, direction: -1, adjustment: 1105
+2017-09-28 08:43:20,700 INFO adjusting level motor up
+2017-09-28 08:43:21,180 INFO inital: 6419, target: 7524
+2017-09-28 08:43:30,042 INFO adjustment completed
+2017-09-28 08:43:37,526 INFO ZDBF: -81, direction: -1, adjustment: 860
+2017-09-28 08:43:40,898 INFO adjusting level motor up
+2017-09-28 08:43:41,378 INFO inital: 7594, target: 8454
+2017-09-28 08:43:46,789 INFO adjustment completed
+2017-09-28 08:43:53,698 INFO ZDBF: -79, direction: -1, adjustment: 778
+2017-09-28 08:43:57,069 INFO adjusting level motor up
+2017-09-28 08:43:57,549 INFO inital: 8541, target: 9319
+2017-09-28 08:44:01,809 INFO adjustment completed
+2017-09-28 08:44:08,736 INFO ZDBF: -76, direction: -1, adjustment: 655
+2017-09-28 08:44:12,108 INFO adjusting level motor up
+2017-09-28 08:44:12,586 INFO inital: 9426, target: 10081
+2017-09-28 08:44:16,079 INFO adjustment completed
+2017-09-28 08:44:23,579 INFO ZDBF: -72, direction: -1, adjustment: 491
+2017-09-28 08:44:26,967 INFO adjusting level motor up
+2017-09-28 08:44:27,447 INFO inital: 10208, target: 10699
+2017-09-28 08:44:30,269 INFO adjustment completed
+2017-09-28 08:44:37,739 INFO ZDBF: -69, direction: -1, adjustment: 368
+2017-09-28 08:44:41,111 INFO adjusting level motor up
+2017-09-28 08:44:41,589 INFO inital: 10793, target: 11161
+2017-09-28 08:44:44,315 INFO adjustment completed
+2017-09-28 08:44:51,801 INFO ZDBF: -65, direction: -1, adjustment: 204
+2017-09-28 08:44:55,173 INFO adjusting level motor up
+2017-09-28 08:44:55,651 INFO inital: 11271, target: 11475
+2017-09-28 08:44:57,707 INFO adjustment completed
+2017-09-28 08:45:05,177 INFO ZDBF: -65, direction: -1, adjustment: 204
+2017-09-28 08:45:08,565 INFO adjusting level motor up
+2017-09-28 08:45:09,043 INFO inital: 11550, target: 11754
+2017-09-28 08:45:11,194 INFO adjustment completed
+2017-09-28 08:45:18,726 INFO ZDBF: -63, direction: 0, adjustment: 0
+2017-09-28 08:45:18,822 INFO New ZDBF: -63
+2017-09-28 08:45:18,823 INFO < calculate results >
+2017-09-28 08:45:18,823 INFO level motor position in range
+2017-09-28 08:45:18,823 INFO upper travel limit within range of 4.905
+2017-09-28 08:45:18,823 INFO lower travel limit within range of 8.405
+2017-09-28 08:45:18,823 INFO ==================== Test Completed ====================
+2017-09-28 08:45:18,823 INFO < Test Results >
+2017-09-28 08:45:18,823 INFO Line 1 (V):     207.7
+2017-09-28 08:45:18,823 INFO Line 2 (V):     211.3
+2017-09-28 08:45:18,823 INFO Line 3 (V):     210.3
+2017-09-28 08:45:18,823 INFO 24V supply (V):  24.11
+2017-09-28 08:45:18,823 INFO 12V supply (V):  12.12
+2017-09-28 08:45:18,823 INFO 5V supply (V):   4.92
+2017-09-28 08:45:18,823 INFO 3.3V supply (V): 3.25
+2017-09-28 08:45:18,823 INFO Level motor position (mm):    6.405
+2017-09-28 08:45:18,825 INFO upper travel range (mm):      4.753
+2017-09-28 08:45:18,825 INFO lower travel range (mm):      8.468
+2017-09-28 08:45:18,825 INFO ZDBF: -63 
+2017-09-28 08:45:18,825 INFO < Equipment passed all test requirements >
+2017-09-28 08:46:28,846 INFO Script running on windows platform, LCD disabled
+2017-09-28 08:46:28,846 INFO ==================== Load Settings ====================
+2017-09-28 08:46:29,032 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/13.json
+2017-09-28 08:46:29,032 INFO McDonald Electric Test
+2017-09-28 08:46:29,256 INFO Writing motionPID successful, @ processID 101
+2017-09-28 08:46:29,671 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 08:46:30,055 INFO Writing level sensors successful, @ processID 103
+2017-09-28 08:46:30,150 INFO Writing power sync successful, @ processID 104
+2017-09-28 08:46:34,944 INFO ==================== Test Begins ====================
+2017-09-28 08:46:34,944 INFO < execute voltage reading >
+2017-09-28 08:46:35,135 INFO Line 1: 209.3
+2017-09-28 08:46:35,137 INFO Line 2: 209.3
+2017-09-28 08:46:35,137 INFO Line 3: 208.7
+2017-09-28 08:46:35,137 INFO Frequency: 64
+2017-09-28 08:46:35,137 INFO 24V supply: 24.11
+2017-09-28 08:46:35,137 INFO 12V supply: 12.12
+2017-09-28 08:46:35,137 INFO 5V supply: 4.92
+2017-09-28 08:46:35,137 INFO 3.3V supply: 3.25
+2017-09-28 08:46:35,137 INFO < execute ZDBF test >
+2017-09-28 08:46:35,232 INFO Homing sequence successful, @ processID 2
+2017-09-28 08:46:35,328 INFO Writing setpoint reg 0 to 0
+2017-09-28 08:46:47,088 INFO ZDBF: -58
+2017-09-28 08:46:47,184 INFO < execute level motor test >
+2017-09-28 08:46:49,276 INFO Writing setpoint reg 0 to 0
+2017-09-28 08:46:49,372 INFO Adjusting level motor up, gap target (mm): 4.894
+2017-09-28 08:47:09,779 INFO Level motor installed correctly
+2017-09-28 08:47:09,779 INFO Reset level motor to inital position
+2017-09-28 08:47:31,224 INFO Adjusting level motor down, gap target (mm): 8.394
+2017-09-28 08:48:02,592 INFO Sensor Reading {position: 6.394, upper range: 4.765, lower range: 8.496}
+2017-09-28 08:48:02,592 INFO Resetting platen level
+2017-09-28 08:48:10,102 INFO ZDBF: -92, direction: -1, adjustment: 2784
+2017-09-28 08:48:13,474 INFO adjusting level motor up
+2017-09-28 08:48:13,954 INFO inital: 4901, target: 7685
+2017-09-28 08:48:33,842 INFO adjustment completed
+2017-09-28 08:48:41,358 INFO ZDBF: -84, direction: -1, adjustment: 2128
+2017-09-28 08:48:44,730 INFO adjusting level motor up
+2017-09-28 08:48:45,210 INFO inital: 7739, target: 9867
+2017-09-28 08:48:54,743 INFO adjustment completed
+2017-09-28 08:49:01,637 INFO ZDBF: -73, direction: -1, adjustment: 1228
+2017-09-28 08:49:05,009 INFO adjusting level motor up
+2017-09-28 08:49:05,487 INFO inital: 9966, target: 11194
+2017-09-28 08:49:10,802 INFO adjustment completed
+2017-09-28 08:49:18,302 INFO ZDBF: -66, direction: -1, adjustment: 654
+2017-09-28 08:49:21,674 INFO adjusting level motor up
+2017-09-28 08:49:22,154 INFO inital: 11290, target: 11944
+2017-09-28 08:49:25,934 INFO adjustment completed
+2017-09-28 08:49:33,418 INFO ZDBF: -57, direction: 0, adjustment: 0
+2017-09-28 08:49:33,515 INFO New ZDBF: -57
+2017-09-28 08:49:33,515 INFO < calculate results >
+2017-09-28 08:49:33,515 INFO level motor position in range
+2017-09-28 08:49:33,515 INFO upper travel limit within range of 4.894
+2017-09-28 08:49:33,515 INFO lower travel limit within range of 8.394
+2017-09-28 08:49:33,515 INFO ==================== Test Completed ====================
+2017-09-28 08:49:33,515 INFO < Test Results >
+2017-09-28 08:49:33,515 INFO Line 1 (V):     209.3
+2017-09-28 08:49:33,516 INFO Line 2 (V):     209.3
+2017-09-28 08:49:33,516 INFO Line 3 (V):     208.7
+2017-09-28 08:49:33,516 INFO 24V supply (V):  24.11
+2017-09-28 08:49:33,516 INFO 12V supply (V):  12.12
+2017-09-28 08:49:33,516 INFO 5V supply (V):   4.92
+2017-09-28 08:49:33,516 INFO 3.3V supply (V): 3.25
+2017-09-28 08:49:33,516 INFO Level motor position (mm):    6.394
+2017-09-28 08:49:33,516 INFO upper travel range (mm):      4.765
+2017-09-28 08:49:33,516 INFO lower travel range (mm):      8.496
+2017-09-28 08:49:33,516 INFO ZDBF: -57 
+2017-09-28 08:49:33,516 INFO < Equipment passed all test requirements >
+2017-09-28 08:50:20,256 INFO Script running on windows platform, LCD disabled
+2017-09-28 08:50:20,256 INFO ==================== Load Settings ====================
+2017-09-28 08:50:20,453 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/13.json
+2017-09-28 08:50:20,453 INFO McDonald Electric Test
+2017-09-28 08:50:20,676 INFO Writing motionPID successful, @ processID 101
+2017-09-28 08:50:21,092 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 08:50:21,476 INFO Writing level sensors successful, @ processID 103
+2017-09-28 08:50:21,572 INFO Writing power sync successful, @ processID 104
+2017-09-28 08:50:24,263 INFO ==================== Test Begins ====================
+2017-09-28 08:50:24,263 INFO < execute voltage reading >
+2017-09-28 08:50:24,456 INFO Line 1: 208.2
+2017-09-28 08:50:24,456 INFO Line 2: 209.3
+2017-09-28 08:50:24,456 INFO Line 3: 211.3
+2017-09-28 08:50:24,456 INFO Frequency: 64
+2017-09-28 08:50:24,456 INFO 24V supply: 24.11
+2017-09-28 08:50:24,456 INFO 12V supply: 12.14
+2017-09-28 08:50:24,456 INFO 5V supply: 4.92
+2017-09-28 08:50:24,456 INFO 3.3V supply: 3.25
+2017-09-28 08:50:24,456 INFO < execute ZDBF test >
+2017-09-28 08:50:24,551 INFO Homing sequence successful, @ processID 2
+2017-09-28 08:50:24,647 INFO Writing setpoint reg 0 to 0
+2017-09-28 08:50:35,815 INFO ZDBF: -58
+2017-09-28 08:50:35,911 INFO < execute level motor test >
+2017-09-28 08:50:38,005 INFO Writing setpoint reg 0 to 0
+2017-09-28 08:50:38,101 INFO Adjusting level motor up, gap target (mm): 4.833
+2017-09-28 08:50:58,523 INFO Level motor installed correctly
+2017-09-28 08:50:58,523 INFO Reset level motor to inital position
+2017-09-28 08:51:19,983 INFO Adjusting level motor down, gap target (mm): 8.333
+2017-09-28 08:51:50,247 INFO Sensor Reading {position: 6.333, upper range: 4.704, lower range: 8.415}
+2017-09-28 08:51:50,247 INFO Resetting platen level
+2017-09-28 08:51:57,759 INFO ZDBF: -96, direction: -1, adjustment: 3112
+2017-09-28 08:52:01,131 INFO adjusting level motor up
+2017-09-28 08:52:01,609 INFO inital: 5177, target: 8289
+2017-09-28 08:52:22,361 INFO adjustment completed
+2017-09-28 08:52:29,272 INFO ZDBF: -80, direction: -1, adjustment: 1802
+2017-09-28 08:52:32,657 INFO adjusting level motor up
+2017-09-28 08:52:33,138 INFO inital: 8361, target: 10163
+2017-09-28 08:52:40,753 INFO adjustment completed
+2017-09-28 08:52:47,648 INFO ZDBF: -71, direction: -1, adjustment: 1064
+2017-09-28 08:52:51,019 INFO adjusting level motor up
+2017-09-28 08:52:51,499 INFO inital: 10257, target: 11321
+2017-09-28 08:52:56,334 INFO adjustment completed
+2017-09-28 08:53:03,819 INFO ZDBF: -64, direction: -1, adjustment: 490
+2017-09-28 08:53:07,190 INFO adjusting level motor up
+2017-09-28 08:53:07,670 INFO inital: 11397, target: 11887
+2017-09-28 08:53:10,875 INFO adjustment completed
+2017-09-28 08:53:18,375 INFO ZDBF: -60, direction: 0, adjustment: 0
+2017-09-28 08:53:18,471 INFO New ZDBF: -60
+2017-09-28 08:53:18,473 INFO < calculate results >
+2017-09-28 08:53:18,473 INFO level motor position in range
+2017-09-28 08:53:18,473 INFO upper travel limit within range of 4.833
+2017-09-28 08:53:18,473 INFO lower travel limit within range of 8.333
+2017-09-28 08:53:18,473 INFO ==================== Test Completed ====================
+2017-09-28 08:53:18,473 INFO < Test Results >
+2017-09-28 08:53:18,473 INFO Line 1 (V):     208.2
+2017-09-28 08:53:18,473 INFO Line 2 (V):     209.3
+2017-09-28 08:53:18,473 INFO Line 3 (V):     211.3
+2017-09-28 08:53:18,473 INFO 24V supply (V):  24.11
+2017-09-28 08:53:18,473 INFO 12V supply (V):  12.14
+2017-09-28 08:53:18,473 INFO 5V supply (V):   4.92
+2017-09-28 08:53:18,473 INFO 3.3V supply (V): 3.25
+2017-09-28 08:53:18,473 INFO Level motor position (mm):    6.333
+2017-09-28 08:53:18,473 INFO upper travel range (mm):      4.704
+2017-09-28 08:53:18,473 INFO lower travel range (mm):      8.415
+2017-09-28 08:53:18,473 INFO ZDBF: -60 
+2017-09-28 08:53:18,473 INFO < Equipment passed all test requirements >
+2017-09-28 08:54:49,538 INFO Script running on windows platform, LCD disabled
+2017-09-28 08:54:49,539 INFO ==================== Load Settings ====================
+2017-09-28 08:54:49,723 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/13.json
+2017-09-28 08:54:49,723 INFO McDonald Electric Test
+2017-09-28 08:54:49,930 INFO Writing motionPID successful, @ processID 101
+2017-09-28 08:54:50,329 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 08:54:50,713 INFO Writing level sensors successful, @ processID 103
+2017-09-28 08:54:50,809 INFO Writing power sync successful, @ processID 104
+2017-09-28 08:54:53,782 INFO ==================== Test Begins ====================
+2017-09-28 08:54:53,782 INFO < execute voltage reading >
+2017-09-28 08:54:53,973 INFO Line 1: 211.3
+2017-09-28 08:54:53,973 INFO Line 2: 209.3
+2017-09-28 08:54:53,974 INFO Line 3: 208.7
+2017-09-28 08:54:53,974 INFO Frequency: 64
+2017-09-28 08:54:53,974 INFO 24V supply: 24.11
+2017-09-28 08:54:53,974 INFO 12V supply: 12.14
+2017-09-28 08:54:53,974 INFO 5V supply: 4.92
+2017-09-28 08:54:53,974 INFO 3.3V supply: 3.25
+2017-09-28 08:54:53,974 INFO < execute ZDBF test >
+2017-09-28 08:54:54,069 INFO Homing sequence successful, @ processID 2
+2017-09-28 08:54:54,165 INFO Writing setpoint reg 0 to 0
+2017-09-28 08:55:05,351 INFO ZDBF: -58
+2017-09-28 08:55:05,447 INFO < execute level motor test >
+2017-09-28 08:55:07,539 INFO Writing setpoint reg 0 to 0
+2017-09-28 08:55:07,635 INFO Adjusting level motor up, gap target (mm): 4.847
+2017-09-28 08:55:28,038 INFO Level motor installed correctly
+2017-09-28 08:55:28,039 INFO Reset level motor to inital position
+2017-09-28 08:55:48,875 INFO Adjusting level motor down, gap target (mm): 8.347
+2017-09-28 08:56:20,226 INFO Sensor Reading {position: 6.347, upper range: 4.728, lower range: 8.457}
+2017-09-28 08:56:20,226 INFO Resetting platen level
+2017-09-28 08:56:27,144 INFO ZDBF: -91, direction: -1, adjustment: 3377.5
+2017-09-28 08:56:30,532 INFO adjusting level motor up
+2017-09-28 08:56:31,012 INFO inital: 5048, target: 8425.5
+2017-09-28 08:56:53,201 INFO adjustment completed
+2017-09-28 08:57:00,734 INFO ZDBF: -82, direction: -1, adjustment: 2457.5
+2017-09-28 08:57:04,121 INFO adjusting level motor up
+2017-09-28 08:57:04,601 INFO inital: 8513, target: 10970.5
+2017-09-28 08:57:14,134 INFO adjustment completed
+2017-09-28 08:57:21,619 INFO ZDBF: -68, direction: -1, adjustment: 1022.5
+2017-09-28 08:57:24,990 INFO adjusting level motor up
+2017-09-28 08:57:25,470 INFO inital: 11069, target: 12091.5
+2017-09-28 08:57:30,497 INFO adjustment completed
+2017-09-28 08:57:37,983 INFO ZDBF: -57, direction: 0, adjustment: 0
+2017-09-28 08:57:38,078 INFO New ZDBF: -57
+2017-09-28 08:57:38,078 INFO < calculate results >
+2017-09-28 08:57:38,078 INFO level motor position in range
+2017-09-28 08:57:38,078 INFO upper travel limit within range of 4.847
+2017-09-28 08:57:38,078 INFO lower travel limit within range of 8.347
+2017-09-28 08:57:38,078 INFO ==================== Test Completed ====================
+2017-09-28 08:57:38,078 INFO < Test Results >
+2017-09-28 08:57:38,079 INFO Line 1 (V):     211.3
+2017-09-28 08:57:38,079 INFO Line 2 (V):     209.3
+2017-09-28 08:57:38,079 INFO Line 3 (V):     208.7
+2017-09-28 08:57:38,079 INFO 24V supply (V):  24.11
+2017-09-28 08:57:38,079 INFO 12V supply (V):  12.14
+2017-09-28 08:57:38,079 INFO 5V supply (V):   4.92
+2017-09-28 08:57:38,079 INFO 3.3V supply (V): 3.25
+2017-09-28 08:57:38,079 INFO Level motor position (mm):    6.347
+2017-09-28 08:57:38,079 INFO upper travel range (mm):      4.728
+2017-09-28 08:57:38,079 INFO lower travel range (mm):      8.457
+2017-09-28 08:57:38,079 INFO ZDBF: -57 
+2017-09-28 08:57:38,079 INFO < Equipment passed all test requirements >
+2017-09-28 09:12:29,017 INFO Script running on windows platform, LCD disabled
+2017-09-28 09:12:29,017 INFO ==================== Load Settings ====================
+2017-09-28 09:12:29,217 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/29.json
+2017-09-28 09:12:29,217 INFO McDonald Electric Test
+2017-09-28 09:12:29,440 INFO Writing motionPID successful, @ processID 101
+2017-09-28 09:12:29,841 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 09:12:30,223 INFO Writing level sensors successful, @ processID 103
+2017-09-28 09:12:30,321 INFO Writing power sync successful, @ processID 104
+2017-09-28 09:12:32,334 INFO ==================== Test Begins ====================
+2017-09-28 09:12:32,334 INFO < execute voltage reading >
+2017-09-28 09:12:32,526 INFO Line 1: 211.3
+2017-09-28 09:12:32,526 INFO Line 2: 209.8
+2017-09-28 09:12:32,526 INFO Line 3: 211.8
+2017-09-28 09:12:32,526 INFO Frequency: 66
+2017-09-28 09:12:32,526 INFO 24V supply: 24.17
+2017-09-28 09:12:32,526 INFO 12V supply: 12.15
+2017-09-28 09:12:32,526 INFO 5V supply: 4.96
+2017-09-28 09:12:32,526 INFO 3.3V supply: 3.26
+2017-09-28 09:12:32,526 INFO < execute ZDBF test >
+2017-09-28 09:12:43,552 INFO Homing sequence successful, @ processID 2
+2017-09-28 09:12:43,648 INFO Writing setpoint reg 0 to 0
+2017-09-28 09:12:54,210 INFO ZDBF: -79
+2017-09-28 09:12:54,306 INFO < execute level motor test >
+2017-09-28 09:12:56,400 INFO Writing setpoint reg 0 to 0
+2017-09-28 09:12:56,496 INFO Adjusting level motor up, gap target (mm): 4.837
+2017-09-28 09:13:18,036 INFO Level motor installed correctly
+2017-09-28 09:13:18,036 INFO Reset level motor to inital position
+2017-09-28 09:13:40,055 INFO Adjusting level motor down, gap target (mm): 8.337
+2017-09-28 09:14:13,693 INFO Sensor Reading {position: 6.337, upper range: 4.716, lower range: 8.419}
+2017-09-28 09:14:13,693 INFO Resetting platen level
+2017-09-28 09:14:21,763 INFO ZDBF: -96, direction: -1, adjustment: 1740.0
+2017-09-28 09:14:25,144 INFO adjusting level motor up
+2017-09-28 09:14:25,622 INFO inital: 5181, target: 6921.0
+2017-09-28 09:14:39,375 INFO adjustment completed
+2017-09-28 09:14:47,450 INFO ZDBF: -95, direction: -1, adjustment: 1637.5
+2017-09-28 09:14:50,838 INFO adjusting level motor up
+2017-09-28 09:14:51,319 INFO inital: 6923, target: 8560.5
+2017-09-28 09:15:02,098 INFO adjustment completed
+2017-09-28 09:15:10,174 INFO ZDBF: -93, direction: -1, adjustment: 1432.5
+2017-09-28 09:15:13,562 INFO adjusting level motor up
+2017-09-28 09:15:14,042 INFO inital: 8645, target: 10077.5
+2017-09-28 09:15:20,697 INFO adjustment completed
+2017-09-28 09:15:28,775 INFO ZDBF: -92, direction: -1, adjustment: 1330.0
+2017-09-28 09:15:32,161 INFO adjusting level motor up
+2017-09-28 09:15:32,641 INFO inital: 10154, target: 11484.0
+2017-09-28 09:15:38,723 INFO adjustment completed
+2017-09-28 09:15:47,375 INFO ZDBF: -90, direction: -1, adjustment: 1125.0
+2017-09-28 09:15:50,763 INFO adjusting level motor up
+2017-09-28 09:15:51,242 INFO inital: 11536, target: 12661.0
+2017-09-28 09:15:56,460 INFO adjustment completed
+2017-09-28 09:16:05,144 INFO ZDBF: -87, direction: -1, adjustment: 817.5
+2017-09-28 09:16:08,532 INFO adjusting level motor up
+2017-09-28 09:16:09,012 INFO inital: 12765, target: 13582.5
+2017-09-28 09:16:13,368 INFO adjustment completed
+2017-09-28 09:16:21,460 INFO ZDBF: -82, direction: 0, adjustment: 0
+2017-09-28 09:16:21,555 INFO New ZDBF: -82
+2017-09-28 09:16:21,555 INFO < calculate results >
+2017-09-28 09:16:21,555 INFO level motor position in range
+2017-09-28 09:16:21,555 INFO upper travel limit within range of 4.837
+2017-09-28 09:16:21,555 INFO lower travel limit within range of 8.337
+2017-09-28 09:16:21,555 INFO ==================== Test Completed ====================
+2017-09-28 09:16:21,555 INFO < Test Results >
+2017-09-28 09:16:21,555 INFO Line 1 (V):     211.3
+2017-09-28 09:16:21,556 INFO Line 2 (V):     209.8
+2017-09-28 09:16:21,556 INFO Line 3 (V):     211.8
+2017-09-28 09:16:21,556 INFO 24V supply (V):  24.17
+2017-09-28 09:16:21,556 INFO 12V supply (V):  12.15
+2017-09-28 09:16:21,556 INFO 5V supply (V):   4.96
+2017-09-28 09:16:21,556 INFO 3.3V supply (V): 3.26
+2017-09-28 09:16:21,556 INFO Level motor position (mm):    6.337
+2017-09-28 09:16:21,556 INFO upper travel range (mm):      4.716
+2017-09-28 09:16:21,556 INFO lower travel range (mm):      8.419
+2017-09-28 09:16:21,556 INFO ZDBF: -82 
+2017-09-28 09:16:21,556 INFO < Equipment passed all test requirements >
+2017-09-28 09:48:00,888 INFO Script running on windows platform, LCD disabled
+2017-09-28 09:48:00,888 INFO ==================== Load Settings ====================
+2017-09-28 09:48:01,088 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/29.json
+2017-09-28 09:48:01,088 INFO McDonald Electric Test
+2017-09-28 09:48:01,312 INFO Writing motionPID successful, @ processID 101
+2017-09-28 09:48:01,710 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 09:48:02,095 INFO Writing level sensors successful, @ processID 103
+2017-09-28 09:48:02,190 INFO Writing power sync successful, @ processID 104
+2017-09-28 09:48:04,395 INFO ==================== Test Begins ====================
+2017-09-28 09:48:04,395 INFO < execute voltage reading >
+2017-09-28 09:48:04,588 INFO Line 1: 209.3
+2017-09-28 09:48:04,588 INFO Line 2: 210.3
+2017-09-28 09:48:04,588 INFO Line 3: 212.3
+2017-09-28 09:48:04,588 INFO Frequency: 66
+2017-09-28 09:48:04,588 INFO 24V supply: 24.17
+2017-09-28 09:48:04,588 INFO 12V supply: 12.15
+2017-09-28 09:48:04,588 INFO 5V supply: 4.96
+2017-09-28 09:48:04,588 INFO 3.3V supply: 3.26
+2017-09-28 09:48:04,588 INFO < execute ZDBF test >
+2017-09-28 09:48:04,683 INFO Homing sequence successful, @ processID 2
+2017-09-28 09:48:04,779 INFO Writing setpoint reg 0 to 0
+2017-09-28 09:48:17,739 INFO ZDBF: -80
+2017-09-28 09:48:17,834 INFO < execute level motor test >
+2017-09-28 09:48:19,927 INFO Writing setpoint reg 0 to 0
+2017-09-28 09:48:20,023 INFO Adjusting level motor up, gap target (mm): 4.803
+2017-09-28 09:48:41,563 INFO Level motor installed correctly
+2017-09-28 09:48:41,563 INFO Reset level motor to inital position
+2017-09-28 09:49:04,207 INFO Adjusting level motor down, gap target (mm): 8.303
+2017-09-28 09:49:36,739 INFO Sensor Reading {position: 6.303, upper range: 4.634, lower range: 8.375}
+2017-09-28 09:49:36,739 INFO Resetting platen level
+2017-09-28 09:49:44,823 INFO ZDBF: -98, direction: -1, adjustment: 1842.5
+2017-09-28 09:49:48,211 INFO adjusting level motor up
+2017-09-28 09:49:48,691 INFO inital: 5335, target: 7177.5
+2017-09-28 09:50:03,210 INFO adjustment completed
+2017-09-28 09:50:11,877 INFO ZDBF: -98, direction: -1, adjustment: 1842.5
+2017-09-28 09:50:15,265 INFO adjusting level motor up
+2017-09-28 09:50:15,743 INFO inital: 7222, target: 9064.5
+2017-09-28 09:50:26,132 INFO adjustment completed
+2017-09-28 09:50:34,193 INFO ZDBF: -93, direction: -1, adjustment: 1330.0
+2017-09-28 09:50:37,579 INFO adjusting level motor up
+2017-09-28 09:50:38,059 INFO inital: 9149, target: 10479.0
+2017-09-28 09:50:44,140 INFO adjustment completed
+2017-09-28 09:50:52,232 INFO ZDBF: -95, direction: -1, adjustment: 1535.0
+2017-09-28 09:50:55,618 INFO adjusting level motor up
+2017-09-28 09:50:56,098 INFO inital: 10552, target: 12087.0
+2017-09-28 09:51:03,154 INFO adjustment completed
+2017-09-28 09:51:11,232 INFO ZDBF: -92, direction: -1, adjustment: 1227.5
+2017-09-28 09:51:14,618 INFO adjusting level motor up
+2017-09-28 09:51:15,098 INFO inital: 12211, target: 13438.5
+2017-09-28 09:51:20,700 INFO adjustment completed
+2017-09-28 09:51:29,351 INFO ZDBF: -83, direction: 0, adjustment: 0
+2017-09-28 09:51:29,447 INFO New ZDBF: -83
+2017-09-28 09:51:29,447 INFO < calculate results >
+2017-09-28 09:51:29,447 INFO level motor position in range
+2017-09-28 09:51:29,447 INFO upper travel limit within range of 4.803
+2017-09-28 09:51:29,447 INFO lower travel limit within range of 8.303
+2017-09-28 09:51:29,447 INFO ==================== Test Completed ====================
+2017-09-28 09:51:29,447 INFO < Test Results >
+2017-09-28 09:51:29,447 INFO Line 1 (V):     209.3
+2017-09-28 09:51:29,447 INFO Line 2 (V):     210.3
+2017-09-28 09:51:29,447 INFO Line 3 (V):     212.3
+2017-09-28 09:51:29,447 INFO 24V supply (V):  24.17
+2017-09-28 09:51:29,447 INFO 12V supply (V):  12.15
+2017-09-28 09:51:29,447 INFO 5V supply (V):   4.96
+2017-09-28 09:51:29,447 INFO 3.3V supply (V): 3.26
+2017-09-28 09:51:29,448 INFO Level motor position (mm):    6.303
+2017-09-28 09:51:29,448 INFO upper travel range (mm):      4.634
+2017-09-28 09:51:29,448 INFO lower travel range (mm):      8.375
+2017-09-28 09:51:29,448 INFO ZDBF: -83 
+2017-09-28 09:51:29,448 INFO < Equipment passed all test requirements >
+2017-09-28 10:17:16,934 INFO Script running on windows platform, LCD disabled
+2017-09-28 10:17:16,934 INFO ==================== Load Settings ====================
+2017-09-28 10:17:17,132 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/29.json
+2017-09-28 10:17:17,132 INFO McDonald Electric Test
+2017-09-28 10:17:17,357 INFO Writing motionPID successful, @ processID 101
+2017-09-28 10:17:17,772 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 10:17:18,154 INFO Writing level sensors successful, @ processID 103
+2017-09-28 10:17:18,250 INFO Writing power sync successful, @ processID 104
+2017-09-28 10:17:20,838 INFO ==================== Test Begins ====================
+2017-09-28 10:17:20,838 INFO < execute voltage reading >
+2017-09-28 10:17:21,030 INFO Line 1: 209.8
+2017-09-28 10:17:21,030 INFO Line 2: 210.3
+2017-09-28 10:17:21,030 INFO Line 3: 212.3
+2017-09-28 10:17:21,030 INFO Frequency: 66
+2017-09-28 10:17:21,030 INFO 24V supply: 24.17
+2017-09-28 10:17:21,030 INFO 12V supply: 12.15
+2017-09-28 10:17:21,032 INFO 5V supply: 4.95
+2017-09-28 10:17:21,032 INFO 3.3V supply: 3.26
+2017-09-28 10:17:21,032 INFO < execute ZDBF test >
+2017-09-28 10:17:21,125 INFO Homing sequence successful, @ processID 2
+2017-09-28 10:17:21,221 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:17:34,164 INFO ZDBF: -76
+2017-09-28 10:17:34,260 INFO < execute level motor test >
+2017-09-28 10:17:36,355 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:17:36,450 INFO Adjusting level motor up, gap target (mm): 4.397
+2017-09-28 10:17:57,990 INFO Level motor installed correctly
+2017-09-28 10:17:57,992 INFO Reset level motor to inital position
+2017-09-28 10:18:20,634 INFO Adjusting level motor down, gap target (mm): 7.897
+2017-09-28 10:18:49,868 INFO Sensor Reading {position: 5.897, upper range: 4.268, lower range: 7.977}
+2017-09-28 10:18:49,868 INFO Resetting platen level
+2017-09-28 10:18:57,953 INFO ZDBF: -94, direction: -1, adjustment: 921.25
+2017-09-28 10:19:01,342 INFO adjusting level motor up
+2017-09-28 10:19:01,821 INFO inital: 6610, target: 7531
+2017-09-28 10:19:10,108 INFO adjustment completed
+2017-09-28 10:19:18,217 INFO ZDBF: -98, direction: -1, adjustment: 1126.25
+2017-09-28 10:19:21,604 INFO adjusting level motor up
+2017-09-28 10:19:22,082 INFO inital: 7584, target: 8710
+2017-09-28 10:19:28,740 INFO adjustment completed
+2017-09-28 10:19:36,815 INFO ZDBF: -92, direction: -1, adjustment: 818.75
+2017-09-28 10:19:40,203 INFO adjusting level motor up
+2017-09-28 10:19:40,683 INFO inital: 8810, target: 9628
+2017-09-28 10:19:45,230 INFO adjustment completed
+2017-09-28 10:19:53,914 INFO ZDBF: -93, direction: -1, adjustment: 870.0
+2017-09-28 10:19:57,301 INFO adjusting level motor up
+2017-09-28 10:19:57,780 INFO inital: 9748, target: 10618
+2017-09-28 10:20:02,135 INFO adjustment completed
+2017-09-28 10:20:10,213 INFO ZDBF: -93, direction: -1, adjustment: 870.0
+2017-09-28 10:20:13,601 INFO adjusting level motor up
+2017-09-28 10:20:14,079 INFO inital: 10683, target: 11553
+2017-09-28 10:20:18,628 INFO adjustment completed
+2017-09-28 10:20:26,720 INFO ZDBF: -91, direction: -1, adjustment: 767.5
+2017-09-28 10:20:30,107 INFO adjusting level motor up
+2017-09-28 10:20:30,586 INFO inital: 11619, target: 12386
+2017-09-28 10:20:34,559 INFO adjustment completed
+2017-09-28 10:20:42,667 INFO ZDBF: -91, direction: -1, adjustment: 767.5
+2017-09-28 10:20:46,055 INFO adjusting level motor up
+2017-09-28 10:20:46,533 INFO inital: 12487, target: 13254
+2017-09-28 10:20:50,506 INFO adjustment completed
+2017-09-28 10:20:59,221 INFO ZDBF: -85, direction: -1, adjustment: 460.0
+2017-09-28 10:21:02,609 INFO adjusting level motor up
+2017-09-28 10:21:03,088 INFO inital: 13315, target: 13775
+2017-09-28 10:21:06,388 INFO adjustment completed
+2017-09-28 10:21:14,450 INFO ZDBF: -86, direction: -1, adjustment: 511.25
+2017-09-28 10:21:17,836 INFO adjusting level motor up
+2017-09-28 10:21:18,316 INFO inital: 13843, target: 14354
+2017-09-28 10:21:21,713 INFO adjustment completed
+2017-09-28 10:21:30,397 INFO ZDBF: -83, direction: -1, adjustment: 357.5
+2017-09-28 10:21:33,785 INFO adjusting level motor up
+2017-09-28 10:21:34,265 INFO inital: 14476, target: 14833
+2017-09-28 10:21:36,990 INFO adjustment completed
+2017-09-28 10:21:45,084 INFO ZDBF: -75, direction: 0, adjustment: 0
+2017-09-28 10:21:45,180 INFO New ZDBF: -75
+2017-09-28 10:21:45,180 INFO < calculate results >
+2017-09-28 10:21:45,180 INFO level motor position in range
+2017-09-28 10:21:45,180 INFO upper travel limit within range of 4.397
+2017-09-28 10:21:45,180 INFO lower travel limit within range of 7.897
+2017-09-28 10:21:45,180 INFO ==================== Test Completed ====================
+2017-09-28 10:21:45,180 INFO < Test Results >
+2017-09-28 10:21:45,180 INFO Line 1 (V):     209.8
+2017-09-28 10:21:45,180 INFO Line 2 (V):     210.3
+2017-09-28 10:21:45,180 INFO Line 3 (V):     212.3
+2017-09-28 10:21:45,180 INFO 24V supply (V):  24.17
+2017-09-28 10:21:45,180 INFO 12V supply (V):  12.15
+2017-09-28 10:21:45,180 INFO 5V supply (V):   4.95
+2017-09-28 10:21:45,180 INFO 3.3V supply (V): 3.26
+2017-09-28 10:21:45,180 INFO Level motor position (mm):    5.897
+2017-09-28 10:21:45,180 INFO upper travel range (mm):      4.268
+2017-09-28 10:21:45,180 INFO lower travel range (mm):      7.977
+2017-09-28 10:21:45,180 INFO ZDBF: -75 
+2017-09-28 10:21:45,180 INFO < Equipment passed all test requirements >
+2017-09-28 10:24:06,739 INFO Script running on windows platform, LCD disabled
+2017-09-28 10:24:06,739 INFO ==================== Load Settings ====================
+2017-09-28 10:24:06,937 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/13.json
+2017-09-28 10:24:06,937 INFO McDonald Electric Test
+2017-09-28 10:24:07,161 INFO Writing motionPID successful, @ processID 101
+2017-09-28 10:24:07,576 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 10:24:07,960 INFO Writing level sensors successful, @ processID 103
+2017-09-28 10:24:08,055 INFO Writing power sync successful, @ processID 104
+2017-09-28 10:24:19,809 INFO Script running on windows platform, LCD disabled
+2017-09-28 10:24:19,809 INFO ==================== Load Settings ====================
+2017-09-28 10:24:20,009 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/13.json
+2017-09-28 10:24:20,009 INFO McDonald Electric Test
+2017-09-28 10:24:20,217 INFO Writing motionPID successful, @ processID 101
+2017-09-28 10:24:20,632 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 10:24:21,016 INFO Writing level sensors successful, @ processID 103
+2017-09-28 10:24:21,111 INFO Writing power sync successful, @ processID 104
+2017-09-28 10:24:22,358 INFO ==================== Test Begins ====================
+2017-09-28 10:24:22,358 INFO < execute voltage reading >
+2017-09-28 10:24:22,551 INFO Line 1: 207.7
+2017-09-28 10:24:22,551 INFO Line 2: 209.8
+2017-09-28 10:24:22,551 INFO Line 3: 208.2
+2017-09-28 10:24:22,551 INFO Frequency: 64
+2017-09-28 10:24:22,551 INFO 24V supply: 24.11
+2017-09-28 10:24:22,552 INFO 12V supply: 12.12
+2017-09-28 10:24:22,552 INFO 5V supply: 4.92
+2017-09-28 10:24:22,552 INFO 3.3V supply: 3.25
+2017-09-28 10:24:22,552 INFO < execute ZDBF test >
+2017-09-28 10:24:27,345 INFO Homing sequence successful, @ processID 2
+2017-09-28 10:24:27,440 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:24:36,835 INFO ZDBF: -39
+2017-09-28 10:24:36,931 INFO < execute level motor test >
+2017-09-28 10:24:39,025 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:24:39,121 INFO Adjusting level motor up, gap target (mm): 4.785
+2017-09-28 10:25:00,614 INFO Level motor installed correctly
+2017-09-28 10:25:00,614 INFO Reset level motor to inital position
+2017-09-28 10:25:22,648 INFO Adjusting level motor down, gap target (mm): 8.285
+2017-09-28 10:25:51,826 INFO Sensor Reading {position: 6.285, upper range: 4.606, lower range: 8.345}
+2017-09-28 10:25:51,828 INFO Resetting platen level
+2017-09-28 10:25:58,746 INFO ZDBF: -87, direction: -1, adjustment: 5898
+2017-09-28 10:26:02,118 INFO adjusting level motor up
+2017-09-28 10:26:02,598 INFO inital: 5412, target: 11310
+2017-09-28 10:26:32,161 INFO adjustment completed
+2017-09-28 10:26:39,661 INFO ZDBF: -57, direction: -1, adjustment: 1105
+2017-09-28 10:26:43,049 INFO adjusting level motor up
+2017-09-28 10:26:43,529 INFO inital: 11378, target: 12483
+2017-09-28 10:26:48,746 INFO adjustment completed
+2017-09-28 10:26:56,247 INFO ZDBF: -34, direction: 1, adjustment: -204
+2017-09-28 10:26:59,619 INFO adjusting level motor down
+2017-09-28 10:27:00,099 INFO inital: 12573, target: 12369
+2017-09-28 10:27:02,441 INFO adjustment completed
+2017-09-28 10:27:09,959 INFO ZDBF: -43, direction: 0, adjustment: 0
+2017-09-28 10:27:10,055 INFO New ZDBF: -43
+2017-09-28 10:27:10,055 INFO < calculate results >
+2017-09-28 10:27:10,055 INFO level motor position in range
+2017-09-28 10:27:10,055 INFO upper travel limit within range of 4.785
+2017-09-28 10:27:10,055 INFO lower travel limit within range of 8.285
+2017-09-28 10:27:10,055 INFO ==================== Test Completed ====================
+2017-09-28 10:27:10,055 INFO < Test Results >
+2017-09-28 10:27:10,055 INFO Line 1 (V):     207.7
+2017-09-28 10:27:10,055 INFO Line 2 (V):     209.8
+2017-09-28 10:27:10,055 INFO Line 3 (V):     208.2
+2017-09-28 10:27:10,055 INFO 24V supply (V):  24.11
+2017-09-28 10:27:10,055 INFO 12V supply (V):  12.12
+2017-09-28 10:27:10,055 INFO 5V supply (V):   4.92
+2017-09-28 10:27:10,055 INFO 3.3V supply (V): 3.25
+2017-09-28 10:27:10,055 INFO Level motor position (mm):    6.285
+2017-09-28 10:27:10,055 INFO upper travel range (mm):      4.606
+2017-09-28 10:27:10,055 INFO lower travel range (mm):      8.345
+2017-09-28 10:27:10,055 INFO ZDBF: -43 
+2017-09-28 10:27:10,055 INFO < Equipment passed all test requirements >
+2017-09-28 10:28:11,746 INFO Script running on windows platform, LCD disabled
+2017-09-28 10:28:11,746 INFO ==================== Load Settings ====================
+2017-09-28 10:28:11,943 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/13.json
+2017-09-28 10:28:11,943 INFO McDonald Electric Test
+2017-09-28 10:28:12,150 INFO Writing motionPID successful, @ processID 101
+2017-09-28 10:28:12,549 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 10:28:12,933 INFO Writing level sensors successful, @ processID 103
+2017-09-28 10:28:13,029 INFO Writing power sync successful, @ processID 104
+2017-09-28 10:28:14,563 INFO ==================== Test Begins ====================
+2017-09-28 10:28:14,563 INFO < execute voltage reading >
+2017-09-28 10:28:14,756 INFO Line 1: 208.7
+2017-09-28 10:28:14,756 INFO Line 2: 208.2
+2017-09-28 10:28:14,756 INFO Line 3: 209.8
+2017-09-28 10:28:14,756 INFO Frequency: 64
+2017-09-28 10:28:14,756 INFO 24V supply: 24.11
+2017-09-28 10:28:14,756 INFO 12V supply: 12.14
+2017-09-28 10:28:14,756 INFO 5V supply: 4.92
+2017-09-28 10:28:14,756 INFO 3.3V supply: 3.25
+2017-09-28 10:28:14,756 INFO < execute ZDBF test >
+2017-09-28 10:28:14,851 INFO Homing sequence successful, @ processID 2
+2017-09-28 10:28:14,947 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:28:26,709 INFO ZDBF: -52
+2017-09-28 10:28:26,803 INFO < execute level motor test >
+2017-09-28 10:28:28,898 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:28:28,993 INFO Adjusting level motor up, gap target (mm): 4.898
+2017-09-28 10:28:50,500 INFO Level motor installed correctly
+2017-09-28 10:28:50,500 INFO Reset level motor to inital position
+2017-09-28 10:29:12,538 INFO Adjusting level motor down, gap target (mm): 8.398
+2017-09-28 10:29:43,904 INFO Sensor Reading {position: 6.398, upper range: 4.71, lower range: 8.485}
+2017-09-28 10:29:43,904 INFO Resetting platen level
+2017-09-28 10:29:51,415 INFO ZDBF: -91, direction: -1, adjustment: 4791
+2017-09-28 10:29:54,786 INFO adjusting level motor up
+2017-09-28 10:29:55,266 INFO inital: 4956, target: 9747
+2017-09-28 10:30:23,111 INFO adjustment completed
+2017-09-28 10:30:30,621 INFO ZDBF: -75, direction: -1, adjustment: 1413
+2017-09-28 10:30:34,009 INFO adjusting level motor up
+2017-09-28 10:30:34,489 INFO inital: 9825, target: 11238
+2017-09-28 10:30:40,378 INFO adjustment completed
+2017-09-28 10:30:47,862 INFO ZDBF: -57, direction: -1, adjustment: 204
+2017-09-28 10:30:51,234 INFO adjusting level motor up
+2017-09-28 10:30:51,713 INFO inital: 11339, target: 11543
+2017-09-28 10:30:53,864 INFO adjustment completed
+2017-09-28 10:31:01,365 INFO ZDBF: -56, direction: 0, adjustment: 0
+2017-09-28 10:31:01,461 INFO New ZDBF: -56
+2017-09-28 10:31:01,461 INFO < calculate results >
+2017-09-28 10:31:01,461 INFO level motor position in range
+2017-09-28 10:31:01,461 INFO upper travel limit within range of 4.898
+2017-09-28 10:31:01,461 INFO lower travel limit within range of 8.398
+2017-09-28 10:31:01,461 INFO ==================== Test Completed ====================
+2017-09-28 10:31:01,461 INFO < Test Results >
+2017-09-28 10:31:01,461 INFO Line 1 (V):     208.7
+2017-09-28 10:31:01,461 INFO Line 2 (V):     208.2
+2017-09-28 10:31:01,461 INFO Line 3 (V):     209.8
+2017-09-28 10:31:01,461 INFO 24V supply (V):  24.11
+2017-09-28 10:31:01,463 INFO 12V supply (V):  12.14
+2017-09-28 10:31:01,463 INFO 5V supply (V):   4.92
+2017-09-28 10:31:01,463 INFO 3.3V supply (V): 3.25
+2017-09-28 10:31:01,463 INFO Level motor position (mm):    6.398
+2017-09-28 10:31:01,463 INFO upper travel range (mm):      4.71
+2017-09-28 10:31:01,463 INFO lower travel range (mm):      8.485
+2017-09-28 10:31:01,463 INFO ZDBF: -56 
+2017-09-28 10:31:01,463 INFO < Equipment passed all test requirements >
+2017-09-28 10:33:06,223 INFO Script running on windows platform, LCD disabled
+2017-09-28 10:33:06,223 INFO ==================== Load Settings ====================
+2017-09-28 10:33:06,405 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/13.json
+2017-09-28 10:33:06,405 INFO McDonald Electric Test
+2017-09-28 10:33:06,630 INFO Writing motionPID successful, @ processID 101
+2017-09-28 10:33:07,029 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 10:33:07,413 INFO Writing level sensors successful, @ processID 103
+2017-09-28 10:33:07,509 INFO Writing power sync successful, @ processID 104
+2017-09-28 10:33:09,331 INFO ==================== Test Begins ====================
+2017-09-28 10:33:09,331 INFO < execute voltage reading >
+2017-09-28 10:33:09,523 INFO Line 1: 207.2
+2017-09-28 10:33:09,523 INFO Line 2: 210.3
+2017-09-28 10:33:09,523 INFO Line 3: 208.2
+2017-09-28 10:33:09,523 INFO Frequency: 64
+2017-09-28 10:33:09,523 INFO 24V supply: 24.11
+2017-09-28 10:33:09,523 INFO 12V supply: 12.14
+2017-09-28 10:33:09,523 INFO 5V supply: 4.92
+2017-09-28 10:33:09,523 INFO 3.3V supply: 3.25
+2017-09-28 10:33:09,523 INFO < execute ZDBF test >
+2017-09-28 10:33:09,618 INFO Homing sequence successful, @ processID 2
+2017-09-28 10:33:09,713 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:33:21,474 INFO ZDBF: -51
+2017-09-28 10:33:21,571 INFO < execute level motor test >
+2017-09-28 10:33:23,663 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:33:23,759 INFO Adjusting level motor up, gap target (mm): 4.955
+2017-09-28 10:33:44,164 INFO Level motor installed correctly
+2017-09-28 10:33:44,164 INFO Reset level motor to inital position
+2017-09-28 10:34:05,625 INFO Adjusting level motor down, gap target (mm): 8.455
+2017-09-28 10:34:36,971 INFO Sensor Reading {position: 6.455, upper range: 4.839, lower range: 8.541}
+2017-09-28 10:34:36,971 INFO Resetting platen level
+2017-09-28 10:34:43,891 INFO ZDBF: -92, direction: -1, adjustment: 5037
+2017-09-28 10:34:47,279 INFO adjusting level motor up
+2017-09-28 10:34:47,757 INFO inital: 4782, target: 9819
+2017-09-28 10:35:16,848 INFO adjustment completed
+2017-09-28 10:35:24,367 INFO ZDBF: -75, direction: -1, adjustment: 1474
+2017-09-28 10:35:27,753 INFO adjusting level motor up
+2017-09-28 10:35:28,233 INFO inital: 9901, target: 11375
+2017-09-28 10:35:34,315 INFO adjustment completed
+2017-09-28 10:35:41,832 INFO ZDBF: -55, direction: 0, adjustment: 0
+2017-09-28 10:35:41,927 INFO New ZDBF: -55
+2017-09-28 10:35:41,928 INFO < calculate results >
+2017-09-28 10:35:41,928 INFO level motor position in range
+2017-09-28 10:35:41,928 INFO upper travel limit within range of 4.955
+2017-09-28 10:35:41,928 INFO lower travel limit within range of 8.455
+2017-09-28 10:35:41,928 INFO ==================== Test Completed ====================
+2017-09-28 10:35:41,928 INFO < Test Results >
+2017-09-28 10:35:41,928 INFO Line 1 (V):     207.2
+2017-09-28 10:35:41,928 INFO Line 2 (V):     210.3
+2017-09-28 10:35:41,928 INFO Line 3 (V):     208.2
+2017-09-28 10:35:41,928 INFO 24V supply (V):  24.11
+2017-09-28 10:35:41,928 INFO 12V supply (V):  12.14
+2017-09-28 10:35:41,928 INFO 5V supply (V):   4.92
+2017-09-28 10:35:41,928 INFO 3.3V supply (V): 3.25
+2017-09-28 10:35:41,928 INFO Level motor position (mm):    6.455
+2017-09-28 10:35:41,930 INFO upper travel range (mm):      4.839
+2017-09-28 10:35:41,930 INFO lower travel range (mm):      8.541
+2017-09-28 10:35:41,930 INFO ZDBF: -55 
+2017-09-28 10:35:41,930 INFO < Equipment passed all test requirements >
+2017-09-28 10:36:36,084 INFO Script running on windows platform, LCD disabled
+2017-09-28 10:36:36,084 INFO ==================== Load Settings ====================
+2017-09-28 10:36:36,285 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/13.json
+2017-09-28 10:36:36,285 INFO McDonald Electric Test
+2017-09-28 10:36:36,492 INFO Writing motionPID successful, @ processID 101
+2017-09-28 10:36:36,891 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 10:36:37,276 INFO Writing level sensors successful, @ processID 103
+2017-09-28 10:36:37,371 INFO Writing power sync successful, @ processID 104
+2017-09-28 10:36:47,151 INFO ==================== Test Begins ====================
+2017-09-28 10:36:47,151 INFO < execute voltage reading >
+2017-09-28 10:36:47,342 INFO Line 1: 209.8
+2017-09-28 10:36:47,344 INFO Line 2: 210.3
+2017-09-28 10:36:47,344 INFO Line 3: 209.8
+2017-09-28 10:36:47,344 INFO Frequency: 64
+2017-09-28 10:36:47,344 INFO 24V supply: 23.96
+2017-09-28 10:36:47,344 INFO 12V supply: 12.12
+2017-09-28 10:36:47,344 INFO 5V supply: 4.92
+2017-09-28 10:36:47,344 INFO 3.3V supply: 3.25
+2017-09-28 10:36:47,344 INFO < execute switch test >
+2017-09-28 10:36:48,013 INFO Seeking lower switch successful, @ processID 203
+2017-09-28 10:36:51,464 INFO Seeking upper switch successful, @ processID 203
+2017-09-28 10:36:56,499 INFO Seeking lower switch successful, @ processID 203
+2017-09-28 10:36:57,601 INFO Distance between Lift and Home switch (inch): 2.029527624
+2017-09-28 10:36:57,601 INFO Lift switch location (count): -4115
+2017-09-28 10:36:57,601 INFO Home switch location (count): 9
+2017-09-28 10:36:57,601 INFO Moving upwards time elapse (sec): 3.46600008011
+2017-09-28 10:36:57,601 INFO Moving downwards time elapse (sec): 4.49900007248
+2017-09-28 10:36:57,601 INFO Actuator speed upwards (inch/sec): 0.585553253633
+2017-09-28 10:36:57,601 INFO Actuator speed downwards (inch/sec): 0.451106377263
+2017-09-28 10:36:57,601 INFO < execute kill switch test >
+2017-09-28 10:37:01,244 INFO Seeking upper switch successful, @ processID 205
+2017-09-28 10:37:10,128 INFO Upper kill switch location: -5756
+2017-09-28 10:37:15,401 INFO Seeking lower switch successful, @ processID 205
+2017-09-28 10:37:25,101 INFO Home switch remain engaged, switch bracket ok 
+2017-09-28 10:37:25,197 INFO Lower kill switch location: 4611
+2017-09-28 10:37:25,197 INFO Kill switch test successful
+2017-09-28 10:37:25,388 INFO < execute magnet drift test >
+2017-09-28 10:37:25,484 INFO Homing sequence successful, @ processID 204
+2017-09-28 10:37:25,484 INFO Test run #1
+2017-09-28 10:37:32,773 INFO Seeking upper switch successful, @ processID 204
+2017-09-28 10:37:32,963 INFO Writing setpoint reg 0 to -1000
+2017-09-28 10:37:43,829 INFO Seeking upper switch successful, @ processID 204
+2017-09-28 10:37:44,022 INFO Distance moving up: 3114
+2017-09-28 10:37:44,022 INFO Distance moving down: 3107
+2017-09-28 10:37:44,022 INFO Encoder magnet ok, no drift found (7)
+2017-09-28 10:37:44,118 INFO Homing sequence successful, @ processID 204
+2017-09-28 10:37:44,118 INFO Test run #2
+2017-09-28 10:37:44,502 INFO Seeking upper switch successful, @ processID 204
+2017-09-28 10:37:44,693 INFO Writing setpoint reg 0 to -1000
+2017-09-28 10:37:55,559 INFO Seeking upper switch successful, @ processID 204
+2017-09-28 10:37:55,750 INFO Distance moving up: 3112
+2017-09-28 10:37:55,750 INFO Distance moving down: 3116
+2017-09-28 10:37:55,750 INFO Encoder magnet ok, no drift found (4)
+2017-09-28 10:37:55,846 INFO Homing sequence successful, @ processID 204
+2017-09-28 10:37:55,846 INFO Test run #3
+2017-09-28 10:37:56,325 INFO Seeking upper switch successful, @ processID 204
+2017-09-28 10:37:56,517 INFO Writing setpoint reg 0 to -1000
+2017-09-28 10:38:07,382 INFO Seeking upper switch successful, @ processID 204
+2017-09-28 10:38:07,575 INFO Distance moving up: 3113
+2017-09-28 10:38:07,575 INFO Distance moving down: 3124
+2017-09-28 10:38:07,575 INFO Encoder magnet ok, no drift found (11)
+2017-09-28 10:38:07,575 INFO < execute homing test >
+2017-09-28 10:38:07,671 INFO Homing sequence successful, @ processID 2
+2017-09-28 10:38:07,671 INFO < execute sensors gap test >
+2017-09-28 10:38:07,766 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:38:09,956 INFO Rear sensor out of range (mm) 6.50135807367
+2017-09-28 10:38:09,956 INFO Front sensors within range (mm) 6.33045442061
+2017-09-28 10:38:09,956 INFO Waiting for adjustment to complete
+2017-09-28 10:38:35,196 INFO Rear sensors within range (mm) 6.37958922086
+2017-09-28 10:38:35,197 INFO Front sensors within range (mm) 6.32007812738
+2017-09-28 10:38:35,197 INFO < execute ZDBF test >
+2017-09-28 10:38:35,292 INFO Homing sequence successful, @ processID 2
+2017-09-28 10:38:35,388 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:38:44,780 INFO ZDBF: -55
+2017-09-28 10:38:44,877 INFO < execute level motor test >
+2017-09-28 10:38:46,970 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:38:47,065 INFO Adjusting level motor up, gap target (mm): 4.877
+2017-09-28 10:39:07,471 INFO Level motor installed correctly
+2017-09-28 10:39:07,473 INFO Reset level motor to inital position
+2017-09-28 10:39:28,342 INFO Adjusting level motor down, gap target (mm): 8.377
+2017-09-28 10:39:59,694 INFO Sensor Reading {position: 6.377, upper range: 4.767, lower range: 8.465}
+2017-09-28 10:39:59,694 INFO Resetting platen level
+2017-09-28 10:40:07,203 INFO ZDBF: -89, direction: -1, adjustment: 4176
+2017-09-28 10:40:10,575 INFO adjusting level motor up
+2017-09-28 10:40:11,053 INFO inital: 5010, target: 9186
+2017-09-28 10:40:36,503 INFO adjustment completed
+2017-09-28 10:40:43,428 INFO ZDBF: -75, direction: -1, adjustment: 1228
+2017-09-28 10:40:46,801 INFO adjusting level motor up
+2017-09-28 10:40:47,279 INFO inital: 9276, target: 10504
+2017-09-28 10:40:52,499 INFO adjustment completed
+2017-09-28 10:40:59,983 INFO ZDBF: -73, direction: -1, adjustment: 1105
+2017-09-28 10:41:03,355 INFO adjusting level motor up
+2017-09-28 10:41:03,835 INFO inital: 10591, target: 11696
+2017-09-28 10:41:09,053 INFO adjustment completed
+2017-09-28 10:41:16,539 INFO ZDBF: -53, direction: 0, adjustment: 0
+2017-09-28 10:41:16,634 INFO New ZDBF: -53
+2017-09-28 10:41:16,634 INFO < calculate results >
+2017-09-28 10:41:16,634 INFO Raw output:{3965, -4115, 9, -5756, 4611}
+2017-09-28 10:41:16,634 INFO grill plate to home sw (inch):  -1.9468504559999997
+2017-09-28 10:41:16,634 INFO lift switch location (inch):    2.029527624
+2017-09-28 10:41:16,634 INFO home switch location (inch):    0.0044291339999999995
+2017-09-28 10:41:16,634 INFO upper killsw location (inch):   2.8371063899999998
+2017-09-28 10:41:16,634 INFO lower killsw location (inch):   -2.2647638519999997
+2017-09-28 10:41:16,634 INFO level motor position in range
+2017-09-28 10:41:16,634 INFO upper travel limit within range of 4.877
+2017-09-28 10:41:16,634 INFO lower travel limit within range of 8.377
+2017-09-28 10:41:16,634 INFO ==================== Test Completed ====================
+2017-09-28 10:41:16,634 INFO < Test Results >
+2017-09-28 10:41:16,634 INFO Line 1 (V):     209.8
+2017-09-28 10:41:16,635 INFO Line 2 (V):     210.3
+2017-09-28 10:41:16,635 INFO Line 3 (V):     209.8
+2017-09-28 10:41:16,635 INFO 24V supply (V):  23.96
+2017-09-28 10:41:16,635 INFO 12V supply (V):  12.12
+2017-09-28 10:41:16,635 INFO 5V supply (V):   4.92
+2017-09-28 10:41:16,635 INFO 3.3V supply (V): 3.25
+2017-09-28 10:41:16,635 INFO Time elapse upwards (sec):    3.466
+2017-09-28 10:41:16,635 INFO Time elapse downwards (sec):  4.499
+2017-09-28 10:41:16,635 INFO Distance moving down (count): 3124
+2017-09-28 10:41:16,635 INFO Distance moving up (count):   3113
+2017-09-28 10:41:16,635 INFO Max Drift count (count):      11
+2017-09-28 10:41:16,635 INFO Rear sensors gap (mm)         6.38
+2017-09-28 10:41:16,637 INFO Front sensors gap (mm)        6.32
+2017-09-28 10:41:16,637 INFO Level motor position (mm):    6.377
+2017-09-28 10:41:16,637 INFO upper travel range (mm):      4.767
+2017-09-28 10:41:16,637 INFO lower travel range (mm):      8.465
+2017-09-28 10:41:16,637 INFO ZDBF: -53 
+2017-09-28 10:41:16,637 INFO < Equipment passed all test requirements >
+2017-09-28 10:43:47,019 INFO Script running on windows platform, LCD disabled
+2017-09-28 10:43:47,019 INFO ==================== Load Settings ====================
+2017-09-28 10:43:47,219 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/13.json
+2017-09-28 10:43:47,219 INFO McDonald Electric Test
+2017-09-28 10:43:47,443 INFO Writing motionPID successful, @ processID 101
+2017-09-28 10:43:47,858 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 10:43:48,242 INFO Writing level sensors successful, @ processID 103
+2017-09-28 10:43:48,338 INFO Writing power sync successful, @ processID 104
+2017-09-28 10:43:52,940 INFO ==================== Test Begins ====================
+2017-09-28 10:43:52,940 INFO < execute voltage reading >
+2017-09-28 10:43:53,131 INFO Line 1: 210.3
+2017-09-28 10:43:53,131 INFO Line 2: 210.3
+2017-09-28 10:43:53,132 INFO Line 3: 208.7
+2017-09-28 10:43:53,132 INFO Frequency: 64
+2017-09-28 10:43:53,132 INFO 24V supply: 24.11
+2017-09-28 10:43:53,132 INFO 12V supply: 12.14
+2017-09-28 10:43:53,132 INFO 5V supply: 4.92
+2017-09-28 10:43:53,132 INFO 3.3V supply: 3.25
+2017-09-28 10:43:53,132 INFO < execute ZDBF test >
+2017-09-28 10:43:53,227 INFO Homing sequence successful, @ processID 2
+2017-09-28 10:43:53,322 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:44:04,525 INFO ZDBF: -52
+2017-09-28 10:44:04,621 INFO < execute level motor test >
+2017-09-28 10:44:06,713 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:44:06,809 INFO Adjusting level motor up, gap target (mm): 4.912
+2017-09-28 10:44:27,216 INFO Level motor installed correctly
+2017-09-28 10:44:27,216 INFO Reset level motor to inital position
+2017-09-28 10:44:48,085 INFO Adjusting level motor down, gap target (mm): 8.412
+2017-09-28 10:45:19,434 INFO Sensor Reading {position: 6.412, upper range: 4.8, lower range: 8.493}
+2017-09-28 10:45:19,436 INFO Resetting platen level
+2017-09-28 10:45:26,946 INFO ZDBF: -91, direction: -1, adjustment: 4791
+2017-09-28 10:45:30,318 INFO adjusting level motor up
+2017-09-28 10:45:30,796 INFO inital: 4937, target: 9728
+2017-09-28 10:45:58,450 INFO adjustment completed
+2017-09-28 10:46:05,359 INFO ZDBF: -76, direction: -1, adjustment: 1474
+2017-09-28 10:46:08,732 INFO adjusting level motor up
+2017-09-28 10:46:09,210 INFO inital: 9819, target: 11293
+2017-09-28 10:46:15,292 INFO adjustment completed
+2017-09-28 10:46:22,778 INFO ZDBF: -58, direction: -1, adjustment: 367
+2017-09-28 10:46:26,174 INFO adjusting level motor up
+2017-09-28 10:46:26,653 INFO inital: 11382, target: 11749
+2017-09-28 10:46:29,378 INFO adjustment completed
+2017-09-28 10:46:36,848 INFO ZDBF: -55, direction: 0, adjustment: 0
+2017-09-28 10:46:36,943 INFO New ZDBF: -55
+2017-09-28 10:46:36,944 INFO < calculate results >
+2017-09-28 10:46:36,944 INFO level motor position in range
+2017-09-28 10:46:36,944 INFO upper travel limit within range of 4.912
+2017-09-28 10:46:36,944 INFO lower travel limit within range of 8.412
+2017-09-28 10:46:36,944 INFO ==================== Test Completed ====================
+2017-09-28 10:46:36,944 INFO < Test Results >
+2017-09-28 10:46:36,944 INFO Line 1 (V):     210.3
+2017-09-28 10:46:36,944 INFO Line 2 (V):     210.3
+2017-09-28 10:46:36,944 INFO Line 3 (V):     208.7
+2017-09-28 10:46:36,944 INFO 24V supply (V):  24.11
+2017-09-28 10:46:36,944 INFO 12V supply (V):  12.14
+2017-09-28 10:46:36,944 INFO 5V supply (V):   4.92
+2017-09-28 10:46:36,944 INFO 3.3V supply (V): 3.25
+2017-09-28 10:46:36,944 INFO Level motor position (mm):    6.412
+2017-09-28 10:46:36,944 INFO upper travel range (mm):      4.8
+2017-09-28 10:46:36,944 INFO lower travel range (mm):      8.493
+2017-09-28 10:46:36,944 INFO ZDBF: -55 
+2017-09-28 10:46:36,944 INFO < Equipment passed all test requirements >
+2017-09-28 10:46:59,355 INFO Script running on windows platform, LCD disabled
+2017-09-28 10:46:59,355 INFO ==================== Load Settings ====================
+2017-09-28 10:46:59,549 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/29.json
+2017-09-28 10:46:59,551 INFO McDonald Electric Test
+2017-09-28 10:46:59,773 INFO Writing motionPID successful, @ processID 101
+2017-09-28 10:47:00,190 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 10:47:00,572 INFO Writing level sensors successful, @ processID 103
+2017-09-28 10:47:00,668 INFO Writing power sync successful, @ processID 104
+2017-09-28 10:47:03,736 INFO ==================== Test Begins ====================
+2017-09-28 10:47:03,736 INFO < execute voltage reading >
+2017-09-28 10:47:03,928 INFO Line 1: 211.8
+2017-09-28 10:47:03,928 INFO Line 2: 210.3
+2017-09-28 10:47:03,928 INFO Line 3: 209.8
+2017-09-28 10:47:03,928 INFO Frequency: 66
+2017-09-28 10:47:03,928 INFO 24V supply: 24.17
+2017-09-28 10:47:03,930 INFO 12V supply: 12.15
+2017-09-28 10:47:03,930 INFO 5V supply: 4.95
+2017-09-28 10:47:03,930 INFO 3.3V supply: 3.26
+2017-09-28 10:47:03,930 INFO < execute ZDBF test >
+2017-09-28 10:47:04,025 INFO Homing sequence successful, @ processID 2
+2017-09-28 10:47:04,119 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:47:17,095 INFO ZDBF: -72
+2017-09-28 10:47:17,191 INFO < execute level motor test >
+2017-09-28 10:47:19,285 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:47:19,381 INFO Adjusting level motor up, gap target (mm): 3.967
+2017-09-28 10:47:40,921 INFO Level motor installed correctly
+2017-09-28 10:47:40,921 INFO Reset level motor to inital position
+2017-09-28 10:48:03,546 INFO Adjusting level motor down, gap target (mm): 7.467
+2017-09-28 10:48:29,513 INFO Sensor Reading {position: 5.467, upper range: 3.85, lower range: 7.577}
+2017-09-28 10:48:29,513 INFO Resetting platen level
+2017-09-28 10:48:38,190 INFO ZDBF: -95, direction: -1, adjustment: 1413
+2017-09-28 10:48:41,576 INFO adjusting level motor up
+2017-09-28 10:48:42,056 INFO inital: 7930, target: 9343
+2017-09-28 10:48:49,289 INFO adjustment completed
+2017-09-28 10:48:57,940 INFO ZDBF: -96, direction: -1, adjustment: 1474
+2017-09-28 10:49:01,328 INFO adjusting level motor up
+2017-09-28 10:49:01,808 INFO inital: 9436, target: 10910
+2017-09-28 10:49:08,272 INFO adjustment completed
+2017-09-28 10:49:16,348 INFO ZDBF: -90, direction: -1, adjustment: 1105
+2017-09-28 10:49:19,720 INFO adjusting level motor up
+2017-09-28 10:49:20,198 INFO inital: 10968, target: 12073
+2017-09-28 10:49:25,704 INFO adjustment completed
+2017-09-28 10:49:33,780 INFO ZDBF: -91, direction: -1, adjustment: 1167
+2017-09-28 10:49:37,168 INFO adjusting level motor up
+2017-09-28 10:49:37,648 INFO inital: 12197, target: 13364
+2017-09-28 10:49:42,961 INFO adjustment completed
+2017-09-28 10:49:51,677 INFO ZDBF: -85, direction: -1, adjustment: 798
+2017-09-28 10:49:55,065 INFO adjusting level motor up
+2017-09-28 10:49:55,545 INFO inital: 13422, target: 14220
+2017-09-28 10:50:00,283 INFO adjustment completed
+2017-09-28 10:50:08,967 INFO ZDBF: -83, direction: -1, adjustment: 675
+2017-09-28 10:50:12,355 INFO adjusting level motor up
+2017-09-28 10:50:12,834 INFO inital: 14343, target: 15018
+2017-09-28 10:50:16,710 INFO adjustment completed
+2017-09-28 10:50:25,385 INFO ZDBF: -70, direction: 0, adjustment: 0
+2017-09-28 10:50:25,482 INFO New ZDBF: -70
+2017-09-28 10:50:25,482 INFO < calculate results >
+2017-09-28 10:50:25,482 INFO level motor position in range
+2017-09-28 10:50:25,482 INFO upper travel limit within range of 3.967
+2017-09-28 10:50:25,482 INFO lower travel limit within range of 7.467
+2017-09-28 10:50:25,482 INFO ==================== Test Completed ====================
+2017-09-28 10:50:25,482 INFO < Test Results >
+2017-09-28 10:50:25,482 INFO Line 1 (V):     211.8
+2017-09-28 10:50:25,483 INFO Line 2 (V):     210.3
+2017-09-28 10:50:25,483 INFO Line 3 (V):     209.8
+2017-09-28 10:50:25,483 INFO 24V supply (V):  24.17
+2017-09-28 10:50:25,483 INFO 12V supply (V):  12.15
+2017-09-28 10:50:25,483 INFO 5V supply (V):   4.95
+2017-09-28 10:50:25,483 INFO 3.3V supply (V): 3.26
+2017-09-28 10:50:25,483 INFO Level motor position (mm):    5.467
+2017-09-28 10:50:25,483 INFO upper travel range (mm):      3.85
+2017-09-28 10:50:25,483 INFO lower travel range (mm):      7.577
+2017-09-28 10:50:25,483 INFO ZDBF: -70 
+2017-09-28 10:50:25,483 INFO < Equipment passed all test requirements >
+2017-09-28 10:51:08,427 INFO Script running on windows platform, LCD disabled
+2017-09-28 10:51:08,428 INFO ==================== Load Settings ====================
+2017-09-28 10:51:08,625 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/29.json
+2017-09-28 10:51:08,625 INFO McDonald Electric Test
+2017-09-28 10:51:08,834 INFO Writing motionPID successful, @ processID 101
+2017-09-28 10:51:09,217 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 10:51:09,601 INFO Writing level sensors successful, @ processID 103
+2017-09-28 10:51:09,696 INFO Writing power sync successful, @ processID 104
+2017-09-28 10:51:12,285 INFO ==================== Test Begins ====================
+2017-09-28 10:51:12,285 INFO < execute voltage reading >
+2017-09-28 10:51:12,476 INFO Line 1: 211.3
+2017-09-28 10:51:12,476 INFO Line 2: 207.7
+2017-09-28 10:51:12,476 INFO Line 3: 211.8
+2017-09-28 10:51:12,477 INFO Frequency: 66
+2017-09-28 10:51:12,477 INFO 24V supply: 24.17
+2017-09-28 10:51:12,477 INFO 12V supply: 12.15
+2017-09-28 10:51:12,477 INFO 5V supply: 4.95
+2017-09-28 10:51:12,477 INFO 3.3V supply: 3.26
+2017-09-28 10:51:12,477 INFO < execute ZDBF test >
+2017-09-28 10:51:12,572 INFO Homing sequence successful, @ processID 2
+2017-09-28 10:51:12,668 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:52:19,607 INFO Script running on windows platform, LCD disabled
+2017-09-28 10:52:19,607 INFO ==================== Load Settings ====================
+2017-09-28 10:52:19,792 INFO C:/Users/wa68891/Documents/GitHub/EOL/hwcfg/29.json
+2017-09-28 10:52:19,792 INFO McDonald Electric Test
+2017-09-28 10:52:19,999 INFO Writing motionPID successful, @ processID 101
+2017-09-28 10:52:20,398 INFO Writing heaterPID successful, @ processID 102
+2017-09-28 10:52:20,782 INFO Writing level sensors successful, @ processID 103
+2017-09-28 10:52:20,878 INFO Writing power sync successful, @ processID 104
+2017-09-28 10:52:22,220 INFO ==================== Test Begins ====================
+2017-09-28 10:52:22,220 INFO < execute voltage reading >
+2017-09-28 10:52:22,413 INFO Line 1: 211.8
+2017-09-28 10:52:22,413 INFO Line 2: 210.3
+2017-09-28 10:52:22,413 INFO Line 3: 212.3
+2017-09-28 10:52:22,413 INFO Frequency: 66
+2017-09-28 10:52:22,413 INFO 24V supply: 24.17
+2017-09-28 10:52:22,413 INFO 12V supply: 12.15
+2017-09-28 10:52:22,413 INFO 5V supply: 4.96
+2017-09-28 10:52:22,413 INFO 3.3V supply: 3.26
+2017-09-28 10:52:22,413 INFO < execute ZDBF test >
+2017-09-28 10:52:22,507 INFO Homing sequence successful, @ processID 2
+2017-09-28 10:52:22,604 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:52:30,226 INFO ZDBF: -71
+2017-09-28 10:52:30,322 INFO < execute level motor test >
+2017-09-28 10:52:32,414 INFO Writing setpoint reg 0 to 0
+2017-09-28 10:52:32,510 INFO Adjusting level motor up, gap target (mm): 3.969
+2017-09-28 10:52:54,049 INFO Level motor installed correctly
+2017-09-28 10:52:54,049 INFO Reset level motor to inital position
+2017-09-28 10:53:16,676 INFO Adjusting level motor down, gap target (mm): 7.469
+2017-09-28 10:53:42,625 INFO Sensor Reading {position: 5.469, upper range: 3.847, lower range: 7.582}
+2017-09-28 10:53:42,625 INFO Resetting platen level
+2017-09-28 10:53:50,711 INFO ZDBF: -96, direction: -1, adjustment: 3069
+2017-09-28 10:53:54,098 INFO adjusting level motor up
+2017-09-28 10:53:54,578 INFO inital: 7914, target: 10983
+2017-09-28 10:54:07,562 INFO adjustment completed
+2017-09-28 10:54:15,655 INFO ZDBF: -92, direction: -1, adjustment: 2580
+2017-09-28 10:54:19,042 INFO adjusting level motor up
+2017-09-28 10:54:19,523 INFO inital: 11041, target: 13621
+2017-09-28 10:54:30,121 INFO adjustment completed
+2017-09-28 10:54:38,788 INFO ZDBF: -86, direction: -1, adjustment: 921
+2017-09-28 10:54:42,176 INFO adjusting level motor up
+2017-09-28 10:54:42,654 INFO inital: 13688, target: 14609
+2017-09-28 10:54:47,681 INFO adjustment completed
+2017-09-28 10:54:56,364 INFO ZDBF: -77, direction: -1, adjustment: 367
+2017-09-28 10:54:59,750 INFO adjusting level motor up
+2017-09-28 10:55:00,230 INFO inital: 14737, target: 15104
+2017-09-28 10:55:03,052 INFO adjustment completed
+2017-09-28 10:55:11,752 INFO ZDBF: -68, direction: 0, adjustment: 0
+2017-09-28 10:55:11,848 INFO New ZDBF: -68
+2017-09-28 10:55:11,848 INFO < calculate results >
+2017-09-28 10:55:11,848 INFO level motor position in range
+2017-09-28 10:55:11,848 INFO upper travel limit within range of 3.969
+2017-09-28 10:55:11,848 INFO lower travel limit within range of 7.469
+2017-09-28 10:55:11,848 INFO ==================== Test Completed ====================
+2017-09-28 10:55:11,848 INFO < Test Results >
+2017-09-28 10:55:11,848 INFO Line 1 (V):     211.8
+2017-09-28 10:55:11,848 INFO Line 2 (V):     210.3
+2017-09-28 10:55:11,848 INFO Line 3 (V):     212.3
+2017-09-28 10:55:11,848 INFO 24V supply (V):  24.17
+2017-09-28 10:55:11,848 INFO 12V supply (V):  12.15
+2017-09-28 10:55:11,848 INFO 5V supply (V):   4.96
+2017-09-28 10:55:11,848 INFO 3.3V supply (V): 3.26
+2017-09-28 10:55:11,848 INFO Level motor position (mm):    5.469
+2017-09-28 10:55:11,848 INFO upper travel range (mm):      3.847
+2017-09-28 10:55:11,848 INFO lower travel range (mm):      7.582
+2017-09-28 10:55:11,848 INFO ZDBF: -68 
+2017-09-28 10:55:11,848 INFO < Equipment passed all test requirements >

@@ -93,7 +93,7 @@ class myConfig(object):
     logger = ''
     display = LCD.display()
     device = 1
-    restTime = 0.1
+    restTime = 0.05
     timeout = 30
     encoder_conv = 0.00049126  # encoder to inch conversion, update from json
     linuxPath = os.path.dirname(__file__)
@@ -463,6 +463,7 @@ def main():
     if config.test_enable[5]:
         logger.info("< execute ZDBF test >")
         config.display.fb_println("< # 6 execute ZDBF test >", 1)
+        motor.homing(processID)
         motor.setpoint(0)
         time.sleep(2)
         config.ZDBF, config.gap = pl.calZDBF()
