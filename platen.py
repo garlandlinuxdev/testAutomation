@@ -199,7 +199,7 @@ class sensors():
             self.moveLvlMotor(1, direction)
             startTime = time.time()
             self.logger.info("inital: %r, target: %r" %(initial[0], target))
-            self.display.fb_println("inital: %r, target: %r" %(initial[0], target), 0)
+            #self.display.fb_println("inital: %r, target: %r" %(initial[0], target), 0)
             while read[0] <= target and commonFX.timeCal(startTime) < self.lvlMotorTime:
                 read = self.com.readReg(processID, 460, 1)
             self.moveLvlMotor(0, 0)
@@ -215,7 +215,7 @@ class sensors():
             self.moveLvlMotor(1, direction)
             startTime = time.time()
             self.logger.info("inital: %r, target: %r" % (initial[0], target))
-            self.display.fb_println("inital: %r, target: %r" % (initial[0], target), 0)
+            #self.display.fb_println("inital: %r, target: %r" % (initial[0], target), 0)
             while read[0] >= target and commonFX.timeCal(startTime) < self.lvlMotorTime:
                 read = self.com.readReg(processID, 460, 1)
             self.moveLvlMotor(0, 0)

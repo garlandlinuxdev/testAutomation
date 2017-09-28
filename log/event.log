@@ -1052,3 +1052,4 @@
 2017-09-28 10:55:11,848 INFO lower travel range (mm):      7.582
 2017-09-28 10:55:11,848 INFO ZDBF: -68 
 2017-09-28 10:55:11,848 INFO < Equipment passed all test requirements >
+2017-09-28 11:22:58,269 INFO FTDI USB cable not found, please connect cable and restart
