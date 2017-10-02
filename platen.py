@@ -321,17 +321,33 @@ class sensors():
         self.logger.info("Sensor Reading {position: %r, upper range: %r, lower range: %r}" % (
             round(position, 3), round(upperLimit, 3), round(lowerLimit, 3)))
 
+        # reset motor to inital position
+        self.logger.info("Reset level motor to inital position")
+        self.display.fb_println("Reset level motor to inital position", 0)
+        sensorReading = self.readSensor(processID)
+        self.moveLvlMotor(1, -1)
+        startTime = time.time()
+        while sensorReading[0] < sample[0] and commonFX.timeCal(startTime) < self.lvlMotorTime:
+            sensorReading = self.readSensor(processID)
+            time.sleep(0.5)
+        self.moveLvlMotor(0, 0)
+        if commonFX.timeCal(startTime) > self.lvlMotorTime:
+            self.logger.info("level motor did not reach target, timed out at %r (sec)" % self.lvlMotorTime)
+            self.display.fb_println("level motor did not reach target >%r (sec)" % self.lvlMotorTime, 1)
+
         # reset
-        self.logger.info("Resetting platen level")
-        self.display.fb_println("Resetting platen level", 0)
+        self.logger.info("Check ZDBF range")
+        self.display.fb_println("Check ZDBF range", 0)
         newZDBF, direction, adjustment = self.resetGAP(config)
 
-        while direction != 0:
+        retry = 0
+        while direction != 0 and retry <= 4:
             self.resetMode(processID)
             time.sleep(2)
             self.autolevel(processID, direction, adjustment)
             newZDBF, direction, adjustment = self.resetGAP(config)
-
+            retry += 1
+            
         self.resetMode(processID)
         self.logger.info("New ZDBF: %r" % newZDBF)
 
