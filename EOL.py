@@ -10,7 +10,6 @@ from sys import platform
 
 FB_Y = 10  # global Y position of LCD, update using subfile module
 
-
 def setup():
     # Configure Hardware Overwrite
     # com_port = 'COM30'  # For windows
@@ -88,6 +87,39 @@ def testRequired(config):
         config.display.fb_println("Grill Type %r not found" % config.grillType)
         os._exit(1)
 
+def testCase(config, num):
+    if num == 0:
+        config.logger.info("< Execute custom test only >")
+        config.display.fb_println("< Execute custom test only >", 0)
+        return config.json_test_config
+    if num == 1:
+        config.logger.info("< Execute switch test only >")
+        config.display.fb_println("< Execute switch test only >", 0)
+        return [1, 0, 0, 0, 0, 0, 0, 1]
+    if num == 2:
+        config.logger.info("< Execute kill switch test only >")
+        config.display.fb_println("< Execute kill switch test only >", 0)
+        return [0, 1, 0, 0, 0, 0, 0, 1]
+    if num == 3:
+        config.logger.info("< Execute magnet drift test only >")
+        config.display.fb_println("< Execute magnet drift test only >", 0)
+        return [0, 0, 1, 0, 0, 0, 0, 1]
+    if num == 4:
+        config.logger.info("< Execute homing test only >")
+        config.display.fb_println("< Execute homing test only >", 0)
+        return [0, 0, 0, 1, 0, 0, 0, 1]
+    if num == 5:
+        config.logger.info("< Execute sensors test only >")
+        config.display.fb_println("< Execute sensors test only >", 0)
+        return [0, 0, 0, 0, 1, 0, 0, 1]
+    if num == 6:
+        config.logger.info("< Execute ZDBF test only >")
+        config.display.fb_println("< Execute ZDBF test only >", 0)
+        return [0, 0, 0, 0, 0, 1, 0, 1]
+    if num == 7:
+        config.logger.info("< Execute level motor test only >")
+        config.display.fb_println("< Execute level motor test only >", 0)
+        return [0, 0, 0, 0, 0, 1, 1, 1]
 
 class myConfig(object):
     logger = ''
@@ -127,7 +159,7 @@ class myConfig(object):
     killsw_enc = [0, 0]
     magnet = [0, 0, 0]
     sensor = [0, 0]
-    ZDBF = 0
+    ZDBF = -0
     gap = [0, 0]
     grill_plate = 0
     error = [0, 0, 0, 0, 0, 0, 0, 0]
@@ -213,7 +245,7 @@ class myConfig(object):
         # self.display.fb_println("5V supply (V):   %r" % (float(self.supply_voltage[2]) / 100), 0)
         # self.display.fb_println("3.3V supply (V): %r" % (float(self.supply_voltage[3]) / 100), 0)
 
-        if self.test_enable[0] == 1:
+        if self.test_enable[0] == 1 or self.test_enable[1] == 1:
             self.logger.info("Time elapse upwards (sec):    %r" % round(self.time_elapse[0], 3))
             self.logger.info("Time elapse downwards (sec):  %r" % round(self.time_elapse[1], 3))
             self.display.fb_println("Time elapse upwards (sec):    %r" % round(self.time_elapse[0], 3), 0)
@@ -291,7 +323,7 @@ class myConfig(object):
     def calculate(self):
         error = [0, 0, 0, 0, 0, 0, 0, 0]
 
-        if self.test_enable[0] == 1:
+        if self.test_enable[0] == 1 or self.test_enable[1] == 1:
             home_sw = commonFX.encToInch(self.switch[1], self.encoder_conv)
             grill_plate = home_sw - commonFX.encToInch(self.gap[0])
             lift_sw = home_sw - commonFX.encToInch(self.switch[0], self.encoder_conv)
@@ -353,6 +385,7 @@ class myConfig(object):
 
 def main():
     # main starts here
+    FB_X = 280
     config = myConfig()
     if config.display.checkOS() == True:
         config.display.fb_clear()
@@ -415,15 +448,22 @@ def main():
     pl.update(logger, com, config)
 
     config.display.fb_long_print("Press green button to execute custom test", 0)
+    config.display.fb_long_print("Test selection: ", 0)
     button = com.readCoil(processID, 30, 1)
     startTime = time.time()
+    counter = -1
+    config.display.reverseLine()
     while button != 0 and commonFX.timeCal(startTime) < 10:
         button = com.readCoil(processID, 30, 1)
         if button[0] == 0:
-            config.display.fb_long_print("< execute customized test sequence >", 1)
+            counter += 1
+            config.display.fb_printX("%r " %counter, FB_X, 1)
+            FB_X += 40
+            #config.display.fb_long_print("< execute customized test sequence >", 1)
             com.setCoil(processID, 30, [1])
-            config.test_enable = config.json_test_config
-            break
+    config.display.nextLine()
+    if counter != -1 and counter <= 7:
+        config.test_enable = testCase(config, counter)
 
     # seek upper switch
     processID = 1
@@ -457,6 +497,7 @@ def main():
     if config.test_enable[4]:
         logger.info("< execute sensors gap test >")
         config.display.fb_println("< # 5 execute sensors gap test >", 1)
+        motor.homing(processID)
         motor.setpoint(0)
         time.sleep(2)
         config.sensor = pl.sensorGap()
@@ -470,6 +511,7 @@ def main():
     if config.test_enable[6]:
         logger.info("< execute level motor test >")
         config.display.fb_println("< # 7 execute level motor test >", 1)
+        motor.homing(processID)
         time.sleep(2)
         config.motor_range, config.motor_limit, config.newZDBF = pl.motorRangeTest(config)
     if config.test_enable[7]:

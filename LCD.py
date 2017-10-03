@@ -33,6 +33,34 @@ class display():
     def updateFB_Y(self):
         subfile.storage(self.FB_Y) # update global Y position
 
+    def reverseLine(self):
+        subfile.storage(self.FB_Y - 18)  # update global Y position
+
+    def nextLine(self):
+        self.FB_Y = self.FB_Y + 18
+        self.updateFB_Y()
+
+    def fb_printX(self, msg, FB_X, color):
+        self.checkOS()
+        if self.myPlatform == False:
+            print msg
+            return
+
+        # Print a line on framebuffer.
+        # '-x' Default is 10, 18 pixels = 16 + 2 = Font_Height + Line_Spacing.
+        # y = 26 lines x = 46 characters
+        self.FB_Y = subfile.getStorage()  # get global Y position
+
+        if color == 1:
+            os.popen(self.FBUTIL + ' -y ' + str(self.FB_Y ) + ' -x ' + str(FB_X) + ' -r ' + 'red ' + ' ' + r"""%r""" % msg)
+        else:
+            os.popen(self.FBUTIL + ' -y ' + str(self.FB_Y ) + ' -x ' + str(FB_X) + ' ' + r"""%r""" % msg)
+
+        if self.FB_Y >= self.max_line:
+            # max lines = 26 * 18 pixels = 468
+            time.sleep(self.delay)
+            self.fb_clear()
+
     def fb_println(self, msg, color):
         self.checkOS()
         if self.myPlatform == False:

@@ -1,12 +1,12 @@
 {
 	"custom_test":{
-		"switch": 0,
-		"kill_switch": 0,
+		"switch": 1,
+		"kill_switch": 1,
 		"magnet_drift": 0,
-		"homing": 0,
+		"homing": 1,
 		"sensors": 0,
-		"ZDBF": 1,
-		"level_motor": 1,
+		"ZDBF": 0,
+		"level_motor": 0,
 		"results": 1
 	},
 	"Pearl":{
@@ -24,9 +24,10 @@
 			"movement_trigger": [ 150, 250 ],
 			"offset_required": [ 1.5 , 2 ],
 			"sensor_to_enc": [ 46 , 80 ],
-			"ZDBF_limit": 4,
-			"ZDBF_limit_offset": 2,
-			"ZDBF_conv_correction": 3
+			"ZDBF_limit": 6,
+			"ZDBF_limit_offset": 4,
+			"ZDBF_conv_correction": 2,
+			"autolevel_retry": 3
 		},
 		
 		"actuator":{
@@ -67,7 +68,8 @@
 			"sensor_to_enc": [ 42 , 60 ],
 			"ZDBF_limit": 8,
 			"ZDBF_limit_offset": 5,
-			"ZDBF_conv_correction": 0.8
+			"ZDBF_conv_correction": 0.8,
+			"autolevel_retry": 3
 		},
 		
 		"actuator":{

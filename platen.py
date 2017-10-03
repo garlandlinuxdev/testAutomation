@@ -23,6 +23,7 @@ class sensors():
     ZDBF_limit = 5  # differences required for adjustment, between target ZDBF to current ZDBF
     ZDBF_limit_offset = 5 # offset limits for reduced adjustment conversion
     ZDBF_conv_correction = 0.5 # multipler for adjustment conversion
+    autolevel_retry = 3 # max number of auto level retry
 
     def update(self, logger, com, config):
         self.logger = logger
@@ -38,6 +39,7 @@ class sensors():
         self.ZDBF_limit = config.platen_config[8]
         self.ZDBF_limit_offset = config.platen_config[9]
         self.ZDBF_conv_correction = config.platen_config[10]
+        self.autolevel_retry = config.platen_config[11]
 
     def readSensor(self, processID):
         # [rear, front]
@@ -86,6 +88,9 @@ class sensors():
         processID = 303
         check = 0
         status = 1
+        pos = self.com.readReg(processID, 0, 1)
+        if commonFX.signedInt(pos[0]) != -32768:
+            time.sleep(7)
         while check != 2:
 
             read = self.readSensor(processID)
@@ -133,11 +138,18 @@ class sensors():
 
     def calZDBF(self):
         processID = 305
+        self.resetMode(processID)
         self.com.setReg(processID, 255, [10])
         read = self.com.readReg(processID, 255, 1)
-        while read[0] != 14:
+        startTime = time.time()
+        while read[0] != 14 and commonFX.timeCal(startTime) < self.lvlMotorTime/2:
             time.sleep(0.5)
             read = self.com.readReg(processID, 255, 1)
+        if commonFX.timeCal(startTime) > self.lvlMotorTime/2:
+            self.logger.info("Unable to capture ZDBF")
+            self.display.fb_println("Unable to capture ZDBF", 1)
+            os._exit(1)
+
         gap = self.com.readReg(processID, 5, 2)
         ZDBF = gap[0] - gap[1]
         self.logger.info("ZDBF: " + str(ZDBF))
@@ -147,7 +159,11 @@ class sensors():
 
     def resetGAP(self, config):
         processID = 306
-        target = config.ZDBF
+        if config.ZDBF == -0:
+            target, gap = self.calZDBF()
+        else:
+            target = config.ZDBF
+
         adjustment = 0
         self.com.setReg(processID, 255, [10])
         read = self.com.readReg(processID, 255, 1)
@@ -230,8 +246,11 @@ class sensors():
         processID = 307
         sample = []
         motor_range = [0, 0, 0]
-
+        self.resetMode(processID)
         self.setpoint(processID, 0)
+        pos = self.com.readReg(processID, 0, 1)
+        if commonFX.signedInt(pos[0]) != -32768:
+            time.sleep(7)
         sensorReading = self.readSensor(processID)
         motor_range[0] = sensorReading[0]  # current position
         sample.append(sensorReading[0])  # initial
@@ -336,18 +355,22 @@ class sensors():
             self.display.fb_println("level motor did not reach target >%r (sec)" % self.lvlMotorTime, 1)
 
         # reset
+        self.resetMode(processID)
         self.logger.info("Check ZDBF range")
         self.display.fb_println("Check ZDBF range", 0)
         newZDBF, direction, adjustment = self.resetGAP(config)
 
-        retry = 0
-        while direction != 0 and retry <= 4:
+        retry = 1
+        while direction != 0 and retry <= self.autolevel_retry:
             self.resetMode(processID)
             time.sleep(2)
             self.autolevel(processID, direction, adjustment)
             newZDBF, direction, adjustment = self.resetGAP(config)
+            if retry > self.autolevel_retry:
+                self.logger.info("Max auto level retry reached, > %r" % retry)
+                self.display.fb_println("Max auto level retry reached, > %r" % retry, 1)
             retry += 1
-            
+
         self.resetMode(processID)
         self.logger.info("New ZDBF: %r" % newZDBF)
 
