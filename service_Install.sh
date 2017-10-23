@@ -24,7 +24,9 @@ if [ -e $SCRIPT_DIR/$SERVICE ]; then
 	dos2unix $SCRIPT_DIR/$RUN_SCRIPT
 	dos2unix $SCRIPT_DIR/$SERVICE
 	cp $SCRIPT_DIR/$SERVICE $LIB_DIR/
-	chkconfig -add $SERVICE
+	chkconfig stinger off
+	chkconfig stinger-factory-reset off
+	chkconfig --add $SERVICE
 else
 	echo "No main or service found"
 fi

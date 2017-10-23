@@ -1,0 +1,13 @@
+auto lo
+iface lo inet loopback
+auto eth0
+iface eth0 inet static
+address 192.168.101.20
+network 192.168.0.0
+netmask 255.255.255.0
+up route add default gw 192.168.101.1
+dns-nameservers 75.75.75.75 8.8.8.8
+auto wlan0
+iface wlan0 inet dhcp
+wpa-ssid "testing50"
+wpa-psk "123456789"

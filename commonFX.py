@@ -14,6 +14,10 @@ def baumerToMM(arg):
     mm = 10 - ((abs(arg) * 10.0) / 32767)
     return mm
 
+def baumerToThou(arg):
+    thou = baumerToMM(arg) * 39.3701
+    return thou
+
 def gapToMM(arg):
     mm = round(((abs(arg) * 10.0) / 32767), 3)
     return mm

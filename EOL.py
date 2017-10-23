@@ -4,11 +4,12 @@
 __author__ = "Adrian Wong"
 
 import modbus_tk.modbus_rtu as modbus_rtu
-import serial, os, logging, modbus, time
+import serial, os, logging, modbus, time, csv
 import jsonToFile, actuator, voltage, platen, commonFX, LCD
 from sys import platform
 
 FB_Y = 10  # global Y position of LCD, update using subfile module
+
 
 def setup():
     # Configure Hardware Overwrite
@@ -87,6 +88,7 @@ def testRequired(config):
         config.display.fb_println("Grill Type %r not found" % config.grillType)
         os._exit(1)
 
+
 def testCase(config, num):
     if num == 0:
         config.logger.info("< Execute custom test only >")
@@ -121,6 +123,7 @@ def testCase(config, num):
         config.display.fb_println("< Execute level motor test only >", 0)
         return [0, 0, 0, 0, 0, 1, 1, 1]
 
+
 class myConfig(object):
     logger = ''
     display = LCD.display()
@@ -135,9 +138,11 @@ class myConfig(object):
     hwcfg = '/hwcfg/'  # library of all json configurations
     usbPath = '/media/usb0/'
     usb_logpath = 'log/'  # usb file path
+    excel = 'log.csv'
     logfile = linuxPath + logPath
     settingsFile = linuxPath + sysPath + "settings.json"
     log = "event.log"
+    test_completed = -1
     grillType = 0  # load from SIB
     jsonFile = linuxPath + hwcfg + str(grillType) + ".json"
     loadReg_enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors]
@@ -171,7 +176,7 @@ class myConfig(object):
         self.jsonFile = self.linuxPath + self.hwcfg + str(grillType) + ".json"
 
     def updateSettings(self):
-
+        timestr = time.strftime("%Y%m%d-%H%M%S")
         if platform == "linux" or platform == "linux2":
             # linux
             self.myPlatform = True
@@ -189,6 +194,12 @@ class myConfig(object):
             return
         if os.path.exists(self.linuxPath + self.sysPath + 'image') == True:
             os.popen('rm ' + self.linuxPath + self.sysPath + 'image')
+        if os.path.exists(self.usbPath + self.excel) == True:
+            if os.path.exists(self.logfile + self.excel) == True:
+                self.logger.info("Previous log.csv file copied to USB path...")
+                self.display.fb_long_print("Previous log.csv file copied to USB path...", 0)
+                os.popen('mv ' + self.logfile + self.excel + ' ' + self.usbPath + timestr + '-' + self.excel)
+                os.popen('cp ' + self.usbPath + self.excel + ' ' + self.logfile + self.excel)
         if os.path.exists(self.usbPath + 'settings.json') == True:
             os.popen('cp ' + ' ' + self.usbPath + 'settings.json' + ' ' + self.settingsFile)
             self.logger.info("EOL settings updated...")
@@ -208,7 +219,7 @@ class myConfig(object):
         timestr = time.strftime("%Y%m%d-%H%M%S")
         if os.path.isfile(self.logfile + self.log) == True:
             os.popen('mv ' + self.logfile + self.log + ' ' + self.linuxPath + self.logPath + timestr + '-' + str(
-                    self.grillType) + '.log')
+                self.grillType) + '.log')
 
         if os.path.exists(self.usbPath + self.usb_logpath) == True:
             try:
@@ -224,7 +235,43 @@ class myConfig(object):
                 pass
             self.display.fb_println("USB log path not found", 0)
             os.popen('mv ' + self.logfile + self.log + ' ' + self.linuxPath + self.logPath + timestr + '-' + str(
-                    self.grillType) + '.log')
+                self.grillType) + '.log')
+
+    def writeToCSV(self):
+        datestr = time.strftime('%Y/%m/%d')
+        timestr = time.strftime('%H:%M:%S')
+        with open(self.logfile + self.excel, 'a') as test:
+            fieldnames = (
+                'date', 'time', 'grill_type', 'linel', 'line2', 'line3', '24supply', '12supply', '5supply', '3_3supply',
+                'timeUpwards', 'timeDownwards', 'grill_plate', 'lift_sw', 'home_sw', 'up_killsw', 'down_killsw',
+                'dist_up', 'dist_dwn', 'max_drift', 'rear_sensor', 'front_sensor', 'zdbf', 'lvl_motor_pos',
+                'lvl_motor_upper_range', 'lvl_motor_lower_range', 'new_zdbf', 'test_completed')
+            targetWriter = csv.DictWriter(test, delimiter=',', lineterminator='\n', fieldnames=fieldnames)
+            headers = dict((n, n) for n in fieldnames)
+            #targetWriter.writerow(headers)
+            targetWriter.writerow(
+                {'date': datestr, 'time': timestr, 'grill_type': self.grillType,
+                 'linel': str(self.supply_voltage[4] / 10.0),
+                 'line2': str(self.supply_voltage[5] / 10.0),
+                 'line3': str(self.supply_voltage[6] / 10.0),
+                 '24supply': str(float(self.supply_voltage[0]) / 100),
+                 '12supply': str(float(self.supply_voltage[1]) / 100),
+                 '5supply': str(float(self.supply_voltage[2]) / 100),
+                 '3_3supply': str(float(self.supply_voltage[3]) / 100),
+                 'timeUpwards': str(round(self.time_elapse[0], 3)), 'timeDownwards': str(round(self.time_elapse[1], 3)),
+                 'grill_plate': str(self.grill_plate), 'lift_sw': str(self.switch[0]), 'home_sw': str(self.switch[1]),
+                 'up_killsw': str(self.killsw_enc[0]), 'down_killsw': str(self.killsw_enc[1]),
+                 'dist_up': str(self.magnet[0]), 'dist_dwn': str(self.magnet[1]), 'max_drift': str(self.magnet[2]),
+                 'rear_sensor': str(round(commonFX.baumerToThou(self.sensor[0]), 3)),
+                 'front_sensor': str(round(commonFX.baumerToThou(self.sensor[1]), 3)),
+                 'zdbf': str(self.ZDBF),
+                 'lvl_motor_pos': str(round(self.motor_limit[0], 3)),
+                 'lvl_motor_upper_range': str(round(self.motor_limit[1], 3)),
+                 'lvl_motor_lower_range': str(round(self.motor_limit[2], 3)),
+                 'new_zdbf': str(self.newZDBF),
+                 'test_completed': str(self.test_completed)
+                 })
+        test.close()
 
     def report(self):
         self.logger.info("< Test Results >")
@@ -279,46 +326,51 @@ class myConfig(object):
             self.display.fb_println("Distance moving up (count):   %r" % self.magnet[1], 0)
             self.display.fb_println("Max Drift count (count):      %r" % self.magnet[2], 0)
         if self.test_enable[4] == 1:
-            self.logger.info("Rear sensors gap (mm)         %r" % round(commonFX.baumerToMM(self.sensor[0]), 3))
-            self.logger.info("Front sensors gap (mm)        %r" % round(commonFX.baumerToMM(self.sensor[1]), 3))
+            self.logger.info("Rear sensors gap (mil)        %r" % round(commonFX.baumerToThou(self.sensor[0]), 3))
+            self.logger.info("Front sensors gap (mil)       %r" % round(commonFX.baumerToThou(self.sensor[1]), 3))
             self.display.fb_println(
-                "Rear sensors gap (mm)         %r" % round(commonFX.baumerToMM(self.sensor[0]), 3), 0)
+                "Rear sensors gap (mil)        %r" % round(commonFX.baumerToThou(self.sensor[0]), 3), 0)
             self.display.fb_println(
-                "Front sensors gap (mm)        %r" % round(commonFX.baumerToMM(self.sensor[1]), 3), 0)
-        if self.test_enable[5] == 1 and self.test_enable[6] != 1:
-            self.logger.info("ZDBF: %r" % self.ZDBF)
-            self.display.fb_println("ZDBF: %r" % self.ZDBF, 0)
+                "Front sensors gap (mil)       %r" % round(commonFX.baumerToThou(self.sensor[1]), 3), 0)
+        if self.test_enable[5] == 1:
+            self.logger.info("ZDBF:                         %r" % self.ZDBF)
+            self.display.fb_println("ZDBF:                         %r" % self.ZDBF, 0)
 
         if self.test_enable[6] == 1:
-            up_limit = round(commonFX.baumerToMM(self.motor_range[0]) - self.platen_config[6][1], 3)
-            low_limit = round(commonFX.baumerToMM(self.motor_range[0]) + self.platen_config[6][1], 3)
-            self.logger.info("Level motor position (mm):    %r" % round(self.motor_limit[0], 3))
-            self.display.fb_println("Level motor position (mm):    %r" % round(self.motor_limit[0], 3), 0)
+            up_limit = round(commonFX.baumerToThou(self.motor_range[0]) - self.platen_config[6][1], 3)
+            low_limit = round(commonFX.baumerToThou(self.motor_range[0]) + self.platen_config[6][1], 3)
+            self.logger.info("Level motor position (mil):   %r" % round(self.motor_limit[0], 3))
+            self.display.fb_println("Level motor position (mil):   %r" % round(self.motor_limit[0], 3), 0)
             if self.error[5] == 1:
-                self.logger.info("upper travel range (mm):      %r > %r" % (round(self.motor_limit[1], 3), up_limit))
+                self.logger.info("upper travel range (mil):     %r > %r" % (round(self.motor_limit[1], 3), up_limit))
                 self.display.fb_println(
-                    "upper travel range (mm):      %r > %r" % (round(self.motor_limit[1], 3), up_limit), 1)
+                    "upper travel range (mil):     %r > %r" % (round(self.motor_limit[1], 3), up_limit), 1)
             else:
-                self.logger.info("upper travel range (mm):      %r" % round(self.motor_limit[1], 3))
-                self.display.fb_println("upper travel range (mm):      %r" % round(self.motor_limit[1], 3), 0)
+                self.logger.info("upper travel range (mil):     %r" % round(self.motor_limit[1], 3))
+                self.display.fb_println("upper travel range (mil):     %r" % round(self.motor_limit[1], 3), 0)
 
             if self.error[6] == 1:
-                self.logger.info("lower travel range (mm):      %r < %r" % (round(self.motor_limit[2], 3), low_limit))
+                self.logger.info("lower travel range (mil):     %r < %r" % (round(self.motor_limit[2], 3), low_limit))
                 self.display.fb_println(
-                    "lower travel range (mm):      %r < %r" % (round(self.motor_limit[2], 3), low_limit), 1)
+                    "lower travel range (mil):     %r < %r" % (round(self.motor_limit[2], 3), low_limit), 1)
             else:
-                self.logger.info("lower travel range (mm):      %r" % round(self.motor_limit[2], 3))
-                self.display.fb_println("lower travel range (mm):      %r" % round(self.motor_limit[2], 3), 0)
+                self.logger.info("lower travel range (mil):     %r" % round(self.motor_limit[2], 3))
+                self.display.fb_println("lower travel range (mil):     %r" % round(self.motor_limit[2], 3), 0)
 
-            self.logger.info("ZDBF: %r " % self.newZDBF)
-            self.display.fb_println("ZDBF: %r " % self.newZDBF, 0)
+            self.logger.info("New ZDBF:                     %r " % self.newZDBF)
+            self.display.fb_println("New ZDBF:                     %r " % self.newZDBF, 0)
 
         if 1 in self.error:
+            self.test_completed = 0
             self.logger.info("Tolerances not in range, adjustment required")
             self.display.fb_long_print("Tolerances not in range, adjustment required", 1)
         else:
+            self.test_completed = 1
+
             self.logger.info("< Equipment passed all test requirements >")
             self.display.fb_println("< Equipment passed all test requirements >", 1)
+
+        self.writeToCSV()
 
     def calculate(self):
         error = [0, 0, 0, 0, 0, 0, 0, 0]
@@ -339,23 +391,23 @@ class myConfig(object):
 
             if commonFX.rangeCheck(round(grill_plate, 3), self.switch_config[1], self.switch_config[0]) != True:
                 self.logger.info("grill plate to home distance not in range, target: %r +/- %r%%" % (
-                self.switch_config[1], self.switch_config[0] * 100))
+                    self.switch_config[1], self.switch_config[0] * 100))
                 error[0] = -1
             if commonFX.rangeCheck(round(lift_sw, 3), self.switch_config[2], self.switch_config[0]) != True:
                 self.logger.info("lift switch location not in range, target: %r +/- %r%%" % (
-                self.switch_config[2], self.switch_config[0] * 100))
+                    self.switch_config[2], self.switch_config[0] * 100))
                 error[1] = 1
             if commonFX.rangeCheck(round(home_sw, 1), self.switch_config[3], self.switch_config[0]) != True:
                 self.logger.info("home switch location not in range, target: %r +/- %r%%" % (
-                self.switch_config[3], self.switch_config[0] * 100))
+                    self.switch_config[3], self.switch_config[0] * 100))
                 error[2] = 1
             if commonFX.rangeCheck(round(killsw_high, 3), self.switch_config[4], self.switch_config[0]) != True:
                 self.logger.info("upper kill switch location not in range, target: %r +/- %r%%" % (
-                self.switch_config[4], self.switch_config[0] * 100))
+                    self.switch_config[4], self.switch_config[0] * 100))
                 error[3] = 1
             if commonFX.rangeCheck(round(killlsw_low, 3), self.switch_config[5], self.switch_config[0]) != True:
                 self.logger.info("lower kill switch location not in range, target: %r +/- %r%%" % (
-                self.switch_config[5], self.switch_config[0] * 100))
+                    self.switch_config[5], self.switch_config[0] * 100))
                 error[4] = 1
 
             self.grill_plate = round(grill_plate, 3)
@@ -363,18 +415,18 @@ class myConfig(object):
             self.killsw_enc = [round(killsw_high, 3), round(killlsw_low, 3)]
 
         if self.test_enable[6] == 1:
-            position = commonFX.baumerToMM(self.motor_range[0])
+            position = commonFX.baumerToThou(self.motor_range[0])
             upper_limit = position - self.platen_config[6][0]
             lower_limit = position + self.platen_config[6][1]
-            if commonFX.baumerToMM(self.motor_range[1]) <= upper_limit and commonFX.baumerToMM(
+            if commonFX.baumerToThou(self.motor_range[1]) <= upper_limit and commonFX.baumerToThou(
                     self.motor_range[2]) >= lower_limit:
                 self.logger.info("level motor position in range")
-            if commonFX.baumerToMM(self.motor_range[1]) > upper_limit:
+            if commonFX.baumerToThou(self.motor_range[1]) > upper_limit:
                 self.logger.info("upper travel limit not in range of %r" % round(upper_limit, 3))
                 error[5] = 1
             else:
                 self.logger.info("upper travel limit within range of %r" % round(upper_limit, 3))
-            if commonFX.baumerToMM(self.motor_range[2]) < lower_limit:
+            if commonFX.baumerToThou(self.motor_range[2]) < lower_limit:
                 self.logger.info("lower travel limit not in range of %r" % round(lower_limit, 3))
                 error[6] = 1
             else:
@@ -415,7 +467,7 @@ def main():
     myJSON = jsonToFile.loadJSON()
     myJSON.update(logger, com, config.loadReg_enable)
 
-    #info = myJSON.readJSON(config.linuxPath + config.sysPath + 'settings.json')
+    # info = myJSON.readJSON(config.linuxPath + config.sysPath + 'settings.json')
     try:
         info = myJSON.readJSON(config.linuxPath + config.sysPath + 'settings.json')
     except ValueError:
@@ -457,9 +509,9 @@ def main():
         button = com.readCoil(processID, 30, 1)
         if button[0] == 0:
             counter += 1
-            config.display.fb_printX("%r " %counter, FB_X, 1)
+            config.display.fb_printX("%r " % counter, FB_X, 1)
             FB_X += 40
-            #config.display.fb_long_print("< execute customized test sequence >", 1)
+            # config.display.fb_long_print("< execute customized test sequence >", 1)
             com.setCoil(processID, 30, [1])
     config.display.nextLine()
     if counter != -1 and counter <= 7:

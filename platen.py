@@ -88,10 +88,12 @@ class sensors():
         processID = 303
         check = 0
         status = 1
+        retry = 1
+        self.resetMode(processID)
         pos = self.com.readReg(processID, 0, 1)
         if commonFX.signedInt(pos[0]) != -32768:
             time.sleep(7)
-        while check != 2:
+        while check != 2 and retry <= 3:
 
             read = self.readSensor(processID)
             rear = read[0]
@@ -99,20 +101,20 @@ class sensors():
             self.com.setCoil(processID, 30, [1])  # reset button coil
 
             if commonFX.rangeCheck(int(rear), self.sensor_target[0], self.sensorGapTolerance):
-                self.logger.info("Rear sensors within range (mm) " + str(commonFX.baumerToMM(rear)))
-                self.display.fb_println("Rear sensors within range (mm) %r" % round(commonFX.baumerToMM(rear), 3), 0)
+                self.logger.info("Rear sensors within range (mil) " + str(commonFX.baumerToThou(rear)))
+                self.display.fb_println("Rear sensors within range (mil) %r" % round(commonFX.baumerToThou(rear), 3), 0)
                 check += 1
             else:
-                self.logger.info("Rear sensor out of range (mm) " + str(commonFX.baumerToMM(rear)))
-                self.display.fb_println("Rear sensor out of range (mm) %r" % round(commonFX.baumerToMM(rear), 3), 1)
+                self.logger.info("Rear sensor out of range (mil) " + str(commonFX.baumerToThou(rear)))
+                self.display.fb_println("Rear sensor out of range (mil) %r" % round(commonFX.baumerToThou(rear), 3), 1)
                 status = 0
             if commonFX.rangeCheck(int(front), self.sensor_target[1], self.sensorGapTolerance):
-                self.logger.info("Front sensors within range (mm) " + str(commonFX.baumerToMM(front)))
-                self.display.fb_println("Front sensors within range (mm) %r" % round(commonFX.baumerToMM(front), 3), 0)
+                self.logger.info("Front sensors within range (mil) " + str(commonFX.baumerToThou(front)))
+                self.display.fb_println("Front sensors within range (mil) %r" % round(commonFX.baumerToThou(front), 3), 0)
                 check += 1
             else:
-                self.logger.info("Front sensor out of range (mm) " + str(commonFX.baumerToMM(front)))
-                self.display.fb_println("Front sensor out of range (mm) %r" % round(commonFX.baumerToMM(front), 3), 1)
+                self.logger.info("Front sensor out of range (mil) " + str(commonFX.baumerToThou(front)))
+                self.display.fb_println("Front sensor out of range (mil) %r" % round(commonFX.baumerToThou(front), 3), 1)
                 status = 0
 
             if status == 0:
@@ -122,9 +124,9 @@ class sensors():
                 read = self.readSensor(processID)
 
                 self.display.fb_clear()
-                self.display.fb_println("Adjust sensor gap to ~ %r mm" %round(commonFX.baumerToMM(self.sensor_target[0]), 2) , 1)
-                self.display.fb_println("Rear sensors range (mm) %r" % round(commonFX.baumerToMM(read[0]), 3), 0)
-                self.display.fb_println("Front sensors range (mm) %r" % round(commonFX.baumerToMM(read[1]), 3), 0)
+                self.display.fb_println("Adjust sensor gap to ~ %r (mil)" %round(commonFX.baumerToThou(self.sensor_target[0]), 2) , 1)
+                self.display.fb_println("Rear sensors range (mil) %r" % round(commonFX.baumerToThou(read[0]), 3), 0)
+                self.display.fb_println("Front sensors range (mil) %r" % round(commonFX.baumerToThou(read[1]), 3), 0)
                 self.display.fb_println("Press Green button to proceed after adjustment", 1)
 
                 button = self.com.readCoil(processID, 30, 1)
@@ -133,6 +135,11 @@ class sensors():
                     check = 0
                     status = 1
                 time.sleep(1)
+            retry += 1
+
+        if retry > 3:
+            self.logger.info("Sensor gap check bypassed...continue with testing")
+            self.display.fb_println("Sensor gap check bypassed...continue with testing", 0)
 
         return read
 
@@ -260,7 +267,7 @@ class sensors():
         target = int(commonFX.mmToBaumer(offset))
 
         # adjustment upwards
-        self.logger.info("Adjusting level motor up, gap target (mm): %r" % round(offset, 3))
+        self.logger.info("Adjusting level motor up, gap target (mil): %r" % round(commonFX.baumerToThou(offset), 3))
         self.display.fb_println("Adjusting level motor up", 0)
         self.moveLvlMotor(1, -1)
 
@@ -333,9 +340,9 @@ class sensors():
         motor_range[2] = sensorReading[0]
 
         # log data
-        position = commonFX.baumerToMM(motor_range[0])
-        upperLimit = commonFX.baumerToMM(motor_range[1])
-        lowerLimit = commonFX.baumerToMM(motor_range[2])
+        position = commonFX.baumerToThou(motor_range[0])
+        upperLimit = commonFX.baumerToThou(motor_range[1])
+        lowerLimit = commonFX.baumerToThou(motor_range[2])
 
         self.logger.info("Sensor Reading {position: %r, upper range: %r, lower range: %r}" % (
             round(position, 3), round(upperLimit, 3), round(lowerLimit, 3)))
