@@ -139,7 +139,7 @@ class sensors():
 
         if retry > 3:
             self.logger.info("Sensor gap check bypassed...continue with testing")
-            self.display.fb_println("Sensor gap check bypassed...continue with testing", 0)
+            self.display.fb_long_print("Sensor gap check bypassed...continue with testing", 0)
 
         return read
 

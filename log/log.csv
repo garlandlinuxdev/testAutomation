@@ -1,6 +1,1 @@
-date,time,grill_type,linel,line2,line3,24supply,12supply,5supply,3_3supply,timeUpwards,timeDownwards,grill_plate,lift_sw,home_sw,up_killsw,down_killsw,dist_up,dist_dwn,max_drift,rear_sensor,front_sensor,zdbf,lvl_motor_pos,lvl_motor_upper_range,lvl_motor_lower_range,new_zdbf,test_completed
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,
+date,time,grill_type,linel,line2,line3,24supply,12supply,5supply,3_3supply,timeUpwards,timeDownwards,grill_plate,lift_sw,home_sw,up_killsw,down_killsw,dist_up,dist_dwn,max_drift,rear_sensor,front_sensor,zdbf,lvl_motor_pos,lvl_motor_upper_range,lvl_motor_lower_range,new_zdbf,test_passed

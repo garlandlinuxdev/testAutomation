@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8b1b430-cf88-4d12-ae5d-ea818ec56e3d" name="Default" comment="test selection option added">
+    <list default="true" id="d8b1b430-cf88-4d12-ae5d-ea818ec56e3d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EOL.py" afterPath="$PROJECT_DIR$/EOL.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commonFX.py" afterPath="$PROJECT_DIR$/commonFX.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/log.csv" afterPath="$PROJECT_DIR$/log/log.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platen.py" afterPath="$PROJECT_DIR$/platen.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service_Install.sh" afterPath="$PROJECT_DIR$/service_Install.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +28,8 @@
       <file leaf-file-name="EOL.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EOL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="554" column="32" lean-forward="true" selection-start-line="554" selection-start-column="32" selection-end-line="554" selection-end-column="32" />
+            <state relative-caret-position="2226">
+              <caret line="223" column="57" lean-forward="false" selection-start-line="223" selection-start-column="46" selection-end-line="223" selection-end-column="57" />
               <folding>
                 <element signature="e#76#117#0" expanded="true" />
               </folding>
@@ -52,7 +50,7 @@
       <file leaf-file-name="modbus.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modbus.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="781">
+            <state relative-caret-position="945">
               <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
               <folding />
             </state>
@@ -72,8 +70,8 @@
       <file leaf-file-name="platen.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/platen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="67" column="38" lean-forward="true" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
+            <state relative-caret-position="2667">
+              <caret line="145" column="22" lean-forward="true" selection-start-line="145" selection-start-column="22" selection-end-line="145" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -82,7 +80,7 @@
       <file leaf-file-name="commonFX.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commonFX.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
+            <state relative-caret-position="399">
               <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
@@ -104,7 +102,7 @@
       <file leaf-file-name="actuator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/actuator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3780">
+            <state relative-caret-position="1764">
               <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
               <folding />
             </state>
@@ -219,8 +217,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -746,7 +744,14 @@
       <option name="project" value="LOCAL" />
       <updated>1507042385604</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="csv log capture and sensor gap bypass added">
+      <created>1508779463067</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1508779463067</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -759,10 +764,9 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32807216" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1621912" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16433942" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32694477" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -772,6 +776,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32694477" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -811,7 +816,8 @@
     <MESSAGE value="platen limit offset added, grill plate to home tolerance no longer flag an error" />
     <MESSAGE value="ZDBF correction in platen reset modified" />
     <MESSAGE value="test selection option added" />
-    <option name="LAST_COMMIT_MESSAGE" value="test selection option added" />
+    <MESSAGE value="csv log capture and sensor gap bypass added" />
+    <option name="LAST_COMMIT_MESSAGE" value="csv log capture and sensor gap bypass added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1197,7 +1203,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modbus.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="781">
+        <state relative-caret-position="945">
           <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
           <folding />
         </state>
@@ -1213,7 +1219,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/actuator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3780">
+        <state relative-caret-position="1764">
           <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding />
         </state>
@@ -1221,7 +1227,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commonFX.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
+        <state relative-caret-position="399">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
@@ -1229,16 +1235,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="67" column="38" lean-forward="true" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
+        <state relative-caret-position="2667">
+          <caret line="145" column="22" lean-forward="true" selection-start-line="145" selection-start-column="22" selection-end-line="145" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EOL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="554" column="32" lean-forward="true" selection-start-line="554" selection-start-column="32" selection-end-line="554" selection-end-column="32" />
+        <state relative-caret-position="2226">
+          <caret line="223" column="57" lean-forward="false" selection-start-line="223" selection-start-column="46" selection-end-line="223" selection-end-column="57" />
           <folding>
             <element signature="e#76#117#0" expanded="true" />
           </folding>
