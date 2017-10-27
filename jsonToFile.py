@@ -10,8 +10,8 @@ class loadJSON():
     heaterPIDconfig = 0  # ["Standard Grilled", "Water Based", "Future Use 1", "Future Use 2", "Preheat"]
     setpoint = -32768  # initial position setpoint
     enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors]
-    temp_Limit = [1794, 2400, 1794, 2400, 1794, 0, 0, 0]  # temperature limit
-    heaterTemp = [0, 0, 0, 0, 0, 0, 0, 0]  # temperature setpoint
+    temp_Limit = [1900, 2400, 1900, 2400, 1900, 0, 0, 0]  # temperature limit
+    heaterTemp = [1766, 2183, 1766, 2183, 1766, 0, 0, 0]  # temperature setpoint
 
     # Temporary variables, do not modify here
     logger = ''
