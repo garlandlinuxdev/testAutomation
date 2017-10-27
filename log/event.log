@@ -1053,3 +1053,56 @@
 2017-09-28 10:55:11,848 INFO ZDBF: -68 
 2017-09-28 10:55:11,848 INFO < Equipment passed all test requirements >
 2017-09-28 11:22:58,269 INFO FTDI USB cable not found, please connect cable and restart
+2017-10-27 15:22:48,394 INFO FTDI USB cable not found, please connect cable and restart
+2017-10-27 15:23:37,240 INFO Script running on windows platform, LCD disabled
+2017-10-27 15:23:37,240 INFO ==================== Load Settings ====================
+2017-10-27 15:23:37,374 INFO Reading register 32 failed (retry remains 20), @ processID 0
+2017-10-27 15:23:37,494 INFO Reading register 32 failed (retry remains 19), @ processID 0
+2017-10-27 15:23:37,615 INFO Reading register 32 failed (retry remains 18), @ processID 0
+2017-10-27 15:23:37,736 INFO Reading register 32 failed (retry remains 17), @ processID 0
+2017-10-27 15:23:37,861 INFO Reading register 32 failed (retry remains 16), @ processID 0
+2017-10-27 15:23:37,986 INFO Reading register 32 failed (retry remains 15), @ processID 0
+2017-10-27 15:23:38,107 INFO Reading register 32 failed (retry remains 14), @ processID 0
+2017-10-27 15:23:38,230 INFO Reading register 32 failed (retry remains 13), @ processID 0
+2017-10-27 15:23:38,351 INFO Reading register 32 failed (retry remains 12), @ processID 0
+2017-10-27 15:23:38,471 INFO Reading register 32 failed (retry remains 11), @ processID 0
+2017-10-27 15:23:38,592 INFO Reading register 32 failed (retry remains 10), @ processID 0
+2017-10-27 15:23:38,713 INFO Reading register 32 failed (retry remains 9), @ processID 0
+2017-10-27 15:23:38,835 INFO Reading register 32 failed (retry remains 8), @ processID 0
+2017-10-27 15:23:38,956 INFO Reading register 32 failed (retry remains 7), @ processID 0
+2017-10-27 15:23:39,076 INFO Reading register 32 failed (retry remains 6), @ processID 0
+2017-10-27 15:23:39,197 INFO Reading register 32 failed (retry remains 5), @ processID 0
+2017-10-27 15:23:39,319 INFO Reading register 32 failed (retry remains 4), @ processID 0
+2017-10-27 15:23:39,440 INFO Reading register 32 failed (retry remains 3), @ processID 0
+2017-10-27 15:23:39,561 INFO Reading register 32 failed (retry remains 2), @ processID 0
+2017-10-27 15:23:39,681 INFO Reading register 32 failed (retry remains 1), @ processID 0
+2017-10-27 15:23:39,802 INFO Reading register 32 failed (retry remains 0), @ processID 0
+2017-10-27 15:23:39,802 INFO Max retry reached @ 0, exiting script...please restart
+2017-10-27 15:23:44,818 INFO Script running on windows platform, LCD disabled
+2017-10-27 15:23:44,818 INFO ==================== Load Settings ====================
+2017-10-27 15:23:44,940 INFO Reading register 32 failed (retry remains 20), @ processID 0
+2017-10-27 15:23:45,061 INFO Reading register 32 failed (retry remains 19), @ processID 0
+2017-10-27 15:23:45,181 INFO Reading register 32 failed (retry remains 18), @ processID 0
+2017-10-27 15:23:45,302 INFO Reading register 32 failed (retry remains 17), @ processID 0
+2017-10-27 15:23:45,424 INFO Reading register 32 failed (retry remains 16), @ processID 0
+2017-10-27 15:23:45,545 INFO Reading register 32 failed (retry remains 15), @ processID 0
+2017-10-27 15:23:45,665 INFO Reading register 32 failed (retry remains 14), @ processID 0
+2017-10-27 15:23:45,786 INFO Reading register 32 failed (retry remains 13), @ processID 0
+2017-10-27 15:23:45,907 INFO Reading register 32 failed (retry remains 12), @ processID 0
+2017-10-27 15:23:46,029 INFO Reading register 32 failed (retry remains 11), @ processID 0
+2017-10-27 15:23:46,150 INFO Reading register 32 failed (retry remains 10), @ processID 0
+2017-10-27 15:23:46,270 INFO Reading register 32 failed (retry remains 9), @ processID 0
+2017-10-27 15:23:46,391 INFO Reading register 32 failed (retry remains 8), @ processID 0
+2017-10-27 15:23:46,513 INFO Reading register 32 failed (retry remains 7), @ processID 0
+2017-10-27 15:23:46,634 INFO Reading register 32 failed (retry remains 6), @ processID 0
+2017-10-27 15:23:46,755 INFO Reading register 32 failed (retry remains 5), @ processID 0
+2017-10-27 15:23:46,875 INFO Reading register 32 failed (retry remains 4), @ processID 0
+2017-10-27 15:23:46,996 INFO Reading register 32 failed (retry remains 3), @ processID 0
+2017-10-27 15:23:47,118 INFO Reading register 32 failed (retry remains 2), @ processID 0
+2017-10-27 15:23:47,239 INFO Reading register 32 failed (retry remains 1), @ processID 0
+2017-10-27 15:23:47,359 INFO Reading register 32 failed (retry remains 0), @ processID 0
+2017-10-27 15:23:47,361 INFO Max retry reached @ 0, exiting script...please restart
+2017-10-27 15:23:53,933 INFO Script running on windows platform, LCD disabled
+2017-10-27 15:23:53,933 INFO ==================== Load Settings ====================
+2017-10-27 15:23:54,055 INFO Reading register 32 failed (retry remains 20), @ processID 0
+2017-10-27 15:23:54,147 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/21.json

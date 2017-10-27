@@ -13,10 +13,10 @@ FB_Y = 10  # global Y position of LCD, update using subfile module
 
 def setup():
     # Configure Hardware Overwrite
-    # com_port = 'COM30'  # For windows
+    com_port = 'COM82'  # For windows
     # com_port = '/dev/ttyO4' #For UART4
     # com_port = '/dev/ttyO1' #For UI using UART1
-    com_port = '/dev/ttyUSB0'  # For USB port
+    # com_port = '/dev/ttyUSB0'  # For USB port
 
     baud = 115200
     byte = 8
@@ -150,7 +150,7 @@ class myConfig(object):
     customer = 1  # 1
     description = "unknown"  # load from json file
     sync_role = 0
-    cycle = 50
+    cycle = 100
 
     # storage
     json_test_config = ''
