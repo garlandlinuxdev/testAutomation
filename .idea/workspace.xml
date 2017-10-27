@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8b1b430-cf88-4d12-ae5d-ea818ec56e3d" name="Default" comment="csv log capture and sensor gap bypass added">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.py" />
+    <list default="true" id="d8b1b430-cf88-4d12-ae5d-ea818ec56e3d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EOL.py" afterPath="$PROJECT_DIR$/EOL.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsonToFile.py" afterPath="$PROJECT_DIR$/jsonToFile.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="EOL.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EOL.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EOL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4087">
-              <caret line="498" column="0" lean-forward="true" selection-start-line="498" selection-start-column="0" selection-end-line="498" selection-end-column="0" />
+            <state relative-caret-position="760">
+              <caret line="274" column="20" lean-forward="true" selection-start-line="240" selection-start-column="4" selection-end-line="274" selection-end-column="20" />
               <folding>
                 <element signature="e#76#117#0" expanded="true" />
               </folding>
@@ -48,13 +46,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state relative-caret-position="1869">
+              <caret line="89" column="20" lean-forward="true" selection-start-line="89" selection-start-column="20" selection-end-line="89" selection-end-column="20" />
               <folding>
-                <element signature="e#74#115#0" expanded="true" />
+                <element signature="e#74#110#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,8 +126,8 @@
         <option value="$PROJECT_DIR$/commonFX.py" />
         <option value="$PROJECT_DIR$/EOL.py" />
         <option value="$PROJECT_DIR$/platen.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/jsonToFile.py" />
+        <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
@@ -740,7 +738,14 @@
       <option name="project" value="LOCAL" />
       <updated>1508852868037</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="autogap test">
+      <created>1509131404489</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1509131404489</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -806,7 +811,8 @@
     <MESSAGE value="ZDBF correction in platen reset modified" />
     <MESSAGE value="test selection option added" />
     <MESSAGE value="csv log capture and sensor gap bypass added" />
-    <option name="LAST_COMMIT_MESSAGE" value="csv log capture and sensor gap bypass added" />
+    <MESSAGE value="autogap test" />
+    <option name="LAST_COMMIT_MESSAGE" value="autogap test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1215,12 +1221,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/EOL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state relative-caret-position="760">
+          <caret line="274" column="20" lean-forward="true" selection-start-line="240" selection-start-column="4" selection-end-line="274" selection-end-column="20" />
           <folding>
-            <element signature="e#74#115#0" expanded="true" />
+            <element signature="e#76#117#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1233,12 +1239,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EOL.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4087">
-          <caret line="498" column="0" lean-forward="true" selection-start-line="498" selection-start-column="0" selection-end-line="498" selection-end-column="0" />
+        <state relative-caret-position="1869">
+          <caret line="89" column="20" lean-forward="true" selection-start-line="89" selection-start-column="20" selection-end-line="89" selection-end-column="20" />
           <folding>
-            <element signature="e#76#117#0" expanded="true" />
+            <element signature="e#74#110#0" expanded="true" />
           </folding>
         </state>
       </provider>

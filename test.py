@@ -2,10 +2,28 @@
 #Project: EOL
 #Description: 
 __author__ = "Adrian Wong"
-import modbus_tk.modbus_rtu as modbus_rtu
-import serial, os, logging, modbus, time, csv
+import serial, os, modbus, time, csv
 import jsonToFile, actuator, platen, commonFX
 import EOL
+
+
+def writeToCSV(config, zdbf, sensor):
+    datestr = time.strftime('%Y/%m/%d')
+    timestr = time.strftime('%H:%M:%S')
+    epoch_time = int(time.time())
+    with open(config.logfile + 'test' + epoch_time + config.excel, 'a') as test:
+        fieldnames = (
+            'date', 'time', 'grill_type', 'zdbf', 'rear_enc', 'front_enc')
+        targetWriter = csv.DictWriter(test, delimiter=',', lineterminator='\n', fieldnames=fieldnames)
+        headers = dict((n, n) for n in fieldnames)
+        targetWriter.writerow(headers)
+        targetWriter.writerow(
+            {'date': datestr, 'time': timestr, 'grill_type': config.grillType,
+             'zdbf': str(zdbf),
+             'rear_enc': str(sensor[0]),
+             'front_enc': str(sensor[1]),
+             })
+    test.close()
 
 def main():
     #main starts here
@@ -68,7 +86,8 @@ def main():
         time.sleep(8)
         zdbf, gap = pl.calZDBF()
         config.display.fb_println("ZDBF: %r  |  Rear: %r  |  Front: %r" %(zdbf, gap[0], gap[1]), 0)
-
+        writeToCSV(config, zdbf, gap)
+        counter += 1
 
 if __name__ == "__main__":
     main()
