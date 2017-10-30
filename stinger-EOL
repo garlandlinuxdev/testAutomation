@@ -71,8 +71,8 @@ end_of_line()
 	chmod 666 $FTDI_CABLE
 	cd /
 	sleep 5
-	fb_println "Starting EOL functions"
-	python2.7 $EOL_script &
+	#fb_println "Starting EOL functions"
+	#python2.7 $EOL_script &
 	
 }
 

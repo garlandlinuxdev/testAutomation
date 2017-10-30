@@ -13,10 +13,10 @@ FB_Y = 10  # global Y position of LCD, update using subfile module
 
 def setup():
     # Configure Hardware Overwrite
-    com_port = 'COM82'  # For windows
+    # com_port = 'COM82'  # For windows
     # com_port = '/dev/ttyO4' #For UART4
     # com_port = '/dev/ttyO1' #For UI using UART1
-    # com_port = '/dev/ttyUSB0'  # For USB port
+    com_port = '/dev/ttyUSB0'  # For USB port
 
     baud = 115200
     byte = 8

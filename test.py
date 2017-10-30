@@ -1,38 +1,54 @@
 #!/usr/bin/python
-#Project: EOL
-#Description: 
+# Project: EOL
+# Description:
 __author__ = "Adrian Wong"
 import serial, os, modbus, time, csv
 import jsonToFile, actuator, platen, commonFX
 import EOL
 
 
-def writeToCSV(config, zdbf, sensor):
+def writeToCSV(config, filename, zdbf, enc, status):
     datestr = time.strftime('%Y/%m/%d')
     timestr = time.strftime('%H:%M:%S')
-    epoch_time = int(time.time())
-    with open(config.logfile + 'test' + epoch_time + config.excel, 'a') as test:
-        fieldnames = (
-            'date', 'time', 'grill_type', 'zdbf', 'rear_enc', 'front_enc')
-        targetWriter = csv.DictWriter(test, delimiter=',', lineterminator='\n', fieldnames=fieldnames)
-        headers = dict((n, n) for n in fieldnames)
-        targetWriter.writerow(headers)
-        targetWriter.writerow(
-            {'date': datestr, 'time': timestr, 'grill_type': config.grillType,
-             'zdbf': str(zdbf),
-             'rear_enc': str(sensor[0]),
-             'front_enc': str(sensor[1]),
-             })
-    test.close()
+    if status == 1:
+        with open(filename, 'a') as test:
+            fieldnames = (
+                'date', 'time', 'grill_type', 'rear_enc', 'front_enc', 'zdbf', 'rear_inch', 'front_inch', 'zdbf_mils')
+            targetWriter = csv.DictWriter(test, delimiter=',', lineterminator='\n', fieldnames=fieldnames)
+            headers = dict((n, n) for n in fieldnames)
+            targetWriter.writerow(headers)
+        test.close()
+    else:
+        with open(filename, 'a') as test:
+            fieldnames = (
+                'date', 'time', 'grill_type',  'rear_enc', 'front_enc', 'zdbf', 'rear_inch', 'front_inch', 'zdbf_mils')
+            targetWriter = csv.DictWriter(test, delimiter=',', lineterminator='\n', fieldnames=fieldnames)
+            # headers = dict((n, n) for n in fieldnames)
+            # targetWriter.writerow(headers)
+            targetWriter.writerow(
+                {'date': datestr, 'time': timestr, 'grill_type': config.grillType, 'rear_enc': str(enc[0]),
+                 'front_enc': str(enc[1]), 'zdbf': str(zdbf), 'rear_inch': str(commonFX.encToInch(enc[0])),
+                 'front_inch': str(commonFX.encToInch(enc[1])), 'zdbf_mils': str(commonFX.encToInch(zdbf) * 1000)
+                 })
+        test.close()
+
 
 def main():
-    #main starts here
+    # define variables
+    zdbf = 0
+    gap = [0, 0]
+
+    # main starts here
     config = EOL.myConfig()
     if config.display.checkOS() == True:
         config.display.fb_clear()
         config.copyLog()
     logger = EOL.setup_logger('event_log', config.logfile + config.log)
     config.logger = logger
+
+    epoch_time = int(time.time())
+    testlog = config.logfile + 'test_' + str(epoch_time) + '-' + config.excel
+    writeToCSV(config, testlog, zdbf, gap, 1)
 
     try:
         master = EOL.setup()
@@ -70,6 +86,9 @@ def main():
     config.json_test_config, config.voltage_config, config.platen_config, config.actuator_config, config.switch_config = myJSON.loadSettings(
         info, config.customer)
 
+    data = myJSON.readJSON(config.jsonFile)
+    myJSON.setDevice(data)
+
     motor = actuator.motion()
     motor.update(logger, com, config)
     config.encoder_conv = motor.encoder_conv
@@ -77,17 +96,20 @@ def main():
     pl = platen.sensors()
     pl.update(logger, com, config)
 
-    counter = 0
+    counter = 1
     motor.homing(processID)
     motor.resetMode(processID)
+
     while counter <= config.cycle:
-        config.display.fb_println(counter, 1)
+        config.display.fb_println('Cycle: %r' % counter, 1)
+        pl.resetMode(processID)
         motor.setpoint(-500)
         time.sleep(8)
         zdbf, gap = pl.calZDBF()
-        config.display.fb_println("ZDBF: %r  |  Rear: %r  |  Front: %r" %(zdbf, gap[0], gap[1]), 0)
-        writeToCSV(config, zdbf, gap)
+        config.display.fb_println("ZDBF: %r  |  Rear: %r  |  Front: %r" % (zdbf, gap[0], gap[1]), 0)
+        writeToCSV(config, testlog, zdbf, gap, 0)
         counter += 1
+
 
 if __name__ == "__main__":
     main()

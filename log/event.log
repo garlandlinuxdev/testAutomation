@@ -1106,3 +1106,368 @@
 2017-10-27 15:23:53,933 INFO ==================== Load Settings ====================
 2017-10-27 15:23:54,055 INFO Reading register 32 failed (retry remains 20), @ processID 0
 2017-10-27 15:23:54,147 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/21.json
+2017-10-30 07:42:19,487 INFO Script running on windows platform, LCD disabled
+2017-10-30 07:42:19,487 INFO ==================== Load Settings ====================
+2017-10-30 07:42:19,591 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/21.json
+2017-10-30 07:42:19,815 INFO Writing motionPID successful, @ processID 101
+2017-10-30 07:42:20,230 INFO Writing heaterPID successful, @ processID 102
+2017-10-30 07:42:20,614 INFO Writing level sensors successful, @ processID 103
+2017-10-30 07:42:20,710 INFO Writing power sync successful, @ processID 104
+2017-10-30 07:42:26,556 INFO Homing sequence successful, @ processID 0
+2017-10-30 07:42:26,747 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:42:45,246 INFO ZDBF: -67
+2017-10-30 07:43:37,368 INFO Script running on windows platform, LCD disabled
+2017-10-30 07:43:37,368 INFO ==================== Load Settings ====================
+2017-10-30 07:43:37,454 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/21.json
+2017-10-30 07:43:37,663 INFO Writing motionPID successful, @ processID 101
+2017-10-30 07:43:38,046 INFO Writing heaterPID successful, @ processID 102
+2017-10-30 07:43:38,430 INFO Writing level sensors successful, @ processID 103
+2017-10-30 07:43:38,526 INFO Writing power sync successful, @ processID 104
+2017-10-30 07:43:38,621 INFO Homing sequence successful, @ processID 0
+2017-10-30 07:43:38,812 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:43:57,263 INFO ZDBF: -70
+2017-10-30 07:43:57,454 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:44:15,891 INFO ZDBF: -66
+2017-10-30 07:44:16,082 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:44:33,944 INFO ZDBF: -67
+2017-10-30 07:44:34,135 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:44:51,996 INFO ZDBF: -60
+2017-10-30 07:44:52,187 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:45:10,065 INFO ZDBF: -59
+2017-10-30 07:45:10,256 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:45:28,132 INFO ZDBF: -65
+2017-10-30 07:45:28,325 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:45:46,233 INFO ZDBF: -65
+2017-10-30 07:45:46,424 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:46:04,348 INFO ZDBF: -62
+2017-10-30 07:46:04,540 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:46:22,417 INFO ZDBF: -63
+2017-10-30 07:46:22,608 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:46:40,484 INFO ZDBF: -60
+2017-10-30 07:46:40,677 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:46:58,569 INFO ZDBF: -62
+2017-10-30 07:46:58,760 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:47:16,635 INFO ZDBF: -62
+2017-10-30 07:47:16,828 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:47:34,681 INFO ZDBF: -59
+2017-10-30 07:47:34,872 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:47:52,765 INFO ZDBF: -59
+2017-10-30 07:47:52,957 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:50:00,502 INFO Script running on windows platform, LCD disabled
+2017-10-30 07:50:00,502 INFO ==================== Load Settings ====================
+2017-10-30 07:50:00,589 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/21.json
+2017-10-30 07:50:00,813 INFO Writing motionPID successful, @ processID 101
+2017-10-30 07:50:01,197 INFO Writing heaterPID successful, @ processID 102
+2017-10-30 07:50:01,579 INFO Writing level sensors successful, @ processID 103
+2017-10-30 07:50:01,676 INFO Writing power sync successful, @ processID 104
+2017-10-30 07:50:01,772 INFO Homing sequence successful, @ processID 0
+2017-10-30 07:50:01,963 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:50:26,436 INFO Script running on windows platform, LCD disabled
+2017-10-30 07:50:26,436 INFO ==================== Load Settings ====================
+2017-10-30 07:50:26,539 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/21.json
+2017-10-30 07:50:26,763 INFO Writing motionPID successful, @ processID 101
+2017-10-30 07:50:27,178 INFO Writing heaterPID successful, @ processID 102
+2017-10-30 07:50:27,562 INFO Writing level sensors successful, @ processID 103
+2017-10-30 07:50:27,657 INFO Writing power sync successful, @ processID 104
+2017-10-30 07:50:27,753 INFO Homing sequence successful, @ processID 0
+2017-10-30 07:50:27,946 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:50:45,803 INFO ZDBF: -61
+2017-10-30 07:50:45,996 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:51:03,904 INFO ZDBF: -59
+2017-10-30 07:51:04,095 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:51:21,970 INFO ZDBF: -60
+2017-10-30 07:51:22,163 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:51:39,523 INFO ZDBF: -59
+2017-10-30 07:51:39,714 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:51:45,075 INFO Script running on windows platform, LCD disabled
+2017-10-30 07:51:45,075 INFO ==================== Load Settings ====================
+2017-10-30 07:51:45,164 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/21.json
+2017-10-30 07:51:45,371 INFO Writing motionPID successful, @ processID 101
+2017-10-30 07:51:45,755 INFO Writing heaterPID successful, @ processID 102
+2017-10-30 07:51:46,138 INFO Writing level sensors successful, @ processID 103
+2017-10-30 07:51:46,233 INFO Writing power sync successful, @ processID 104
+2017-10-30 07:51:46,329 INFO Homing sequence successful, @ processID 0
+2017-10-30 07:51:46,617 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:52:04,526 INFO ZDBF: -58
+2017-10-30 07:52:04,813 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:52:22,674 INFO ZDBF: -56
+2017-10-30 07:52:22,961 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:52:40,819 INFO ZDBF: -55
+2017-10-30 07:52:41,107 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:52:54,153 INFO Script running on windows platform, LCD disabled
+2017-10-30 07:52:54,153 INFO ==================== Load Settings ====================
+2017-10-30 07:52:54,240 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/21.json
+2017-10-30 07:52:54,464 INFO Writing motionPID successful, @ processID 101
+2017-10-30 07:52:54,864 INFO Writing heaterPID successful, @ processID 102
+2017-10-30 07:52:55,246 INFO Writing level sensors successful, @ processID 103
+2017-10-30 07:52:55,342 INFO Writing power sync successful, @ processID 104
+2017-10-30 07:52:55,440 INFO Homing sequence successful, @ processID 0
+2017-10-30 07:52:55,726 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:53:13,588 INFO ZDBF: -55
+2017-10-30 07:53:13,875 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:53:31,717 INFO ZDBF: -56
+2017-10-30 07:53:32,022 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:53:49,323 INFO ZDBF: -54
+2017-10-30 07:53:49,611 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:54:06,865 INFO ZDBF: -54
+2017-10-30 07:54:07,153 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:54:37,615 INFO Script running on windows platform, LCD disabled
+2017-10-30 07:54:37,615 INFO ==================== Load Settings ====================
+2017-10-30 07:54:37,703 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/21.json
+2017-10-30 07:54:37,910 INFO Writing motionPID successful, @ processID 101
+2017-10-30 07:54:38,309 INFO Writing heaterPID successful, @ processID 102
+2017-10-30 07:54:38,693 INFO Writing level sensors successful, @ processID 103
+2017-10-30 07:54:38,789 INFO Writing power sync successful, @ processID 104
+2017-10-30 07:54:38,884 INFO Homing sequence successful, @ processID 0
+2017-10-30 07:54:39,171 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:54:56,441 INFO ZDBF: -53
+2017-10-30 07:54:56,730 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:55:14,016 INFO ZDBF: -53
+2017-10-30 07:55:14,319 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:55:31,608 INFO ZDBF: -54
+2017-10-30 07:58:51,713 INFO Script running on windows platform, LCD disabled
+2017-10-30 07:58:51,713 INFO ==================== Load Settings ====================
+2017-10-30 07:58:51,802 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/21.json
+2017-10-30 07:58:52,009 INFO Writing motionPID successful, @ processID 101
+2017-10-30 07:58:52,392 INFO Writing heaterPID successful, @ processID 102
+2017-10-30 07:58:52,776 INFO Writing level sensors successful, @ processID 103
+2017-10-30 07:58:52,871 INFO Writing power sync successful, @ processID 104
+2017-10-30 07:58:52,967 INFO Homing sequence successful, @ processID 0
+2017-10-30 07:58:53,256 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:59:11,132 INFO ZDBF: -54
+2017-10-30 07:59:11,420 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:59:29,341 INFO ZDBF: -53
+2017-10-30 07:59:29,644 INFO Writing setpoint reg 0 to -500
+2017-10-30 07:59:47,506 INFO ZDBF: -51
+2017-10-30 07:59:47,792 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:00:05,094 INFO ZDBF: -51
+2017-10-30 08:00:05,381 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:00:22,650 INFO ZDBF: -50
+2017-10-30 08:00:22,953 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:05:08,558 INFO Script running on windows platform, LCD disabled
+2017-10-30 08:05:08,559 INFO ==================== Load Settings ====================
+2017-10-30 08:05:08,661 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/21.json
+2017-10-30 08:05:08,887 INFO Writing motionPID successful, @ processID 101
+2017-10-30 08:05:09,302 INFO Writing heaterPID successful, @ processID 102
+2017-10-30 08:05:09,686 INFO Writing level sensors successful, @ processID 103
+2017-10-30 08:05:09,782 INFO Writing power sync successful, @ processID 104
+2017-10-30 08:05:09,877 INFO Homing sequence successful, @ processID 0
+2017-10-30 08:05:10,164 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:05:28,016 INFO ZDBF: -53
+2017-10-30 08:05:28,303 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:05:46,154 INFO ZDBF: -53
+2017-10-30 08:05:46,457 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:06:03,845 INFO ZDBF: -52
+2017-10-30 08:06:04,134 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:06:21,394 INFO ZDBF: -52
+2017-10-30 08:06:21,698 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:06:38,989 INFO ZDBF: -51
+2017-10-30 08:06:39,293 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:08:23,252 INFO Script running on windows platform, LCD disabled
+2017-10-30 08:08:23,252 INFO ==================== Load Settings ====================
+2017-10-30 08:08:23,355 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/21.json
+2017-10-30 08:08:23,563 INFO Writing motionPID successful, @ processID 101
+2017-10-30 08:08:23,963 INFO Writing heaterPID successful, @ processID 102
+2017-10-30 08:08:24,346 INFO Writing level sensors successful, @ processID 103
+2017-10-30 08:08:24,441 INFO Writing power sync successful, @ processID 104
+2017-10-30 08:08:24,538 INFO Homing sequence successful, @ processID 0
+2017-10-30 08:08:24,825 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:08:42,690 INFO ZDBF: -50
+2017-10-30 08:08:42,977 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:09:00,266 INFO ZDBF: -50
+2017-10-30 08:09:00,552 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:09:17,842 INFO ZDBF: -50
+2017-10-30 08:09:18,130 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:09:35,450 INFO ZDBF: -51
+2017-10-30 08:09:35,739 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:09:53,029 INFO ZDBF: -49
+2017-10-30 08:09:53,332 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:10:10,638 INFO ZDBF: -50
+2017-10-30 08:10:10,927 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:10:28,200 INFO ZDBF: -51
+2017-10-30 08:10:28,487 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:10:45,778 INFO ZDBF: -50
+2017-10-30 08:10:46,081 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:11:03,388 INFO ZDBF: -50
+2017-10-30 08:11:03,691 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:11:20,966 INFO ZDBF: -50
+2017-10-30 08:11:21,253 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:11:38,507 INFO ZDBF: -51
+2017-10-30 08:11:38,812 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:11:56,085 INFO ZDBF: -48
+2017-10-30 08:11:56,374 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:12:13,631 INFO ZDBF: -49
+2017-10-30 08:12:13,918 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:12:31,190 INFO ZDBF: -51
+2017-10-30 08:12:31,477 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:12:48,783 INFO ZDBF: -50
+2017-10-30 08:12:49,088 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:13:06,359 INFO ZDBF: -49
+2017-10-30 08:13:06,648 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:13:23,903 INFO ZDBF: -50
+2017-10-30 08:13:24,207 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:13:41,463 INFO ZDBF: -50
+2017-10-30 08:13:41,750 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:13:59,055 INFO ZDBF: -49
+2017-10-30 08:13:59,344 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:14:16,617 INFO ZDBF: -50
+2017-10-30 08:14:16,921 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:14:34,226 INFO ZDBF: -49
+2017-10-30 08:14:34,513 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:14:51,786 INFO ZDBF: -47
+2017-10-30 08:14:52,072 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:15:09,362 INFO ZDBF: -50
+2017-10-30 08:15:09,650 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:15:26,938 INFO ZDBF: -47
+2017-10-30 08:15:27,243 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:15:44,507 INFO ZDBF: -49
+2017-10-30 08:15:44,795 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:16:02,068 INFO ZDBF: -49
+2017-10-30 08:16:02,387 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:16:19,658 INFO ZDBF: -49
+2017-10-30 08:16:19,946 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:16:37,220 INFO ZDBF: -49
+2017-10-30 08:16:37,506 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:16:54,795 INFO ZDBF: -48
+2017-10-30 08:16:55,098 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:17:12,401 INFO ZDBF: -48
+2017-10-30 08:17:12,690 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:17:29,979 INFO ZDBF: -48
+2017-10-30 08:17:30,266 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:17:47,538 INFO ZDBF: -49
+2017-10-30 08:17:47,825 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:18:05,082 INFO ZDBF: -48
+2017-10-30 08:18:05,371 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:18:22,642 INFO ZDBF: -48
+2017-10-30 08:18:22,930 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:18:40,203 INFO ZDBF: -48
+2017-10-30 08:18:40,506 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:18:57,796 INFO ZDBF: -49
+2017-10-30 08:18:58,099 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:19:15,388 INFO ZDBF: -49
+2017-10-30 08:19:15,691 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:19:32,990 INFO ZDBF: -50
+2017-10-30 08:19:33,293 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:19:50,551 INFO ZDBF: -48
+2017-10-30 08:19:50,838 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:20:08,109 INFO ZDBF: -49
+2017-10-30 08:20:08,414 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:20:25,700 INFO ZDBF: -50
+2017-10-30 08:20:26,003 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:20:43,275 INFO ZDBF: -49
+2017-10-30 08:20:43,562 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:21:00,867 INFO ZDBF: -49
+2017-10-30 08:21:01,170 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:21:18,424 INFO ZDBF: -49
+2017-10-30 08:21:18,729 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:21:36,000 INFO ZDBF: -51
+2017-10-30 08:21:36,286 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:21:53,591 INFO ZDBF: -48
+2017-10-30 08:21:53,878 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:22:11,150 INFO ZDBF: -49
+2017-10-30 08:22:11,437 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:22:28,740 INFO ZDBF: -49
+2017-10-30 08:22:29,043 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:22:46,313 INFO ZDBF: -49
+2017-10-30 08:22:46,601 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:23:03,855 INFO ZDBF: -49
+2017-10-30 08:23:04,142 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:23:21,430 INFO ZDBF: -49
+2017-10-30 08:23:21,717 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:23:39,013 INFO ZDBF: -48
+2017-10-30 08:23:39,301 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:23:56,588 INFO ZDBF: -48
+2017-10-30 08:23:56,891 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:24:14,147 INFO ZDBF: -46
+2017-10-30 08:24:14,450 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:24:31,767 INFO ZDBF: -48
+2017-10-30 08:24:32,055 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:24:49,342 INFO ZDBF: -49
+2017-10-30 08:24:49,645 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:25:06,915 INFO ZDBF: -47
+2017-10-30 08:25:07,203 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:25:24,459 INFO ZDBF: -48
+2017-10-30 08:25:24,762 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:25:42,032 INFO ZDBF: -47
+2017-10-30 08:25:42,321 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:25:59,622 INFO ZDBF: -48
+2017-10-30 08:25:59,911 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:26:17,180 INFO ZDBF: -48
+2017-10-30 08:26:17,469 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:26:34,740 INFO ZDBF: -48
+2017-10-30 08:26:35,028 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:26:52,312 INFO ZDBF: -46
+2017-10-30 08:26:52,617 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:27:09,936 INFO ZDBF: -47
+2017-10-30 08:27:10,223 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:27:27,493 INFO ZDBF: -48
+2017-10-30 08:27:27,782 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:27:45,046 INFO ZDBF: -48
+2017-10-30 08:27:45,334 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:28:02,586 INFO ZDBF: -46
+2017-10-30 08:28:02,891 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:28:20,193 INFO ZDBF: -48
+2017-10-30 08:28:20,480 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:28:37,750 INFO ZDBF: -46
+2017-10-30 08:28:38,039 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:28:55,293 INFO ZDBF: -48
+2017-10-30 08:28:55,596 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:29:12,852 INFO ZDBF: -48
+2017-10-30 08:29:13,155 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:29:30,427 INFO ZDBF: -48
+2017-10-30 08:29:30,730 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:29:47,984 INFO ZDBF: -46
+2017-10-30 08:29:48,289 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:30:05,543 INFO ZDBF: -47
+2017-10-30 08:30:05,848 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:30:23,134 INFO ZDBF: -46
+2017-10-30 08:30:23,423 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:30:40,678 INFO ZDBF: -48
+2017-10-30 08:30:40,982 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:30:58,255 INFO ZDBF: -46
+2017-10-30 08:30:58,559 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:31:15,848 INFO ZDBF: -47
+2017-10-30 08:31:16,151 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:31:33,407 INFO ZDBF: -47
+2017-10-30 08:31:33,710 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:31:50,961 INFO ZDBF: -44
+2017-10-30 08:31:51,266 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:32:08,571 INFO ZDBF: -47
+2017-10-30 08:32:08,874 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:32:26,131 INFO ZDBF: -46
+2017-10-30 08:32:26,434 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:32:43,690 INFO ZDBF: -46
+2017-10-30 08:32:43,996 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:33:01,250 INFO ZDBF: -46
+2017-10-30 08:33:01,553 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:33:18,825 INFO ZDBF: -46
+2017-10-30 08:33:19,128 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:33:36,401 INFO ZDBF: -47
+2017-10-30 08:33:36,706 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:33:53,960 INFO ZDBF: -48
+2017-10-30 08:33:54,266 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:34:11,553 INFO ZDBF: -47
+2017-10-30 08:34:11,858 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:34:29,115 INFO ZDBF: -47
+2017-10-30 08:34:29,417 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:34:46,673 INFO ZDBF: -44
+2017-10-30 08:34:46,976 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:35:04,279 INFO ZDBF: -47
+2017-10-30 08:35:04,584 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:35:21,839 INFO ZDBF: -46
+2017-10-30 08:35:22,142 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:35:39,394 INFO ZDBF: -46
+2017-10-30 08:35:39,697 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:35:56,394 INFO ZDBF: -46
+2017-10-30 08:35:56,698 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:36:13,970 INFO ZDBF: -47
+2017-10-30 08:36:14,275 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:36:31,529 INFO ZDBF: -46
+2017-10-30 08:36:31,832 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:36:49,105 INFO ZDBF: -47
+2017-10-30 08:36:49,392 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:37:06,664 INFO ZDBF: -48
+2017-10-30 08:37:06,967 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:37:24,226 INFO ZDBF: -45
+2017-10-30 08:37:24,530 INFO Writing setpoint reg 0 to -500
+2017-10-30 08:37:41,819 INFO ZDBF: -48
