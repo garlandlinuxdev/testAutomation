@@ -37,6 +37,7 @@ def main():
     # define variables
     zdbf = 0
     gap = [0, 0]
+    name = 'test'
 
     # main starts here
     config = EOL.myConfig()
@@ -47,8 +48,6 @@ def main():
     config.logger = logger
 
     epoch_time = int(time.time())
-    testlog = config.logfile + 'test_' + str(epoch_time) + '-' + config.excel
-    writeToCSV(config, testlog, zdbf, gap, 1)
 
     try:
         master = EOL.setup()
@@ -82,6 +81,9 @@ def main():
     config.grillType = myJSON.grillType(processID)
     config.updateJSON(config.grillType)
     logger.info(config.jsonFile)
+
+    testlog = config.logfile + str(name) + '_' + str(config.grillType) + '_' + str(epoch_time) + '-' + config.excel
+    writeToCSV(config, testlog, zdbf, gap, 1)
 
     config.json_test_config, config.voltage_config, config.platen_config, config.actuator_config, config.switch_config = myJSON.loadSettings(
         info, config.customer)
