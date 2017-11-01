@@ -110,6 +110,9 @@ def main():
         writeToCSV(config, testlog, zdbf, gap, 0)
         counter += 1
 
+    while True:
+        pl.com.readReg(processID, 0, 1)
+        time.sleep(1)
 
 if __name__ == "__main__":
     main()
