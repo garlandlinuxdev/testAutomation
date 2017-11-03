@@ -35,6 +35,7 @@ def writeToCSV(config, filename, zdbf, enc, status):
 
 def main():
     # define variables
+    waitTime = 120
     zdbf = 0
     gap = [0, 0]
     name = 'test'
@@ -105,6 +106,11 @@ def main():
     while counter <= config.cycle:
         config.display.fb_println('Cycle: %r' % counter, 1)
         pl.resetMode(processID)
+        motor.setpoint(-4000)
+        startTime = time.time()
+        while commonFX.timeCal(startTime) <= waitTime:
+            pl.com.readReg(processID, 0, 1)
+            time.sleep(0.5)
         motor.setpoint(-500)
         time.sleep(8)
         zdbf, gap = pl.calZDBF()
@@ -114,7 +120,7 @@ def main():
 
     while True:
         pl.com.readReg(processID, 0, 1)
-        time.sleep(1)
+
 
 if __name__ == "__main__":
     main()
