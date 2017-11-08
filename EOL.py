@@ -150,7 +150,6 @@ class myConfig(object):
     customer = 1  # 1
     description = "unknown"  # load from json file
     sync_role = 0
-    cycle = 200
 
     # storage
     json_test_config = ''

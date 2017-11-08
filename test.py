@@ -39,6 +39,12 @@ def main():
     zdbf = 0
     gap = [0, 0]
     name = 'test'
+    cycle = 200
+    setpoint = [0, -4000, -500]
+    preheat = 1  # 1 for enable
+
+    linuxPath = os.path.dirname(__file__)
+    logPath = '/project/log/'
 
     # main starts here
     config = EOL.myConfig()
@@ -83,7 +89,7 @@ def main():
     config.updateJSON(config.grillType)
     logger.info(config.jsonFile)
 
-    testlog = config.logfile + str(name) + '_' + str(config.grillType) + '_' + str(epoch_time) + '-' + config.excel
+    testlog = logPath + str(name) + '_' + str(config.grillType) + '_' + str(epoch_time) + '-' + config.excel
     writeToCSV(config, testlog, zdbf, gap, 1)
 
     config.json_test_config, config.voltage_config, config.platen_config, config.actuator_config, config.switch_config = myJSON.loadSettings(
@@ -103,15 +109,34 @@ def main():
     motor.homing(processID)
     motor.resetMode(processID)
 
-    while counter <= config.cycle:
+    # preheat
+    ready = [0, 0, 0, 0, 0]
+    while preheat == 1:
+        logger.info('Preheat enabled')
+        motor.setpoint(setpoint[0])
+        temp = pl.com.readReg(processID, 84, 5)
+        for x in range(0, 5):
+            if temp[x] >= myJSON.heaterTemp[x]:
+                ready[x] = 1
+            else:
+                ready[x] = 0
+
+        if 0 in ready:
+            preheat = 1
+        else:
+            preheat = 0
+    logger.info('Preheat Completed')
+
+    while counter <= cycle:
         config.display.fb_println('Cycle: %r' % counter, 1)
+        logger.info('Cycle: %r' % counter)
         pl.resetMode(processID)
-        motor.setpoint(-4000)
+        motor.setpoint(setpoint[1])
         startTime = time.time()
         while commonFX.timeCal(startTime) <= waitTime:
             pl.com.readReg(processID, 0, 1)
             time.sleep(0.5)
-        motor.setpoint(-500)
+        motor.setpoint(setpoint[2])
         time.sleep(8)
         zdbf, gap = pl.calZDBF()
         config.display.fb_println("ZDBF: %r  |  Rear: %r  |  Front: %r" % (zdbf, gap[0], gap[1]), 0)
