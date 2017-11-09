@@ -89,7 +89,10 @@ def main():
     config.updateJSON(config.grillType)
     logger.info(config.jsonFile)
 
-    testlog = logPath + str(name) + '_' + str(config.grillType) + '_' + str(epoch_time) + '-' + config.excel
+    if config.grillType != 47:
+        testlog = logPath + str(name) + '_' + str(config.grillType) + '_' + str(epoch_time) + '-' + config.excel
+    else:
+        testlog = config.logfile + str(name) + '_' + str(config.grillType) + '_' + str(epoch_time) + '-' + config.excel
     writeToCSV(config, testlog, zdbf, gap, 1)
 
     config.json_test_config, config.voltage_config, config.platen_config, config.actuator_config, config.switch_config = myJSON.loadSettings(
@@ -111,11 +114,13 @@ def main():
 
     # preheat
     ready = [0, 0, 0, 0, 0]
-    while preheat == 1:
+    if preheat == 1:
         logger.info('Preheat enabled')
         motor.setpoint(setpoint[0])
+    while preheat == 1:
         temp = pl.com.readReg(processID, 84, 5)
         for x in range(0, 5):
+            print temp[x], myJSON.heaterTemp[x], ready[x]
             if temp[x] >= myJSON.heaterTemp[x]:
                 ready[x] = 1
             else:
@@ -125,7 +130,8 @@ def main():
             preheat = 1
         else:
             preheat = 0
-    logger.info('Preheat Completed')
+
+    logger.info('Test cycle started')
 
     while counter <= cycle:
         config.display.fb_println('Cycle: %r' % counter, 1)
