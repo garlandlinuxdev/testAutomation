@@ -13,7 +13,7 @@ FB_Y = 10  # global Y position of LCD, update using subfile module
 
 def setup():
     # Configure Hardware Overwrite
-    # com_port = 'COM82'  # For windows
+    # com_port = 'COM30'  # For windows
     # com_port = '/dev/ttyO4' #For UART4
     # com_port = '/dev/ttyO1' #For UI using UART1
     com_port = '/dev/ttyUSB0'  # For USB port
@@ -145,8 +145,10 @@ class myConfig(object):
     test_completed = -1
     grillType = 0  # load from SIB
     jsonFile = linuxPath + hwcfg + str(grillType) + ".json"
-    loadReg_enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors]
+    loadReg_enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors, power sync]
     test_enable = [0, 0, 0, 0, 0, 0, 0]  # selection for test execution
+    temp_Limit = [2400, 2820, 2400, 2820, 2400, 0, 0, 0]  # temperature limit
+    heaterTemp = [1766, 2183, 1766, 2183, 1766, 0, 0, 0]  # temperature setpoint
     customer = 1  # 1
     description = "unknown"  # load from json file
     sync_role = 0
@@ -465,6 +467,8 @@ def main():
     com.setCoil(processID, 30, [1])  # reset button status
 
     myJSON = jsonToFile.loadJSON()
+    myJSON.temp_Limit = config.temp_Limit # overrides default class in loadJSON
+    myJSON.heaterTemp = config.heaterTemp # overrides default class in loadJSON
     myJSON.update(logger, com, config.loadReg_enable)
 
     # info = myJSON.readJSON(config.linuxPath + config.sysPath + 'settings.json')

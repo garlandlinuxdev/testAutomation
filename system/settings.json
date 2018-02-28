@@ -5,7 +5,7 @@
 		"magnet_drift": 0,
 		"homing": 1,
 		"sensors": 0,
-		"ZDBF": 0,
+		"ZDBF": 1,
 		"level_motor": 0,
 		"results": 1
 	},

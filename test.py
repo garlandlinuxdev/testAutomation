@@ -34,20 +34,25 @@ def writeToCSV(config, filename, zdbf, enc, status):
 
 
 def main():
+    config = EOL.myConfig()
+
     # define variables
-    waitTime = 120
+    waitTime = 30
     zdbf = 0
     gap = [0, 0]
     name = 'test'
-    cycle = 200
-    setpoint = [0, -4000, -500]
-    preheat = 1  # 1 for enable
+    cycle = 100
+    setpoint = [0, -4450, -500]
+    preheat = 0  # 1 for enable
+    config.loadReg_enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors, power sync]
+    config.temp_Limit = [2400, 2820, 2400, 2820, 2400, 0, 0, 0]  # overrides temperature limit in loadJSON
+    config.heaterTemp = [1766, 2183, 1766, 2183, 1766, 0, 0, 0]  # overrides temperature setpoint in loadJSON
 
     linuxPath = os.path.dirname(__file__)
-    logPath = '/project/log/'
+    logPath = linuxPath + '/log/'
 
     # main starts here
-    config = EOL.myConfig()
+
     if config.display.checkOS() == True:
         config.display.fb_clear()
         config.copyLog()
@@ -121,7 +126,7 @@ def main():
         temp = pl.com.readReg(processID, 84, 5)
         for x in range(0, 5):
             print temp[x], myJSON.heaterTemp[x], ready[x]
-            if temp[x] >= myJSON.heaterTemp[x]:
+            if temp[x] >= myJSON.heaterTemp[x] - 80:
                 ready[x] = 1
             else:
                 ready[x] = 0
