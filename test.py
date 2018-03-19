@@ -13,7 +13,7 @@ def writeToCSV(config, filename, zdbf, enc, status):
     if status == 1:
         with open(filename, 'a') as test:
             fieldnames = (
-                'date', 'time', 'grill_type', 'rear_enc', 'front_enc', 'zdbf', 'rear_inch', 'front_inch', 'zdbf_mils')
+                'date', 'time', 'grill_type', 'rear_enc', 'front_enc', 'zdbf', 'rear_mils', 'front_mils', 'zdbf_mils')
             targetWriter = csv.DictWriter(test, delimiter=',', lineterminator='\n', fieldnames=fieldnames)
             headers = dict((n, n) for n in fieldnames)
             targetWriter.writerow(headers)
@@ -21,14 +21,14 @@ def writeToCSV(config, filename, zdbf, enc, status):
     else:
         with open(filename, 'a') as test:
             fieldnames = (
-                'date', 'time', 'grill_type',  'rear_enc', 'front_enc', 'zdbf', 'rear_inch', 'front_inch', 'zdbf_mils')
+                'date', 'time', 'grill_type',  'rear_enc', 'front_enc', 'zdbf', 'rear_mils', 'front_mils', 'zdbf_mils')
             targetWriter = csv.DictWriter(test, delimiter=',', lineterminator='\n', fieldnames=fieldnames)
             # headers = dict((n, n) for n in fieldnames)
             # targetWriter.writerow(headers)
             targetWriter.writerow(
                 {'date': datestr, 'time': timestr, 'grill_type': config.grillType, 'rear_enc': str(enc[0]),
-                 'front_enc': str(enc[1]), 'zdbf': str(zdbf), 'rear_inch': str(commonFX.encToInch(enc[0])),
-                 'front_inch': str(commonFX.encToInch(enc[1])), 'zdbf_mils': str(commonFX.encToInch(zdbf) * 1000)
+                 'front_enc': str(enc[1]), 'zdbf': str(zdbf), 'rear_mils': str(commonFX.encToInch(enc[0])*1000),
+                 'front_mils': str(commonFX.encToInch(enc[1])*1000), 'zdbf_mils': str(commonFX.encToInch(zdbf) * 1000)
                  })
         test.close()
 
@@ -43,7 +43,7 @@ def main():
     name = 'test'
     cycle = 100
     setpoint = [0, -4450, -500]
-    preheat = 0  # 1 for enable
+    preheat = 1  # 1 for enable
     config.loadReg_enable = [1, 1, 1, 1]  # load register function, 1 for enable [motionPID, heaterPID, level sensors, power sync]
     config.temp_Limit = [2400, 2820, 2400, 2820, 2400, 0, 0, 0]  # overrides temperature limit in loadJSON
     config.heaterTemp = [1766, 2183, 1766, 2183, 1766, 0, 0, 0]  # overrides temperature setpoint in loadJSON
