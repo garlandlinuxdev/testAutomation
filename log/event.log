@@ -1,0 +1,1333 @@
+2018-02-22 13:41:01,987 INFO FTDI USB cable not found, please connect cable and restart
+2018-02-22 13:45:23,773 INFO FTDI USB cable not found, please connect cable and restart
+2018-02-22 13:46:07,433 INFO Script running on windows platform, LCD disabled
+2018-02-22 13:46:07,433 INFO ==================== Load Settings ====================
+2018-02-22 13:46:07,561 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/29.json
+2018-02-22 13:46:20,348 INFO Script running on windows platform, LCD disabled
+2018-02-22 13:46:20,348 INFO ==================== Load Settings ====================
+2018-02-22 13:46:20,453 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/29.json
+2018-02-22 13:46:24,934 INFO Script running on windows platform, LCD disabled
+2018-02-22 13:46:24,934 INFO ==================== Load Settings ====================
+2018-02-22 13:46:25,023 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/29.json
+2018-02-22 13:47:38,313 INFO Script running on windows platform, LCD disabled
+2018-02-22 13:47:38,313 INFO ==================== Load Settings ====================
+2018-02-22 13:47:38,417 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/29.json
+2018-02-22 13:47:48,938 INFO Script running on windows platform, LCD disabled
+2018-02-22 13:47:48,938 INFO ==================== Load Settings ====================
+2018-02-22 13:47:49,042 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/29.json
+2018-02-22 13:47:49,282 INFO Writing motionPID successful, @ processID 101
+2018-02-22 13:47:49,698 INFO Writing heaterPID successful, @ processID 102
+2018-02-22 13:47:50,082 INFO Writing level sensors successful, @ processID 103
+2018-02-22 13:47:50,178 INFO Writing power sync successful, @ processID 104
+2018-02-22 13:47:57,568 INFO Homing sequence successful, @ processID 0
+2018-02-22 13:47:57,664 INFO Test cycle started
+2018-02-22 13:47:57,664 INFO Cycle: 1
+2018-02-22 13:47:57,855 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:48:27,575 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:48:44,242 INFO ZDBF: -20
+2018-02-22 13:48:44,341 INFO Cycle: 2
+2018-02-22 13:48:44,529 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:49:14,216 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:49:30,882 INFO ZDBF: -26
+2018-02-22 13:49:30,986 INFO Cycle: 3
+2018-02-22 13:49:31,187 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:50:01,482 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:50:18,148 INFO ZDBF: -31
+2018-02-22 13:50:18,252 INFO Cycle: 4
+2018-02-22 13:50:18,436 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:50:48,154 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:51:04,822 INFO ZDBF: -34
+2018-02-22 13:51:04,926 INFO Cycle: 5
+2018-02-22 13:51:05,125 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:51:35,404 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:51:52,079 INFO ZDBF: -38
+2018-02-22 13:51:52,184 INFO Cycle: 6
+2018-02-22 13:51:52,368 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:52:22,647 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:52:39,329 INFO ZDBF: -41
+2018-02-22 13:52:39,434 INFO Cycle: 7
+2018-02-22 13:52:39,618 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:53:09,321 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:53:25,987 INFO ZDBF: -45
+2018-02-22 13:53:26,092 INFO Cycle: 8
+2018-02-22 13:53:26,276 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:53:56,581 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:54:13,263 INFO ZDBF: -48
+2018-02-22 13:54:13,367 INFO Cycle: 9
+2018-02-22 13:54:13,552 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:54:43,242 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:54:59,927 INFO ZDBF: -48
+2018-02-22 13:55:00,030 INFO Cycle: 10
+2018-02-22 13:55:00,214 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:55:30,529 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:55:47,190 INFO ZDBF: -49
+2018-02-22 13:55:47,292 INFO Cycle: 11
+2018-02-22 13:55:47,493 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:56:17,200 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:56:33,868 INFO ZDBF: -50
+2018-02-22 13:56:33,971 INFO Cycle: 12
+2018-02-22 13:56:34,155 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:57:04,453 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:57:21,138 INFO ZDBF: -49
+2018-02-22 13:57:21,243 INFO Cycle: 13
+2018-02-22 13:57:21,427 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:57:51,148 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:58:07,816 INFO ZDBF: -50
+2018-02-22 13:58:07,920 INFO Cycle: 14
+2018-02-22 13:58:08,121 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:58:38,418 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:58:55,104 INFO ZDBF: -51
+2018-02-22 13:58:55,207 INFO Cycle: 15
+2018-02-22 13:58:55,391 INFO Writing setpoint reg 0 to -4000
+2018-02-22 13:59:25,114 INFO Writing setpoint reg 0 to -500
+2018-02-22 13:59:41,778 INFO ZDBF: -50
+2018-02-22 13:59:41,881 INFO Cycle: 16
+2018-02-22 13:59:42,081 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:00:12,364 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:00:29,030 INFO ZDBF: -53
+2018-02-22 14:00:29,134 INFO Cycle: 17
+2018-02-22 14:00:29,335 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:00:59,632 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:01:16,302 INFO ZDBF: -49
+2018-02-22 14:01:16,405 INFO Cycle: 18
+2018-02-22 14:01:16,605 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:01:46,312 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:02:02,997 INFO ZDBF: -52
+2018-02-22 14:02:03,101 INFO Cycle: 19
+2018-02-22 14:02:03,285 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:02:33,584 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:02:50,253 INFO ZDBF: -52
+2018-02-22 14:02:50,355 INFO Cycle: 20
+2018-02-22 14:02:50,539 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:03:20,279 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:03:36,947 INFO ZDBF: -53
+2018-02-22 14:03:37,051 INFO Cycle: 21
+2018-02-22 14:03:37,250 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:04:07,572 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:04:24,242 INFO ZDBF: -50
+2018-02-22 14:04:24,345 INFO Cycle: 22
+2018-02-22 14:04:24,546 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:04:54,252 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:05:10,937 INFO ZDBF: -51
+2018-02-22 14:05:11,039 INFO Cycle: 23
+2018-02-22 14:05:11,224 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:05:41,523 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:05:58,207 INFO ZDBF: -50
+2018-02-22 14:05:58,309 INFO Cycle: 24
+2018-02-22 14:05:58,494 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:06:28,200 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:06:44,869 INFO ZDBF: -52
+2018-02-22 14:06:44,971 INFO Cycle: 25
+2018-02-22 14:06:45,157 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:07:15,456 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:07:32,125 INFO ZDBF: -52
+2018-02-22 14:07:32,229 INFO Cycle: 26
+2018-02-22 14:07:32,428 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:08:02,128 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:08:18,813 INFO ZDBF: -52
+2018-02-22 14:08:18,917 INFO Cycle: 27
+2018-02-22 14:08:19,101 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:08:49,384 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:09:06,052 INFO ZDBF: -52
+2018-02-22 14:09:06,157 INFO Cycle: 28
+2018-02-22 14:09:06,355 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:09:36,654 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:09:53,322 INFO ZDBF: -53
+2018-02-22 14:09:53,427 INFO Cycle: 29
+2018-02-22 14:09:53,627 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:10:23,332 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:10:40,003 INFO ZDBF: -53
+2018-02-22 14:10:40,107 INFO Cycle: 30
+2018-02-22 14:10:40,306 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:11:10,604 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:11:27,289 INFO ZDBF: -52
+2018-02-22 14:11:27,392 INFO Cycle: 31
+2018-02-22 14:11:27,575 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:11:57,308 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:12:13,976 INFO ZDBF: -53
+2018-02-22 14:12:14,081 INFO Cycle: 32
+2018-02-22 14:12:14,280 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:12:44,578 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:13:01,263 INFO ZDBF: -54
+2018-02-22 14:13:01,368 INFO Cycle: 33
+2018-02-22 14:13:01,552 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:13:31,257 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:13:47,941 INFO ZDBF: -52
+2018-02-22 14:13:48,046 INFO Cycle: 34
+2018-02-22 14:13:48,262 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:14:18,559 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:14:35,230 INFO ZDBF: -52
+2018-02-22 14:14:35,334 INFO Cycle: 35
+2018-02-22 14:14:35,532 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:15:05,240 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:15:21,908 INFO ZDBF: -53
+2018-02-22 14:15:22,012 INFO Cycle: 36
+2018-02-22 14:15:22,213 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:15:52,503 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:16:09,171 INFO ZDBF: -54
+2018-02-22 14:16:09,276 INFO Cycle: 37
+2018-02-22 14:16:09,476 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:16:39,181 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:16:55,851 INFO ZDBF: -53
+2018-02-22 14:16:55,956 INFO Cycle: 38
+2018-02-22 14:16:56,154 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:17:26,453 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:17:43,122 INFO ZDBF: -51
+2018-02-22 14:17:43,226 INFO Cycle: 39
+2018-02-22 14:17:43,427 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:18:13,132 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:18:29,802 INFO ZDBF: -52
+2018-02-22 14:18:29,907 INFO Cycle: 40
+2018-02-22 14:18:30,107 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:19:00,404 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:19:17,072 INFO ZDBF: -51
+2018-02-22 14:19:17,177 INFO Cycle: 41
+2018-02-22 14:19:17,377 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:19:47,667 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:20:04,335 INFO ZDBF: -52
+2018-02-22 14:20:04,440 INFO Cycle: 42
+2018-02-22 14:20:04,561 INFO Write to register 255 failed (retry remains 20), @ processID 0
+2018-02-22 14:20:04,752 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:20:34,443 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:20:51,111 INFO ZDBF: -52
+2018-02-22 14:20:51,216 INFO Cycle: 43
+2018-02-22 14:20:51,414 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:21:21,121 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:21:37,805 INFO ZDBF: -50
+2018-02-22 14:21:37,910 INFO Cycle: 44
+2018-02-22 14:21:38,030 INFO Write to register 255 failed (retry remains 20), @ processID 0
+2018-02-22 14:21:38,221 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:22:08,536 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:22:25,204 INFO ZDBF: -53
+2018-02-22 14:22:25,309 INFO Cycle: 45
+2018-02-22 14:22:25,509 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:22:55,214 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:23:11,884 INFO ZDBF: -51
+2018-02-22 14:23:11,989 INFO Cycle: 46
+2018-02-22 14:23:12,204 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:23:42,496 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:23:59,180 INFO ZDBF: -50
+2018-02-22 14:23:59,283 INFO Cycle: 47
+2018-02-22 14:23:59,467 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:24:29,174 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:24:45,859 INFO ZDBF: -51
+2018-02-22 14:24:45,963 INFO Cycle: 48
+2018-02-22 14:24:46,148 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:25:16,446 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:25:33,131 INFO ZDBF: -48
+2018-02-22 14:25:33,236 INFO Cycle: 49
+2018-02-22 14:25:33,418 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:26:03,125 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:26:19,792 INFO ZDBF: -50
+2018-02-22 14:26:19,898 INFO Cycle: 50
+2018-02-22 14:26:20,098 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:26:50,397 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:27:07,065 INFO ZDBF: -46
+2018-02-22 14:27:07,168 INFO Cycle: 51
+2018-02-22 14:27:07,368 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:27:37,667 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:27:54,331 INFO ZDBF: -49
+2018-02-22 14:27:54,436 INFO Cycle: 52
+2018-02-22 14:27:54,634 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:28:24,325 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:28:40,994 INFO ZDBF: -49
+2018-02-22 14:28:41,098 INFO Cycle: 53
+2018-02-22 14:28:41,282 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:29:11,581 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:29:28,249 INFO ZDBF: -49
+2018-02-22 14:29:28,354 INFO Cycle: 54
+2018-02-22 14:29:28,552 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:29:58,242 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:30:14,911 INFO ZDBF: -49
+2018-02-22 14:30:15,016 INFO Cycle: 55
+2018-02-22 14:30:15,216 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:30:45,513 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:31:02,198 INFO ZDBF: -46
+2018-02-22 14:31:02,302 INFO Cycle: 56
+2018-02-22 14:31:02,486 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:31:32,194 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:31:48,871 INFO ZDBF: -48
+2018-02-22 14:31:48,976 INFO Cycle: 57
+2018-02-22 14:31:49,160 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:32:19,459 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:32:36,128 INFO ZDBF: -51
+2018-02-22 14:32:36,233 INFO Cycle: 58
+2018-02-22 14:32:36,431 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:33:06,138 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:33:22,808 INFO ZDBF: -47
+2018-02-22 14:33:22,911 INFO Cycle: 59
+2018-02-22 14:33:23,111 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:33:53,394 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:34:10,062 INFO ZDBF: -50
+2018-02-22 14:34:10,167 INFO Cycle: 60
+2018-02-22 14:34:10,367 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:34:40,664 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:34:57,348 INFO ZDBF: -46
+2018-02-22 14:34:57,454 INFO Cycle: 61
+2018-02-22 14:34:57,637 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:35:27,344 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:35:44,005 INFO ZDBF: -51
+2018-02-22 14:35:44,108 INFO Cycle: 62
+2018-02-22 14:35:44,309 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:36:14,607 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:36:31,276 INFO ZDBF: -55
+2018-02-22 14:36:31,381 INFO Cycle: 63
+2018-02-22 14:36:31,579 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:37:01,286 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:37:17,954 INFO ZDBF: -55
+2018-02-22 14:37:18,059 INFO Cycle: 64
+2018-02-22 14:37:18,259 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:37:48,540 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:38:05,226 INFO ZDBF: -57
+2018-02-22 14:38:05,329 INFO Cycle: 65
+2018-02-22 14:38:05,513 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:38:35,220 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:38:51,905 INFO ZDBF: -55
+2018-02-22 14:38:52,010 INFO Cycle: 66
+2018-02-22 14:38:52,194 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:39:22,492 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:39:39,161 INFO ZDBF: -54
+2018-02-22 14:39:39,266 INFO Cycle: 67
+2018-02-22 14:39:39,463 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:40:09,180 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:40:25,865 INFO ZDBF: -56
+2018-02-22 14:40:25,970 INFO Cycle: 68
+2018-02-22 14:40:26,153 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:40:56,450 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:41:13,121 INFO ZDBF: -53
+2018-02-22 14:41:13,224 INFO Cycle: 69
+2018-02-22 14:41:13,424 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:41:43,131 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:41:59,799 INFO ZDBF: -53
+2018-02-22 14:41:59,904 INFO Cycle: 70
+2018-02-22 14:42:00,104 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:42:30,385 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:42:47,055 INFO ZDBF: -54
+2018-02-22 14:42:47,160 INFO Cycle: 71
+2018-02-22 14:42:47,358 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:43:17,657 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:43:34,342 INFO ZDBF: -54
+2018-02-22 14:43:34,447 INFO Cycle: 72
+2018-02-22 14:43:34,630 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:44:04,329 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:44:20,999 INFO ZDBF: -54
+2018-02-22 14:44:21,105 INFO Cycle: 73
+2018-02-22 14:44:21,303 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:44:51,601 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:45:08,269 INFO ZDBF: -53
+2018-02-22 14:45:08,375 INFO Cycle: 74
+2018-02-22 14:45:08,573 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:45:38,265 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:45:54,950 INFO ZDBF: -52
+2018-02-22 14:45:55,055 INFO Cycle: 75
+2018-02-22 14:45:55,237 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:46:25,536 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:46:42,204 INFO ZDBF: -56
+2018-02-22 14:46:42,309 INFO Cycle: 76
+2018-02-22 14:46:42,509 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:47:12,216 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:47:28,884 INFO ZDBF: -56
+2018-02-22 14:47:28,989 INFO Cycle: 77
+2018-02-22 14:47:29,187 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:47:59,479 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:48:16,148 INFO ZDBF: -51
+2018-02-22 14:48:16,253 INFO Cycle: 78
+2018-02-22 14:48:16,436 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:48:46,142 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:49:02,828 INFO ZDBF: -50
+2018-02-22 14:49:02,933 INFO Cycle: 79
+2018-02-22 14:49:03,115 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:49:33,414 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:49:50,082 INFO ZDBF: -53
+2018-02-22 14:49:50,187 INFO Cycle: 80
+2018-02-22 14:49:50,387 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:50:20,686 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:50:37,354 INFO ZDBF: -52
+2018-02-22 14:50:37,459 INFO Cycle: 81
+2018-02-22 14:50:37,657 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:51:07,346 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:51:24,032 INFO ZDBF: -53
+2018-02-22 14:51:24,138 INFO Cycle: 82
+2018-02-22 14:51:24,319 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:51:54,611 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:52:11,280 INFO ZDBF: -50
+2018-02-22 14:52:11,385 INFO Cycle: 83
+2018-02-22 14:52:11,585 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:52:41,290 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:52:57,960 INFO ZDBF: -52
+2018-02-22 14:52:58,065 INFO Cycle: 84
+2018-02-22 14:52:58,263 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:53:28,546 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:53:45,214 INFO ZDBF: -55
+2018-02-22 14:53:45,319 INFO Cycle: 85
+2018-02-22 14:53:45,519 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:54:15,224 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:54:31,911 INFO ZDBF: -54
+2018-02-22 14:54:32,016 INFO Cycle: 86
+2018-02-22 14:54:32,198 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:55:02,496 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:55:19,164 INFO ZDBF: -54
+2018-02-22 14:55:19,269 INFO Cycle: 87
+2018-02-22 14:55:19,469 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:55:49,167 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:56:05,836 INFO ZDBF: -51
+2018-02-22 14:56:05,941 INFO Cycle: 88
+2018-02-22 14:56:06,155 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:56:36,454 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:56:53,124 INFO ZDBF: -49
+2018-02-22 14:56:53,229 INFO Cycle: 89
+2018-02-22 14:56:53,427 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:57:23,118 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:57:39,786 INFO ZDBF: -52
+2018-02-22 14:57:39,891 INFO Cycle: 90
+2018-02-22 14:57:40,092 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:58:10,390 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:58:27,073 INFO ZDBF: -49
+2018-02-22 14:58:27,178 INFO Cycle: 91
+2018-02-22 14:58:27,361 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:58:57,660 INFO Writing setpoint reg 0 to -500
+2018-02-22 14:59:14,328 INFO ZDBF: -53
+2018-02-22 14:59:14,434 INFO Cycle: 92
+2018-02-22 14:59:14,632 INFO Writing setpoint reg 0 to -4000
+2018-02-22 14:59:44,332 INFO Writing setpoint reg 0 to -500
+2018-02-22 15:00:01,002 INFO ZDBF: -53
+2018-02-22 15:00:01,107 INFO Cycle: 93
+2018-02-22 15:00:01,305 INFO Writing setpoint reg 0 to -4000
+2018-02-22 15:00:31,588 INFO Writing setpoint reg 0 to -500
+2018-02-22 15:00:48,272 INFO ZDBF: -52
+2018-02-22 15:00:48,378 INFO Cycle: 94
+2018-02-22 15:00:48,559 INFO Writing setpoint reg 0 to -4000
+2018-02-22 15:01:18,266 INFO Writing setpoint reg 0 to -500
+2018-02-22 15:01:34,936 INFO ZDBF: -51
+2018-02-22 15:01:35,040 INFO Cycle: 95
+2018-02-22 15:01:35,240 INFO Writing setpoint reg 0 to -4000
+2018-02-22 15:02:05,538 INFO Writing setpoint reg 0 to -500
+2018-02-22 15:02:22,207 INFO ZDBF: -51
+2018-02-22 15:02:22,311 INFO Cycle: 96
+2018-02-22 15:02:22,510 INFO Writing setpoint reg 0 to -4000
+2018-02-22 15:02:52,200 INFO Writing setpoint reg 0 to -500
+2018-02-22 15:03:08,869 INFO ZDBF: -50
+2018-02-22 15:03:08,976 INFO Cycle: 97
+2018-02-22 15:03:09,174 INFO Writing setpoint reg 0 to -4000
+2018-02-22 15:03:39,471 INFO Writing setpoint reg 0 to -500
+2018-02-22 15:03:56,150 INFO ZDBF: -52
+2018-02-22 15:03:56,256 INFO Cycle: 98
+2018-02-22 15:03:56,437 INFO Writing setpoint reg 0 to -4000
+2018-02-22 15:04:26,144 INFO Writing setpoint reg 0 to -500
+2018-02-22 15:04:42,813 INFO ZDBF: -50
+2018-02-22 15:04:42,920 INFO Cycle: 99
+2018-02-22 15:04:43,118 INFO Writing setpoint reg 0 to -4000
+2018-02-22 15:05:13,400 INFO Writing setpoint reg 0 to -500
+2018-02-22 15:05:30,069 INFO ZDBF: -52
+2018-02-22 15:05:30,174 INFO Cycle: 100
+2018-02-22 15:05:30,372 INFO Writing setpoint reg 0 to -4000
+2018-02-22 15:06:00,671 INFO Writing setpoint reg 0 to -500
+2018-02-22 15:06:17,355 INFO ZDBF: -53
+2018-02-22 15:17:45,296 INFO Reading register 0 failed (retry remains 20), @ processID 0
+2018-02-22 15:17:45,417 INFO Reading register 0 failed (retry remains 19), @ processID 0
+2018-02-22 15:17:45,539 INFO Reading register 0 failed (retry remains 18), @ processID 0
+2018-02-22 15:17:45,660 INFO Reading register 0 failed (retry remains 17), @ processID 0
+2018-02-22 15:17:45,780 INFO Reading register 0 failed (retry remains 16), @ processID 0
+2018-02-22 15:17:45,901 INFO Reading register 0 failed (retry remains 15), @ processID 0
+2018-02-22 15:17:46,023 INFO Reading register 0 failed (retry remains 14), @ processID 0
+2018-02-22 15:17:46,144 INFO Reading register 0 failed (retry remains 13), @ processID 0
+2018-02-22 15:17:46,265 INFO Reading register 0 failed (retry remains 12), @ processID 0
+2018-02-22 15:17:46,385 INFO Reading register 0 failed (retry remains 11), @ processID 0
+2018-02-22 15:17:46,506 INFO Reading register 0 failed (retry remains 10), @ processID 0
+2018-02-22 15:17:46,628 INFO Reading register 0 failed (retry remains 9), @ processID 0
+2018-02-22 15:17:46,749 INFO Reading register 0 failed (retry remains 8), @ processID 0
+2018-02-22 15:17:46,869 INFO Reading register 0 failed (retry remains 7), @ processID 0
+2018-02-22 15:17:46,990 INFO Reading register 0 failed (retry remains 6), @ processID 0
+2018-02-22 15:17:47,117 INFO Reading register 0 failed (retry remains 5), @ processID 0
+2018-02-22 15:17:47,237 INFO Reading register 0 failed (retry remains 4), @ processID 0
+2018-02-22 15:17:47,358 INFO Reading register 0 failed (retry remains 3), @ processID 0
+2018-02-22 15:17:47,480 INFO Reading register 0 failed (retry remains 2), @ processID 0
+2018-02-22 15:17:47,601 INFO Reading register 0 failed (retry remains 1), @ processID 0
+2018-02-22 15:17:47,721 INFO Reading register 0 failed (retry remains 0), @ processID 0
+2018-02-22 15:17:47,721 INFO Max retry reached @ 0, exiting script...please restart
+2018-02-26 09:00:28,364 INFO Script running on windows platform, LCD disabled
+2018-02-26 09:00:28,364 INFO ==================== Load Settings ====================
+2018-02-26 09:00:28,467 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/29.json
+2018-02-26 09:00:28,723 INFO Writing motionPID successful, @ processID 101
+2018-02-26 09:00:29,140 INFO Writing heaterPID successful, @ processID 102
+2018-02-26 09:00:29,523 INFO Writing level sensors successful, @ processID 103
+2018-02-26 09:00:29,619 INFO Writing power sync successful, @ processID 104
+2018-02-26 09:00:39,407 INFO Homing sequence successful, @ processID 0
+2018-02-26 09:00:39,505 INFO Test cycle started
+2018-02-26 09:00:39,505 INFO Cycle: 1
+2018-02-26 09:00:39,696 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:02:59,812 INFO Script running on windows platform, LCD disabled
+2018-02-26 09:02:59,812 INFO ==================== Load Settings ====================
+2018-02-26 09:02:59,940 INFO Reading register 32 failed (retry remains 20), @ processID 0
+2018-02-26 09:03:00,068 INFO Reading register 32 failed (retry remains 19), @ processID 0
+2018-02-26 09:03:00,196 INFO Reading register 32 failed (retry remains 18), @ processID 0
+2018-02-26 09:03:00,323 INFO Reading register 32 failed (retry remains 17), @ processID 0
+2018-02-26 09:03:00,451 INFO Reading register 32 failed (retry remains 16), @ processID 0
+2018-02-26 09:03:00,579 INFO Reading register 32 failed (retry remains 15), @ processID 0
+2018-02-26 09:03:00,707 INFO Reading register 32 failed (retry remains 14), @ processID 0
+2018-02-26 09:03:00,835 INFO Reading register 32 failed (retry remains 13), @ processID 0
+2018-02-26 09:03:00,963 INFO Reading register 32 failed (retry remains 12), @ processID 0
+2018-02-26 09:03:01,092 INFO Reading register 32 failed (retry remains 11), @ processID 0
+2018-02-26 09:03:01,220 INFO Reading register 32 failed (retry remains 10), @ processID 0
+2018-02-26 09:03:01,348 INFO Reading register 32 failed (retry remains 9), @ processID 0
+2018-02-26 09:03:01,476 INFO Reading register 32 failed (retry remains 8), @ processID 0
+2018-02-26 09:03:01,604 INFO Reading register 32 failed (retry remains 7), @ processID 0
+2018-02-26 09:03:01,732 INFO Reading register 32 failed (retry remains 6), @ processID 0
+2018-02-26 09:03:01,859 INFO Reading register 32 failed (retry remains 5), @ processID 0
+2018-02-26 09:03:01,987 INFO Reading register 32 failed (retry remains 4), @ processID 0
+2018-02-26 09:03:02,115 INFO Reading register 32 failed (retry remains 3), @ processID 0
+2018-02-26 09:03:02,243 INFO Reading register 32 failed (retry remains 2), @ processID 0
+2018-02-26 09:03:02,371 INFO Reading register 32 failed (retry remains 1), @ processID 0
+2018-02-26 09:03:02,500 INFO Reading register 32 failed (retry remains 0), @ processID 0
+2018-02-26 09:03:02,500 INFO Max retry reached @ 0, exiting script...please restart
+2018-02-26 09:03:29,368 INFO Script running on windows platform, LCD disabled
+2018-02-26 09:03:29,369 INFO ==================== Load Settings ====================
+2018-02-26 09:03:29,473 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/29.json
+2018-02-26 09:03:29,697 INFO Writing motionPID successful, @ processID 101
+2018-02-26 09:03:30,082 INFO Writing heaterPID successful, @ processID 102
+2018-02-26 09:03:30,466 INFO Writing level sensors successful, @ processID 103
+2018-02-26 09:03:30,562 INFO Writing power sync successful, @ processID 104
+2018-02-26 09:03:39,200 INFO Homing sequence successful, @ processID 0
+2018-02-26 09:03:39,296 INFO Test cycle started
+2018-02-26 09:03:39,296 INFO Cycle: 1
+2018-02-26 09:03:39,487 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:04:57,338 INFO Script running on windows platform, LCD disabled
+2018-02-26 09:04:57,338 INFO ==================== Load Settings ====================
+2018-02-26 09:04:57,427 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/29.json
+2018-02-26 09:04:57,651 INFO Writing motionPID successful, @ processID 101
+2018-02-26 09:04:58,036 INFO Writing level sensors successful, @ processID 103
+2018-02-26 09:04:58,131 INFO Writing power sync successful, @ processID 104
+2018-02-26 09:05:06,769 INFO Homing sequence successful, @ processID 0
+2018-02-26 09:05:06,865 INFO Test cycle started
+2018-02-26 09:05:06,865 INFO Cycle: 1
+2018-02-26 09:05:07,058 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:05:37,371 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:05:54,055 INFO ZDBF: -13
+2018-02-26 09:05:54,154 INFO Cycle: 2
+2018-02-26 09:05:54,342 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:06:24,655 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:06:41,325 INFO ZDBF: -14
+2018-02-26 09:06:41,428 INFO Cycle: 3
+2018-02-26 09:06:41,612 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:07:11,319 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:07:27,986 INFO ZDBF: -14
+2018-02-26 09:07:28,088 INFO Cycle: 4
+2018-02-26 09:07:28,273 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:07:58,555 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:08:15,234 INFO ZDBF: -14
+2018-02-26 09:08:15,338 INFO Cycle: 5
+2018-02-26 09:08:15,522 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:08:45,227 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:09:01,897 INFO ZDBF: -14
+2018-02-26 09:09:02,000 INFO Cycle: 6
+2018-02-26 09:09:02,200 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:09:32,497 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:09:49,164 INFO ZDBF: -14
+2018-02-26 09:09:49,269 INFO Cycle: 7
+2018-02-26 09:09:49,453 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:10:19,174 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:10:35,842 INFO ZDBF: -15
+2018-02-26 09:10:35,947 INFO Cycle: 8
+2018-02-26 09:10:36,147 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:11:06,444 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:11:23,112 INFO ZDBF: -17
+2018-02-26 09:11:23,217 INFO Cycle: 9
+2018-02-26 09:11:23,401 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:11:53,105 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:12:09,773 INFO ZDBF: -16
+2018-02-26 09:12:09,878 INFO Cycle: 10
+2018-02-26 09:12:10,078 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:12:40,398 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:12:57,068 INFO ZDBF: -18
+2018-02-26 09:12:57,171 INFO Cycle: 11
+2018-02-26 09:12:57,371 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:13:27,684 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:13:44,368 INFO ZDBF: -18
+2018-02-26 09:13:44,473 INFO Cycle: 12
+2018-02-26 09:13:44,657 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:14:14,378 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:14:31,046 INFO ZDBF: -17
+2018-02-26 09:14:31,148 INFO Cycle: 13
+2018-02-26 09:14:31,351 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:15:01,648 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:15:18,315 INFO ZDBF: -16
+2018-02-26 09:15:18,418 INFO Cycle: 14
+2018-02-26 09:15:18,604 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:15:48,325 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:16:04,993 INFO ZDBF: -17
+2018-02-26 09:16:05,096 INFO Cycle: 15
+2018-02-26 09:16:05,298 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:16:35,604 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:16:52,273 INFO ZDBF: -16
+2018-02-26 09:16:52,377 INFO Cycle: 16
+2018-02-26 09:16:52,576 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:17:22,266 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:17:38,950 INFO ZDBF: -16
+2018-02-26 09:17:39,052 INFO Cycle: 17
+2018-02-26 09:17:39,237 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:18:09,551 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:18:26,220 INFO ZDBF: -16
+2018-02-26 09:18:26,322 INFO Cycle: 18
+2018-02-26 09:18:26,507 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:18:56,213 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:19:12,898 INFO ZDBF: -18
+2018-02-26 09:19:13,000 INFO Cycle: 19
+2018-02-26 09:19:13,186 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:19:43,499 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:20:00,183 INFO ZDBF: -16
+2018-02-26 09:20:00,286 INFO Cycle: 20
+2018-02-26 09:20:00,470 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:20:30,168 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:20:46,838 INFO ZDBF: -17
+2018-02-26 09:20:46,940 INFO Cycle: 21
+2018-02-26 09:20:47,125 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:21:17,438 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:21:34,108 INFO ZDBF: -15
+2018-02-26 09:21:34,210 INFO Cycle: 22
+2018-02-26 09:21:34,411 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:22:04,099 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:22:20,783 INFO ZDBF: -15
+2018-02-26 09:22:20,888 INFO Cycle: 23
+2018-02-26 09:22:21,072 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:22:51,385 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:23:08,069 INFO ZDBF: -16
+2018-02-26 09:23:08,173 INFO Cycle: 24
+2018-02-26 09:23:08,358 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:23:38,671 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:23:55,339 INFO ZDBF: -16
+2018-02-26 09:23:55,444 INFO Cycle: 25
+2018-02-26 09:23:55,644 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:24:25,342 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:24:42,010 INFO ZDBF: -16
+2018-02-26 09:24:42,115 INFO Cycle: 26
+2018-02-26 09:24:42,299 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:25:12,579 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:25:29,246 INFO ZDBF: -16
+2018-02-26 09:25:29,351 INFO Cycle: 27
+2018-02-26 09:25:29,551 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:25:59,273 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:26:15,940 INFO ZDBF: -15
+2018-02-26 09:26:16,046 INFO Cycle: 28
+2018-02-26 09:26:16,244 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:26:46,542 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:27:03,210 INFO ZDBF: -16
+2018-02-26 09:27:03,315 INFO Cycle: 29
+2018-02-26 09:27:03,499 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:27:33,204 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:27:49,872 INFO ZDBF: -16
+2018-02-26 09:27:49,976 INFO Cycle: 30
+2018-02-26 09:27:50,161 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:28:20,483 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:28:37,151 INFO ZDBF: -14
+2018-02-26 09:28:37,256 INFO Cycle: 31
+2018-02-26 09:28:37,440 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:29:07,130 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:29:23,799 INFO ZDBF: -15
+2018-02-26 09:29:23,903 INFO Cycle: 32
+2018-02-26 09:29:24,102 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:29:54,400 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:30:11,068 INFO ZDBF: -16
+2018-02-26 09:30:11,171 INFO Cycle: 33
+2018-02-26 09:30:11,355 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:30:41,654 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:30:58,322 INFO ZDBF: -14
+2018-02-26 09:30:58,426 INFO Cycle: 34
+2018-02-26 09:30:58,608 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:31:28,315 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:31:44,983 INFO ZDBF: -16
+2018-02-26 09:31:45,086 INFO Cycle: 35
+2018-02-26 09:31:45,272 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:32:15,562 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:32:32,230 INFO ZDBF: -15
+2018-02-26 09:32:32,335 INFO Cycle: 36
+2018-02-26 09:32:32,519 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:33:02,223 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:33:18,891 INFO ZDBF: -14
+2018-02-26 09:33:18,996 INFO Cycle: 37
+2018-02-26 09:33:19,180 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:33:49,460 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:34:06,145 INFO ZDBF: -15
+2018-02-26 09:34:06,250 INFO Cycle: 38
+2018-02-26 09:34:06,371 INFO Write to register 255 failed (retry remains 20), @ processID 0
+2018-02-26 09:34:06,562 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:34:36,282 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:34:52,967 INFO ZDBF: -16
+2018-02-26 09:34:53,072 INFO Cycle: 39
+2018-02-26 09:34:53,256 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:35:23,536 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:35:40,220 INFO ZDBF: -16
+2018-02-26 09:35:40,325 INFO Cycle: 40
+2018-02-26 09:35:40,509 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:36:10,223 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:36:26,903 INFO ZDBF: -16
+2018-02-26 09:36:27,006 INFO Cycle: 41
+2018-02-26 09:36:27,190 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:36:57,487 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:37:14,155 INFO ZDBF: -14
+2018-02-26 09:37:14,259 INFO Cycle: 42
+2018-02-26 09:37:14,444 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:37:44,150 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:38:00,818 INFO ZDBF: -16
+2018-02-26 09:38:00,921 INFO Cycle: 43
+2018-02-26 09:38:01,105 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:38:31,403 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:38:48,072 INFO ZDBF: -16
+2018-02-26 09:38:48,176 INFO Cycle: 44
+2018-02-26 09:38:48,359 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:39:18,673 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:39:35,342 INFO ZDBF: -15
+2018-02-26 09:39:35,446 INFO Cycle: 45
+2018-02-26 09:39:35,645 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:40:05,351 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:40:22,020 INFO ZDBF: -15
+2018-02-26 09:40:22,125 INFO Cycle: 46
+2018-02-26 09:40:22,309 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:40:52,589 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:41:09,273 INFO ZDBF: -16
+2018-02-26 09:41:09,378 INFO Cycle: 47
+2018-02-26 09:41:09,578 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:41:39,282 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:41:55,967 INFO ZDBF: -15
+2018-02-26 09:41:56,072 INFO Cycle: 48
+2018-02-26 09:41:56,256 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:42:26,552 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:42:43,221 INFO ZDBF: -15
+2018-02-26 09:42:43,326 INFO Cycle: 49
+2018-02-26 09:42:43,509 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:43:13,198 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:43:29,882 INFO ZDBF: -16
+2018-02-26 09:43:29,992 INFO Cycle: 50
+2018-02-26 09:43:30,187 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:44:00,469 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:44:17,147 INFO ZDBF: -16
+2018-02-26 09:44:17,250 INFO Cycle: 51
+2018-02-26 09:44:17,450 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:44:47,155 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:45:03,841 INFO ZDBF: -16
+2018-02-26 09:45:03,951 INFO Cycle: 52
+2018-02-26 09:45:04,144 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:45:34,447 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:45:51,115 INFO ZDBF: -14
+2018-02-26 09:45:51,220 INFO Cycle: 53
+2018-02-26 09:45:51,404 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:46:21,108 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:46:37,778 INFO ZDBF: -16
+2018-02-26 09:46:37,881 INFO Cycle: 54
+2018-02-26 09:46:38,065 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:47:08,362 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:47:25,032 INFO ZDBF: -14
+2018-02-26 09:47:25,137 INFO Cycle: 55
+2018-02-26 09:47:25,319 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:47:55,617 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:48:12,328 INFO ZDBF: -15
+2018-02-26 09:48:12,433 INFO Cycle: 56
+2018-02-26 09:48:12,617 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:48:42,322 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:48:58,990 INFO ZDBF: -15
+2018-02-26 09:48:59,094 INFO Cycle: 57
+2018-02-26 09:48:59,278 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:49:29,559 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:49:46,243 INFO ZDBF: -15
+2018-02-26 09:49:46,348 INFO Cycle: 58
+2018-02-26 09:49:46,532 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:50:16,237 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:50:32,905 INFO ZDBF: -15
+2018-02-26 09:50:33,010 INFO Cycle: 59
+2018-02-26 09:50:33,194 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:51:03,492 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:51:20,157 INFO ZDBF: -17
+2018-02-26 09:51:20,263 INFO Cycle: 60
+2018-02-26 09:51:20,446 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:51:50,151 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:52:06,819 INFO ZDBF: -16
+2018-02-26 09:52:06,923 INFO Cycle: 61
+2018-02-26 09:52:07,108 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:52:37,398 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:52:54,066 INFO ZDBF: -17
+2018-02-26 09:52:54,171 INFO Cycle: 62
+2018-02-26 09:52:54,355 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:53:24,653 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:53:41,321 INFO ZDBF: -15
+2018-02-26 09:53:41,424 INFO Cycle: 63
+2018-02-26 09:53:41,625 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:54:11,329 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:54:27,999 INFO ZDBF: -14
+2018-02-26 09:54:28,104 INFO Cycle: 64
+2018-02-26 09:54:28,286 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:54:58,599 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:55:15,285 INFO ZDBF: -16
+2018-02-26 09:55:15,388 INFO Cycle: 65
+2018-02-26 09:55:15,572 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:55:45,278 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:56:01,947 INFO ZDBF: -14
+2018-02-26 09:56:02,051 INFO Cycle: 66
+2018-02-26 09:56:02,234 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:56:32,525 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:56:49,209 INFO ZDBF: -16
+2018-02-26 09:56:49,313 INFO Cycle: 67
+2018-02-26 09:56:49,513 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:57:19,217 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:57:35,903 INFO ZDBF: -16
+2018-02-26 09:57:36,007 INFO Cycle: 68
+2018-02-26 09:57:36,190 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:58:06,489 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:58:23,157 INFO ZDBF: -15
+2018-02-26 09:58:23,262 INFO Cycle: 69
+2018-02-26 09:58:23,444 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:58:53,134 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:59:09,802 INFO ZDBF: -15
+2018-02-26 09:59:09,907 INFO Cycle: 70
+2018-02-26 09:59:10,105 INFO Writing setpoint reg 0 to -4000
+2018-02-26 09:59:40,404 INFO Writing setpoint reg 0 to -500
+2018-02-26 09:59:57,072 INFO ZDBF: -14
+2018-02-26 09:59:57,177 INFO Cycle: 71
+2018-02-26 09:59:57,359 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:00:27,653 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:00:44,336 INFO ZDBF: -15
+2018-02-26 10:00:44,443 INFO Cycle: 72
+2018-02-26 10:00:44,625 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:01:14,346 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:01:31,015 INFO ZDBF: -14
+2018-02-26 10:01:31,118 INFO Cycle: 73
+2018-02-26 10:01:31,319 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:02:01,617 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:02:18,285 INFO ZDBF: -14
+2018-02-26 10:02:18,390 INFO Cycle: 74
+2018-02-26 10:02:18,572 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:02:48,278 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:03:04,947 INFO ZDBF: -15
+2018-02-26 10:03:05,052 INFO Cycle: 75
+2018-02-26 10:03:05,250 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:03:35,563 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:03:52,249 INFO ZDBF: -17
+2018-02-26 10:03:52,354 INFO Cycle: 76
+2018-02-26 10:03:52,536 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:04:22,237 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:04:38,905 INFO ZDBF: -15
+2018-02-26 10:04:39,010 INFO Cycle: 77
+2018-02-26 10:04:39,193 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:05:09,490 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:05:26,160 INFO ZDBF: -14
+2018-02-26 10:05:26,265 INFO Cycle: 78
+2018-02-26 10:05:26,385 INFO Write to register 255 failed (retry remains 20), @ processID 0
+2018-02-26 10:05:26,575 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:05:56,265 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:06:12,950 INFO ZDBF: -15
+2018-02-26 10:06:13,055 INFO Cycle: 79
+2018-02-26 10:06:13,236 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:06:43,535 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:07:00,203 INFO ZDBF: -14
+2018-02-26 10:07:00,308 INFO Cycle: 80
+2018-02-26 10:07:00,490 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:07:30,196 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:07:46,865 INFO ZDBF: -16
+2018-02-26 10:07:46,970 INFO Cycle: 81
+2018-02-26 10:07:47,153 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:08:17,474 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:08:34,160 INFO ZDBF: -15
+2018-02-26 10:08:34,266 INFO Cycle: 82
+2018-02-26 10:08:34,447 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:09:04,137 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:09:20,821 INFO ZDBF: -15
+2018-02-26 10:09:20,926 INFO Cycle: 83
+2018-02-26 10:09:21,108 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:09:51,407 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:10:08,075 INFO ZDBF: -15
+2018-02-26 10:10:08,180 INFO Cycle: 84
+2018-02-26 10:10:08,362 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:10:38,661 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:10:55,328 INFO ZDBF: -15
+2018-02-26 10:10:55,434 INFO Cycle: 85
+2018-02-26 10:10:55,632 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:11:25,355 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:11:42,023 INFO ZDBF: -15
+2018-02-26 10:11:42,128 INFO Cycle: 86
+2018-02-26 10:11:42,328 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:12:12,618 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:12:29,286 INFO ZDBF: -15
+2018-02-26 10:12:29,391 INFO Cycle: 87
+2018-02-26 10:12:29,573 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:12:59,279 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:13:15,963 INFO ZDBF: -15
+2018-02-26 10:13:16,069 INFO Cycle: 88
+2018-02-26 10:13:16,252 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:13:46,565 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:14:03,233 INFO ZDBF: -17
+2018-02-26 10:14:03,338 INFO Cycle: 89
+2018-02-26 10:14:03,538 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:14:33,243 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:14:49,927 INFO ZDBF: -16
+2018-02-26 10:14:50,032 INFO Cycle: 90
+2018-02-26 10:14:50,246 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:15:20,529 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:15:37,197 INFO ZDBF: -15
+2018-02-26 10:15:37,301 INFO Cycle: 91
+2018-02-26 10:15:37,500 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:16:07,206 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:16:23,875 INFO ZDBF: -16
+2018-02-26 10:16:23,980 INFO Cycle: 92
+2018-02-26 10:16:24,180 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:16:54,476 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:17:11,161 INFO ZDBF: -15
+2018-02-26 10:17:11,265 INFO Cycle: 93
+2018-02-26 10:17:11,448 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:17:41,154 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:17:57,822 INFO ZDBF: -15
+2018-02-26 10:17:57,930 INFO Cycle: 94
+2018-02-26 10:17:58,128 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:18:28,424 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:18:45,094 INFO ZDBF: -15
+2018-02-26 10:18:45,198 INFO Cycle: 95
+2018-02-26 10:18:45,397 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:19:15,102 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:19:31,788 INFO ZDBF: -16
+2018-02-26 10:19:31,891 INFO Cycle: 96
+2018-02-26 10:19:32,075 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:20:02,372 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:20:19,049 INFO ZDBF: -17
+2018-02-26 10:20:19,154 INFO Cycle: 97
+2018-02-26 10:20:19,354 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:20:49,651 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:21:06,335 INFO ZDBF: -14
+2018-02-26 10:21:06,440 INFO Cycle: 98
+2018-02-26 10:21:06,624 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:21:36,325 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:21:52,993 INFO ZDBF: -16
+2018-02-26 10:21:53,098 INFO Cycle: 99
+2018-02-26 10:21:53,282 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:22:23,579 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:22:40,263 INFO ZDBF: -17
+2018-02-26 10:22:40,369 INFO Cycle: 100
+2018-02-26 10:22:40,551 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:23:10,273 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:23:26,941 INFO ZDBF: -15
+2018-02-26 10:37:14,421 INFO Script running on windows platform, LCD disabled
+2018-02-26 10:37:14,421 INFO ==================== Load Settings ====================
+2018-02-26 10:37:14,525 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/29.json
+2018-02-26 10:37:14,749 INFO Writing motionPID successful, @ processID 101
+2018-02-26 10:37:15,132 INFO Writing level sensors successful, @ processID 103
+2018-02-26 10:37:15,229 INFO Writing power sync successful, @ processID 104
+2018-02-26 10:37:15,323 INFO Homing sequence successful, @ processID 0
+2018-02-26 10:37:15,421 INFO Preheat enabled
+2018-02-26 10:37:15,516 INFO Writing setpoint reg 0 to 0
+2018-02-26 10:38:43,582 INFO Script running on windows platform, LCD disabled
+2018-02-26 10:38:43,582 INFO ==================== Load Settings ====================
+2018-02-26 10:38:43,687 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/29.json
+2018-02-26 10:38:43,911 INFO Writing motionPID successful, @ processID 101
+2018-02-26 10:38:44,312 INFO Writing heaterPID successful, @ processID 102
+2018-02-26 10:38:44,711 INFO Writing level sensors successful, @ processID 103
+2018-02-26 10:38:44,806 INFO Writing power sync successful, @ processID 104
+2018-02-26 10:38:44,903 INFO Homing sequence successful, @ processID 0
+2018-02-26 10:38:45,000 INFO Preheat enabled
+2018-02-26 10:38:45,095 INFO Writing setpoint reg 0 to 0
+2018-02-26 10:56:39,740 INFO Script running on windows platform, LCD disabled
+2018-02-26 10:56:39,740 INFO ==================== Load Settings ====================
+2018-02-26 10:56:39,845 INFO C:\Users\wa68891\Documents\GitHub\EOL/hwcfg/29.json
+2018-02-26 10:56:40,069 INFO Writing motionPID successful, @ processID 101
+2018-02-26 10:56:40,469 INFO Writing heaterPID successful, @ processID 102
+2018-02-26 10:56:40,852 INFO Writing level sensors successful, @ processID 103
+2018-02-26 10:56:40,948 INFO Writing power sync successful, @ processID 104
+2018-02-26 10:56:41,045 INFO Homing sequence successful, @ processID 0
+2018-02-26 10:56:41,141 INFO Test cycle started
+2018-02-26 10:56:41,141 INFO Cycle: 1
+2018-02-26 10:56:41,332 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:57:11,630 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:57:28,299 INFO ZDBF: -67
+2018-02-26 10:57:28,398 INFO Cycle: 2
+2018-02-26 10:57:28,586 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:57:58,292 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:58:14,977 INFO ZDBF: -69
+2018-02-26 10:58:15,082 INFO Cycle: 3
+2018-02-26 10:58:15,266 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:58:45,562 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:59:02,232 INFO ZDBF: -68
+2018-02-26 10:59:02,336 INFO Cycle: 4
+2018-02-26 10:59:02,536 INFO Writing setpoint reg 0 to -4000
+2018-02-26 10:59:32,226 INFO Writing setpoint reg 0 to -500
+2018-02-26 10:59:48,894 INFO ZDBF: -69
+2018-02-26 10:59:48,996 INFO Cycle: 5
+2018-02-26 10:59:49,197 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:00:19,487 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:00:36,157 INFO ZDBF: -67
+2018-02-26 11:00:36,260 INFO Cycle: 6
+2018-02-26 11:00:36,460 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:01:06,165 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:01:22,851 INFO ZDBF: -66
+2018-02-26 11:01:22,959 INFO Cycle: 7
+2018-02-26 11:01:23,154 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:01:53,437 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:02:10,121 INFO ZDBF: -67
+2018-02-26 11:02:10,223 INFO Cycle: 8
+2018-02-26 11:02:10,408 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:02:40,115 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:02:56,799 INFO ZDBF: -65
+2018-02-26 11:02:56,907 INFO Cycle: 9
+2018-02-26 11:02:57,086 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:03:27,384 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:03:44,052 INFO ZDBF: -65
+2018-02-26 11:03:44,161 INFO Cycle: 10
+2018-02-26 11:03:44,357 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:04:14,663 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:04:31,331 INFO ZDBF: -63
+2018-02-26 11:04:31,437 INFO Cycle: 11
+2018-02-26 11:04:31,618 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:05:01,325 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:05:17,993 INFO ZDBF: -68
+2018-02-26 11:05:18,098 INFO Cycle: 12
+2018-02-26 11:05:18,282 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:05:48,579 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:06:05,249 INFO ZDBF: -64
+2018-02-26 11:06:05,773 INFO Cycle: 13
+2018-02-26 11:06:05,969 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:06:35,690 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:06:52,358 INFO ZDBF: -64
+2018-02-26 11:06:52,461 INFO Cycle: 14
+2018-02-26 11:06:52,663 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:07:22,368 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:07:39,036 INFO ZDBF: -68
+2018-02-26 11:07:39,140 INFO Cycle: 15
+2018-02-26 11:07:39,341 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:08:09,631 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:08:26,299 INFO ZDBF: -64
+2018-02-26 11:08:26,404 INFO Cycle: 16
+2018-02-26 11:08:26,604 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:08:56,292 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:09:12,963 INFO ZDBF: -67
+2018-02-26 11:09:13,065 INFO Cycle: 17
+2018-02-26 11:09:13,250 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:09:43,546 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:10:00,214 INFO ZDBF: -66
+2018-02-26 11:10:00,318 INFO Cycle: 18
+2018-02-26 11:10:00,519 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:10:30,224 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:10:46,894 INFO ZDBF: -64
+2018-02-26 11:10:46,997 INFO Cycle: 19
+2018-02-26 11:10:47,197 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:11:17,496 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:11:34,164 INFO ZDBF: -66
+2018-02-26 11:11:34,267 INFO Cycle: 20
+2018-02-26 11:11:34,469 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:12:04,157 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:12:20,836 INFO ZDBF: -64
+2018-02-26 11:12:20,940 INFO Cycle: 21
+2018-02-26 11:12:21,141 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:12:51,423 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:13:08,092 INFO ZDBF: -65
+2018-02-26 11:13:08,196 INFO Cycle: 22
+2018-02-26 11:13:08,381 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:13:38,677 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:13:55,346 INFO ZDBF: -64
+2018-02-26 11:13:55,450 INFO Cycle: 23
+2018-02-26 11:13:55,651 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:14:25,341 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:14:42,009 INFO ZDBF: -64
+2018-02-26 11:14:42,112 INFO Cycle: 24
+2018-02-26 11:14:42,298 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:15:12,595 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:15:29,263 INFO ZDBF: -64
+2018-02-26 11:15:29,367 INFO Cycle: 25
+2018-02-26 11:15:29,566 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:15:59,256 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:16:15,934 INFO ZDBF: -65
+2018-02-26 11:16:16,038 INFO Cycle: 26
+2018-02-26 11:16:16,237 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:16:46,519 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:17:03,188 INFO ZDBF: -64
+2018-02-26 11:17:03,292 INFO Cycle: 27
+2018-02-26 11:17:03,476 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:17:33,181 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:17:49,849 INFO ZDBF: -65
+2018-02-26 11:17:49,954 INFO Cycle: 28
+2018-02-26 11:17:50,154 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:18:20,436 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:18:37,105 INFO ZDBF: -64
+2018-02-26 11:18:37,209 INFO Cycle: 29
+2018-02-26 11:18:37,392 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:19:07,690 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:19:24,359 INFO ZDBF: -65
+2018-02-26 11:19:24,463 INFO Cycle: 30
+2018-02-26 11:19:24,664 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:19:54,354 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:20:11,019 INFO ZDBF: -65
+2018-02-26 11:20:11,125 INFO Cycle: 31
+2018-02-26 11:20:11,308 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:20:41,605 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:20:58,290 INFO ZDBF: -66
+2018-02-26 11:20:58,394 INFO Cycle: 32
+2018-02-26 11:20:58,578 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:21:28,285 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:21:44,953 INFO ZDBF: -65
+2018-02-26 11:21:45,056 INFO Cycle: 33
+2018-02-26 11:21:45,257 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:22:15,555 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:22:32,223 INFO ZDBF: -64
+2018-02-26 11:22:32,328 INFO Cycle: 34
+2018-02-26 11:22:32,528 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:23:02,233 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:23:18,901 INFO ZDBF: -65
+2018-02-26 11:23:19,006 INFO Cycle: 35
+2018-02-26 11:23:19,206 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:23:49,486 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:24:06,157 INFO ZDBF: -66
+2018-02-26 11:24:06,259 INFO Cycle: 36
+2018-02-26 11:24:06,444 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:24:36,158 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:24:52,844 INFO ZDBF: -67
+2018-02-26 11:24:52,947 INFO Cycle: 37
+2018-02-26 11:24:53,131 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:25:23,430 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:25:40,098 INFO ZDBF: -65
+2018-02-26 11:25:40,201 INFO Cycle: 38
+2018-02-26 11:25:40,401 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:26:10,107 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:26:26,776 INFO ZDBF: -64
+2018-02-26 11:26:26,880 INFO Cycle: 39
+2018-02-26 11:26:27,079 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:26:57,361 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:27:14,030 INFO ZDBF: -67
+2018-02-26 11:27:14,134 INFO Cycle: 40
+2018-02-26 11:27:14,319 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:27:44,617 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:28:01,285 INFO ZDBF: -65
+2018-02-26 11:28:01,388 INFO Cycle: 41
+2018-02-26 11:28:01,588 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:28:31,302 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:28:47,971 INFO ZDBF: -65
+2018-02-26 11:28:48,075 INFO Cycle: 42
+2018-02-26 11:28:48,276 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:29:18,573 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:29:35,243 INFO ZDBF: -64
+2018-02-26 11:29:35,346 INFO Cycle: 43
+2018-02-26 11:29:35,546 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:30:05,236 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:30:21,904 INFO ZDBF: -63
+2018-02-26 11:30:22,009 INFO Cycle: 44
+2018-02-26 11:30:22,194 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:30:52,490 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:31:09,158 INFO ZDBF: -65
+2018-02-26 11:31:09,263 INFO Cycle: 45
+2018-02-26 11:31:09,463 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:31:39,153 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:31:55,838 INFO ZDBF: -64
+2018-02-26 11:31:55,943 INFO Cycle: 46
+2018-02-26 11:31:56,125 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:32:26,408 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:32:43,076 INFO ZDBF: -65
+2018-02-26 11:32:43,181 INFO Cycle: 47
+2018-02-26 11:32:43,381 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:33:13,678 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:33:30,346 INFO ZDBF: -68
+2018-02-26 11:33:30,450 INFO Cycle: 48
+2018-02-26 11:33:30,651 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:34:00,341 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:34:17,009 INFO ZDBF: -64
+2018-02-26 11:34:17,114 INFO Cycle: 49
+2018-02-26 11:34:17,296 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:34:47,578 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:35:04,247 INFO ZDBF: -66
+2018-02-26 11:35:04,351 INFO Cycle: 50
+2018-02-26 11:35:04,536 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:35:34,226 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:35:50,892 INFO ZDBF: -65
+2018-02-26 11:35:50,997 INFO Cycle: 51
+2018-02-26 11:35:51,180 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:36:21,473 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:36:38,142 INFO ZDBF: -64
+2018-02-26 11:36:38,247 INFO Cycle: 52
+2018-02-26 11:36:38,447 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:37:08,135 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:37:24,822 INFO ZDBF: -65
+2018-02-26 11:37:24,926 INFO Cycle: 53
+2018-02-26 11:37:25,109 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:37:55,407 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:38:12,075 INFO ZDBF: -62
+2018-02-26 11:38:12,180 INFO Cycle: 54
+2018-02-26 11:38:12,380 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:38:42,677 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:38:59,345 INFO ZDBF: -66
+2018-02-26 11:38:59,448 INFO Cycle: 55
+2018-02-26 11:38:59,648 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:39:29,338 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:39:46,023 INFO ZDBF: -65
+2018-02-26 11:39:46,128 INFO Cycle: 56
+2018-02-26 11:39:46,312 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:40:16,605 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:40:33,273 INFO ZDBF: -62
+2018-02-26 11:40:33,378 INFO Cycle: 57
+2018-02-26 11:40:33,594 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:41:03,299 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:41:19,983 INFO ZDBF: -65
+2018-02-26 11:41:20,088 INFO Cycle: 58
+2018-02-26 11:41:20,302 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:41:50,601 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:42:07,269 INFO ZDBF: -63
+2018-02-26 11:42:07,372 INFO Cycle: 59
+2018-02-26 11:42:07,588 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:42:37,295 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:42:53,980 INFO ZDBF: -62
+2018-02-26 11:42:54,084 INFO Cycle: 60
+2018-02-26 11:42:54,204 INFO Write to register 255 failed (retry remains 20), @ processID 0
+2018-02-26 11:42:54,395 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:43:24,101 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:43:40,785 INFO ZDBF: -63
+2018-02-26 11:43:40,891 INFO Cycle: 61
+2018-02-26 11:43:41,105 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:44:11,397 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:44:28,065 INFO ZDBF: -61
+2018-02-26 11:44:28,171 INFO Cycle: 62
+2018-02-26 11:44:28,369 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:44:58,651 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:45:15,335 INFO ZDBF: -62
+2018-02-26 11:45:15,440 INFO Cycle: 63
+2018-02-26 11:45:15,624 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:45:45,329 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:46:01,997 INFO ZDBF: -61
+2018-02-26 11:46:02,102 INFO Cycle: 64
+2018-02-26 11:46:02,302 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:46:32,599 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:46:49,267 INFO ZDBF: -60
+2018-02-26 11:46:49,372 INFO Cycle: 65
+2018-02-26 11:46:49,572 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:47:19,262 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:47:35,947 INFO ZDBF: -58
+2018-02-26 11:47:36,052 INFO Cycle: 66
+2018-02-26 11:47:36,233 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:48:06,532 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:48:23,194 INFO ZDBF: -58
+2018-02-26 11:48:23,299 INFO Cycle: 67
+2018-02-26 11:48:23,499 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:48:53,204 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:49:09,872 INFO ZDBF: -58
+2018-02-26 11:49:09,976 INFO Cycle: 68
+2018-02-26 11:49:10,177 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:49:40,457 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:49:57,142 INFO ZDBF: -60
+2018-02-26 11:49:57,247 INFO Cycle: 69
+2018-02-26 11:49:57,430 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:50:27,137 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:50:43,805 INFO ZDBF: -58
+2018-02-26 11:50:43,911 INFO Cycle: 70
+2018-02-26 11:50:44,109 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:51:14,391 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:51:31,075 INFO ZDBF: -60
+2018-02-26 11:51:31,180 INFO Cycle: 71
+2018-02-26 11:51:31,362 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:52:01,661 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:52:18,325 INFO ZDBF: -59
+2018-02-26 11:52:18,430 INFO Cycle: 72
+2018-02-26 11:52:18,628 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:52:48,319 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:53:04,987 INFO ZDBF: -61
+2018-02-26 11:53:05,092 INFO Cycle: 73
+2018-02-26 11:53:05,292 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:53:35,588 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:53:52,273 INFO ZDBF: -60
+2018-02-26 11:53:52,378 INFO Cycle: 74
+2018-02-26 11:53:52,562 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:54:22,267 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:54:38,936 INFO ZDBF: -63
+2018-02-26 11:54:39,040 INFO Cycle: 75
+2018-02-26 11:54:39,161 INFO Write to register 255 failed (retry remains 20), @ processID 0
+2018-02-26 11:54:39,351 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:55:09,632 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:55:26,302 INFO ZDBF: -65
+2018-02-26 11:55:26,407 INFO Cycle: 76
+2018-02-26 11:55:26,605 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:55:56,312 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:56:12,990 INFO ZDBF: -67
+2018-02-26 11:56:13,095 INFO Cycle: 77
+2018-02-26 11:56:13,293 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:56:43,589 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:57:00,257 INFO ZDBF: -65
+2018-02-26 11:57:00,362 INFO Cycle: 78
+2018-02-26 11:57:00,562 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:57:30,266 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:57:46,936 INFO ZDBF: -66
+2018-02-26 11:57:47,042 INFO Cycle: 79
+2018-02-26 11:57:47,256 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:58:17,553 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:58:34,223 INFO ZDBF: -68
+2018-02-26 11:58:34,328 INFO Cycle: 80
+2018-02-26 11:58:34,526 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:59:04,216 INFO Writing setpoint reg 0 to -500
+2018-02-26 11:59:20,900 INFO ZDBF: -65
+2018-02-26 11:59:21,005 INFO Cycle: 81
+2018-02-26 11:59:21,187 INFO Writing setpoint reg 0 to -4000
+2018-02-26 11:59:51,486 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:00:08,154 INFO ZDBF: -63
+2018-02-26 12:00:08,259 INFO Cycle: 82
+2018-02-26 12:00:08,459 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:00:38,174 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:00:54,858 INFO ZDBF: -66
+2018-02-26 12:00:54,963 INFO Cycle: 83
+2018-02-26 12:00:55,147 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:01:25,444 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:01:42,111 INFO ZDBF: -66
+2018-02-26 12:01:42,217 INFO Cycle: 84
+2018-02-26 12:01:42,417 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:02:12,105 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:02:28,790 INFO ZDBF: -61
+2018-02-26 12:02:28,897 INFO Cycle: 85
+2018-02-26 12:02:29,078 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:02:59,375 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:03:16,045 INFO ZDBF: -63
+2018-02-26 12:03:16,151 INFO Cycle: 86
+2018-02-26 12:03:16,348 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:03:46,647 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:04:03,315 INFO ZDBF: -59
+2018-02-26 12:04:03,421 INFO Cycle: 87
+2018-02-26 12:04:03,619 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:04:33,312 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:04:49,982 INFO ZDBF: -61
+2018-02-26 12:04:50,086 INFO Cycle: 88
+2018-02-26 12:04:50,285 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:05:20,566 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:05:37,252 INFO ZDBF: -64
+2018-02-26 12:05:37,355 INFO Cycle: 89
+2018-02-26 12:05:37,539 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:06:07,246 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:06:23,914 INFO ZDBF: -60
+2018-02-26 12:06:24,019 INFO Cycle: 90
+2018-02-26 12:06:24,217 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:06:54,500 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:07:11,167 INFO ZDBF: -61
+2018-02-26 12:07:11,270 INFO Cycle: 91
+2018-02-26 12:07:11,454 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:07:41,145 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:07:57,829 INFO ZDBF: -62
+2018-02-26 12:07:57,936 INFO Cycle: 92
+2018-02-26 12:07:58,118 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:08:28,408 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:08:45,078 INFO ZDBF: -63
+2018-02-26 12:08:45,183 INFO Cycle: 93
+2018-02-26 12:08:45,381 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:09:15,664 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:09:32,331 INFO ZDBF: -64
+2018-02-26 12:09:32,437 INFO Cycle: 94
+2018-02-26 12:09:32,635 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:10:02,341 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:10:19,009 INFO ZDBF: -66
+2018-02-26 12:10:19,115 INFO Cycle: 95
+2018-02-26 12:10:19,313 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:10:49,611 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:11:06,279 INFO ZDBF: -66
+2018-02-26 12:11:06,385 INFO Cycle: 96
+2018-02-26 12:11:06,568 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:11:36,273 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:11:52,943 INFO ZDBF: -69
+2018-02-26 12:11:53,049 INFO Cycle: 97
+2018-02-26 12:11:53,246 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:12:23,538 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:12:40,204 INFO ZDBF: -67
+2018-02-26 12:12:40,311 INFO Cycle: 98
+2018-02-26 12:12:40,509 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:13:10,198 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:13:26,884 INFO ZDBF: -69
+2018-02-26 12:13:26,989 INFO Cycle: 99
+2018-02-26 12:13:27,171 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:13:57,470 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:14:14,138 INFO ZDBF: -68
+2018-02-26 12:14:14,244 INFO Cycle: 100
+2018-02-26 12:14:14,441 INFO Writing setpoint reg 0 to -4000
+2018-02-26 12:14:44,132 INFO Writing setpoint reg 0 to -500
+2018-02-26 12:15:00,816 INFO ZDBF: -69
