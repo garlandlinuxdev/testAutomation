@@ -92,5 +92,22 @@
 			"killsw_high": 2.596,
 			"killsw_low": -2.237
 		}
+	},
+	"test":{
+		"config":{
+			"rest_time": 30,
+			"pause_time": 8,
+			"log_name": "test",
+			"cycle": 100,
+			"setpoint": [0, -4450, -500],
+			"preheat": 1,
+			"load_motionPID": 1,
+			"load_heaterPID": 1,
+			"load_level_sensors": 1,
+			"power_sync": 1,
+			"temp_limit": [2400, 2820, 2400, 2820, 2400, 0, 0, 0],
+			"heater_temp": [1766, 2183, 1766, 2183, 1766, 0, 0, 0]
+		}
 	}
+	
 }

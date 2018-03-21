@@ -47,20 +47,22 @@ class loadJSON():
         return description, jumper, grilltype
 
     def loadSettings(self, data, customer):
-        test = []
+        custom_test = []
         voltage = []
         platen = []
         actuator = []
         switch = []
+        test = []
+        temp = []
 
-        test.append(data["custom_test"]["switch"])
-        test.append(data["custom_test"]["kill_switch"])
-        test.append(data["custom_test"]["magnet_drift"])
-        test.append(data["custom_test"]["homing"])
-        test.append(data["custom_test"]["sensors"])
-        test.append(data["custom_test"]["ZDBF"])
-        test.append(data["custom_test"]["level_motor"])
-        test.append(data["custom_test"]["results"])
+        custom_test.append(data["custom_test"]["switch"])
+        custom_test.append(data["custom_test"]["kill_switch"])
+        custom_test.append(data["custom_test"]["magnet_drift"])
+        custom_test.append(data["custom_test"]["homing"])
+        custom_test.append(data["custom_test"]["sensors"])
+        custom_test.append(data["custom_test"]["ZDBF"])
+        custom_test.append(data["custom_test"]["level_motor"])
+        custom_test.append(data["custom_test"]["results"])
 
         if customer == 1 or customer == 2:
             voltage.append(data["Pearl"]["voltage"]["tolerance"])
@@ -130,7 +132,20 @@ class loadJSON():
             switch.append(data["CFA"]["switch"]["killsw_high"])
             switch.append(data["CFA"]["switch"]["killsw_low"])
 
-        return test, voltage, platen, actuator, switch
+        test.append(data["test"]["config"]["rest_time"])
+        test.append(data["test"]["config"]["pause_time"])
+        test.append(data["test"]["config"]["log_name"])
+        test.append(data["test"]["config"]["cycle"])
+        test.append(data["test"]["config"]["setpoint"])
+        test.append(data["test"]["config"]["preheat"])
+        temp.append(data["test"]["config"]["load_motionPID"])
+        temp.extend([data["test"]["config"]["load_heaterPID"]])
+        temp.extend([data["test"]["config"]["load_level_sensors"]])
+        temp.extend([data["test"]["config"]["power_sync"]])
+        test.append(temp)
+        test.append(data["test"]["config"]["temp_limit"])
+        test.append(data["test"]["config"]["heater_temp"])
+        return custom_test, voltage, platen, actuator, switch, test
 
     def loadMotorPID(self, data):
         motorPID = []
